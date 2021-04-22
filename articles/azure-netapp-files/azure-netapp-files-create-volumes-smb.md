@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 04/20/2021
 ms.author: b-juche
-ms.openlocfilehash: 28fc465627032522afb9da8f6ec0fad704834d09
-ms.sourcegitcommit: 260a2541e5e0e7327a445e1ee1be3ad20122b37e
+ms.openlocfilehash: d3ca94524c334a20f5ee75e5300ad419fa1542c5
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107813700"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873267"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Een SMB-volume maken voor Azure NetApp Files
 
@@ -34,7 +34,7 @@ In dit artikel wordt beschreven hoe u een SMB3-volume maakt. Zie Een [NFS-volume
 
 ## <a name="configure-active-directory-connections"></a>Active Directory-verbindingen configureren 
 
-Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Als u Active Directory-verbindingen voor Azure NetApp-bestanden niet hebt geconfigureerd, volgt u de instructies die worden beschreven in [Active Directory-verbindingen](create-active-directory-connections.md)maken en beheren.
+Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Als u Active Directory-verbindingen voor Azure NetApp-bestanden niet hebt geconfigureerd, volgt u de instructies die worden beschreven in Active Directory-verbindingen maken [en beheren.](create-active-directory-connections.md)
 
 ## <a name="add-an-smb-volume"></a>Een SMB-volume toevoegen
 
@@ -51,7 +51,7 @@ Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Al
 
         Een volumenaam moet uniek zijn binnen elke capaciteitspool. De naam moet minstens drie tekens bevatten. U kunt alle alfanumerieke tekens gebruiken.   
 
-        U kunt of niet gebruiken `default` `bin` als de volumenaam.
+        U kunt of niet `default` gebruiken `bin` als de volumenaam.
 
     * **Capaciteitspool**  
         Geef de capaciteitspool op waar u het volume wilt maken.
@@ -64,35 +64,35 @@ Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Al
     * **Doorvoer (MiB/S)**   
         Als het volume is gemaakt in een handmatige QoS-capaciteitspool, geeft u de doorvoer op die u voor het volume wilt gebruiken.   
 
-        Als het volume wordt gemaakt in een automatische QoS-capaciteitspool, is de waarde die in dit veld wordt weergegeven (quotum x doorvoer op serviceniveau).   
+        Als het volume wordt gemaakt in een automatische QoS-capaciteitspool, is de waarde die in dit veld wordt weergegeven (quota x doorvoer op serviceniveau).   
 
     * **Virtueel netwerk**  
         Geef het virtuele Azure-netwerk (VNet) op van waaruit u het volume wilt openen.  
 
-        Het VNet dat u opgeeft, moet een subnet hebben dat is gedelegeerd Azure NetApp Files. De Azure NetApp Files-service is alleen toegankelijk vanaf hetzelfde VNet of vanuit een VNet dat zich in dezelfde regio als het volume via VNet-peering. U kunt het volume ook openen vanuit uw on-premises netwerk via Express Route.   
+        Het VNet dat u opgeeft, moet een subnet hebben dat is gedelegeerd Azure NetApp Files. De Azure NetApp Files-service is alleen toegankelijk vanuit hetzelfde VNet of vanuit een VNet dat zich in dezelfde regio als het volume via VNet-peering. U kunt het volume ook openen vanuit uw on-premises netwerk via Express Route.   
 
     * **Subnet**  
         Geef het subnet op dat u wilt gebruiken voor het volume.  
         Het opgegeven subnet moet zijn gedelegeerd aan Azure NetApp Files. 
         
-        Als u nog geen subnet hebt gedelegeerd, kunt u klikken op **Nieuwe maken** op de pagina Een volume maken. Geef vervolgens op de pagina Subnet maken de subnetgegevens op, en selecteer **Microsoft.NetApp/volumes** om het subnet te delegeren aan Azure NetApp Files. In elk VNet kan slechts één subnet worden gedelegeerd aan Azure NetApp Files.   
+        Als u nog geen subnet hebt gedelegeerd, kunt u op **de** pagina Een volume maken op Nieuwe maken klikken. Geef vervolgens op de pagina Subnet maken de subnetgegevens op, en selecteer **Microsoft.NetApp/volumes** om het subnet te delegeren aan Azure NetApp Files. In elk VNet kan slechts één subnet worden gedelegeerd aan Azure NetApp Files.   
  
         ![ Een volume maken](../media/azure-netapp-files/azure-netapp-files-new-volume.png)
     
         ![Subnet maken](../media/azure-netapp-files/azure-netapp-files-create-subnet.png)
 
-    * Als u een bestaand momentopnamebeleid wilt  toepassen op het volume, klikt u op Geavanceerde sectie weergeven om het uit te vouwen, geeft u op of u het momentopnamepad wilt verbergen en selecteert u een beleid voor momentopnamen in het pull-downmenu. 
+    * Als u een bestaand momentopnamebeleid wilt  toepassen op het volume, klikt u op geavanceerde sectie weergeven om dit uit te vouwen, geeft u op of u het momentopnamepad wilt verbergen en selecteert u een momentopnamebeleid in de pull-down menu. 
 
-        Zie Beleid voor momentopnamen beheren voor meer informatie over het maken van een [beleid voor momentopnamen.](azure-netapp-files-manage-snapshots.md#manage-snapshot-policies)
+        Zie Beleid voor momentopnamen beheren voor meer informatie over het maken [van een beleid voor momentopnamen.](azure-netapp-files-manage-snapshots.md#manage-snapshot-policies)
 
         ![Geavanceerde selectie tonen](../media/azure-netapp-files/volume-create-advanced-selection.png)
 
 4. Klik **op Protocol** en vul de volgende gegevens in:  
-    * Selecteer **SMB** als het protocoltype voor het volume. 
+    * Selecteer **SMB** als protocoltype voor het volume. 
     * Selecteer uw **Active Directory-verbinding** in de vervolgkeuzelijst.
     * Geef de naam van het gedeelde volume op in **Sharenaam.**
     * Als u versleuteling voor SMB3 wilt inschakelen, selecteert u **SMB3-protocolversleuteling inschakelen.**   
-        Met deze functie schakelt u versleuteling in voor in-flight SMB3-gegevens. SMB-clients die geen SMB3-versleuteling gebruiken, hebben geen toegang tot dit volume.  Data-at-rest wordt versleuteld, ongeacht deze instelling.  
+        Met deze functie wordt versleuteling voor in-flight SMB3-gegevens mogelijk. SMB-clients die geen SMB3-versleuteling gebruiken, hebben geen toegang tot dit volume.  Data-at-rest wordt versleuteld, ongeacht deze instelling.  
         Zie [Veelgestelde vragen over SMB-versleuteling](azure-netapp-files-faqs.md#smb-encryption-faqs) voor meer informatie. 
 
         De **functie SMB3-protocolversleuteling** is momenteel beschikbaar als preview-versie. Als dit de eerste keer is dat u deze functie gebruikt, registreert u de functie voordat u deze gebruikt: 
@@ -104,19 +104,19 @@ Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Al
         Controleer de status van de functieregistratie: 
 
         > [!NOTE]
-        > De **RegistrationState** kan maximaal 60 minuten in de status zijn `Registering` voordat u in verandert in `Registered` . Wacht totdat de status is `Registered` voordat u doorgaat.
+        > De **RegistrationState** kan maximaal 60 minuten in de status zijn `Registering` voordat wordt overgenummerd naar `Registered` . Wacht totdat de status is voordat `Registered` u doorgaat.
 
         ```azurepowershell-interactive
         Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFSMBEncryption
         ```
         
-        U kunt ook [Azure CLI-opdrachten en gebruiken](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) om de functie te registreren en de `az feature register` `az feature show` registratiestatus weer te geven.  
+        U kunt ook [Azure CLI-opdrachten en](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` gebruiken om de functie te registreren en de `az feature show` registratiestatus weer te geven.  
     * Als u Continue beschikbaarheid voor het SMB-volume wilt inschakelen, selecteert **u Continue beschikbaarheid inschakelen.**    
 
         > [!IMPORTANT]   
-        > De functie Continue beschikbaarheid van SMB is momenteel beschikbaar als openbare preview. U moet een aanvraag voor een wachtlijst indienen voor toegang tot de functie via de pagina voor het indienen **[Azure NetApp Files SMB Continuous Availability Shares Public Preview.](https://aka.ms/anfsmbcasharespreviewsignup)** Wacht op een officiële bevestigingsmail van het Azure NetApp Files voordat u de functie Continue beschikbaarheid gebruikt.   
+        > De functie Continue beschikbaarheid van SMB is momenteel beschikbaar als openbare preview. U moet een wachtlijstaanvraag indienen voor toegang tot de functie via de Azure NetApp Files pagina voor het indienen van de openbare preview-wachtlijst voor **[SMB Continue](https://aka.ms/anfsmbcasharespreviewsignup)** beschikbaarheids shares. Wacht op een officiële bevestigingsmail van het Azure NetApp Files voordat u de functie Continue beschikbaarheid gebruikt.   
         > 
-        > U moet continue beschikbaarheid alleen inschakelen voor SQL Server en [FsLogix-gebruikersprofielcontainers.](../virtual-desktop/create-fslogix-profile-container.md) Het gebruik van SMB-shares voor continue beschikbaarheid voor andere workloads dan SQL Server en FsLogix-gebruikersprofielcontainers *wordt niet* ondersteund. Deze functie wordt momenteel ondersteund op Windows SQL Server. Linux SQL Server wordt momenteel niet ondersteund. Als u een niet-beheerdersaccount (domein) gebruikt voor het installeren van SQL Server, moet u ervoor zorgen dat aan het account de vereiste beveiligingsrechten zijn toegewezen. Als het domeinaccount niet over de vereiste beveiligingsrechten ( ) en de bevoegdheid kan niet worden ingesteld op domeinniveau, kunt u de bevoegdheid verlenen aan het account met behulp van de beveiligingsrechten gebruikers veld van `SeSecurityPrivilege` Active Directory-verbindingen.  Zie [Een Active Directory-verbinding maken.](create-active-directory-connections.md#create-an-active-directory-connection)
+        > U moet Continue beschikbaarheid alleen inschakelen voor SQL Server en [FSLogix-gebruikersprofielcontainers.](../virtual-desktop/create-fslogix-profile-container.md) Het gebruik van SMB-shares voor continue beschikbaarheid voor andere workloads dan SQL Server en FSLogix-gebruikersprofielcontainers *wordt niet* ondersteund. Deze functie wordt momenteel ondersteund in Windows SQL Server. Linux SQL Server wordt momenteel niet ondersteund. Als u een niet-beheerdersaccount (domein) gebruikt voor het installeren van SQL Server, moet u ervoor zorgen dat aan het account de vereiste beveiligingsrechten zijn toegewezen. Als het domeinaccount niet over de vereiste beveiligingsrechten ( ) en de bevoegdheid kan niet worden ingesteld op domeinniveau, kunt u de bevoegdheid verlenen aan het account met behulp van de beveiligingsrechten gebruikers veld van `SeSecurityPrivilege` Active Directory-verbindingen.  Zie [Een Active Directory-verbinding maken.](create-active-directory-connections.md#create-an-active-directory-connection)
 
     <!-- [1/13/21] Commenting out command-based steps below, because the plan is to use form-based (URL) registration, similar to CRR feature registration -->
     <!-- 
@@ -138,7 +138,7 @@ Voordat u een SMB-volume maakt, moet u een Active Directory-verbinding maken. Al
 
     ![Schermopname van het tabblad Protocol voor het maken van een SMB-volume.](../media/azure-netapp-files/azure-netapp-files-protocol-smb.png)
 
-5. Klik **op Controleren en maken om** de volumedetails te controleren.  Klik vervolgens **op Maken** om het SMB-volume te maken.
+5. Klik **op Controleren en maken om** de volumedetails te controleren.  Klik vervolgens op **Maken** om het SMB-volume te maken.
 
     Het volume dat u hebt gemaakt, wordt weergegeven op de pagina Volumes. 
  
@@ -150,7 +150,7 @@ Toegang tot een SMB-volume wordt beheerd via machtigingen.
 
 ### <a name="share-permissions"></a>Machtigingen voor delen  
 
-Een nieuw volume heeft standaard de **machtigingen iedereen /volledig** beheer delen. Leden van de groep Domeinad administrators kunnen de machtigingen voor delen als volgt wijzigen:  
+Een nieuw volume heeft standaard de sharemachtigingen **Iedereen/Volledig** beheer. Leden van de groep Domeinad administrators kunnen de sharemachtigingen als volgt wijzigen:  
 
 1. Wijs de share toe aan een station.  
 2. Klik met de rechtermuisknop op het station, **selecteer Eigenschappen** en ga vervolgens naar het **tabblad** Beveiliging.

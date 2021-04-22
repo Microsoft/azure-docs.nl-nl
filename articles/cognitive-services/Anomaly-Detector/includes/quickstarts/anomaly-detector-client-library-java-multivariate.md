@@ -1,5 +1,5 @@
 ---
-title: Anomaly Detector quickstart over meerdere Java-clientbibliotheeks
+title: Anomaly Detector quickstart over multivariate Java-clientbibliotheek
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
 author: mrbullwinkle
@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/06/2021
 ms.author: mbullwin
-ms.openlocfilehash: f2e227b2a589955191a2e602495cf0ffbb3f6d8b
-ms.sourcegitcommit: 6f1aa680588f5db41ed7fc78c934452d468ddb84
+ms.openlocfilehash: e85f54beb9a3d4203e527ed9c8ce5582b6a2f5b0
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107732624"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107879613"
 ---
 Ga aan de slag met Anomaly Detector multivariate clientbibliotheek voor Java. Voer de volgende stappen uit om het pakket te installeren en de algoritmen te gaan gebruiken die door de service worden geleverd. Met de nieuwe API's voor anomaliedetectie met meerdere afwijkingen kunnen ontwikkelaars eenvoudig geavanceerde AI integreren voor het detecteren van afwijkingen uit groepen met metrische gegevens, zonder dat machine learning kennis of gelabelde gegevens nodig zijn. Afhankelijkheden en onderlinge correlaties tussen verschillende signalen worden automatisch geteld als belangrijke factoren. Dit helpt u om uw complexe systemen proactief te beschermen tegen storingen.
 
@@ -21,9 +21,9 @@ Gebruik de Anomaly Detector multivariate clientbibliotheek voor Java voor het vo
 
 * Anomalieën op systeemniveau detecteren uit een groep tijdreeksen.
 * Wanneer een afzonderlijke tijdreeks u niet veel vertelt en u alle signalen moet bekijken om een probleem te detecteren.
-* Predicatief onderhoud van dure fysieke activa met tientallen tot honderden verschillende typen sensoren die verschillende aspecten van de systeemtoestand meten.
+* Predicatief onderhoud van dure fysieke activa met tientallen tot honderden verschillende soorten sensoren die verschillende aspecten van de systeemtoestand meten.
 
-[Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/anomalydetector/azure-ai-anomalydetector)  |  [Pakket (Maven)](https://repo1.maven.org/maven2/com/azure/azure-ai-anomalydetector/3.0.0-beta.2/)
+[Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/anomalydetector/azure-ai-anomalydetector)  |  [Pakket (Maven)](https://repo1.maven.org/maven2/com/azure/azure-ai-anomalydetector/3.0.0-beta.2/)  |  [Voorbeeldcode](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/anomalydetector/azure-ai-anomalydetector/src/samples/java/com/azure/ai/anomalydetector/MultivariateSample.java)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -110,7 +110,7 @@ String key = "YOUR_API_KEY";
 String endpoint = "YOUR_ENDPOINT";
 ```
 
- Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, een tijdstempel en een waarde. Alle tijdreeksen moeten worden ingepakt in één ZIP-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
+ Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, tijdstempel en waarde. Alle tijdreeksen moeten worden ingepakt in één zip-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
@@ -153,7 +153,7 @@ AnomalyDetectorClient anomalyDetectorClient = new AnomalyDetectorClientBuilder()
 
 Eerst moeten we een modelaanvraag maken. Zorg ervoor dat de begin- en eindtijd zijn afgestemd op uw gegevensbron.
 
- Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, tijdstempel en waarde. Alle tijdreeksen moeten worden ingepakt in één zip-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md#blobs) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
+ Als u de Anomaly Detector api's wilt gebruiken, moeten we ons eigen model trainen voordat u detectie gebruikt. Gegevens die worden gebruikt voor training zijn een batch tijdreeksen. Elke tijdreeks moet een CSV-indeling hebben met twee kolommen, een tijdstempel en een waarde. Alle tijdreeksen moeten worden ingepakt in één ZIP-bestand en worden geüpload naar [Azure Blob Storage.](../../../../storage/blobs/storage-blobs-introduction.md#blobs) Standaard wordt de bestandsnaam gebruikt om de variabele voor de tijdreeks weer te geven. U kunt ook een extra meta.jsin het zip-bestand als u wilt dat de naam van de variabele verschilt van de naam van het ZIP-bestand. Zodra we de [BLOB SAS-URL (Shared Access Signatures)](../../../../storage/common/storage-sas-overview.md)hebben gegenereerd, kunnen we de URL naar het ZIP-bestand gebruiken voor training.
 
 ```java
 Path path = Paths.get("test-data.csv");
@@ -256,6 +256,8 @@ gradle build
 ```
 ### <a name="run-the-application"></a>De toepassing uitvoeren
 
+Voordat u gaat uitvoeren, kan het handig zijn om uw code te controleren op de [volledige voorbeeldcode](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/anomalydetector/azure-ai-anomalydetector/src/samples/java/com/azure/ai/anomalydetector/MultivariateSample.java).
+
 De toepassing uitvoeren met het doel `run`:
 
 ```console
@@ -264,4 +266,4 @@ gradle run
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Anomaly Detector best practices voor meerdere varianten](../../concepts/best-practices-multivariate.md)
+* [Anomaly Detector multivariate best practices (best practices voor meerdere varianten)](../../concepts/best-practices-multivariate.md)

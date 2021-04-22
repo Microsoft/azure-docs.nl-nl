@@ -1,7 +1,7 @@
 ---
-title: Besturings systeem van de host upgraden voor het berekenings cluster en het exemplaar
+title: Host-besturingssysteem upgraden voor rekencluster en exemplaar
 titleSuffix: Azure Machine Learning
-description: Voer een upgrade uit voor het besturings systeem van de host voor reken cluster en reken instantie van Ubuntu 16,04 LTS naar 18,04 LTS.
+description: Werk het host-besturingssysteem voor het rekencluster en reken exemplaar bij van Ubuntu 16.04 LTS naar 18.04 LTS.
 services: machine-learning
 author: nishankgu
 ms.author: nigup
@@ -11,51 +11,51 @@ ms.subservice: core
 ms.date: 03/03/2021
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 710a860b1ed87f176b6f42b4963dad17acb323b1
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 7445de8349d025679b1560e065ed15d9eec3b08f
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104954051"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872007"
 ---
-# <a name="upgrade-compute-instance-and-compute-cluster-host-os"></a>Reken instantie en reken cluster host-besturings systeem bijwerken
+# <a name="upgrade-compute-instance-and-compute-cluster-host-os"></a>Besturingssysteem van reken-exemplaar en rekenclusterhost upgraden
 
-Azure Machine Learning __Compute-Cluster__ en __reken instantie__ worden beheerde Compute-infra structuur. Als beheerde service beheert micro soft het besturings systeem van de host en de geïnstalleerde pakketten en software versies.
+Azure Machine Learning __rekencluster en__ __rekenin exemplaar zijn__ beheerde rekeninfrastructuur. Als beheerde service beheert Microsoft het hostbesturingssysteem en de pakketten en softwareversies die zijn geïnstalleerd.
 
-Het besturings systeem voor de host voor het berekenings cluster en het reken exemplaar is Ubuntu 16,04 LTS. Op **30 April 2021** wordt de ondersteuning voor 16,04 voor Ubuntu beëindigd. Vanaf __15 maart 2021__ wordt het hostbesturingssysteem automatisch bijgewerkt naar Ubuntu 18,04 LTS. Bijwerken naar 18,04 zorgt voor voortdurende beveiligings updates en ondersteuning van de Ubuntu-community. Deze update wordt doorgevoerd in azure-regio's en is beschikbaar in alle regio's van __9 April 2021__. Zie de [Ubuntu release-blog](https://wiki.ubuntu.com/Releases)voor meer informatie over de Ubuntu-ondersteuning voor 16,04.
+Het host-besturingssysteem voor het berekeningscluster en reken-exemplaar is Ubuntu 16.04 LTS. Op **30 april 2021** stopt Ubuntu de ondersteuning voor 16.04. Vanaf __15 maart 2021__ werkt Microsoft het host-besturingssysteem automatisch bij naar Ubuntu 18.04 LTS. Bijwerken naar 18.04 zorgt voor voortdurende beveiligingsupdates en ondersteuning van de Ubuntu-community. Deze update wordt uitgerold in Azure-regio's en is vanaf 9 april __2021__ beschikbaar in alle regio's. Zie de [Ubuntu-releaseblog](https://wiki.ubuntu.com/Releases)voor meer informatie over het beëindigen van de ondersteuning voor Ubuntu voor 16.04.
 
 > [!TIP]
-> * Het besturings systeem van de host is niet de versie van het besturings systeem dat u kunt opgeven voor een [omgeving](how-to-use-environments.md) bij het trainen of implementeren van een model. Omgevingen worden uitgevoerd in docker. Docker wordt uitgevoerd op het besturings systeem van de host.
-> * Als u momenteel gebruikmaakt van Ubuntu 16,04-omgevingen voor training of implementatie, raadt micro soft u aan om over te scha kelen naar het gebruik van Ubuntu 18,04-gebaseerde installatie kopieën. Zie omgevingen en de [opslag plaats van Azure machine learning containers](https://github.com/Azure/AzureML-Containers/tree/master/base) [gebruiken](how-to-use-environments.md) voor meer informatie.
-> * Wanneer u een Azure Machine Learning Compute-instantie gebruikt op basis van Ubuntu 18,04, is de standaard Python-versie _python 3,8_.
+> * Het host-besturingssysteem is niet de versie van het besturingssysteem die u voor een omgeving [kunt opgeven bij](how-to-use-environments.md) het trainen of implementeren van een model. Omgevingen worden uitgevoerd in Docker. Docker wordt uitgevoerd op het host-besturingssysteem.
+> * Als u momenteel op Ubuntu 16.04 gebaseerde omgevingen gebruikt voor training of implementatie, raadt Microsoft u aan over te schakelen naar het gebruik van op Ubuntu 18.04 gebaseerde installatie afbeeldingen. Zie Omgevingen gebruiken en de opslagplaats [Azure Machine Learning](how-to-use-environments.md) [containers voor meer informatie.](https://github.com/Azure/AzureML-Containers/tree/master/base)
+> * Wanneer u een Azure Machine Learning compute-exemplaar op basis van Ubuntu 18.04 gebruikt, is _python 3.8 de standaardversie van Python._
 ## <a name="creating-new-resources"></a>Nieuwe resources maken
 
-Compute-Cluster of COMPUTE-instanties die zijn gemaakt na __9 April 2021__ gebruiken Ubuntu 18,04 LTS standaard als hostbesturingssysteem. U kunt geen ander host-besturings systeem selecteren.
+Rekencluster- of reken-exemplaren die zijn gemaakt na 9 april __2021 gebruiken__ standaard Ubuntu 18.04 LTS als hostbesturingssysteem. U kunt geen ander host-besturingssysteem selecteren.
 
-## <a name="upgrade-existing-resources"></a>Bestaande resources bijwerken
+## <a name="upgrade-existing-resources"></a>Bestaande resources upgraden
 
-Als u een bestaand reken cluster of reken instanties hebt gemaakt vóór __15 maart 2021__, moet u actie ondernemen om het hostbesturingssysteem bij te werken naar Ubuntu 18,04. Afhankelijk van de regio waar u toegang tot hebt Azure Machine Learning, raden we u aan deze acties na __9 April 2021__ te volgen om ervoor te zorgen dat de wijzigingen zijn doorgevoerd naar alle regio's:
+Als u bestaande rekenclusters of reken-exemplaren hebt gemaakt vóór __15 maart 2021,__ moet u actie ondernemen om het host-besturingssysteem te upgraden naar Ubuntu 18.04. Afhankelijk van de regio waar u toegang Azure Machine Learning, raden we u aan deze acties na 9 april __2021__ uit te voeren om ervoor te zorgen dat onze wijzigingen in alle regio's zijn doorgevoerd:
 
-* __Azure machine learning Compute-Cluster__:
+* __Azure Machine Learning rekencluster:__
 
-    * Als het cluster is geconfigureerd met __minimum aantal knoop punten = 0__, wordt het automatisch geüpgraded wanneer alle taken zijn voltooid en wordt het aantal knoop punten verminderd.
-    * Als de minimum __knooppunten > 0__, wijzigt u de minimale knoop punten tijdelijk in nul en wordt het cluster beperkt tot nul knoop punten.
+    * Als het cluster is geconfigureerd met __min. knooppunten = 0,__ wordt het automatisch bijgewerkt wanneer alle taken zijn voltooid en wordt het gereduceerd tot nul knooppunten.
+    * Als __het minimum aantal knooppunten > 0,__ wijzigt u de minimale knooppunten tijdelijk in nul en staat u toe dat het cluster wordt beperkt tot nul knooppunten.
 
-    Voor meer informatie over het wijzigen van het minimum aantal knoop punten raadpleegt u de opdracht [AZ ml computetarget update amlcompute](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/update#ext_azure_cli_ml_az_ml_computetarget_update_amlcompute) Azure cli (Engelstalig) of de SDK-Naslag informatie over [amlcompute. update ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#update-min-nodes-none--max-nodes-none--idle-seconds-before-scaledown-none-) .
+    Zie de Azure CLI-opdracht [az ml computetarget update amlcompute](https://docs.microsoft.com/cli/azure/ml/computetarget/update#az_ml_computetarget_update_amlcompute) of de SDK-verwijzing [AmlCompute.update()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#update-min-nodes-none--max-nodes-none--idle-seconds-before-scaledown-none-) voor meer informatie over het wijzigen van de minimumknooppunten.
 
-* __Azure machine learning Compute-instantie__: Maak een nieuw Compute-exemplaar (dat gebruikmaakt van Ubuntu 18,04) en verwijder het oude exemplaar.
+* __Azure Machine Learning compute-exemplaar:__ maak een nieuw reken-exemplaar (dat gebruik gaat maken van Ubuntu 18.04) en verwijder het oude exemplaar.
 
-    * Elk notitie blok dat is opgeslagen in de werkruimte bestands share, gegevens archieven, van data sets, is toegankelijk vanuit het nieuwe reken exemplaar.
-    * Als u aangepaste Conda-omgevingen hebt gemaakt, kunt u deze omgevingen vanuit het bestaande exemplaar exporteren en importeren op het nieuwe exemplaar. Zie [Conda-documentatie](https://docs.conda.io/) op docs.Conda.io voor meer informatie over het exporteren en importeren van Conda.
+    * Elk notebook dat is opgeslagen in de bestands share van de werkruimte, gegevensopslag, van gegevenssets, is toegankelijk vanaf de nieuwe reken-instantie.
+    * Als u aangepaste Conda-omgevingen hebt gemaakt, kunt u deze omgevingen exporteren vanuit het bestaande exemplaar en importeren in het nieuwe exemplaar. Zie [Conda-documentatie](https://docs.conda.io/) op de docs.conda.io voor meer informatie over conda docs.conda.io.
 
-    Zie voor meer informatie het artikel [Wat is reken](concept-compute-instance.md) proces en [een Azure machine learning Compute-exemplaar maken en beheren](how-to-create-manage-compute-instance.md)
+    Zie de artikelen Wat is een [reken-exemplaar en](concept-compute-instance.md) Een reken-Azure Machine Learning [maken en beheren?](how-to-create-manage-compute-instance.md) voor meer informatie
 
-## <a name="check-host-os-version"></a>Versie van host-besturings systeem controleren
+## <a name="check-host-os-version"></a>Controleer de versie van het host-besturingssysteem
 
-Voor informatie over het controleren van de versie van het besturings systeem van de host raadpleegt u de Ubuntu community wiki-pagina voor het [controleren van uw Ubuntu-versie](https://help.ubuntu.com/community/CheckingYourUbuntuVersion).
+Zie de wikipagina van de Ubuntu-community over het controleren van uw Ubuntu-versie voor meer informatie over het controleren van de versie van [het host-besturingssysteem.](https://help.ubuntu.com/community/CheckingYourUbuntuVersion)
 
 > [!TIP]
-> Als u de `lsb_release -a` opdracht van de wiki wilt gebruiken, kunt u [een terminal sessie op een reken instantie gebruiken](how-to-access-terminal.md).
+> Als u de `lsb_release -a` opdracht van de wiki wilt gebruiken, kunt u een [terminalsessie op een reken-exemplaar gebruiken.](how-to-access-terminal.md)
 ## <a name="next-steps"></a>Volgende stappen
 
-Neem contact met ons op als u meer vragen of problemen hebt [ubuntu18azureml@service.microsoft.com](mailto:ubuntu18azureml@service.microsoft.com) .
+Als u meer vragen of problemen hebt, kunt u contact met ons opnemen via [ubuntu18azureml@service.microsoft.com](mailto:ubuntu18azureml@service.microsoft.com) .

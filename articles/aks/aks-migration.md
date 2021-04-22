@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 03/25/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 7856b2b0668eca7a172b738a7eeea640e466f003
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 123f4e5c2442b913a53288602d1c56f199b131a6
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107483109"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872781"
 ---
 # <a name="migrate-to-azure-kubernetes-service-aks"></a>Migreren naar Azure Kubernetes Service (AKS)
 
@@ -19,16 +19,16 @@ Deze handleiding bevat informatie over de huidige aanbevolen AKS-configuratie om
 Dit document biedt ondersteuning voor de volgende scenario's:
 
 * Bepaalde toepassingen in een container zetten en migreren naar AKS met behulp [van Azure Migrate](../migrate/migrate-services-overview.md).
-* Een AKS-cluster migreren dat wordt gebacked door [beschikbaarheidssets](../virtual-machines/windows/tutorial-availability-sets.md) naar [Virtual Machine Scale Sets](../virtual-machine-scale-sets/overview.md).
+* Een AKS-cluster migreren met [beschikbaarheidssets naar](../virtual-machines/windows/tutorial-availability-sets.md) [Virtual Machine Scale Sets](../virtual-machine-scale-sets/overview.md).
 * Een AKS-cluster migreren om een [Standard SKU-load balancer.](./load-balancer-standard.md)
 * Migreren van Azure Container Service (ACS) - buiten bedrijf stellen [op 31 januari 2020](https://azure.microsoft.com/updates/azure-container-service-will-retire-on-january-31-2020/) naar AKS.
 * Migreren van [AKS-engine](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview) naar AKS.
 * Migreren van niet-Azure Kubernetes-clusters naar AKS.
 * Bestaande resources verplaatsen naar een andere regio.
 
-Zorg er bij het migreren voor dat uw Kubernetes-doelversie zich binnen het ondersteunde venster voor AKSbevat. Oudere versies zijn mogelijk niet binnen het ondersteunde bereik en vereisen dat een versie-upgrade wordt ondersteund door AKS. Zie Ondersteunde [Kubernetes-versies van AKS voor meer informatie.](./supported-kubernetes-versions.md)
+Zorg er tijdens de migratie voor dat uw Kubernetes-doelversie zich binnen het ondersteunde venster voor AKSbevat. Oudere versies zijn mogelijk niet binnen het ondersteunde bereik en vereisen dat een versie-upgrade wordt ondersteund door AKS. Zie Ondersteunde [Kubernetes-versies van AKS voor meer informatie.](./supported-kubernetes-versions.md)
 
-Als u migreert naar een nieuwere versie van Kubernetes, controleert u het ondersteuningsbeleid voor [Kubernetes-versie en versieverschil.](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions)
+Als u migreert naar een nieuwere versie van Kubernetes, controleert u het ondersteuningsbeleid voor [Kubernetes-versie](https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-versions)en versieverschil.
 
 Verschillende opensource-hulpprogramma's kunnen u helpen bij uw migratie, afhankelijk van uw scenario:
 
@@ -63,7 +63,7 @@ We raden u aan AKS-clusters te gebruiken die worden Virtual Machine Scale Sets e
 * [Meerdere knooppuntgroepen](./use-multiple-node-pools.md),
 * [Beschikbaarheidszones](../availability-zones/az-overview.md),
 * [Geautoriseerde IP-adresbereiken](./api-server-authorized-ip-ranges.md),
-* [Automatische schaalverdeder voor clusters,](./cluster-autoscaler.md)
+* [Automatische schaalverdeder voor clusters](./cluster-autoscaler.md),
 * [Azure Policy voor AKS](../governance/policy/concepts/policy-for-kubernetes.md), en
 * Andere nieuwe functies wanneer ze worden uitgebracht.
 
@@ -71,7 +71,7 @@ AKS-clusters die worden ondersteund [door beschikbaarheidssets voor](../virtual-
 
 In het volgende voorbeeld wordt een AKS-cluster gemaakt met één knooppuntgroep die wordt gebruikt door een virtuele-machineschaalset (VM). Het cluster:
 * Maakt gebruik van een load balancer. 
-* Hiermee schakelt u automatische schaalverdedering van clusters in voor de knooppuntgroep voor het cluster.
+* Hiermee schakelt u de automatische schaalverdeder voor clusters in voor de knooppuntgroep voor het cluster.
 * Hiermee stelt u minimaal *1* en maximaal *3 knooppunten* in.
 
 ```azurecli-interactive
@@ -134,10 +134,10 @@ Migratie van staatloze toepassingen is het meest eenvoudige geval:
 
 ### <a name="considerations-for-stateful-applications"></a>Overwegingen voor stateful toepassingen
 
-Plan de migratie van stateful toepassingen zorgvuldig om gegevensverlies of onverwachte downtime te voorkomen.
+Plan uw migratie van stateful toepassingen zorgvuldig om gegevensverlies of onverwachte downtime te voorkomen.
 
 * Als u Azure Files, kunt u de bestands share als een volume aan het nieuwe cluster toevoegen. Zie [Statische Azure Files als een volume .](./azure-files-volume.md#mount-file-share-as-an-persistent-volume)
-* Als u Azure Managed Disks, kunt u de schijf alleen aan een VM vast maken als deze niet is vastgemaakt. Zie [Mount Static Azure Disk as a Volume (Statische Azure-schijf als een volume mounten).](./azure-disk-volume.md#mount-disk-as-volume)
+* Als u Azure Managed Disks, kunt u de schijf alleen als deze niet is vastgemaakt aan een VM. Zie [Mount Static Azure Disk as a Volume (Statische Azure-schijf als een volume monteren).](./azure-disk-volume.md#mount-disk-as-volume)
 * Als geen van deze methoden werkt, kunt u back-up- en herstelopties gebruiken. Zie [Velero op Azure](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/master/README.md).
 
 #### <a name="azure-files"></a>Azure Files
@@ -180,9 +180,9 @@ Sommige opensource-hulpprogramma's kunnen u helpen bij het maken van beheerde sc
 
 ### <a name="deployment-of-your-cluster-configuration"></a>Implementatie van uw clusterconfiguratie
 
-U wordt aangeraden uw bestaande PIJPLIJN voor continue integratie (CI) en Continue levering (CD) te gebruiken om een bekende goede configuratie in AKS te implementeren. U kunt Azure Pipelines gebruiken om uw [toepassingen te bouwen en te implementeren in AKS.](/azure/devops/pipelines/ecosystems/kubernetes/aks-template) Kloon uw bestaande implementatietaken en zorg ervoor dat `kubeconfig` naar het nieuwe AKS-cluster wijst.
+U wordt aangeraden uw bestaande PIJPLIJN voor continue integratie (CI) en Continuous Deliver (CD) te gebruiken om een bekende goede configuratie in AKS te implementeren. U kunt Azure Pipelines gebruiken om uw [toepassingen te bouwen en te implementeren in AKS.](/azure/devops/pipelines/ecosystems/kubernetes/aks-template) Kloon uw bestaande implementatietaken en zorg ervoor dat `kubeconfig` naar het nieuwe AKS-cluster wijst.
 
-Als dat niet mogelijk is, exporteert u resourcedefinities uit uw bestaande Kubernetes-cluster en pas u deze vervolgens toe op AKS. U kunt gebruiken `kubectl` om objecten te exporteren.
+Als dat niet mogelijk is, exporteert u resourcedefinities uit uw bestaande Kubernetes-cluster en pas u deze vervolgens toe op AKS. U kunt gebruiken om `kubectl` objecten te exporteren.
 
 ```console
 kubectl get deployment -o=yaml --export > deployments.yaml
@@ -190,7 +190,7 @@ kubectl get deployment -o=yaml --export > deployments.yaml
 
 ### <a name="moving-existing-resources-to-another-region"></a>Bestaande resources verplaatsen naar een andere regio
 
-Mogelijk wilt u uw AKS-cluster verplaatsen naar een [andere regio die wordt ondersteund door AKS.][region-availability] U wordt aangeraden een nieuw cluster in de andere regio te maken en vervolgens uw resources en toepassingen in uw nieuwe cluster te implementeren. 
+Mogelijk wilt u uw AKS-cluster verplaatsen naar een [andere regio die wordt ondersteund door AKS][region-availability]. U wordt aangeraden een nieuw cluster in de andere regio te maken en vervolgens uw resources en toepassingen in uw nieuwe cluster te implementeren. 
 
 Als er services zoals Azure [Dev Spaces][azure-dev-spaces] worden uitgevoerd op uw AKS-cluster, moet u deze services bovendien installeren en configureren op uw cluster in de nieuwe regio.
 

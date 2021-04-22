@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.custom: mvc, amqp, devx-track-csharp
 ms.date: 11/06/2018
 ms.author: dobett
-ms.openlocfilehash: a94f3cc6b2387857d19c7b98fa0be64dd6646ec9
-ms.sourcegitcommit: 3ed0f0b1b66a741399dc59df2285546c66d1df38
+ms.openlocfilehash: 2d2c33d0b6f86bc1a779361b86d242cde4c5df38
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/19/2021
-ms.locfileid: "107713854"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873663"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Telemetrie serialiseren met protocolbuffers
 
@@ -37,7 +37,7 @@ De stappen in deze handleiding laten zien hoe u het volgende kunt doen:
 Als u de stappen in deze handleiding wilt volgen, hebt u het volgende nodig:
 
 * Visual Studio Code. U kunt Visual Studio [code voor Mac, Linux en Windows downloaden.](https://code.visualstudio.com/download)
-* .NET Core. U kunt [.NET Core downloaden voor Mac, Linux en Windows.](https://www.microsoft.com/net/download)
+* .NET Core. U kunt [.NET Core downloaden voor Mac, Linux en Windows.](https://dotnet.microsoft.com/download)
 * Postman. U kunt [Postman downloaden voor Mac, Windows of Linux.](https://www.getpostman.com/apps)
 * Een [IoT-hub die is geïmplementeerd in uw Azure-abonnement](../iot-hub/iot-hub-create-through-portal.md). U hebt de connection string IoT-hub nodig om de stappen in deze handleiding uit te voeren. U kunt de connection string op de Azure Portal.
 * Een [Cosmos DB die is geïmplementeerd in uw Azure-abonnement](../cosmos-db/create-sql-api-dotnet.md#create-account) en die gebruikmaakt van de SQL API en die is geconfigureerd voor sterke [consistentie](../cosmos-db/how-to-manage-database-account.md). U hebt de Cosmos DB database nodig om connection string stappen in deze handleiding uit te voeren. U kunt de connection string op de Azure Portal.
@@ -63,14 +63,14 @@ Download de microservice voor [apparaatsimulatie](https://github.com/Azure/azure
 
 Open Visual Studio code **remote-monitoring-services-dotnet-master\storage-adapter.** Klik op de **knoppen Herstellen** om niet-opgeloste afhankelijkheden op te lossen.
 
-Open het **bestand .vscode/launch.js** bestand en wijs uw Cosmos DB connection string toe aan de **OMGEVINGsvariabele \_ PCS STORAGEADAPTER \_ DOCUMENTDB \_ CONNSTRING.**
+Open het **bestand .vscode/launch.js** bestand en wijs uw Cosmos DB connection string toe aan de **PCS \_ STORAGEADAPTER \_ DOCUMENTDB CONNSTRING-omgevingsvariabele. \_**
 
 > [!NOTE]
 > Wanneer u de microservice lokaal op uw computer hebt uitgevoerd, is er nog steeds een Cosmos DB in Azure nodig om goed te werken.
 
-Als u de microservice van de opslagadapter lokaal wilt uitvoeren, klikt u **op \> Foutopsporing starten.**
+Als u de microservice van de opslagadapter lokaal wilt uitvoeren, klikt u **op \> Foutopsporing Starten met foutopsporing.**
 
-In **het terminalvenster** in Visual Studio Code wordt uitvoer weergegeven van de microservice die wordt uitgevoerd, inclusief een URL voor de statuscontrole van de webservice: <http://127.0.0.1:9022/v1/status> . Wanneer u naar dit adres navigeert, moet de status 'OK: Springlevend en goed' zijn.
+Het **venster Terminal** in Visual Studio Code toont uitvoer van de microservice die wordt uitgevoerd, inclusief een URL voor de statuscontrole van de webservice: <http://127.0.0.1:9022/v1/status> . Wanneer u naar dit adres navigeert, moet de status 'OK: Springlevend en goed' zijn.
 
 Laat de microservice van de opslagadapter actief in dit Visual Studio Code terwijl u de volgende stappen voltooit.
 
@@ -80,12 +80,12 @@ Open de **map device-simulation-dotnet-master** die u hebt gedownload van GitHub
 
 In deze handleiding maakt u een nieuw apparaatmodel voor een assettracker:
 
-1. Maak een nieuw apparaatmodelbestand met **deassettracker-01.jsin** de map **Services\data\devicemodels.**
+1. Maak een nieuw apparaatmodelbestand met **assettracker-01.jsin** de map **Services\data\devicemodels.**
 
-1. Definieer de apparaatfunctionaliteit in het **apparaatmodelassettracker-01.jsin het bestand.** De telemetriesectie van een Protobuf-apparaatmodel moet:
+1. Definieer de apparaatfunctionaliteit in het **apparaatmodelassettracker-01.jsin het** bestand. De telemetriesectie van een Protobuf-apparaatmodel moet:
 
    * Neem de naam op van de Protobuf-klasse die u voor uw apparaat genereert. In de volgende sectie ziet u hoe u deze klasse genereert.
-   * Geef Protobuf op als de berichtindeling.
+   * Geef Protobuf op als berichtindeling.
 
      ```json
      {
@@ -139,11 +139,11 @@ In deze handleiding maakt u een nieuw apparaatmodel voor een assettracker:
 
 ### <a name="create-device-behaviors-script"></a>Script voor apparaatgedrag maken
 
-Schrijf het gedragsscript dat definieert hoe uw apparaat zich gedraagt. Zie Een geavanceerd gesimuleerd apparaat maken [voor meer informatie.](iot-accelerators-device-simulation-advanced-device.md)
+Schrijf het gedragsscript dat definieert hoe het apparaat zich gedraagt. Zie Een geavanceerd gesimuleerd apparaat maken [voor meer informatie.](iot-accelerators-device-simulation-advanced-device.md)
 
 ## <a name="define-your-protobuf-format"></a>Uw Protobuf-indeling definiëren
 
-Wanneer u een apparaatmodel hebt en uw berichtindeling hebt bepaald, kunt u een **protobestand** maken. In het **protobestand** voegt u het volgende toe:
+Wanneer u een apparaatmodel hebt en uw berichtindeling hebt bepaald, kunt u een **protobestand** maken. In het **proto-bestand** voegt u het volgende toe:
 
 * Een `csharp_namespace` die overeenkomt met de eigenschap **ClassName** in uw apparaatmodel.
 * Een bericht voor elke gegevensstructuur die moet worden geser serialiseren.
@@ -151,7 +151,7 @@ Wanneer u een apparaatmodel hebt en uw berichtindeling hebt bepaald, kunt u een 
 
 1. Maak een nieuw bestand met de **naam assettracker.proto** in de map **Services\Models\Protobuf\proto.**
 
-1. Definieer de syntaxis, de naamruimte en het berichtschema in het **proto-bestand** als volgt:
+1. Definieer de syntaxis, naamruimte en berichtschema als volgt in het **protobestand:**
 
     ```proto
     syntax = "proto3";
@@ -170,17 +170,17 @@ De `=1` `=2` markeringen , voor elk element geven een unieke tag op die het veld
 
 ## <a name="generate-the-protobuf-class"></a>De Protobuf-klasse genereren
 
-Wanneer u een **protobestand** hebt, bestaat de volgende stap uit het genereren van de klassen die nodig zijn om berichten te lezen en te schrijven. U hebt de **protoc** Protobuf-compiler nodig om deze stap te voltooien.
+Wanneer u een **protobestand** hebt, is de volgende stap het genereren van de klassen die nodig zijn om berichten te lezen en te schrijven. U hebt de **protoc** Protobuf-compiler nodig om deze stap te voltooien.
 
 1. [Download de Protobuf-compiler van GitHub](https://github.com/protocolbuffers/protobuf/releases/download/v3.4.0/protoc-3.4.0-win32.zip)
 
-1. Voer de compiler uit en geef de bronmap, de doelmap en de naam van uw **protobestand** op. Bijvoorbeeld:
+1. Voer de compiler uit en geef de bronmap, de doelmap en de naam van het **protobestand** op. Bijvoorbeeld:
 
     ```cmd
     protoc -I c:\temp\device-simulation-dotnet-master\Services\Models\Protobuf\proto --csharp_out=C:\temp\device-simulation-dotnet-master\Services\Models\Protobuf assettracker.proto
     ```
 
-    Met deze opdracht wordt een **bestand Assettracker.cs** gegenereerd in de map **Services\Models\Protobuf.**
+    Met deze opdracht wordt een **bestand Assettracker.cs** gegenereerd in de **map Services\Models\Protobuf.**
 
 ## <a name="test-protobuf-locally"></a>Protobuf lokaal testen
 
@@ -188,23 +188,23 @@ In deze sectie test u het assettrackerapparaat dat u in de vorige secties lokaal
 
 ### <a name="run-the-device-simulation-microservice"></a>De microservice voor apparaatsimulatie uitvoeren
 
-Open het **bestand .vscode/launch.jsbestand en** wijs het volgende toe:
-
-* IoT Hub connection string aan de **omgevingsvariabele \_ PCS IOTHUB \_ CONNSTRING.**
-* Opslagaccounts connection string de **omgevingsvariabele \_ PCS AZURE \_ STORAGE \_ ACCOUNT.**
-* Cosmos DB connection string naar de **omgevingsvariabele \_ PCS STORAGEADAPTER \_ DOCUMENTDB \_ CONNSTRING.**
-
-Open het **bestand WebService/Properties/launchSettings.jsbestand** en wijs uw volgende toe:
+Open het **bestand .vscode/launch.jsbestand** en wijs het volgende toe:
 
 * IoT Hub connection string naar de **\_ omgevingsvariabele PCS IOTHUB \_ CONNSTRING.**
-* Opslagaccounts connection string de **omgevingsvariabele \_ PCS AZURE \_ STORAGE \_ ACCOUNT.**
-* Cosmos DB connection string naar de **omgevingsvariabele \_ PCS STORAGEADAPTER \_ DOCUMENTDB \_ CONNSTRING.**
+* Opslagaccounts connection string de **omgevingsvariabele \_ AZURE \_ STORAGE ACCOUNT \_ van PCS.**
+* Cosmos DB connection string aan de **omgevingsvariabele \_ PCS STORAGEADAPTER \_ DOCUMENTDB \_ CONNSTRING.**
 
-Open het **WebService\appsettings.ini** bestand en wijzig de instellingen als volgt:
+Open het **bestand WebService/Properties/launchSettings.jsbestand** en wijs het volgende toe:
+
+* IoT Hub connection string aan de **omgevingsvariabele \_ PCS IOTHUB \_ CONNSTRING.**
+* Opslagaccounts connection string de **omgevingsvariabele \_ AZURE \_ STORAGE ACCOUNT \_ van PCS.**
+* Cosmos DB connection string aan de **omgevingsvariabele \_ PCS STORAGEADAPTER \_ DOCUMENTDB \_ CONNSTRING.**
+
+Open het **WebService\appsettings.ini** en wijzig de instellingen als volgt:
 
 #### <a name="configure-the-solution-to-include-your-new-device-model-files"></a>De oplossing configureren om uw nieuwe apparaatmodelbestanden op te nemen
 
-Standaard worden de JSON- en JS-bestanden van uw nieuwe apparaatmodel niet gekopieerd naar de ingebouwde oplossing. U moet ze expliciet opnemen.
+Standaard worden de JSON- en JS-bestanden van uw nieuwe apparaatmodel niet gekopieerd naar de ingebouwde oplossing. U moet deze expliciet opnemen.
 
 Voeg een vermelding toe aan het **bestand services\services.csproj** voor elk bestand dat u wilt toevoegen. Bijvoorbeeld:
 
@@ -217,7 +217,7 @@ Voeg een vermelding toe aan het **bestand services\services.csproj** voor elk be
 </None>
 ```
 
-Als u de microservice lokaal wilt uitvoeren, klikt u **op Fouten opsporen \> Foutopsporing starten.**
+Als u de microservice lokaal wilt uitvoeren, klikt u **op \> Foutopsporing Starten met foutopsporing.**
 
 In **het venster Terminal** in Visual Studio Code wordt uitvoer weergegeven van de microservice die wordt uitgevoerd.
 
@@ -225,7 +225,7 @@ Laat de microservice voor apparaatsimulatie actief in dit exemplaar van Visual S
 
 ### <a name="set-up-a-monitor-for-device-events"></a>Een monitor instellen voor apparaatgebeurtenissen
 
-In deze sectie gebruikt u de Azure CLI om een gebeurtenismonitor in te stellen om de telemetrie te bekijken die wordt verzonden vanaf de apparaten die zijn verbonden met uw IoT-hub.
+In deze sectie gebruikt u de Azure CLI om een gebeurtenismonitor in te stellen om de telemetrie weer te laten zien die wordt verzonden vanaf de apparaten die zijn verbonden met uw IoT-hub.
 
 In het volgende script wordt ervan uitgenomen dat de naam van uw IoT-hub **apparaatsimulatie-test is.**
 
@@ -241,7 +241,7 @@ Laat de gebeurtenismonitor actief terwijl u de gesimuleerde apparaten test.
 
 ### <a name="create-a-simulation-with-the-asset-tracker-device-type"></a>Een simulatie maken met het assettrackerapparaattype
 
-In deze sectie gebruikt u het Hulpprogramma Postman om de microservice voor apparaatsimulatie aan te vragen om een simulatie uit te voeren met behulp van het assettrackerapparaattype. Postman is een hulpprogramma waarmee u REST-aanvragen naar een webservice kunt verzenden.
+In deze sectie gebruikt u het Postman-hulpprogramma om de microservice voor apparaatsimulatie aan te vragen om een simulatie uit te voeren met behulp van het assettrackerapparaattype. Postman is een hulpprogramma waarmee u REST-aanvragen naar een webservice kunt verzenden.
 
 Postman instellen:
 
@@ -251,25 +251,25 @@ Postman instellen:
 
 1. Selecteer **azure IoT Device Simulation solution accelerator.postman \_ collection** en **Azure IoT Device Simulation solution accelerator.postman \_ environment** en klik op **Open.**
 
-1. Vouw de **oplossingsversneller Azure IoT-apparaatsimulatie uit om** de aanvragen weer te geven die u kunt verzenden.
+1. Vouw de **oplossingsversneller voor Azure IoT-apparaatsimulatie uit om** de aanvragen weer te geven die u kunt verzenden.
 
-1. Klik **op Geen omgeving** en selecteer Azure **IoT-oplossingsversneller voor apparaatsimulatie.**
+1. Klik **op Geen omgeving** en selecteer **Oplossingsversneller voor Azure IoT-apparaatsimulatie.**
 
 U hebt nu een verzameling en omgeving geladen in uw Postman-werkruimte die u kunt gebruiken om te communiceren met de microservice voor apparaatsimulatie.
 
 De simulatie configureren en uitvoeren:
 
-1. Selecteer in de Postman-verzameling De **assettrackersimulatie maken** en klik op **Verzenden.** Met deze aanvraag worden vier exemplaren van het gesimuleerde assettrackerapparaattype gemaakt.
+1. Selecteer in de Postman-verzameling **De assettrackersimulatie maken** en klik op **Verzenden.** Met deze aanvraag worden vier exemplaren van het gesimuleerde assettrackerapparaattype gemaakt.
 
 1. De uitvoer van de gebeurtenismonitor in het Azure CLI-venster toont de telemetrie van de gesimuleerde apparaten.
 
-Als u de simulatie wilt stoppen, selecteert **u de aanvraag Simulatie** stoppen in Postman en klikt u op **Verzenden.**
+Als u de simulatie wilt stoppen, selecteert u **de aanvraag Simulatie** stoppen in Postman en klikt u op **Verzenden.**
 
 ### <a name="clean-up-resources"></a>Resources opschonen
 
-U kunt de twee lokaal uitvoerende microservices stoppen in hun Visual Studio Code-exemplaren ( Foutopsporing stoppen **\> met foutopsporing**).
+U kunt de twee lokaal uitvoerende microservices stoppen in hun Visual Studio Code-exemplaren (**Foutopsporing \> stoppen met foutopsporing).**
 
-Als u de exemplaren IoT Hub en Cosmos DB meer nodig hebt, verwijdert u deze uit uw Azure-abonnement om onnodige kosten te voorkomen.
+Als u de instanties IoT Hub en Cosmos DB niet meer nodig hebt, verwijdert u deze uit uw Azure-abonnement om onnodige kosten te voorkomen.
 
 ## <a name="iot-hub-support"></a>IoT Hub-ondersteuning
 

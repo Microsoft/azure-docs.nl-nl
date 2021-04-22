@@ -1,6 +1,6 @@
 ---
-title: Module C# IoT Edge voor Azure Stack Edge Pro met GPU | Microsoft Docs
-description: Meer informatie over het ontwikkelen van een C# IoT Edge-module die op uw Azure Stack Edge Pro GPU-apparaat kan worden geïmplementeerd.
+title: C#-IoT Edge module voor Azure Stack Edge Pro met GPU-| Microsoft Docs
+description: Meer informatie over het ontwikkelen van een C#-IoT Edge module die kan worden geïmplementeerd op uw Azure Stack Edge Pro GPU-apparaat.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,70 +8,70 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 03/05/2021
 ms.author: alkohli
-ms.openlocfilehash: d2ab96fcfa33301f0bd1212b23f9418fa39d0134
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1aab6fa7a2ea659b489a2e65e2a6a79070edc6b3
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102637935"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873760"
 ---
-# <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge-pro"></a>Een C# IoT Edge-module ontwikkelen om bestanden te verplaatsen op Azure Stack Edge Pro
+# <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge-pro"></a>Een C#-module IoT Edge om bestanden op een Azure Stack Edge Pro
 
 [!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
-In dit artikel wordt stapsgewijs beschreven hoe u een IoT Edge module maakt voor implementatie met uw Azure Stack Edge Pro-apparaat. Azure Stack Edge Pro is een opslag oplossing waarmee u gegevens kunt verwerken en verzenden via een netwerk naar Azure.
+In dit artikel wordt beschreven hoe u een module IoT Edge voor implementatie met uw Azure Stack Edge Pro apparaat. Azure Stack Edge Pro is een opslagoplossing waarmee u gegevens kunt verwerken en via het netwerk naar Azure kunt verzenden.
 
-U kunt Azure IoT Edge modules met uw Azure Stack Edge Pro gebruiken om de gegevens te transformeren wanneer deze naar Azure worden verplaatst. De module die in dit artikel wordt gebruikt, implementeert de logica voor het kopiëren van een bestand van een lokale share naar een Cloud share op uw Azure Stack Edge Pro-apparaat.
+U kunt de Azure IoT Edge modules gebruiken met uw Azure Stack Edge Pro om de gegevens te transformeren terwijl ze naar Azure worden verplaatst. De module die in dit artikel wordt gebruikt, implementeert de logica voor het kopiëren van een bestand van een lokale share naar een cloud-share op Azure Stack Edge Pro apparaat.
 
 In dit artikel leert u het volgende:
 
 > [!div class="checklist"]
-> * Maak een container register om uw modules (docker-installatie kopieën) op te slaan en te beheren.
-> * Maak een IoT Edge module om te implementeren op uw Azure Stack Edge Pro-apparaat.
+> * Maak een containerregister voor het opslaan en beheren van uw modules (Docker-afbeeldingen).
+> * Maak een IoT Edge module die u op uw apparaat Azure Stack Edge Pro implementeren.
 
 
-## <a name="about-the-iot-edge-module"></a>Over de IoT Edge-module
+## <a name="about-the-iot-edge-module"></a>Over de IoT Edge module
 
-Uw Azure Stack Edge Pro-apparaat kan IoT Edge modules implementeren en uitvoeren. Edge-modules zijn in wezen docker-containers waarmee een specifieke taak wordt uitgevoerd, zoals het opnemen van een bericht van een apparaat, het transformeren van een bericht of het verzenden van een bericht naar een IoT Hub. In dit artikel maakt u een module waarmee bestanden van een lokale share naar een Cloud share op uw Azure Stack Edge Pro-apparaat worden gekopieerd.
+Uw Azure Stack Edge Pro kan uw apparaat implementeren en uitvoeren IoT Edge modules. Edge-modules zijn in feite Docker-containers die een specifieke taak uitvoeren, zoals het opnemen van een bericht van een apparaat, het transformeren van een bericht of het verzenden van een bericht naar een IoT Hub. In dit artikel maakt u een module die bestanden kopieert van een lokale share naar een cloud-share op Azure Stack Edge Pro apparaat.
 
-1. Bestanden worden naar de lokale share op uw Azure Stack Edge Pro-apparaat geschreven.
-2. Bestands gebeurtenis Generator maakt een bestands gebeurtenis voor elk bestand dat naar de lokale share wordt geschreven. De bestands gebeurtenissen worden ook gegenereerd wanneer een bestand wordt gewijzigd. De bestands gebeurtenissen worden vervolgens naar IoT Edge hub verzonden (in IoT Edge runtime).
-3. In de IoT Edge aangepaste module wordt de bestands gebeurtenis verwerkt voor het maken van een bestands gebeurtenis object dat ook een relatief pad voor het bestand bevat. De module genereert een absoluut pad met behulp van het relatieve bestandspad en kopieert het bestand van de lokale share naar de Cloud share. De module verwijdert vervolgens het bestand van de lokale share.
+1. Bestanden worden naar de lokale share op uw Azure Stack Edge Pro geschreven.
+2. De generator voor bestandsgebeurtenissen maakt een bestandsgebeurtenis voor elk bestand dat naar de lokale share wordt geschreven. De bestandsgebeurtenissen worden ook gegenereerd wanneer een bestand wordt gewijzigd. De bestandsgebeurtenissen worden vervolgens verzonden naar IoT Edge Hub (in IoT Edge runtime).
+3. De IoT Edge-module verwerkt de bestandsgebeurtenis om een bestandsgebeurtenisobject te maken dat ook een relatief pad voor het bestand bevat. De module genereert een absoluut pad met behulp van het relatieve bestandspad en kopieert het bestand van de lokale share naar de cloud-share. De module verwijdert vervolgens het bestand uit de lokale share.
 
-![Hoe Azure IoT Edge-module werkt op Azure Stack Edge Pro](./media/azure-stack-edge-gpu-create-iot-edge-module/how-module-works-1.png)
+![Hoe Azure IoT Edge module werkt op Azure Stack Edge Pro](./media/azure-stack-edge-gpu-create-iot-edge-module/how-module-works-1.png)
 
-Zodra het bestand zich in de Cloud share bevindt, wordt het automatisch geüpload naar uw Azure Storage-account.
+Zodra het bestand zich in de cloud share, wordt het automatisch geüpload naar uw Azure Storage account.
 
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u begint, controleert u of u over het volgende beschikt:
 
-- Een Azure Stack Edge Pro-apparaat met.
+- Een Azure Stack Edge Pro apparaat dat wordt uitgevoerd.
 
-    - Er is ook een IoT Hub resource gekoppeld aan het apparaat.
-    - Er is een Edge Compute-rol geconfigureerd op het apparaat.
-    Ga voor meer informatie naar [Configure Compute configureren](azure-stack-edge-j-series-deploy-configure-compute.md#configure-compute) voor uw Azure stack Edge Pro.<!--Update link?-->
+    - Het apparaat heeft ook een gekoppelde IoT Hub resource.
+    - Op het apparaat is de Edge-rekenrol geconfigureerd.
+    Ga voor meer informatie naar [Compute configureren](azure-stack-edge-j-series-deploy-configure-compute.md#configure-compute) voor uw Azure Stack Edge Pro.<!--Update link?-->
 
-- De volgende ontwikkel bronnen:
+- De volgende ontwikkelingsbronnen:
 
     - [Visual Studio Code](https://code.visualstudio.com/).
     - [De extensie C# voor Visual Studio Code (van OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
-    - [Azure IOT Edge-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge).
-    - [.NET Core 2.1 SDK](https://www.microsoft.com/net/download).
+    - [Azure IoT Edge-extensie voor Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge).
+    - [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet/2.1).
     - [Docker CE](https://store.docker.com/editions/community/docker-ce-desktop-windows). Mogelijk moet u een account maken om de software te downloaden en te installeren.
 
 ## <a name="create-a-container-registry"></a>Een containerregister maken
 
-Een Azure-containerregister is een persoonlijk Docker-register in Azure waar u uw persoonlijke installatiekopieën van de Docker-container kunt opslaan en beheren. De twee populaire docker-register services die beschikbaar zijn in de Cloud, zijn Azure Container Registry en docker hub. In dit artikel wordt gebruikgemaakt van de Container Registry.
+Een Azure-containerregister is een persoonlijk Docker-register in Azure waar u uw persoonlijke installatiekopieën van de Docker-container kunt opslaan en beheren. De twee populaire Docker-registerservices die beschikbaar zijn in de cloud zijn Azure Container Registry en Docker Hub. In dit artikel wordt de Container Registry.
 
 1. Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azure.com).
-2. Selecteer **een resource maken > Containers > container Registry**. Klik op **Create**.
-3. Geleverd
+2. Selecteer **Een resource maken > Containers > Container Registry**. Klik op **Create**.
+3. Geef het volgende op:
 
-   1. Een unieke **register naam** in azure die 5 tot 50 alfanumerieke tekens bevat.
+   1. Een unieke **registernaam** in Azure die 5 tot 50 alfanumerieke tekens bevat.
    2. Kies een **abonnement**.
-   3. Nieuwe maken of een bestaande **resource groep** kiezen.
-   4. Selecteer een **locatie**. We raden u aan deze locatie hetzelfde te zijn als die van de Azure Stack Edge-resource.
+   3. Maak een nieuwe resourcegroep of kies een **bestaande resourcegroep.**
+   4. Selecteer een **Locatie.** We raden u aan dat deze locatie hetzelfde is als die is gekoppeld aan de Azure Stack Edge resource.
    5. Stel de **Gebruiker met beheerdersrechten** in op **Inschakelen**.
    6. Stel de SKU in op **Basic**.
 
@@ -80,20 +80,20 @@ Een Azure-containerregister is een persoonlijk Docker-register in Azure waar u u
 4. Selecteer **Maken**.
 5. Nadat het containerregister is gemaakt, bladert u ernaartoe en selecteert u **Toegangssleutels**.
 
-    ![Toegangs sleutels ophalen](./media/azure-stack-edge-gpu-create-iot-edge-module/get-access-keys-1.png)
+    ![Toegangssleutels ophalen](./media/azure-stack-edge-gpu-create-iot-edge-module/get-access-keys-1.png)
  
-6. Kopieer de waarden voor **Aanmeldingsserver**, **Gebruikersnaam** en **wachtwoord**. U gebruikt deze waarden later om de docker-installatie kopie naar het REGI ster te publiceren en de register referenties toe te voegen aan de Azure IoT Edge runtime.
+6. Kopieer de waarden voor **Aanmeldingsserver**, **Gebruikersnaam** en **wachtwoord**. U gebruikt deze waarden later om de Docker-afbeelding naar uw register te publiceren en om de registerreferenties toe te voegen aan Azure IoT Edge runtime.
 
 
 ## <a name="create-an-iot-edge-module-project"></a>Een IoT Edge-moduleproject creëren
 
-Met de volgende stappen maakt u een IoT Edge module project op basis van de .NET Core 2,1 SDK. Het project maakt gebruik van Visual Studio code en de uitbrei ding Azure IoT Edge.
+Met de volgende stappen maakt u IoT Edge moduleproject op basis van de .NET Core 2.1 SDK. Het project gebruikt Visual Studio Code en de Azure IoT Edge extensie.
 
 ### <a name="create-a-new-solution"></a>Een nieuwe oplossing maken
 
 Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
 
-1. Selecteer in Visual Studio code **> opdracht palet weer geven** om het VS code-opdracht palet te openen.
+1. In Visual Studio Code selecteert u **Weergave > opdrachtpalet om** het OPDRACHTENpalet van VS Code te openen.
 2. Voer in het opdrachtpalet de opdracht **Azure: Aanmelden** in, voer deze uit en volg de instructies om u aan te melden bij uw Azure-account. Als u al bent aangemeld, kunt u deze stap overslaan.
 3. Voer in het opdrachtpalet de opdracht **Azure IoT Edge: New IoT Edge solution** in en voer deze uit. Geef in het opdrachtpalet de volgende informatie op om de oplossing te maken:
 
@@ -102,31 +102,31 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
     
         ![Nieuwe oplossing maken 1](./media/azure-stack-edge-gpu-create-iot-edge-module/create-new-solution-1.png)
 
-    3. Kies **C#-module** als module sjabloon.
-    4. Vervang de standaard module naam door de naam die u wilt toewijzen. in dit geval is het **FileCopyModule**.
+    3. Kies **C#-module** als de modulesjabloon.
+    4. Vervang de standaardnaam van de module door de naam die u wilt toewijzen. In dit geval is dit **FileCopyModule.**
     
-        ![Nieuwe oplossing 2 maken](./media/azure-stack-edge-gpu-create-iot-edge-module/create-new-solution-2.png)
+        ![Nieuwe oplossing maken 2](./media/azure-stack-edge-gpu-create-iot-edge-module/create-new-solution-2.png)
 
-    5. Geef het container register op dat u in de vorige sectie hebt gemaakt als de opslag plaats voor installatie kopieën voor uw eerste module. Vervang **localhost:5000** door de gekopieerde waarde voor de aanmeldingsserver.
+    5. Geef het containerregister dat u in de vorige sectie hebt gemaakt op als de opslagplaats voor de afbeelding voor uw eerste module. Vervang **localhost:5000** door de gekopieerde waarde voor de aanmeldingsserver.
 
-        De uiteindelijke teken reeks ziet er als volgt uit `<Login server name>/<Module name>` . In dit voor beeld is de teken reeks: `mycontreg2.azurecr.io/filecopymodule` .
+        De uiteindelijke tekenreeks ziet er als `<Login server name>/<Module name>` uit. In dit voorbeeld is de tekenreeks: `mycontreg2.azurecr.io/filecopymodule` .
 
-        ![Nieuwe oplossing 3 maken](./media/azure-stack-edge-gpu-create-iot-edge-module/create-new-solution-3.png)
+        ![Nieuwe oplossing maken 3](./media/azure-stack-edge-gpu-create-iot-edge-module/create-new-solution-3.png)
 
-4. Ga naar **bestand > map openen**.
+4. Ga naar **Bestand > Map openen.**
 
-    ![Nieuwe oplossing 4 maken](./media/azure-stack-edge-gpu-create-iot-edge-module/create-new-solution-4.png)
+    ![Nieuwe oplossing maken 4](./media/azure-stack-edge-gpu-create-iot-edge-module/create-new-solution-4.png)
 
-5. Blader naar de map **EdgeSolution** die u eerder hebt gemaakt. Het VS code-venster laadt uw IoT Edge Solution-werk ruimte met de vijf onderdelen op het hoogste niveau. U kunt de `.vscode` map, het **. gitignore** -bestand, het **. env** -bestand en de deployment.template.jsop * * in dit artikel niet bewerken.
+5. Blader en wijs naar de **map EdgeSolution** die u eerder hebt gemaakt. In het VS Code-venster wordt IoT Edge oplossingswerkruimte geladen met de vijf onderdelen op het hoogste niveau. U gaat de `.vscode` map, het **.gitignore-bestand,** **het .env-bestand** en de deployment.template.jsop** in dit artikel niet bewerken.
     
-    Het enige onderdeel dat u wijzigt, is de map modules. Deze map bevat de C#-code voor uw module en docker-bestanden om uw module als container installatie kopie te maken.
+    Het enige onderdeel dat u wijzigt, is de map modules. Deze map bevat de C#-code voor uw module en Docker-bestanden om uw module te bouwen als een containerafbeelding.
 
     ![Nieuwe oplossing maken 5](./media/azure-stack-edge-gpu-create-iot-edge-module/create-new-solution-5.png)
 
 ### <a name="update-the-module-with-custom-code"></a>De module bijwerken met aangepaste code
 
-1. Open **modules > FileCopyModule > Program. cs** in de VS code Explorer.
-2. Voeg boven aan de **naam ruimte FileCopyModule** de volgende using-instructies toe voor typen die later worden gebruikt. **Micro soft. Azure. devices. client. Trans Port. Mqtt** is een protocol voor het verzenden van berichten naar IOT Edge hub.
+1. Open in VS Code Explorer **modules > FileCopyModule > Program.cs.**
+2. Voeg bovenaan de **fileCopyModule-naamruimte** de volgende using-instructies toe voor typen die later worden gebruikt. **Microsoft.Azure.Devices.Client.Transport.Mqtt** is een protocol voor het verzenden van berichten naar IoT Edge Hub.
 
     ```
     namespace FileCopyModule
@@ -134,7 +134,7 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
         using Microsoft.Azure.Devices.Client.Transport.Mqtt;
         using Newtonsoft.Json;
     ```
-3. Voeg de variabele **InputFolderPath** en **OutputFolderPath** toe aan de klasse Program.
+3. Voeg de **variabele InputFolderPath** en **OutputFolderPath toe** aan de klasse Program.
 
     ```
     class Program
@@ -144,7 +144,7 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
             private const string OutputFolderPath = "/home/output";
     ```
 
-4. Voeg direct na de vorige stap de klasse **FileEvent** toe om de hoofd tekst van het bericht te definiëren.
+4. Voeg direct na de vorige stap de **klasse FileEvent** toe om de bericht-body te definiëren.
 
     ```
     /// <summary>
@@ -160,7 +160,7 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
     }
     ```
 
-5. In de **init-methode** maakt en configureert de code een **ModuleClient** -object. Met dit object kan de module verbinding maken met de lokale Azure IoT Edge runtime met behulp van het MQTT-protocol om berichten te verzenden en te ontvangen. De verbindingsreeks die in de methode Init wordt gebruikt, wordt door de IoT Edge-runtime aan de module geleverd. Met de code wordt een FileCopy-call back geregistreerd voor het ontvangen van berichten van een IoT Edge hub via het **input1** -eind punt. Vervang de **init-methode** door de volgende code.
+5. In de **Methode Init maakt** en configureert de code een **ModuleClient-object.** Met dit object kan de module verbinding maken met de lokale Azure IoT Edge runtime met behulp van het MQTT-protocol om berichten te verzenden en te ontvangen. De verbindingsreeks die in de methode Init wordt gebruikt, wordt door de IoT Edge-runtime aan de module geleverd. De code registreert een FileCopy-callback om berichten te ontvangen van een IoT Edge hub via het **eindpunt input1.** Vervang de **Methode Init** door de volgende code.
 
     ```
     /// <summary>
@@ -182,7 +182,7 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
     }
     ```
 
-6. Verwijder de code voor de **methode PipeMessage** en plaats de code voor **FileCopy**.
+6. Verwijder de code voor **de pipemessage-methode** en voeg in plaats ervan de code voor **FileCopy in.**
 
     ```
         /// <summary>
@@ -240,42 +240,42 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
     ```
 
 7. Sla dit bestand op.
-8. U kunt ook [een bestaand code voorbeeld](https://azure.microsoft.com/resources/samples/data-box-edge-csharp-modules/?cdn=disable) voor dit project downloaden. U kunt vervolgens het bestand dat u hebt opgeslagen, valideren op basis van het bestand **Program. cs** in dit voor beeld.
+8. U kunt ook [een bestaand codevoorbeeld voor](https://azure.microsoft.com/resources/samples/data-box-edge-csharp-modules/?cdn=disable) dit project downloaden. Vervolgens kunt u het bestand valideren dat u hebt opgeslagen op het **bestand program.cs** in dit voorbeeld.
 
 ## <a name="build-your-iot-edge-solution"></a>Uw eigen IoT Edge-oplossing bouwen
 
-In de vorige sectie hebt u een IoT Edge oplossing gemaakt en code toegevoegd aan de FileCopyModule om bestanden te kopiëren van een lokale share naar de Cloud share. Nu moet u de oplossing bouwen als een containerinstallatiekopie en deze naar het containerregister pushen.
+In de vorige sectie hebt u een IoT Edge oplossing gemaakt en code toegevoegd aan fileCopyModule om bestanden van de lokale share naar de cloud share te kopiëren. Nu moet u de oplossing bouwen als een containerinstallatiekopie en deze naar het containerregister pushen.
 
-1. Ga in VSCode naar Terminal > New terminal om een nieuwe, geïntegreerde Visual Studio code-Terminal te openen.
-2. Meld u aan bij docker door de volgende opdracht in de geïntegreerde terminal in te voeren.
+1. Ga in VSCode naar Terminal > New Terminal om een nieuwe geïntegreerde Visual Studio Code te openen.
+2. Meld u aan bij Docker door de volgende opdracht in te voeren in de geïntegreerde terminal.
 
     `docker login <ACR login server> -u <ACR username>`
 
-    Gebruik de aanmeldings server en de gebruikers naam die u hebt gekopieerd uit het container register.
+    Gebruik de aanmeldingsserver en gebruikersnaam die u hebt gekopieerd uit het containerregister.
 
     ![IoT Edge-oplossingen bouwen en pushen](./media/azure-stack-edge-gpu-create-iot-edge-module/build-iot-edge-solution-1.png)
 
-2. Geef het wacht woord op wanneer u wordt gevraagd om het wacht woord. U kunt ook de waarden voor aanmeldings server, gebruikers naam en wacht woord ophalen uit de **toegangs sleutels** in het container register in het Azure Portal.
+2. Wanneer u wordt gevraagd om een wachtwoord, moet u het wachtwoord opgeven. U kunt ook de waarden voor aanmeldingsserver,  gebruikersnaam en wachtwoord ophalen uit de toegangssleutels in het containerregister in de Azure Portal.
  
-3. Zodra de referenties zijn opgegeven, kunt u de module-installatie kopie pushen naar uw Azure container Registry. Klik in de VS code Explorer met de rechter muisknop op het **module.js** bestand en selecteer **Build and push IOT Edge Solution**.
+3. Zodra de referenties zijn opgegeven, kunt u de module-afbeelding naar uw Azure-containerregister pushen. Klik in VS Code Explorer met de rechtermuisknop op **module.jsbestand** en selecteer Build and Push **IoT Edge solution**.
 
-    ![IoT Edge oplossing 2 bouwen en pushen](./media/azure-stack-edge-gpu-create-iot-edge-module/build-iot-edge-solution-2.png)
+    ![Oplossing voor IoT Edge bouwen en pushen 2](./media/azure-stack-edge-gpu-create-iot-edge-module/build-iot-edge-solution-2.png)
  
-    Wanneer u Visual Studio code voor het bouwen van uw oplossing vertelt, worden er twee opdrachten uitgevoerd in de geïntegreerde terminal: docker-build en docker-push. Met deze twee opdrachten wordt uw code gebouwd, wordt de CSharpModule.dll in een container opgeslagen en wordt de code vervolgens naar het containerregister gepusht dat u hebt opgegeven toen u de oplossing initialiseerde.
+    Wanneer u aan Visual Studio Code opdracht geeft om uw oplossing te bouwen, worden er twee opdrachten uitgevoerd in de geïntegreerde terminal: docker build en docker push. Met deze twee opdrachten wordt uw code gebouwd, wordt de CSharpModule.dll in een container opgeslagen en wordt de code vervolgens naar het containerregister gepusht dat u hebt opgegeven toen u de oplossing initialiseerde.
 
-    U wordt gevraagd om het module platform te kiezen. Selecteer *amd64* die overeenkomt met Linux.
+    U wordt gevraagd om het moduleplatform te kiezen. Selecteer *amd64 die* overeenkomt met Linux.
 
     ![Platform selecteren](./media/azure-stack-edge-gpu-create-iot-edge-module/select-platform.png)
 
     > [!IMPORTANT] 
-    > Alleen de linux-modules worden ondersteund.
+    > Alleen de Linux-modules worden ondersteund.
 
-    Mogelijk wordt de volgende waarschuwing weer gegeven die u kunt negeren:
+    Mogelijk ziet u de volgende waarschuwing die u kunt negeren:
 
-    *Program. cs (77, 44): waarschuwing CS1998: deze async-methode heeft geen ' await ' Opera tors en wordt synchroon uitgevoerd. Overweeg het gebruik van de operator await om niet-blokkerende API-aanroepen of ' await-taak. run (...) ' te gebruiken voor het CPU-gebonden werk op een achtergrond thread.*
+    *Program.cs(77,44): waarschuwing CS1998: Deze asynchrone methode heeft geen await-operators en wordt synchroon uitgevoerd. Overweeg het gebruik van de operator 'await' om te wachten op niet-blokkerende API-aanroepen of 'await Task.Run(...)' om CPU-gebonden werk uit te voeren op een achtergrondthread.*
 
-4. U kunt het volledige adres van de containerinstallatiekopie, inclusief de tag, zien in de geïntegreerde terminal van VS Code. Het adres van de installatie kopie is gebaseerd op informatie in de module.jsin het bestand met de indeling `<repository>:<version>-<platform>` . In dit artikel moet er als volgt uitzien `mycontreg2.azurecr.io/filecopymodule:0.0.1-amd64` .
+4. U kunt het volledige adres van de containerinstallatiekopie, inclusief de tag, zien in de geïntegreerde terminal van VS Code. Het adres van de afbeelding is gebouwd op basis van informatie die zich in de module.jsbestand met de indeling `<repository>:<version>-<platform>` . Voor dit artikel moet het er als `mycontreg2.azurecr.io/filecopymodule:0.0.1-amd64` uitzien.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u deze module wilt implementeren en uitvoeren op Azure Stack Edge Pro, raadpleegt u de stappen in [een module toevoegen](azure-stack-edge-j-series-deploy-configure-compute.md#add-a-module).<!--Update link?-->
+Als u deze module wilt implementeren en uitvoeren op Azure Stack Edge Pro, bekijkt u de stappen in [Een module toevoegen.](azure-stack-edge-j-series-deploy-configure-compute.md#add-a-module)<!--Update link?-->

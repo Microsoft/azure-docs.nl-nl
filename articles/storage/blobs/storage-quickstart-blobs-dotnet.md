@@ -1,6 +1,6 @@
 ---
-title: 'Snelstartgids: Azure Blob Storage bibliotheek V12-.NET'
-description: In deze Quick Start leert u hoe u de Azure Blob Storage-client bibliotheek versie 12 voor .NET kunt gebruiken om een container en een BLOB in Blob-opslag (object) te maken. Hierna leert u hoe u de blob naar uw lokale computer downloadt en hoe u alle blobs in een container kunt weergeven.
+title: 'Quickstart: Azure Blob Storage library v12 - .NET'
+description: In deze quickstart leert u hoe u de Azure Blob Storage-clientbibliotheek versie 12 voor .NET gebruikt om een container en een blob in Blob-opslag (object) te maken. Hierna leert u hoe u de blob naar uw lokale computer downloadt en hoe u alle blobs in een container kunt weergeven.
 author: twooley
 ms.author: twooley
 ms.date: 03/03/2021
@@ -8,18 +8,18 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7ab7c52f6fe392cfebd056a86f0566705fb2b8e6
-ms.sourcegitcommit: 02bc06155692213ef031f049f5dcf4c418e9f509
+ms.openlocfilehash: f913b33d0bea425a24d2fd336c9d065978606e82
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106280663"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107869253"
 ---
-# <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Snelstartgids: Azure Blob Storage-client bibliotheek V12 voor .NET
+# <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Quickstart: Azure Blob Storage clientbibliotheek v12 voor .NET
 
-Ga aan de slag met de Azure Blob Storage-client bibliotheek V12 voor .NET. Azure Blob Storage is de oplossing voor opslag van objecten in de cloud van Microsoft. Volg de stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
+Ga aan de slag met Azure Blob Storage clientbibliotheek v12 voor .NET. Azure Blob Storage is de oplossing voor opslag van objecten in de cloud van Microsoft. Volg de stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
 
-Gebruik de Azure Blob Storage-client bibliotheek V12 voor .NET voor het volgende:
+Gebruik de Azure Blob Storage-clientbibliotheek v12 voor .NET voor het volgende:
 
 * Een container maken
 * Een blob uploaden naar Azure Storage
@@ -44,7 +44,7 @@ Aanvullende bronnen:
 
 ## <a name="setting-up"></a>Instellen
 
-In deze sectie wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Blob Storage-client bibliotheek V12 voor .NET.
+In deze sectie wordt u door het voorbereiden van een project voor de Azure Blob Storage clientbibliotheek v12 voor .NET.
 
 ### <a name="create-the-project"></a>Het project maken
 
@@ -80,10 +80,10 @@ dotnet add package Azure.Storage.Blobs
 
 Ga als volgt te werk vanuit de projectmap:
 
-1. Open het bestand *Program. cs* in de editor.
-1. Verwijder de- `Console.WriteLine("Hello World!");` instructie.
-1. `using`Instructies toevoegen.
-1. Werk de `Main` methode declaratie bij om async te ondersteunen.
+1. Open het *bestand Program.cs* in uw editor.
+1. Verwijder de `Console.WriteLine("Hello World!");` instructie .
+1. Voeg `using` -instructies toe.
+1. Werk de `Main` methodedeclaratie bij om async te ondersteunen.
 
     Hier volgt de code:
 
@@ -112,7 +112,7 @@ Gebruik de volgende .NET-klassen om te communiceren met deze resources:
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-In deze voorbeeld code fragmenten ziet u hoe u het volgende kunt uitvoeren met de Azure Blob Storage-client bibliotheek voor .NET:
+Deze voorbeeldcodefragmenten laten zien hoe u het volgende kunt uitvoeren met de Azure Blob Storage-clientbibliotheek voor .NET:
 
 * [De verbindingsreeks ophalen](#get-the-connection-string)
 * [Een container maken](#create-a-container)
@@ -225,7 +225,7 @@ In deze snelstart hebt u geleerd hoe u blobs kunt uploaden, downloaden en er een
 Als u voorbeeld-apps voor Blob-opslag wilt zien, ga dan naar:
 
 > [!div class="nextstepaction"]
-> [Azure Blob Storage SDK V12 .NET-voor beelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
+> [Azure Blob Storage SDK v12 .NET-voorbeelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
 
 * Ga naar [Azure voor .NET- en .NET Core-ontwikkelaars](/dotnet/azure/) voor zelfstudies, voorbeelden, quickstarts en andere documentatie.
-* Zie voor meer informatie over .NET Core [Aan de slag met .NET in 10 minuten](https://www.microsoft.com/net/learn/get-started/).
+* Zie voor meer informatie over .NET Core [Aan de slag met .NET in 10 minuten](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro).

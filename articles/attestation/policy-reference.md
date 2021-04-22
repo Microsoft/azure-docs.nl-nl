@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Attestation
 description: Een Azure Policy ingebouwde beleidsdefinities voor Azure Attestation. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.topic: reference
 ms.service: attestation
 author: msmbaldwin
 ms.author: mbaldwin
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 693a734b30c3c21677554ad87e4a98cec3ad2518
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 6d1c2b07871fa436dcde12a77663babd573cf720
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107500228"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107863083"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-attestation"></a>Azure Policy ingebouwde definities voor Azure Attestation
 

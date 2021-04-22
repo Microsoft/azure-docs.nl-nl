@@ -14,12 +14,12 @@ ms.author: dbradish
 ms.reviewer: thsomasu
 ms.lastreviewed: 03/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d8400eb051c09fac4cb88863ad2fac12d2ca0a1b
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: d9754bb1390e242b12944b0b59595d4a4d46af33
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107789857"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873573"
 ---
 # <a name="quickstart-create-an-azure-notification-hub-using-the-azure-cli"></a>Een Azure notification hub maken met behulp van de Azure-CLI
 
@@ -48,7 +48,7 @@ az group create --name spnhubrg --location eastus
 
 1. Maak een naamruimte voor uw notification hubs.
 
-   Een naamruimte bevat één of meer hubs, en de naam moet uniek zijn in alle Azure-abonnementen en ten minste zes tekens lang zijn. Gebruik de opdracht [az notification-hub namespace check-availability](/cli/azure/ext/notification-hub/notification-hub/namespace#ext-notification-hub-az-notification-hub-namespace-check-availability) om te controleren of een naam beschikbaar is.
+   Een naamruimte bevat één of meer hubs, en de naam moet uniek zijn in alle Azure-abonnementen en ten minste zes tekens lang zijn. Gebruik de opdracht [az notification-hub namespace check-availability](/cli/azure/notification-hub/namespace#az_notification_hub_namespace_check-availability) om te controleren of een naam beschikbaar is.
 
    ```azurecli
    az notification-hub namespace check-availability --name spnhubns
@@ -69,7 +69,7 @@ az group create --name spnhubrg --location eastus
    }
    ```
 
-   Let op de tweede regel in het Azure CLI-antwoord: `"isAvailable": true`. Op deze regel staat `false` als de gewenste naam die u voor de naamruimte hebt opgegeven, niet beschikbaar is. Zodra u hebt bevestigd dat de naam beschikbaar is, voert u de opdracht [az notification-hub namespace create](/cli/azure/ext/notification-hub/notification-hub/namespace#ext-notification-hub-az-notification-hub-namespace-create) uit om uw naamruimte te maken.  
+   Let op de tweede regel in het Azure CLI-antwoord: `"isAvailable": true`. Op deze regel staat `false` als de gewenste naam die u voor de naamruimte hebt opgegeven, niet beschikbaar is. Zodra u hebt bevestigd dat de naam beschikbaar is, voert u de opdracht [az notification-hub namespace create](/cli/azure/notification-hub/namespace#az_notification_hub_namespace_create) uit om uw naamruimte te maken.  
 
    ```azurecli
    az notification-hub namespace create --resource-group spnhubrg --name spnhubns  --location eastus --sku Free
@@ -92,7 +92,7 @@ az group create --name spnhubrg --location eastus
 
 2. Haal een lijst met naamruimten op.
 
-   Gebruik de opdracht [az notification-hub namespace list](/cli/azure/ext/notification-hub/notification-hub/namespace#ext-notification-hub-az-notification-hub-namespace-list) om de details van uw nieuwe naamruimte te bekijken. De parameter `--resource-group` is optioneel als u alle naamruimten voor een abonnement wilt zien.
+   Gebruik de opdracht [az notification-hub namespace list](/cli/azure/notification-hub/namespace#az_notification_hub_namespace_list) om de details van uw nieuwe naamruimte te bekijken. De parameter `--resource-group` is optioneel als u alle naamruimten voor een abonnement wilt zien.
 
    ```azurecli
    az notification-hub namespace list --resource-group spnhubrg
@@ -102,7 +102,7 @@ az group create --name spnhubrg --location eastus
 
 1. Maak uw eerste notification hub.
 
-   Er kunnen nu één of meer notification hubs worden gemaakt in uw nieuwe naamruimte. Voer de opdracht [az notification-hub create](/cli/azure/ext/notification-hub/notification-hub#ext-notification-hub-az-notification-hub-create) uit om een notification hub te maken.
+   Er kunnen nu één of meer notification hubs worden gemaakt in uw nieuwe naamruimte. Voer de opdracht [az notification-hub create](/cli/azure/notification-hub#az_notification_hub_create) uit om een notification hub te maken.
 
    ```azurecli
    az notification-hub create --resource-group spnhubrg --namespace-name spnhubns --name spfcmtutorial1nhub --location eastus --sku Free
@@ -118,7 +118,7 @@ az group create --name spnhubrg --location eastus
 
 3. Haal een lijst met notification hubs op.
 
-   Met elke uitgevoerde opdracht retourneert de Azure-CLI een bericht of deze is geslaagd, maar het is geruststellend een lijst met notification hubs te kunnen ophalen. De opdracht [az notification-hub list](/cli/azure/ext/notification-hub/notification-hub#ext-notification-hub-az-notification-hub-list) is ontworpen voor dit doeleinde.
+   Met elke uitgevoerde opdracht retourneert de Azure-CLI een bericht of deze is geslaagd, maar het is geruststellend een lijst met notification hubs te kunnen ophalen. De opdracht [az notification-hub list](/cli/azure/notification-hub#az_notification_hub_list) is ontworpen voor dit doeleinde.
 
    ```azurecli
    az notification-hub list --resource-group spnhubrg --namespace-name spnhubns --output table
@@ -126,7 +126,7 @@ az group create --name spnhubrg --location eastus
 
 ## <a name="work-with-access-policies"></a>Werken met toegangsbeleid
 
-1. Azure Notification Hubs maakt gebruik van [Shared Access Signature-beveiliging](./notification-hubs-push-notification-security.md) door middel van toegangsbeleid. Er worden automatisch twee soorten beleid gemaakt wanneer u een notification hub maakt. De verbindingsreeksen uit dit beleid zijn nodig om pushmeldingen te configureren. De opdracht [az notification-hub authorization-rule list](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list) biedt een lijst met beleidsnamen en hun respectieve resourcegroepen.
+1. Azure Notification Hubs maakt gebruik van [Shared Access Signature-beveiliging](./notification-hubs-push-notification-security.md) door middel van toegangsbeleid. Er worden automatisch twee soorten beleid gemaakt wanneer u een notification hub maakt. De verbindingsreeksen uit dit beleid zijn nodig om pushmeldingen te configureren. De opdracht [az notification-hub authorization-rule list](/cli/azure/notification-hub/authorization-rule#az_notification_hub_authorization-rule-list) biedt een lijst met beleidsnamen en hun respectieve resourcegroepen.
 
    ```azurecli
    az notification-hub authorization-rule list --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --output table
@@ -135,13 +135,13 @@ az group create --name spnhubrg --location eastus
    > [!IMPORTANT]
    > Gebruik niet het beleid _DefaultFullSharedAccessSignature_ in uw toepassing. Dit beleid mag alleen in uw back-end worden gebruikt. Gebruik alleen `Listen`-toegangsbeleid in uw clienttoepassing.
 
-2. Als u aanvullende autorisatieregels met betekenisvolle namen wilt maken, kunt u uw eigen toegangsbeleid maken en aanpassen door de opdracht [az notification-hub authorization-rule create](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-create) te gebruiken. De parameter `--rights` is een door spaties gescheiden lijst met de machtigingen die u wilt toewijzen.
+2. Als u aanvullende autorisatieregels met betekenisvolle namen wilt maken, kunt u uw eigen toegangsbeleid maken en aanpassen door de opdracht [az notification-hub authorization-rule create](/cli/azure/notification-hub/authorization-rule#az_notification_hub_authorization_rule_create) te gebruiken. De parameter `--rights` is een door spaties gescheiden lijst met de machtigingen die u wilt toewijzen.
 
    ```azurecli
    az notification-hub authorization-rule create --resource-group spnhubrg --namespace-name spnhubns --notification-hub-name spfcmtutorial1nhub --name spnhub1key --rights Listen Manage Send
    ```
 
-3. Er zijn twee sets sleutels en verbindingsreeksen voor elk toegangsbeleid. U hebt ze later nodig om [een notification hub mee te configureren](./configure-notification-hub-portal-pns-settings.md). Als u de sleutels en verbindingsreeksen wilt weergeven voor een toegangsbeleid voor Notification Hubs, gebruikt u de opdracht [az notification-hub authorization-rule list-keys](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys).
+3. Er zijn twee sets sleutels en verbindingsreeksen voor elk toegangsbeleid. U hebt ze later nodig om [een notification hub mee te configureren](./configure-notification-hub-portal-pns-settings.md). Als u de sleutels en verbindingsreeksen wilt weergeven voor een toegangsbeleid voor Notification Hubs, gebruikt u de opdracht [az notification-hub authorization-rule list-keys](/cli/azure/notification-hub/authorization-rule#az_notification_hub_authorization_rule_list_keys).
 
    ```azurecli
    # query the keys and connection strings for DefaultListenSharedAccessSignature
@@ -154,7 +154,7 @@ az group create --name spnhubrg --location eastus
    ```
 
    > [!NOTE]
-   > Een [Notification Hubs-naamruimte](/cli/azure/ext/notification-hub/notification-hub/namespace/authorization-rule#ext-notification-hub-az-notification-hub-namespace-authorization-rule-list-keys) en een [notification hub](/cli/azure/ext/notification-hub/notification-hub/authorization-rule#ext-notification-hub-az-notification-hub-authorization-rule-list-keys) hebben elk een ander toegangsbeleid. Zorg ervoor dat u het juiste referentiemateriaal over de Azure-CLI gebruikt wanneer u query’s uitvoert voor sleutels en verbindingsreeksen.
+   > Een [Notification Hubs-naamruimte](/cli/azure/notification-hub/namespace/authorization-rule#az_notification_hub_namespace_authorization_rule_list_keys) en een [notification hub](/cli/azure/notification-hub/authorization-rule#az_notification_hub_authorization_rule_list_keys) hebben elk een ander toegangsbeleid. Zorg ervoor dat u het juiste referentiemateriaal over de Azure-CLI gebruikt wanneer u query’s uitvoert voor sleutels en verbindingsreeksen.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -170,10 +170,10 @@ az group delete --name spnhubrg
 
 * Ontdek de uitgebreide mogelijkheden voor het beheren van notification hubs met de Azure-CLI:
 
-  [Volledige referentielijst voor Notification Hubs](/cli/azure/ext/notification-hub/notification-hub)
+  [Volledige referentielijst voor Notification Hubs](/cli/azure/notification-hub)
 
-  [Referentielijst met Notification Hubs-naamruimten](/cli/azure/ext/notification-hub/notification-hub/namespace)
+  [Referentielijst met Notification Hubs-naamruimten](/cli/azure/notification-hub/namespace)
 
-  [Referentielijst met Notification Hubs-autorisatieregels](/cli/azure/ext/notification-hub/notification-hub/authorization-rule)
+  [Referentielijst met Notification Hubs-autorisatieregels](/cli/azure/notification-hub/authorization-rule)
 
-  [Referentielijst met Notification Hubs-referenties](/cli/azure/ext/notification-hub/notification-hub/credential)
+  [Referentielijst met Notification Hubs-referenties](/cli/azure/notification-hub/credential)

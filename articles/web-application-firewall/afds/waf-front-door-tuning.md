@@ -1,6 +1,6 @@
 ---
-title: Retuning Web Application firewall (WAF) voor Azure front deur
-description: In dit artikel leert u hoe u de WAF voor de voor deur kunt afstemmen.
+title: Afstemmen Web Application Firewall (WAF) voor Azure Front Door
+description: In dit artikel leert u hoe u de WAF kunt afstemmen voor Front Door.
 services: web-application-firewall
 author: mohitkusecurity
 ms.service: web-application-firewall
@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.date: 12/11/2020
 ms.author: mohitku
 ms.reviewer: tyao
-ms.openlocfilehash: b2f551257fb6869d5dec47014be3a8522b61b9fa
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c0879edc0e3fbd6cf6bcadc26dd862f95ecf4fd4
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102506630"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872349"
 ---
-# <a name="tuning-web-application-firewall-waf-for-azure-front-door"></a>Retuning Web Application firewall (WAF) voor Azure front deur
+# <a name="tuning-web-application-firewall-waf-for-azure-front-door"></a>Afstemmen Web Application Firewall (WAF) voor Azure Front Door
  
-De set met door Azure beheerde standaard regels is gebaseerd op de [OWASP core Rule set (CRS)](https://github.com/SpiderLabs/owasp-modsecurity-crs/tree/v3.1/dev) en is zodanig ontworpen dat deze strikt uit het vak is. Het is vaak verwacht dat WAF-regels moeten worden afgestemd op de specifieke behoeften van de toepassing of organisatie met behulp van de WAF. Dit wordt vaak bereikt door regel uitsluitingen te definiëren, aangepaste regels te maken en zelfs regels uit te scha kelen die problemen of fout-positieven veroorzaken. Er zijn enkele dingen die u kunt doen als aanvragen die worden door gegeven via uw Web Application firewall (WAF), worden geblokkeerd.
+De door Azure beheerde standaardregelset is gebaseerd op de [OWASP Core Rule Set (CRS)](https://github.com/SpiderLabs/owasp-modsecurity-crs/tree/v3.1/dev) en is standaard ontworpen om strikt te zijn. Vaak wordt verwacht dat WAF-regels moeten worden afgestemd op de specifieke behoeften van de toepassing of organisatie die de WAF gebruikt. Dit wordt meestal bereikt door regeluitsluitingen te definiëren, aangepaste regels te maken en zelfs regels uit te stellen die mogelijk problemen of fout-positieven veroorzaken. Er zijn enkele dingen die u kunt doen als aanvragen die via uw Web Application Firewall (WAF) moeten worden geblokkeerd.
 
-Zorg er eerst voor dat u het [WAF overzicht van de voor deur](afds-overview.md) en het [WAF-beleid voor front-deur](waf-front-door-create-portal.md) documenten hebt gelezen. Zorg er ook voor dat u [WAF controle en logboek registratie](waf-front-door-monitor.md)hebt ingeschakeld. In deze artikelen wordt uitgelegd hoe de WAF functions werkt, hoe de WAF-regel sets werken en hoe u toegang krijgt tot WAF-Logboeken.
+Zorg er eerst voor dat u het [overzicht van Front Door WAF en](afds-overview.md) het [WAF-beleid](waf-front-door-create-portal.md) voor Front Door hebt gelezen. Zorg er ook voor dat u [WAF-bewaking en -logboekregistratie hebt ingeschakeld.](waf-front-door-monitor.md) In deze artikelen wordt uitgelegd hoe de WAF werkt, hoe de WAF-regelsets werken en hoe u toegang krijgt tot WAF-logboeken.
  
-## <a name="understanding-waf-logs"></a>Informatie over WAF-logboeken
+## <a name="understanding-waf-logs"></a>WAF-logboeken begrijpen
  
-Het doel van WAF-Logboeken is om elke aanvraag weer te geven die overeenkomt met of wordt geblokkeerd door de WAF. Het is een verzameling van alle geëvalueerde aanvragen die overeenkomen of worden geblokkeerd. Als u ziet dat de WAF een aanvraag blokkeert die niet (een fout-positief) is, kunt u enkele dingen doen. Eerst beperkt u de specifieke aanvraag en zoekt u deze. Desgewenst kunt u [een aangepast antwoord bericht zo configureren](./waf-front-door-configure-custom-response-code.md) dat dit het `trackingReference` veld bevat om de gebeurtenis eenvoudig te identificeren en een logboek query uit te voeren op die specifieke waarde. Bekijk de logboeken om de specifieke URI, het tijds tempel of het client-IP-adres van de aanvraag te vinden. Wanneer u de gerelateerde logboek vermeldingen vindt, kunt u beginnen met het uitvoeren van onjuiste positieven. 
+Het doel van WAF-logboeken is om elke aanvraag weer te geven die door de WAF wordt gematcht of geblokkeerd. Het is een verzameling van alle geëvalueerde aanvragen die worden gematcht of geblokkeerd. Als u merkt dat de WAF een aanvraag blokkeert die niet mag (een fout-positief), kunt u een aantal dingen doen. Zoek eerst de specifieke aanvraag. Indien gewenst kunt u [een](./waf-front-door-configure-custom-response-code.md) aangepast antwoordbericht configureren om het veld op te nemen om de gebeurtenis gemakkelijk te identificeren en een logboekquery uit te voeren op die `trackingReference` specifieke waarde. Bekijk de logboeken om de specifieke URI, tijdstempel of client-IP van de aanvraag te vinden. Wanneer u de gerelateerde logboekgegevens vindt, kunt u beginnen met het reageren op fout-positieven. 
  
-Stel bijvoorbeeld dat u een betrouwbaar verkeer hebt met de teken reeks `1=1` die u wilt door geven aan uw WAF. De aanvraag ziet er als volgt uit:
+Stel dat u een legitiem verkeer hebt met de tekenreeks `1=1` die u via uw WAF wilt doorgeven. De aanvraag ziet er als volgende uit:
 
 ```
 POST http://afdwafdemosite.azurefd.net/api/Feedbacks HTTP/1.1
@@ -36,9 +36,9 @@ Content-Length: 55
 UserId=20&captchaId=7&captchaId=15&comment="1=1"&rating=3
 ```
 
-Als u de aanvraag probeert, blokkeert de WAF het verkeer dat uw reeks van *1 = 1* in een para meter of veld bevat. Dit is een teken reeks die vaak is gekoppeld aan een SQL-injectie aanval. U kunt de logboeken bekijken en de tijds tempel van de aanvraag bekijken en de regels die zijn geblokkeerd/overeenkomen.
+Als u de aanvraag probeert, blokkeert de WAF verkeer dat uw *tekenreeks van 1=1* in een parameter of veld bevat. Dit is een tekenreeks die vaak is gekoppeld aan een SQL-injectieaanval. U kunt de logboeken bekijken en de tijdstempel van de aanvraag en de regels zien die zijn geblokkeerd/overeenkomen.
  
-In het volgende voor beeld verkennen we een `FrontdoorWebApplicationFirewallLog` logboek dat is gegenereerd als gevolg van een overeenkomst van een regel. De volgende Log Analytics query kan worden gebruikt om aanvragen te vinden die in de afgelopen 24 uur zijn geblokkeerd:
+In het volgende voorbeeld verkennen we een logboek `FrontdoorWebApplicationFirewallLog` dat is gegenereerd vanwege een regelmatch. De volgende Log Analytics-query kan worden gebruikt om aanvragen te vinden die in de afgelopen 24 uur zijn geblokkeerd:
 
 ```kusto
 AzureDiagnostics
@@ -48,11 +48,11 @@ AzureDiagnostics
 
 ```
  
-In het `requestUri` veld ziet u dat de aanvraag specifiek is gemaakt `/api/Feedbacks/` . Verder vinden we de regel-ID `942110` in het `ruleName` veld. Als u de regel-ID weet, kunt u naar de [OWASP ModSecurity core-regel set officiële opslag plaats](https://github.com/coreruleset/coreruleset) gaan en deze [regel-id](https://github.com/coreruleset/coreruleset/blob/v3.1/dev/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf) doorzoeken om de code te controleren en precies te begrijpen waarvoor deze regel overeenkomt. 
+In het `requestUri` veld ziet u dat de aanvraag specifiek aan is `/api/Feedbacks/` gedaan. Verderop vinden we de regel-id `942110` in het `ruleName` veld . Als u de regel-id kent, kunt u naar de officiële opslagplaats [](https://github.com/coreruleset/coreruleset/blob/v3.1/dev/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf) [OWASP ModSecurity Core Rule Set](https://github.com/coreruleset/coreruleset) gaan en zoeken op die regel-id om de code te controleren en precies te begrijpen op welke code deze regel van pas komt. 
  
-Vervolgens ziet u door het `action` veld te controleren of deze regel is ingesteld op het blok keren van aanvragen bij het vergelijken en bevestigen we dat de aanvraag wordt geblokkeerd door de WAF omdat de `policyMode` is ingesteld op `prevention` . 
+Vervolgens zien we, door het veld te controleren, dat deze regel is ingesteld op het blokkeren van aanvragen bij het afstemmen, en we bevestigen dat de aanvraag in feite is geblokkeerd door de WAF omdat de is ingesteld `action` `policyMode` op `prevention` . 
  
-Nu gaan we de informatie in het veld controleren `details` . Hier ziet u de `matchVariableName` en de `matchVariableValue` informatie. We weten dat deze regel is geactiveerd, omdat iemands invoer *1 = 1* in het `comment` veld van de web-app.
+Laten we nu de informatie in het veld `details` controleren. Hier kunt u de informatie en `matchVariableName` `matchVariableValue` zien. We leren dat deze regel is geactiveerd omdat iemand *1=1* heeft ingevoerd in het `comment` veld van de web-app.
  
 ```json
 {
@@ -85,9 +85,9 @@ Nu gaan we de informatie in het veld controleren `details` . Hier ziet u de `mat
 }
 ```
  
-Er is ook een waarde bij het controleren van de toegangs logboeken om uw kennis over een bepaalde WAF-gebeurtenis uit te breiden. Hieronder bekijken we het `FrontdoorAccessLog` logboek dat is gegenereerd als reactie op de bovenstaande gebeurtenis.
+Het is ook belangrijk om de toegangslogboeken te controleren om uw kennis over een bepaalde WAF-gebeurtenis uit te breiden. Hieronder bekijken we het `FrontdoorAccessLog` logboek dat is gegenereerd als reactie op de bovenstaande gebeurtenis.
  
-U ziet dat deze gerelateerde logboeken zijn gebaseerd op de `trackingReference` waarde die hetzelfde is. In verschillende velden die algemeen inzicht bieden, zoals `userAgent` en `clientIP` , zullen we de aandacht vestigen op de `httpStatusCode` `httpStatusDetails` velden en. Hier kunnen we bevestigen dat de client een HTTP 403-antwoord heeft ontvangen dat absoluut bevestigt dat deze aanvraag is geweigerd en geblokkeerd. 
+U kunt zien dat dit gerelateerde logboeken zijn op basis van `trackingReference` de waarde die hetzelfde is. Onder verschillende velden die algemeen inzicht bieden, zoals `userAgent` en , wordt de aandacht vestigen op de velden en `clientIP` `httpStatusCode` `httpStatusDetails` . Hier kunnen we bevestigen dat de client een HTTP 403-antwoord heeft ontvangen, dat absoluut bevestigt dat deze aanvraag is geweigerd en geblokkeerd. 
  
 ```json
 {
@@ -121,112 +121,112 @@ U ziet dat deze gerelateerde logboeken zijn gebaseerd op de `trackingReference` 
 }
 ```
 
-## <a name="resolving-false-positives"></a>Foutieve positieven oplossen
+## <a name="resolving-false-positives"></a>Fout-positieven oplossen
  
-Als u een weloverwogen beslissing wilt nemen over het afhandelen van een vals-positief, is het belang rijk om vertrouwd te raken met de technologieën die uw toepassing gebruikt. Stel bijvoorbeeld dat er geen SQL-Server is in uw technologie stack en dat er valse positieven worden ontvangen die aan deze regels zijn gerelateerd. Als u deze regels uitschakelt, wordt uw beveiliging niet noodzakelijkerwijs verzwakt. 
+Als u een weloverwogen beslissing wilt nemen over het verwerken van een fout-positief, is het belangrijk om vertrouwd te raken met de technologieën die uw toepassing gebruikt. Stel bijvoorbeeld dat uw technologiestack geen SQL-server heeft en dat u fout-positieven krijgt met betrekking tot deze regels. Het uitschakelen van deze regels betekent niet noodzakelijkerwijs dat uw beveiliging in de weg zit. 
 
-Met deze informatie en de kennis die regel 942110 is die overeenkomt met de `1=1` teken reeks in ons voor beeld, kunnen we enkele dingen doen om te voor komen dat deze rechtmatige aanvraag wordt geblokkeerd:
+Met deze informatie, en de wetenschap dat regel 942110 de regel is die overeen komt met de tekenreeks in ons voorbeeld, kunnen we een aantal dingen doen om te voorkomen dat deze legitieme aanvraag wordt `1=1` geblokkeerd:
  
-* Uitsluitings lijsten gebruiken
-  * Zie [WAF (Web Application firewall) met uitsluitingen voor de front-deur service](waf-front-door-exclusion.md) voor meer informatie over uitsluitings lijsten. 
+* Uitsluitingslijsten gebruiken
+  * Zie [Web Application Firewall (WAF) met Front Door Service-uitsluitingslijsten](waf-front-door-exclusion.md) voor meer informatie over uitsluitingslijsten. 
 * WAF-acties wijzigen
-  * Zie [WAF-acties](afds-overview.md#waf-actions) voor meer informatie over welke acties kunnen worden uitgevoerd wanneer een aanvraag overeenkomt met de voor waarden van een regel.
+  * Zie [WAF Actions (WAF-acties)](afds-overview.md#waf-actions) voor meer informatie over welke acties kunnen worden ondernomen wanneer een aanvraag overeenkomt met de voorwaarden van een regel.
 * Aangepaste regels gebruiken
-  * Zie [aangepaste regels voor Web Application Firewall met Azure front deur](waf-front-door-custom-rules.md) voor meer informatie over aangepaste regels.
+  * Zie [Aangepaste regels voor Web Application Firewall met Azure Front Door](waf-front-door-custom-rules.md) voor meer informatie over aangepaste regels.
 * Regels uitschakelen 
 
 > [!TIP]
-> Wanneer u een benadering selecteert om legitieme aanvragen via de WAF toe te staan, kunt u deze zo smal maken als u wilt. Het is bijvoorbeeld beter om een uitsluitings lijst te gebruiken dan helemaal een regel uit te scha kelen.
+> Wanneer u een benadering selecteert om legitieme aanvragen via de WAF toe te staan, probeert u dit zo beperkt mogelijk te maken. Het is bijvoorbeeld beter om een uitsluitingslijst te gebruiken dan een regel volledig uit te sluiten.
 
-### <a name="using-exclusion-lists"></a>Uitsluitings lijsten gebruiken
+### <a name="using-exclusion-lists"></a>Uitsluitingslijsten gebruiken
 
-Een voor deel van het gebruik van een uitsluitings lijst is dat alleen de overeenkomende variabele die u hebt geselecteerd om op te nemen, niet meer voor die aanvraag wordt gecontroleerd. Dat wil zeggen dat u kunt kiezen tussen specifieke aanvraag headers, aanvraag cookies, query reeks argumenten of bericht hoofdtekst post argumenten die moeten worden uitgesloten als aan een bepaalde voor waarde wordt voldaan, in tegens telling tot het uitsluiten van de volledige aanvraag om te worden geïnspecteerd. De andere niet-opgegeven variabelen van de aanvraag worden gewoon gecontroleerd.
+Een voordeel van het gebruik van een uitsluitingslijst is dat alleen de overeenkomstvariabele die u wilt uitsluiten, niet meer wordt geïnspecteerd voor die bepaalde aanvraag. Dat wil zeggen dat u kunt kiezen tussen specifieke aanvraagheaders, aanvraagcookies, queryreeksargumenten of aanvraagteksttekstargumenten die moeten worden uitgesloten als aan een bepaalde voorwaarde wordt voldaan, in plaats van de hele aanvraag uit te sluiten van inspectie. De andere niet-opgegeven variabelen van de aanvraag worden nog steeds normaal geïnspecteerd.
  
-Het is belang rijk om te overwegen dat uitsluitingen een globale instelling zijn. Dit betekent dat de geconfigureerde uitsluiting geldt voor al het verkeer dat via uw WAF wordt door gegeven, niet alleen een specifieke Web-app of-URI. Dit kan bijvoorbeeld een probleem zijn als *1 = 1* een geldige aanvraag is in de hoofd tekst van een bepaalde web-app, maar niet voor anderen onder hetzelfde WAF-beleid. Als het zinvol is om verschillende uitsluitings lijsten te gebruiken voor verschillende toepassingen, kunt u overwegen om verschillende WAF-beleids regels te gebruiken voor elke toepassing en deze toe te passen op de front-end van elke toepassing.
+Het is belangrijk om te overwegen dat uitsluitingen een globale instelling zijn. Dit betekent dat de geconfigureerde uitsluiting van toepassing is op al het verkeer dat uw WAF passeert, niet alleen op een specifieke web-app of URI. Dit kan bijvoorbeeld een probleem zijn als *1 =1* een geldige aanvraag is in de body voor een bepaalde web-app, maar niet voor anderen onder hetzelfde WAF-beleid. Als het zinvol is om verschillende uitsluitingslijsten voor verschillende toepassingen te gebruiken, kunt u voor elke toepassing verschillende WAF-beleidsregels gebruiken en deze toepassen op de front-end van elke toepassing.
  
-Wanneer u uitsluitings lijsten voor beheerde regels configureert, kunt u ervoor kiezen om alle regels in een regelset, alle regels in een regel groep of een afzonderlijke regel uit te sluiten. Een uitsluitings lijst kan worden geconfigureerd met behulp van [Power shell](/powershell/module/az.frontdoor/New-AzFrontDoorWafManagedRuleExclusionObject), [Azure cli](/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/exclusion#ext_front_door_az_network_front_door_waf_policy_managed_rules_exclusion_add), [rest API](/rest/api/frontdoorservice/webapplicationfirewall/policies/createorupdate)of de Azure Portal.
+Bij het configureren van uitsluitingslijsten voor beheerde regels kunt u ervoor kiezen om alle regels binnen een regelset, alle regels binnen een regelgroep of een afzonderlijke regel uit te sluiten. Een uitsluitingslijst kan worden geconfigureerd met [Behulp van PowerShell,](/powershell/module/az.frontdoor/New-AzFrontDoorWafManagedRuleExclusionObject) [Azure CLI,](/cli/azure/network/front-door/waf-policy/managed-rules/exclusion#az_network_front_door_waf_policy_managed_rules_exclusion_add) [REST API](/rest/api/frontdoorservice/webapplicationfirewall/policies/createorupdate)of de Azure Portal.
 
-* Uitsluitingen op regel niveau
-  * Het Toep assen van uitsluitingen op regel niveau betekent dat de opgegeven uitsluitingen niet alleen worden geanalyseerd op die afzonderlijke regel, terwijl deze nog steeds wordt geanalyseerd door alle andere regels in de regelset. Dit is het meest gedetailleerde niveau voor uitsluitingen en kan worden gebruikt voor het afstemmen van de beheerde regelset op basis van de informatie die u in de WAF-Logboeken vindt bij het oplossen van problemen met een gebeurtenis.
-* Uitsluitingen op regel groeps niveau
-  * Uitsluitingen Toep assen op een regel groeps niveau betekent dat de opgegeven uitsluitingen niet worden geanalyseerd op basis van de specifieke set regel typen. Als u bijvoorbeeld *SQLI* als een uitgesloten regel groep selecteert, worden de gedefinieerde uitsluitingen van aanvragen niet geïnspecteerd door een van de SQLI-specifieke regels, maar ze worden toch gecontroleerd door regels in andere groepen, zoals *php*, *RFI* of *XSS*. Dit type uitsluiting kan nuttig zijn wanneer u zeker weet dat de toepassing niet vatbaar is voor specifieke typen aanvallen. Een toepassing die geen SQL-data bases heeft, kan bijvoorbeeld alle *SQLI* -regels uitsluiten zonder dat het beveiligings niveau ervan wordt afbreuk.
-* Uitsluitingen bij het niveau van de regel set 
-  * Uitsluitingen Toep assen op een regel niveau: de opgegeven uitsluitingen worden niet geanalyseerd op basis van de beveiligings regels die in die regelset beschikbaar zijn. Dit is een uitgebreide uitsluiting en moet daarom zorgvuldig worden gebruikt.
+* Uitsluitingen op regelniveau
+  * Uitsluitingen toepassen op regelniveau betekent dat de opgegeven uitsluitingen niet alleen worden geanalyseerd op basis van die afzonderlijke regel, terwijl ze nog steeds worden geanalyseerd door alle andere regels in de regelset. Dit is het meest gedetailleerde niveau voor uitsluitingen en kan worden gebruikt om de beheerde regelset af te stemmen op basis van de informatie die u in de WAF-logboeken vindt bij het oplossen van problemen met een gebeurtenis.
+* Uitsluitingen op het niveau van regelgroep
+  * Uitsluitingen toepassen op het niveau van een regelgroep betekent dat de opgegeven uitsluitingen niet worden geanalyseerd op die specifieke set regeltypen. Als u *bijvoorbeeld SQLI* selecteert als uitgesloten regelgroep, wordt aangegeven dat de gedefinieerde aanvraaguitsluitingen niet worden geïnspecteerd door een van de SQLI-specifieke regels, maar dat deze nog steeds worden geïnspecteerd door regels in andere groepen, zoals *PHP,* *RFI* of *XSS.* Dit type uitsluiting kan nuttig zijn wanneer we zeker weten dat de toepassing niet vatbaar is voor specifieke typen aanvallen. Een toepassing die geen SQL-databases heeft, kan bijvoorbeeld alle *SQLI-regels* uitsluiten zonder dat dit nadelig is voor het beveiligingsniveau.
+* Uitsluitingen op regelsetniveau 
+  * Uitsluitingen toepassen op een regelsetniveau betekent dat de opgegeven uitsluitingen niet worden geanalyseerd op een van de beveiligingsregels die beschikbaar zijn in die regelset. Dit is een uitgebreide uitsluiting, dus deze moet zorgvuldig worden gebruikt.
 
-In dit voor beeld wordt een uitzonde ring op het meest gedetailleerde niveau uitgevoerd (waarbij uitsluiting wordt toegepast op één regel) en we gaan de overeenkomst met de **hoofd tekst** van de aanvraag afstemmen uitsluiten die bevat `comment` . Dit is duidelijk omdat u de variabele Details in het logboek firewall kunt zien: `"matchVariableName": "PostParamValue:comment"` . Het kenmerk is `comment` . U kunt deze kenmerk naam ook op een aantal andere manieren vinden. Zie [aanvraag kenmerk namen zoeken](#finding-request-attribute-names).
+In dit voorbeeld voeren we een uitsluiting uit op het meest gedetailleerde niveau (uitsluiting toepassen op één regel) en willen we de overeenkomstvariabele Aanvraag body **post args** name die `comment` bevat uitsluiten. Dit is duidelijk omdat u de overeenkomende variabeledetails in het firewalllogboek kunt zien: `"matchVariableName": "PostParamValue:comment"` . Het kenmerk is `comment` . U kunt deze kenmerknaam ook op een paar andere manieren vinden. Zie [Aanvraagkenmerknamen zoeken.](#finding-request-attribute-names)
 
-![Uitsluitings regels](../media/waf-front-door-tuning/exclusion-rules.png)
+![Uitsluitingsregels](../media/waf-front-door-tuning/exclusion-rules.png)
 
-![Regel uitsluiting voor specifieke regel](../media/waf-front-door-tuning/exclusion-rule.png)
+![Regeluitsluiting voor specifieke regel](../media/waf-front-door-tuning/exclusion-rule.png)
 
-Soms zijn er gevallen waarin specifieke para meters worden door gegeven aan de WAF op een manier die mogelijk niet intuïtief is. Er is bijvoorbeeld een token dat wordt door gegeven wanneer wordt geverifieerd met behulp van Azure Active Directory. Dit token, `__RequestVerificationToken` , wordt meestal als een aanvraag cookie door gegeven. In sommige gevallen, waarbij cookies echter worden uitgeschakeld, wordt dit token ook als een aanvraag post-argument door gegeven. Daarom moet u, om ervoor te zorgen dat het token fout-positieven van Azure AD voldoet aan `__RequestVerificationToken` de uitsluitings lijst voor zowel `RequestCookieNames` als `RequestBodyPostArgsNames` .
+Af en toe zijn er gevallen waarbij specifieke parameters worden doorgegeven aan de WAF op een manier die mogelijk niet intuïtief is. Er is bijvoorbeeld een token dat wordt doorgegeven bij het authenticeren met behulp Azure Active Directory. Dit token, `__RequestVerificationToken` , wordt meestal doorgegeven als een aanvraagcookie. In sommige gevallen waarin cookies zijn uitgeschakeld, wordt dit token echter ook doorgegeven als argument na een aanvraag. Daarom moet u ervoor zorgen dat wordt toegevoegd aan de uitsluitingslijst voor zowel als om fout-positieven voor Het Azure AD-token `__RequestVerificationToken` `RequestCookieNames` aan te `RequestBodyPostArgsNames` pakken.
 
-Uitsluitingen voor een veld naam (*selector*) betekent dat de waarde niet langer door de WAF wordt geëvalueerd. De veld naam zelf blijft echter worden geëvalueerd en in zeldzame gevallen kan deze overeenkomen met een WAF-regel en een actie activeren.
+Uitsluitingen voor een veldnaam *(selector)* betekent dat de waarde niet meer wordt geëvalueerd door de WAF. De veldnaam zelf wordt echter nog steeds geëvalueerd en in zeldzame gevallen kan deze overeenkomen met een WAF-regel en een actie activeren.
 
-![Regel uitsluiting voor regelset](../media/waf-front-door-tuning/exclusion-rule-selector.png)
+![Regeluitsluiting voor regelset](../media/waf-front-door-tuning/exclusion-rule-selector.png)
 
 ### <a name="changing-waf-actions"></a>WAF-acties wijzigen
 
-Een andere manier om het gedrag van WAF-regels te verwerken, is door de actie te kiezen die wordt ondernomen wanneer een aanvraag overeenkomt met de voor waarden van een regel. De beschik bare acties zijn: [toestaan, blok keren, aanmelden en omleiden](afds-overview.md#waf-actions).
+Een andere manier om het gedrag van WAF-regels te verwerken, is door de actie te kiezen die moet worden ondernomen wanneer een aanvraag overeenkomt met de voorwaarden van een regel. De beschikbare acties zijn: [Toestaan, Blokkeren, Logboek en Omleiden.](afds-overview.md#waf-actions)
 
-In dit voor beeld hebben we de standaard actie *geblokkeerd* gewijzigd in de *logboek* actie voor regel 942110. Dit leidt ertoe dat de WAF de aanvraag registreert en door gaan met het evalueren van dezelfde aanvraag met de regels voor de resterende lagere prioriteit.
+In dit voorbeeld hebben we de standaardactie *Blokkeren gewijzigd* in de actie *Logboek* op regel 942110. Dit zorgt ervoor dat de WAF de aanvraag vast moet maken en dezelfde aanvraag blijft evalueren op basis van de resterende regels met een lagere prioriteit.
 
 ![WAF-acties](../media/waf-front-door-tuning/actions.png)
 
-Nadat u dezelfde aanvraag hebt uitgevoerd, kunt u teruggaan naar de logboeken. we zien dat deze aanvraag overeenkomt met de regel-ID 942110 en dat het `action_s` veld nu het *logboek* aanduidt in plaats van *blok keren*. Vervolgens hebben we de logboek query uitgebreid om de informatie op te nemen `trackingReference_s` en te zien wat er nog meer is gebeurd met deze aanvraag.
+Nadat dezelfde aanvraag is gedaan, kunnen we teruggaan naar de logboeken en zien we dat deze aanvraag een overeenkomst is op regel-id 942110 en dat het veld nu Logboek in plaats van Blokkeren `action_s` aangeeft.   Vervolgens hebben we de logboekquery uitgebreid om de informatie op `trackingReference_s` te nemen en te zien wat er nog meer is gebeurd met deze aanvraag.
 
-![Logboek met meerdere regel overeenkomsten](../media/waf-front-door-tuning/actions-log.png)
+![Logboek met meerdere regel-overeenkomsten](../media/waf-front-door-tuning/actions-log.png)
 
-In het algemeen zien we dat er in een andere SQLI-regel een overeenkomst wordt weer gegeven in milliseconden nadat de regel-ID 942110 is verwerkt. Dezelfde aanvraag komt overeen met regel-ID 942310 en deze keer dat het standaard actie *blok* is geactiveerd.
+Interessant is dat er een andere SQLI-regelmatch plaatsvindt in milliseconden nadat regel-id 942110 is verwerkt. Dezelfde aanvraag komt overeen met regel-id 942310 en deze keer is de standaardactie *Blokkeren* geactiveerd.
 
-Een ander voor deel van het gebruik van de *logboek* actie tijdens het afstemmen of oplossen van problemen is dat u kunt bepalen of meerdere regels binnen een specifieke regel groep overeenkomen en een bepaalde aanvraag blok keren. U kunt de uitsluitingen vervolgens op het juiste niveau maken, dat wil zeggen op het niveau van de regel of regel groep. 
+Een ander voordeel  van het gebruik van de actie Logboek tijdens het afstemmen of oplossen van problemen met WAF is dat u kunt bepalen of meerdere regels binnen een specifieke regelgroep overeenkomen en een bepaalde aanvraag blokkeren. Vervolgens kunt u uw uitsluitingen op het juiste niveau maken, dat wil zeggen op het niveau van de regel of regelgroep. 
 
 ### <a name="using-custom-rules"></a>Aangepaste regels gebruiken
 
-Zodra u hebt vastgesteld wat een overeenkomst met een WAF-regel veroorzaakt, kunt u aangepaste regels gebruiken om de manier aan te passen waarop de WAF reageert op de gebeurtenis. Aangepaste regels worden verwerkt vóór beheerde regels, ze kunnen meer dan één voor waarde bevatten en hun acties kunnen [toestaan, weigeren, Logboeken of omleiden](afds-overview.md#waf-actions). Wanneer er een overeenkomende regel is, wordt de verwerking van de WAF-engine gestopt. Dit betekent dat er geen andere aangepaste regels met een lagere prioriteit en beheerde regels meer worden uitgevoerd.
+Zodra u hebt vastgesteld wat de oorzaak is van een overeenkomst met een WAF-regel, kunt u aangepaste regels gebruiken om aan te passen hoe de WAF op de gebeurtenis reageert. Aangepaste regels worden verwerkt vóór beheerde regels. Ze kunnen meer dan één voorwaarde bevatten en hun acties kunnen [Toestaan, Weigeren, Logboek of Omleiden zijn.](afds-overview.md#waf-actions) Wanneer er een overeenkomst is met een regel, stopt de WAF-engine met verwerken. Dit betekent dat andere aangepaste regels met een lagere prioriteit en beheerde regels niet meer worden uitgevoerd.
 
-In het onderstaande voor beeld is een aangepaste regel gemaakt met twee voor waarden. De eerste voor waarde zoekt naar de `comment` waarde in de hoofd tekst van de aanvraag. De tweede voor waarde zoekt naar de `/api/Feedbacks/` waarde in de aanvraag-URI.
+In het onderstaande voorbeeld hebben we een aangepaste regel met twee voorwaarden gemaakt. De eerste voorwaarde zoekt naar de `comment` waarde in de aanvraag body. De tweede voorwaarde zoekt naar de `/api/Feedbacks/` waarde in de aanvraag-URI.
 
-Met behulp van een aangepaste regel kunt u het meest gedetailleerd zijn bij het afstemmen van uw WAF-regels en voor het omgaan met valse positieven. In dit geval nemen we geen actie op basis van de `comment` aanvraag hoofdtekst waarde, die mogelijk voor meerdere sites of apps onder hetzelfde WAF-beleid bestaat. Door een andere voor waarde op te nemen die ook overeenkomt met een bepaalde aanvraag `/api/Feedbacks/` -URI, zorgen we ervoor dat deze aangepaste regel echt van toepassing is op dit expliciete use-case dat we gecontroleerden. Dit zorgt ervoor dat dezelfde aanval, indien uitgevoerd tegen verschillende omstandigheden, nog steeds wordt geïnspecteerd en wordt voor komen door de WAF-engine.
+Door een aangepaste regel te gebruiken, kunt u de meest gedetailleerde zijn bij het afstemmen van uw WAF-regels en het omgaan met fout-positieven. In dit geval ondernemen we niet alleen actie op basis van de aanvraagwaarde voor de aanvraag, die kan bestaan op meerdere sites of apps onder `comment` hetzelfde WAF-beleid. Door een andere voorwaarde op te nemen die ook op een bepaalde aanvraag-URI moet overeenkomen, zorgen we ervoor dat deze aangepaste regel echt van toepassing is op deze expliciete `/api/Feedbacks/` use-case die we hebben onderzocht. Dit zorgt ervoor dat dezelfde aanval, indien uitgevoerd tegen verschillende omstandigheden, nog steeds wordt geïnspecteerd en voorkomen door de WAF-engine.
 
 ![Logboek](../media/waf-front-door-tuning/custom-rule.png)
 
-Bij het verkennen van het logboek ziet u dat het `ruleName_s` veld de naam bevat die is opgegeven voor de aangepaste regel die we hebben gemaakt: `redirectcomment` . In het `action_s` veld kunt u zien dat de *omleidings* actie voor deze gebeurtenis is uitgevoerd. In het `details_matches_s` veld ziet u dat de Details voor beide voor waarden overeenkomen.
+Wanneer u het logboek verkent, kunt u zien dat het veld de naam bevat die is opgegeven `ruleName_s` voor de aangepaste regel die we hebben gemaakt: `redirectcomment` . In het `action_s` veld ziet u dat de omleidingsactie is ondernomen voor deze gebeurtenis.  In het `details_matches_s` veld ziet u dat de details van beide voorwaarden overeenkomen.
 
 ### <a name="disabling-rules"></a>Regels uitschakelen
 
-Een andere manier om te zien wat een fout positief is, is door de regel uit te scha kelen die overeenkomt met de ingevoerde invoer die schadelijk is voor WAF. Omdat u de WAF-Logboeken hebt geparseerd en de regel omlaag hebt geverfijn tot 942110, kunt u deze uitschakelen in de Azure Portal. Zie [de firewall regels voor web-apps aanpassen met behulp van de Azure Portal](../ag/application-gateway-customize-waf-rules-portal.md#disable-rule-groups-and-rules).
+Een andere manier om een fout-positief te krijgen, is door de regel uit te schakelen die overeen kwam met de invoer die volgens de WAF schadelijk was. Omdat u de WAF-logboeken hebt geparseerd en de regel hebt beperkt tot 942110, kunt u deze uitschakelen in de Azure Portal. Zie [Customize Web Application Firewall rules using the Azure Portal](../ag/application-gateway-customize-waf-rules-portal.md#disable-rule-groups-and-rules).
  
-Het uitschakelen van een regel is een voor deel wanneer u er zeker van bent dat alle aanvragen die aan deze specifieke voor waarde voldoen, rechtmatige aanvragen zijn of wanneer u zeker weet dat de regel niet van toepassing is op uw omgeving (zoals het uitschakelen van een SQL-injectie regel omdat u niet-SQL-back-endservers hebt). 
+Het uitschakelen van een regel is een voordeel wanneer u zeker weet dat alle aanvragen die voldoen aan die specifieke voorwaarde in feite legitieme aanvragen zijn, of wanneer u zeker weet dat de regel niet van toepassing is op uw omgeving (zoals het uitschakelen van een SQL-injectieregel omdat u niet-SQL-back-enden hebt). 
  
-Het uitschakelen van een regel is echter een algemene instelling die van toepassing is op alle frontend-hosts die zijn gekoppeld aan het WAF-beleid. Wanneer u ervoor kiest om een regel uit te scha kelen, worden er mogelijk beveiligings lekken weer gegeven zonder beveiliging of detectie voor andere frontend-hosts die zijn gekoppeld aan het WAF-beleid.
+Het uitschakelen van een regel is echter een globale instelling die van toepassing is op alle front-endhosts die zijn gekoppeld aan het WAF-beleid. Wanneer u ervoor kiest om een regel uit te schakelen, worden beveiligingsproblemen mogelijk blootgesteld zonder beveiliging of detectie voor andere front-endhosts die zijn gekoppeld aan het WAF-beleid.
  
-Als u Azure PowerShell wilt gebruiken om een beheerde regel uit te scha kelen, raadpleegt u de documentatie van het [`PSAzureManagedRuleOverride`](/powershell/module/az.frontdoor/new-azfrontdoorwafmanagedruleoverrideobject) object. Als u Azure CLI wilt gebruiken, raadpleegt u de [`az network front-door waf-policy managed-rules override`](/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/override) documentatie.
+Zie de objectdocumentatie als u Azure PowerShell beheerde regel wilt [`PSAzureManagedRuleOverride`](/powershell/module/az.frontdoor/new-azfrontdoorwafmanagedruleoverrideobject) uitschakelen. Als u Azure CLI wilt gebruiken, bekijkt u de [`az network front-door waf-policy managed-rules override`](/cli/azure/network/front-door/waf-policy/managed-rules/override) documentatie.
 
 ![WAF-regels](../media/waf-front-door-tuning/waf-rules.png)
 
 > [!TIP]
-> Het is een goed idee om de wijzigingen die u in uw WAF-beleid aanbrengt, te documenteren. Voeg voorbeeld aanvragen toe om de foutieve positieve detectie te illustreren en leg duidelijk uit waarom u een aangepaste regel hebt toegevoegd, een regel of regelset hebt uitgeschakeld of een uitzonde ring hebt toegevoegd. Deze documentatie kan handig zijn als u uw toepassing in de toekomst opnieuw ontwerpt en u wilt controleren of uw wijzigingen nog geldig zijn. Het kan ook helpen als u ooit hebt gecontroleerd of als u wilt uitvullen waarom u het WAF-beleid opnieuw hebt geconfigureerd op basis van de standaard instellingen.
+> Het is een goed idee om eventuele wijzigingen in uw WAF-beleid te documenteren. Neem voorbeeldaanvragen op om de fout-positieve detectie te illustreren en duidelijk uit te leggen waarom u een aangepaste regel hebt toegevoegd, een regel of regelset hebt uitgeschakeld of een uitzondering hebt toegevoegd. Deze documentatie kan handig zijn als u uw toepassing in de toekomst opnieuw ontwerpt en moet controleren of uw wijzigingen nog geldig zijn. Het kan ook helpen als u ooit wordt gecontroleerd of moet rechtvaardigen waarom u het WAF-beleid opnieuw hebt geconfigureerd vanuit de standaardinstellingen.
 
-## <a name="finding-request-fields"></a>Aanvraag velden zoeken
+## <a name="finding-request-fields"></a>Aanvraagvelden zoeken
 
-Met een browser proxy zoals [Fiddler](https://www.telerik.com/fiddler)kunt u afzonderlijke aanvragen controleren en bepalen welke specifieke velden van een webpagina worden genoemd. Dit is handig wanneer we bepaalde velden moeten uitsluiten van inspectie met behulp van uitsluitings lijsten in WAF.
+Met behulp van een browserproxy [zoals Fiddler](https://www.telerik.com/fiddler)kunt u afzonderlijke aanvragen inspecteren en bepalen welke specifieke velden van een webpagina worden aangeroepen. Dit is handig wanneer bepaalde velden moeten worden uitgesloten van inspectie met behulp van uitsluitingslijsten in WAF.
 
-### <a name="finding-request-attribute-names"></a>Kenmerk namen van aanvragen zoeken
+### <a name="finding-request-attribute-names"></a>Kenmerknamen van aanvragen zoeken
  
-In dit voor beeld ziet u het veld waarin de `1=1` teken reeks is ingevoerd `comment` . Deze gegevens zijn door gegeven in de hoofd tekst van een POST-aanvraag.
+In dit voorbeeld ziet u dat het veld waar de `1=1` tekenreeks is ingevoerd, wordt `comment` aangeroepen. Deze gegevens zijn doorgegeven in de body van een POST-aanvraag.
 
-![Fiddler-aanvraag met hoofd tekst](../media/waf-front-door-tuning/fiddler-request-attribute-name.png)
+![Fiddler-aanvraag met de body](../media/waf-front-door-tuning/fiddler-request-attribute-name.png)
 
-Dit is een veld dat u kunt uitsluiten. Zie voor meer informatie over uitsluitings lijsten [Web Application firewall-uitsluitings lijsten](./waf-front-door-exclusion.md). U kunt de evaluatie in dit geval uitsluiten door de volgende uitzonde ring te configureren:
+Dit is een veld dat u kunt uitsluiten. Zie Uitsluitingslijsten voor [Web Application Firewall voor meer informatie over uitsluitingslijsten.](./waf-front-door-exclusion.md) U kunt de evaluatie in dit geval uitsluiten door de volgende uitsluiting te configureren:
 
-![Uitsluitings regel](../media/waf-front-door-tuning/fiddler-request-attribute-name-exclusion.png)
+![Uitsluitingsregel](../media/waf-front-door-tuning/fiddler-request-attribute-name-exclusion.png)
 
-U kunt ook de logboeken van de firewall bekijken om de informatie op te halen om te zien wat u moet toevoegen aan de uitsluitings lijst. Zie [metrische gegevens en logboeken bewaken in azure front deur](./waf-front-door-monitor.md)voor meer informatie over het inschakelen van logboek registratie.
+U kunt ook de firewalllogboeken bekijken om de informatie op te halen om te zien wat u aan de uitsluitingslijst moet toevoegen. Zie Bewaking van metrische gegevens en logboeken in Azure Front Door om logboekregistratie [in te Azure Front Door.](./waf-front-door-monitor.md)
 
-Bekijk het firewall logboek in het `PT1H.json` bestand voor het uur dat de aanvraag die u wilt controleren, heeft plaatsgevonden. `PT1H.json` Er zijn bestanden beschikbaar in de containers van het opslag account waar de `FrontDoorWebApplicationFirewallLog` en de `FrontDoorAccessLog` Diagnostische logboeken worden opgeslagen.
+Controleer het firewalllogboek in het bestand voor het uur dat de aanvraag `PT1H.json` die u wilt controleren heeft plaatsgevonden. `PT1H.json` -bestanden zijn beschikbaar in de opslagaccountcontainers waar `FrontDoorWebApplicationFirewallLog` de diagnostische logboeken en `FrontDoorAccessLog` worden opgeslagen.
 
-In dit voor beeld ziet u de regel die de aanvraag heeft geblokkeerd (met dezelfde transactie referentie) en op exact dezelfde tijd heeft plaatsgevonden:
+In dit voorbeeld ziet u de regel die de aanvraag heeft geblokkeerd (met dezelfde transactieverwijzing) en op exact hetzelfde moment heeft plaatsgevonden:
 
 ```json
 {
@@ -259,21 +259,21 @@ In dit voor beeld ziet u de regel die de aanvraag heeft geblokkeerd (met dezelfd
 }
 ```
 
-Met uw kennis van hoe de door Azure beheerde regel sets werken (Zie [Web Application firewall op de Azure front deur](afds-overview.md)) weet u dat de regel met de *actie:* de eigenschap Block wordt geblokkeerd op basis van de gegevens die in de aanvraag tekst worden gevonden. U kunt in de details zien dat deze overeenkomt met een patroon ( `1=1` ), en het veld heeft de naam `comment` . Volg dezelfde vorige stappen om de naam van de hoofd tekst van het aanvraag bericht met te sluiten `comment` .
+Als u weet hoe de door Azure beheerde regelsets werken (zie Web Application Firewall op [Azure Front Door](afds-overview.md)) weet u dat de regel met de actie *Blokkeren wordt* geblokkeerd op basis van de gegevens die overeenkomen in de aanvraag body. U kunt in de details zien dat deze overeenkomen met een patroon ( `1=1` ) en dat het veld de naam `comment` heeft. Volg dezelfde vorige stappen om de naam van de aanvraag body post args uit te sluiten die `comment` bevat.
 
-### <a name="finding-request-header-names"></a>Namen van aanvraag headers zoeken
+### <a name="finding-request-header-names"></a>Namen van aanvraagheaders zoeken
 
-Fiddler is opnieuw een handig hulp programma om namen van aanvraag headers te vinden. In de volgende scherm afbeelding ziet u de kopteksten voor deze GET-aanvraag, waaronder content-type, User-agent, enzovoort. U kunt ook aanvraag headers gebruiken om uitsluitingen en aangepaste regels te maken in WAF.
+Fiddler is opnieuw een handig hulpmiddel om headernamen van aanvragen te vinden. In de volgende schermopname ziet u de headers voor deze GET-aanvraag, waaronder Content-Type, User-Agent, en meer. U kunt ook aanvraagheaders gebruiken om uitsluitingen en aangepaste regels te maken in WAF.
 
-![Fiddler-aanvraag met koptekst](../media/waf-front-door-tuning/fiddler-request-header-name.png)
+![Fiddler-aanvraag met header](../media/waf-front-door-tuning/fiddler-request-header-name.png)
 
-Een andere manier om aanvraag-en antwoord headers weer te geven, is door te zoeken in de ontwikkel hulpprogramma's van uw browser, zoals Edge of Chrome. U kunt op F12 drukken of met de rechter muisknop > Ontwikkelhulpprogramma's **inspecteren**  ->  en het tabblad **netwerk** selecteren. Laad een webpagina en klik op de aanvraag die u wilt inspecteren.
+Een andere manier om aanvraag- en antwoordheaders weer te geven, is door te kijken in de ontwikkelhulpprogramma's van uw browser, zoals Edge of Chrome. Druk op F12 of klik met de rechtermuisknop op -> **Inspect** Ontwikkelhulpprogramma's en selecteer het tabblad Netwerk. Laad een webpagina en klik op de aanvraag die  ->  u wilt inspecteren. 
 
-![Netwerk controle-aanvraag](../media/waf-front-door-tuning/network-inspector-request.png)
+![Aanvraag voor netwerkcontrole](../media/waf-front-door-tuning/network-inspector-request.png)
 
-### <a name="finding-request-cookie-names"></a>Cookie namen van aanvragen zoeken
+### <a name="finding-request-cookie-names"></a>Aanvraagcookienamen zoeken
 
-Als de aanvraag cookies bevat, kan het tabblad cookies worden geselecteerd om ze weer te geven in Fiddler. Cookie-informatie kan ook worden gebruikt voor het maken van uitsluitingen of aangepaste regels in WAF.
+Als de aanvraag cookies bevat, kan het tabblad Cookies worden geselecteerd om ze weer te geven in Fiddler. Cookie-informatie kan ook worden gebruikt voor het maken van uitsluitingen of aangepaste regels in WAF.
 
 ## <a name="next-steps"></a>Volgende stappen
 

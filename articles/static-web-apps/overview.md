@@ -7,24 +7,24 @@ ms.service: static-web-apps
 ms.topic: overview
 ms.date: 04/01/2021
 ms.author: cshoe
-ms.openlocfilehash: e81f0a9e4fc50cf0d80f2905b9328af3c721865c
-ms.sourcegitcommit: d23602c57d797fb89a470288fcf94c63546b1314
+ms.openlocfilehash: 945979daa3c766b737e5b312a6c14e60204a6a55
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106166395"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874059"
 ---
 # <a name="what-is-azure-static-web-apps-preview"></a>Wat is Azure Static Web Apps Preview?
 
-Azure static Web Apps is een service die automatisch volledige stack-web-apps bouwt en implementeert in azure vanuit een code opslagplaats.
+Azure Static Web Apps is een service die automatisch volledige stack web-apps bouwt en implementeert in Azure vanuit een codeopslagplaats.
 
-:::image type="content" source="media/overview/azure-static-web-apps-overview.png" alt-text="Overzichts diagram van statische Azure-Web Apps":::
+:::image type="content" source="media/overview/azure-static-web-apps-overview.png" alt-text="Azure Static Web Apps overzichtsdiagram":::
 
-De werkstroom van Azure Static Web Apps wordt aangepast aan de dagelijkse werkstroom van een ontwikkelaar. Apps worden gebouwd en geïmplementeerd op basis van code wijzigingen.
+De werkstroom van Azure Static Web Apps wordt aangepast aan de dagelijkse werkstroom van een ontwikkelaar. Apps worden gebouwd en geïmplementeerd op basis van codewijzigingen.
 
-Wanneer u een statische Azure Web Apps-resource maakt, communiceert Azure rechtstreeks met GitHub of Azure DevOps om een vertakking van uw keuze te bewaken. Elke keer dat u pusht of pull-aanvragen in de gevolgde vertakking accepteert, wordt automatisch een build uitgevoerd en wordt uw app en API geïmplementeerd in Azure.
+Wanneer u een resource Azure Static Web Apps, communiceert Azure rechtstreeks met GitHub of Azure DevOps om een vertakking van uw keuze te bewaken. Telkens wanneer u commits pusht of pull-aanvragen accepteert in de gevolgde vertakking, wordt er automatisch een build uitgevoerd en worden uw app en API geïmplementeerd in Azure.
 
-Statische web-apps zijn doorgaans gebouwd met behulp van bibliotheken en frameworks, zoals hoek, reageren, svelte, vue of razendsnelle, waarbij server side rendering niet is vereist. Deze apps zijn onder andere HTML-, CSS-, JavaScript- en afbeeldingsactiva waaruit de toepassing bestaat. Met een traditionele webserver worden deze activa geleverd vanaf één server naast eventuele vereiste API-eindpunten.
+Statische web-apps worden vaak gebouwd met behulp van bibliotheken en frameworks zoals Angular, React, Svelte, Vue of Blazor, waarbij server side rendering niet vereist is. Deze apps zijn onder andere HTML-, CSS-, JavaScript- en afbeeldingsactiva waaruit de toepassing bestaat. Met een traditionele webserver worden deze activa geleverd vanaf één server naast eventuele vereiste API-eindpunten.
 
 Met Static Web Apps worden statische activa gescheiden van een traditionele webserver, en worden in plaats hiervan geleverd vanaf punten die geografisch wereldwijd zijn gedistribueerd. Deze distributie maakt het uitvoeren van bestanden veel sneller dan bestanden die zich fysiek dichter bij eindgebruikers bevinden. Daarnaast worden API-eindpunten gehost met behulp van een [serverloze architectuur](../azure-functions/functions-overview.md), waardoor er helemaal geen volledige back-end-server meer nodig is.
 
@@ -32,7 +32,7 @@ Met Static Web Apps worden statische activa gescheiden van een traditionele webs
 
 - **Webhosting** voor statische inhoud zoals HTML, CSS, JavaScript en afbeeldingen.
 - Ondersteuning voor **Geïntegreerde API** geboden in Azure Functions.
-- **Eersteklas github-en Azure DevOps-integratie** waarbij de opslag plaats trigger-builds en implementaties wijzigt.
+- **Eersteklas GitHub- en Azure DevOps-integratie** waarbij wijzigingen in de opslagplaats builds en implementaties activeren.
 - **Wereldwijd gedistribueerde** statische inhoud, waardoor inhoud zich dichter bij de gebruikers bevindt.
 - **Gratis SSL-certificaten** die automatisch worden verlengd.
 - **Aangepaste domeinen** om uw app merkaanpassingen te bieden.
@@ -44,7 +44,7 @@ Met Static Web Apps worden statische activa gescheiden van een traditionele webs
 
 ## <a name="what-you-can-do-with-static-web-apps"></a>Wat u kunt doen met Static Web Apps
 
-- **Moderne webtoepassingen bouwen** met JavaScript-frameworks en bibliotheken, zoals [Angular](getting-started.md?tabs=angular), [React](getting-started.md?tabs=react), [Svelte](/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md?tabs=react) of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) gebruiken om WebAssembly-toepassingen te maken, met een back-end van [Azure Functions](apis.md).
+- **Moderne webtoepassingen bouwen** met JavaScript-frameworks en bibliotheken, zoals [Angular](getting-started.md?tabs=angular), [React](getting-started.md?tabs=react), [Svelte](/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md?tabs=vue) of [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) gebruiken om WebAssembly-toepassingen te maken, met een back-end van [Azure Functions](apis.md).
 - **Statische sites publiceren** met frameworks zoals [Gatsby](publish-gatsby.md), [Hugo](publish-hugo.md), [VuePress](publish-vuepress.md).
 - **Webtoepassingen implementeren** met frameworks zoals [Nuxt.js](deploy-nextjs.md) en [Nuxt.js](deploy-nuxtjs.md).
 

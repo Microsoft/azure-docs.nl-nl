@@ -3,27 +3,27 @@ title: Statisch uitgaand IP-adres configureren
 description: Azure Firewall en door de gebruiker gedefinieerde routes configureren voor Azure Container Instances workloads die gebruikmaken van het openbare IP-adres van de firewall voor in- en uitvoeren
 ms.topic: article
 ms.date: 07/16/2020
-ms.openlocfilehash: 1cd0ff48da58706a1be59caf4b9d5974dc5f552a
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: a03c59652b9409d54bbe63c63a31fdd2228ac34e
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107790811"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107878682"
 ---
 # <a name="configure-a-single-public-ip-address-for-outbound-and-inbound-traffic-to-a-container-group"></a>Eén openbaar IP-adres configureren voor uitgaand en inkomende verkeer naar een containergroep
 
-Door een [containergroep met een](container-instances-container-groups.md) extern gericht IP-adres in te stellen, kunnen externe clients het IP-adres gebruiken voor toegang tot een container in de groep. Een browser heeft bijvoorbeeld toegang tot een web-app die wordt uitgevoerd in een container. Momenteel gebruikt een containergroep echter een ander IP-adres voor uitgaand verkeer. Dit ip-adres voor toegangsuitgang wordt niet programmatisch blootgesteld, waardoor het bewaken en configureren van clientfirewallregels voor containergroep complexer wordt.
+Door een [containergroep met een](container-instances-container-groups.md) extern gericht IP-adres in te stellen, kunnen externe clients het IP-adres gebruiken voor toegang tot een container in de groep. Een browser heeft bijvoorbeeld toegang tot een web-app die wordt uitgevoerd in een container. Momenteel gebruikt een containergroep echter een ander IP-adres voor uitgaand verkeer. Dit ip-adres voor het egressie-adres wordt niet programmatisch blootgesteld, waardoor de bewaking en configuratie van clientfirewallregels voor containergroep complexer wordt.
 
-Dit artikel bevat stappen voor het configureren van een containergroep in een [virtueel netwerk dat](container-instances-virtual-network-concepts.md) is geïntegreerd met [Azure Firewall.](../firewall/overview.md) Door een door de gebruiker gedefinieerde route naar de containergroep en firewallregels in te stellen, kunt u verkeer naar en van de containergroep routeer en identificeren. Ingress en egress van containergroep gebruiken het openbare IP-adres van de firewall. Eén ip-adres voor een egress kan worden gebruikt door meerdere containergroepen die zijn geïmplementeerd in het subnet van het virtuele netwerk dat is gedelegeerd aan Azure Container Instances.
+Dit artikel bevat stappen voor het configureren van een containergroep in een [virtueel netwerk dat](container-instances-virtual-network-concepts.md) is geïntegreerd met [Azure Firewall](../firewall/overview.md). Door een door de gebruiker gedefinieerde route naar de containergroep en firewallregels in te stellen, kunt u verkeer van en naar de containergroep routeer en identificeren. In- en uit te gaan van een containergroep gebruiken het openbare IP-adres van de firewall. Eén IP-adres voor een egress kan worden gebruikt door meerdere containergroepen die zijn geïmplementeerd in het subnet van het virtuele netwerk dat is gedelegeerd aan Azure Container Instances.
 
 In dit artikel gebruikt u de Azure CLI om de resources voor dit scenario te maken:
 
 * Containergroepen die zijn geïmplementeerd op een gedelegeerd subnet [in het virtuele netwerk](container-instances-vnet.md) 
 * Een Azure-firewall geïmplementeerd in het netwerk met een statisch openbaar IP-adres
 * Een door de gebruiker gedefinieerde route op het subnet van de containergroepen
-* Een NAT-regel voor ingressie door de firewall en een toepassingsregel voorgress
+* Een NAT-regel voor ingressie van de firewall en een toepassingsregel voorgress
 
-Vervolgens valideert u toegangs- en egress-gegevens van voorbeeldcontainergroepen via de firewall.
+Vervolgens valideert u ingress en egress vanuit voorbeeldcontainergroepen via de firewall.
 
 ## <a name="deploy-aci-in-a-virtual-network"></a>ACI implementeren in een virtueel netwerk
 
@@ -129,7 +129,7 @@ FW_PRIVATE_IP="$(az network firewall ip-config list \
   --firewall-name myFirewall \
   --query "[].privateIpAddress" --output tsv)"
 ```
-Haal het openbare IP-adres van de firewall op met de [opdracht az network public-ip show.][az-network-public-ip-show] Dit openbare IP-adres wordt gebruikt in een latere opdracht.
+Haal het openbare IP-adres van de firewall op met [de opdracht az network public-ip show.][az-network-public-ip-show] Dit openbare IP-adres wordt gebruikt in een latere opdracht.
 
 ```azurecli
 FW_PUBLIC_IP="$(az network public-ip show \
@@ -140,11 +140,11 @@ FW_PUBLIC_IP="$(az network public-ip show \
 
 ## <a name="define-user-defined-route-on-aci-subnet"></a>Door de gebruiker gedefinieerde route definiëren op ACI-subnet
 
-Definieer een door het gebruik gedefinieerde route op het ACI-subnet om verkeer om te leiden naar de Azure-firewall. Zie Netwerkverkeer [routeer voor meer informatie.](../virtual-network/tutorial-create-route-table-cli.md) 
+Definieer een gebruiks gedefinieerde route op het ACI-subnet om verkeer om te leiden naar de Azure-firewall. Zie Netwerkverkeer [routeer voor meer informatie.](../virtual-network/tutorial-create-route-table-cli.md) 
 
 ### <a name="create-route-table"></a>Routetabel maken
 
-Voer eerst de volgende [opdracht az network route-table create uit om][az-network-route-table-create] de routetabel te maken. Maak de routetabel in dezelfde regio als het virtuele netwerk.
+Voer eerst de volgende [opdracht az network route-table create uit][az-network-route-table-create] om de routetabel te maken. Maak de routetabel in dezelfde regio als het virtuele netwerk.
 
 ```azurecli
 az network route-table create \
@@ -156,7 +156,7 @@ az network route-table create \
 
 ### <a name="create-route"></a>Route maken
 
-Voer [az network-route-table route create uit om][az-network-route-table-route-create] een route te maken in de routetabel. Als u verkeer naar de firewall wilt door sturen, stelt u het volgende hoptype in op en wordt het privé-IP-adres van de firewall als het adres van `VirtualAppliance` de volgende hop doorgeven.
+Voer [az network-route-table route create uit om][az-network-route-table-route-create] een route te maken in de routetabel. Als u verkeer naar de firewall wilt door sturen, stelt u het volgende hoptype in op en geef het privé-IP-adres van de firewall door als het adres `VirtualAppliance` van de volgende hop.
 
 ```azurecli
 az network route-table route create \
@@ -185,9 +185,9 @@ az network vnet subnet update \
 
 Standaard worden Azure Firewall (blokken) inkomende en uitgaande verkeer niet geaccepteerd. 
 
-### <a name="configure-nat-rule-on-firewall-to-aci-subnet"></a>NAT-regel op firewall naar ACI-subnet configureren
+### <a name="configure-nat-rule-on-firewall-to-aci-subnet"></a>NAT-regel configureren op firewall naar ACI-subnet
 
-Maak een [NAT-regel op](../firewall/rule-processing.md) de firewall om inkomende internetverkeer om te zetten en te filteren naar de toepassingscontainer die u eerder in het netwerk hebt gestart. Zie Inkomende internetverkeer filteren met Azure Firewall [DNAT voor meer informatie](../firewall/tutorial-firewall-dnat.md)
+Maak een [NAT-regel](../firewall/rule-processing.md) op de firewall om inkomende internetverkeer om te zetten en te filteren naar de toepassingscontainer die u eerder in het netwerk hebt gestart. Zie Inkomende internetverkeer filteren met Azure Firewall [DNAT voor meer informatie](../firewall/tutorial-firewall-dnat.md)
 
 Maak een NAT-regel en -verzameling met behulp van [de opdracht az network firewall nat-rule create:][az-network-firewall-nat-rule-create]
 
@@ -207,11 +207,11 @@ az network firewall nat-rule create \
   --priority 200
 ```
 
-Voeg waar nodig NAT-regels toe om verkeer naar andere IP-adressen in het subnet te filteren. Andere containergroepen in het subnet kunnen bijvoorbeeld IP-adressen voor inkomende verkeer blootstellen of andere interne IP-adressen kunnen worden toegewezen aan de containergroep na het opnieuw opstarten.
+Voeg zo nodig NAT-regels toe om verkeer naar andere IP-adressen in het subnet te filteren. Andere containergroepen in het subnet kunnen bijvoorbeeld IP-adressen voor inkomende verkeer blootstellen of andere interne IP-adressen kunnen worden toegewezen aan de containergroep na het opnieuw opstarten.
 
 ### <a name="create-outbound-application-rule-on-the-firewall"></a>Uitgaande toepassingsregel maken op de firewall
 
-Voer de volgende [opdracht az network firewall application-rule create][az-network-firewall-application-rule-create] uit om een uitgaande regel op de firewall te maken. Deze voorbeeldregel staat toegang toe vanaf het subnet dat is gedelegeerd Azure Container Instances tot de FQDN. `checkip.dyndns.org` HTTP-toegang tot de site wordt in een latere stap gebruikt om het ip-adres van het Azure Container Instances.
+Voer de volgende [az network firewall application-rule create-opdracht][az-network-firewall-application-rule-create] uit om een uitgaande regel op de firewall te maken. Deze voorbeeldregel staat toegang toe vanaf het subnet dat is gedelegeerd Azure Container Instances tot de FQDN. `checkip.dyndns.org` HTTP-toegang tot de site wordt in een latere stap gebruikt om het IP-adres van het Azure Container Instances.
 
 ```azurecli
 az network firewall application-rule create \
@@ -232,7 +232,7 @@ In de volgende secties wordt gecontroleerd of het subnet dat is gedelegeerd Azur
 
 ### <a name="test-ingress-to-a-container-group"></a>Ingress naar een containergroep testen
 
-Test de inkomende toegang tot *de appcontainer die* wordt uitgevoerd in het virtuele netwerk door naar het openbare IP-adres van de firewall te bladeren. Eerder hebt u het openbare IP-adres opgeslagen in variabele $FW_PUBLIC_IP:
+Test de binnenkomende toegang tot de *appcontainer die* wordt uitgevoerd in het virtuele netwerk door naar het openbare IP-adres van de firewall te bladeren. Eerder hebt u het openbare IP-adres opgeslagen in variabele $FW_PUBLIC_IP:
 
 ```bash
 echo $FW_PUBLIC_IP
@@ -248,10 +248,10 @@ Als de NAT-regel op de firewall juist is geconfigureerd, ziet u het volgende wan
 
 :::image type="content" source="media/container-instances-egress-ip-address/aci-ingress-ip-address.png" alt-text="Blader naar het openbare IP-adres van de firewall":::
 
-### <a name="test-egress-from-a-container-group"></a>Het egress uit een containergroep testen
+### <a name="test-egress-from-a-container-group"></a>Egress uit een containergroep testen
 
 
-Implementeer de volgende voorbeeldcontainer in het virtuele netwerk. Wanneer deze wordt uitgevoerd, wordt er één HTTP-aanvraag naar verstuurd, waarin het IP-adres van de afzender (het ip-adres van het `http://checkip.dyndns.org` egress) wordt weergegeven. Als de toepassingsregel op de firewall juist is geconfigureerd, wordt het openbare IP-adres van de firewall geretourneerd.
+Implementeer de volgende voorbeeldcontainer in het virtuele netwerk. Wanneer deze wordt uitgevoerd, wordt er één HTTP-aanvraag naar verstuurd, waarin het IP-adres van de afzender (het ip-adres van `http://checkip.dyndns.org` het egress-adres) wordt weergegeven. Als de toepassingsregel op de firewall juist is geconfigureerd, wordt het openbare IP-adres van de firewall geretourneerd.
 
 ```azurecli
 az container create \
@@ -280,9 +280,9 @@ De uitvoer ziet er ongeveer zo uit:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel stelt u containergroepen in een virtueel netwerk in achter een Azure-firewall. U hebt een door de gebruiker gedefinieerde route en NAT- en toepassingsregels op de firewall geconfigureerd. Met behulp van deze configuratie stelt u één statisch IP-adres in voor in- en Azure Container Instances.
+In dit artikel stelt u containergroepen in een virtueel netwerk in achter een Azure-firewall. U hebt een door de gebruiker gedefinieerde route en NAT- en toepassingsregels geconfigureerd in de firewall. Met behulp van deze configuratie stelt u één statisch IP-adres in voor in- en Azure Container Instances.
 
-Zie de documentatie over Azure Firewall informatie over het beheren van verkeer en het [beveiligen Azure Firewall Azure-resources.](../firewall/index.yml)
+Voor meer informatie over het beheren van verkeer en het beveiligen van Azure-resources, zie [Azure Firewall](../firewall/index.yml) documentatie.
 
 
 
@@ -290,15 +290,15 @@ Zie de documentatie over Azure Firewall informatie over het beheren van verkeer 
 [az-container-create]: /cli/azure/container#az_container_create
 [az-network-vnet-subnet-create]: /cli/azure/network/vnet/subnet#az_network_vnet_subnet_create
 [az-extension-add]: /cli/azure/extension#az_extension_add
-[az-network-firewall-update]: /cli/azure/ext/azure-firewall/network/firewall#ext-azure-firewall-az-network-firewall-update
+[az-network-firewall-update]: /cli/azure/network/firewall#az_network_firewall_update
 [az-network-public-ip-show]: /cli/azure/network/public-ip/#az_network_public_ip_show
 [az-network-route-table-create]:/cli/azure/network/route-table/#az_network_route_table_create
 [az-network-route-table-route-create]: /cli/azure/network/route-table/route#az_network_route_table_route_create
-[az-network-firewall-ip-config-list]: /cli/azure/ext/azure-firewall/network/firewall/ip-config#ext-azure-firewall-az-network-firewall-ip-config-list
+[az-network-firewall-ip-config-list]: /cli/azure/network/firewall/ip-config#az_network_firewall_ip_config_list
 [az-network-vnet-subnet-update]: /cli/azure/network/vnet/subnet#az_network_vnet_subnet_update
 [az-container-exec]: /cli/azure/container#az_container_exec
 [az-vm-create]: /cli/azure/vm#az_vm_create
 [az-vm-open-port]: /cli/azure/vm#az_vm_open_port
 [az-vm-list-ip-addresses]: /cli/azure/vm#az_vm_list_ip_addresses
-[az-network-firewall-application-rule-create]: /cli/azure/ext/azure-firewall/network/firewall/application-rule#ext-azure-firewall-az-network-firewall-application-rule-create
-[az-network-firewall-nat-rule-create]: /cli/azure/ext/azure-firewall/network/firewall/nat-rule#ext-azure-firewall-az-network-firewall-nat-rule-create
+[az-network-firewall-application-rule-create]: /cli/azure/network/firewall/application-rule#az_network_firewall_application_rule_create
+[az-network-firewall-nat-rule-create]: /cli/azure/network/firewall/nat-rule#az_network_firewall_nat_rule_create

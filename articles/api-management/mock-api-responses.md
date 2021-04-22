@@ -7,12 +7,12 @@ ms.custom: mvc, devx-track-azurecli
 ms.topic: tutorial
 ms.date: 02/09/2021
 ms.author: apimpm
-ms.openlocfilehash: a7617a36ed800f1765ed7723568a4b612fcb6518
-ms.sourcegitcommit: 272351402a140422205ff50b59f80d3c6758f6f6
+ms.openlocfilehash: 6214594f825908388762ac35cc8c8722ff9135f1
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107587575"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874347"
 ---
 # <a name="tutorial-mock-api-responses"></a>Zelfstudie: Gesimuleerde antwoorden van een API
 
@@ -95,7 +95,7 @@ Als u Azure CLI wilt gaan gebruiken, gaat u als volgende te werk:
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-Als u een bewerking wilt toevoegen aan uw test-API, moet u de [opdracht az apim api operation create](/cli/azure/apim/api/operation#az_apim_api_operation_create) uitvoeren:
+Voer de opdracht [az apim api operation create](/cli/azure/apim/api/operation#az_apim_api_operation_create) uit om een bewerking toe te voegen aan uw test-API:
 
 ```azurecli
 az apim api operation create --resource-group apim-hello-word-resource-group \

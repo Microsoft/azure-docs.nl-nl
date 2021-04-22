@@ -1,21 +1,21 @@
 ---
 title: Vertaalstatus op halen
 titleSuffix: Azure Cognitive Services
-description: De methode get translation status retourneert de status voor een aanvraag voor documentvertaling.
+description: De methode get translation status retourneert de status voor een documentvertalingsaanvraag.
 services: cognitive-services
 author: jann-skotdal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 03/25/2021
+ms.date: 04/21/2021
 ms.author: v-jansk
-ms.openlocfilehash: 8b129974396e420948737c9bdf47a5707decab6b
-ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
+ms.openlocfilehash: c17cd6cb97aaac3cd08342270e4eafa07eb5fd7d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107836165"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864879"
 ---
 # <a name="get-translation-status"></a>Vertaalstatus op halen
 
@@ -28,12 +28,12 @@ Verzend een `GET` aanvraag naar:
 GET https://<NAME-OF-YOUR-RESOURCE>.cognitiveservices.azure.com/translator/text/batch/v1.0-preview.1/batches/{id}
 ```
 
-Meer informatie over het vinden van [uw aangepaste domeinnaam](../get-started-with-document-translation.md#find-your-custom-domain-name).
+Meer informatie over het vinden [van uw aangepaste domeinnaam](../get-started-with-document-translation.md#find-your-custom-domain-name).
 
 > [!IMPORTANT]
 >
 > * **Voor alle API-aanvragen voor de documentvertalingsservice is een aangepast domein-eindpunt vereist.**
-> * U kunt het eindpunt dat u op uw  Azure Portal resourcesleutels en eindpuntpagina hebt gevonden, noch het globale translator-eindpunt gebruiken om HTTP-aanvragen te maken voor `api.cognitive.microsofttranslator.com` documentvertaling.
+> * U kunt het eindpunt op de pagina sleutels  en eindpunt van uw Azure Portal-resource, noch het globale translator-eindpunt, , gebruiken om HTTP-aanvragen voor documentvertaling `api.cognitive.microsofttranslator.com` te maken.
 
 
 ## <a name="request-parameters"></a>Aanvraagparameters
@@ -64,7 +64,7 @@ Hier volgen de mogelijke HTTP-statuscodes die een aanvraag retourneert.
 |500|Interne serverfout.|
 |Andere statuscodes|<ul><li>Te veel aanvragen</li><li>Server tijdelijk niet beschikbaar</li></ul>|
 
-## <a name="get-translation-status-response"></a>Antwoord van vertaalstatus op halen
+## <a name="get-translation-status-response"></a>Antwoord op vertaalstatus krijgen
 
 ### <a name="successful-get-translation-status-response"></a>Geslaagd antwoord op vertaalstatus
 
@@ -73,7 +73,7 @@ De volgende informatie wordt geretourneerd als een geslaagd antwoord.
 |Naam|Type|Beschrijving|
 |--- |--- |--- |
 |id|tekenreeks|Id van de bewerking.|
-|createdDateTimeUtc|tekenreeks|Bewerking datum/tijd gemaakt.|
+|createdDateTimeUtc|tekenreeks|Datum/tijd van bewerking gemaakt.|
 |lastActionDateTimeUtc|tekenreeks|De datum waarop de status van de bewerking is bijgewerkt.|
 |status|Tekenreeks|Lijst met mogelijke statussen voor een taak of document: <ul><li>Geannuleerd</li><li>Annuleren</li><li>Mislukt</li><li>Niet gestart</li><li>Wordt uitgevoerd</li><li>Geslaagd</li><li>ValidationFailed</li></ul>|
 |samenvatting|StatusSummary|Samenvatting met de details die hieronder worden vermeld.|
@@ -81,7 +81,7 @@ De volgende informatie wordt geretourneerd als een geslaagd antwoord.
 |summary.failed|geheel getal|Aantal mislukte pogingen.|
 |summary.success|geheel getal|Aantal geslaagde.|
 |summary.inProgress|geheel getal|Het aantal wordt uitgevoerd.|
-|summary.notYetStarted|geheel getal|Aantal van nog niet gestart.|
+|summary.notYetStarted|geheel getal|Aantal nog niet gestart.|
 |summary.cancelled|geheel getal|Aantal geannuleerd.|
 |summary.totalCharacterCharged|geheel getal|Totaal aantal tekens dat in rekening wordt gebracht door de API.|
 

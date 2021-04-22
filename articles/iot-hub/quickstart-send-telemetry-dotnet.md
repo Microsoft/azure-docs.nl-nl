@@ -1,5 +1,5 @@
 ---
-title: Quick Start-telemetrie verzenden naar Azure IoT Hub Snelstartgids (C#) | Microsoft Docs
+title: 'Quickstart: Telemetrie verzenden naar Azure IoT Hub quickstart (C#) | Microsoft Docs'
 description: In deze snelstart voert u twee C#-voorbeeldtoepassingen uit om gesimuleerde telemetrie te verzenden naar een IoT-hub en telemetrie van de IoT-hub te lezen voor verwerking in de cloud.
 author: robinsh
 manager: philmea
@@ -14,12 +14,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - devx-track-azurecli
 ms.date: 06/01/2020
-ms.openlocfilehash: 1a681cd3f1c624268fdc9bc62cf9841e9ac28827
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: ec26e4a42cdeb7a693c8078c0f065241f32da949
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106057504"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107863979"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-service-application-net"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub, en lezen met een servicetoepassing (.NET)
 
@@ -35,7 +35,7 @@ In de snelstartgids worden twee vooraf geschreven C#-toepassingen gebruikt, éé
 
 * De twee voorbeeldtoepassingen die u uitvoert in deze snelstartgids zijn geschreven in C#. .NET Core SDK 3.1 of hoger moet zijn geïnstalleerd op de ontwikkelcomputer.
 
-    U kunt de .NET Core SDK voor meerdere platforms downloaden van [.NET](https://www.microsoft.com/net/download/all).
+    U kunt de .NET Core SDK voor meerdere platforms downloaden van [.NET](https://dotnet.microsoft.com/download).
 
     Gebruik de volgende opdracht om de huidige versie van C# op uw ontwikkelcomputer te controleren:
 

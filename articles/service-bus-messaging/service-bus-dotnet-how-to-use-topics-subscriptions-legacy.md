@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.date: 09/02/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 28e94cdb0df0a18b41f4c8a0ded362b50df6dcac
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: a64ccec49248f48a85782cfe9537513a97b2bdfc
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100652969"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107868155"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Aan de slag met Service Bus-onderwerpen
 Deze zelfstudie bestaat uit de volgende stappen:
@@ -19,7 +19,7 @@ Deze zelfstudie bestaat uit de volgende stappen:
 2. Schrijf een .NET Core-consoletoepassing om deze berichten van het abonnement te ontvangen.
 
 > [!WARNING]
-> Deze Snelstartgids maakt gebruik van het oude pakket micro soft. Azure. ServiceBus. Zie [berichten verzenden en ontvangen met het pakket Azure. Messa ging. ServiceBus](service-bus-dotnet-how-to-use-topics-subscriptions.md)voor een Snelstartgids waarbij het meest recente Azure. Messa ging. ServiceBus-pakket wordt gebruikt. Raadpleeg de [hand leiding voor het migreren van micro soft. Azure. ServiceBus naar Azure. Messa ging. ServiceBus](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/servicebus/Azure.Messaging.ServiceBus/MigrationGuide.md)om uw toepassing te verplaatsen van de oude naar een nieuwe-bibliotheek. 
+> In deze quickstart wordt het oude pakket Microsoft.Azure.ServiceBus gebruikt. Zie Berichten verzenden en ontvangen met het [Azure.Messaging.ServiceBus-pakket](service-bus-dotnet-how-to-use-topics-subscriptions.md)voor een quickstart die gebruikmaakt van het meest recente pakket Azure.Messaging.ServiceBus. Zie de Handleiding voor het migreren van [Microsoft.Azure.ServiceBus naar Azure.Messaging.ServiceBus](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/servicebus/Azure.Messaging.ServiceBus/MigrationGuide.md)als u uw toepassing wilt verplaatsen van de oude bibliotheek naar een nieuwe bibliotheek. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -28,9 +28,9 @@ Deze zelfstudie bestaat uit de volgende stappen:
     1. Maak een Service Bus-**naamruimte**.
     2. Haal de **verbindingsreeks** op.
     3. Maak een **onderwerp** in de naamruimte.
-    4. Maak **één abonnement** op het onderwerp in de naam ruimte.
+    4. Maak **één abonnement** op het onderwerp in de naamruimte.
 3. [Visual Studio 2017 update 3 (versie 15.3, 26730.01)](https://www.visualstudio.com/vs) of hoger.
-4. [NET Core SDK](https://www.microsoft.com/net/download/windows), versie 2.0 of later.
+4. [NET Core SDK](https://dotnet.microsoft.com/download), versie 2.0 of later.
  
 ## <a name="send-messages-to-the-topic"></a>Berichten naar het onderwerp verzenden
 
@@ -66,7 +66,7 @@ Start Visual Studio en maak een nieuwe **consoletoepassing (.NET Core)**.
     static ITopicClient topicClient;
     ``` 
 
-3. Vervang de- `Main()` methode door de volgende **asynchrone** `Main` methode waarmee berichten asynchroon worden verzonden met de methode SendMessagesAsync die u in de volgende stap gaat toevoegen. 
+3. Vervang de methode door de volgende asynchrone methode waarmee berichten asynchroon worden verzonden met behulp van de `Main()`  `Main` SendMessagesAsync-methode die u in de volgende stap gaat toevoegen. 
 
     ```csharp
     public static async Task Main(string[] args)
@@ -179,7 +179,7 @@ Start Visual Studio en maak een nieuwe **consoletoepassing (.NET Core)**.
 
 ## <a name="receive-messages-from-the-subscription"></a>Berichten ontvangen van het abonnement
 
-Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere .NET core-console toepassing en installeert u het pakket **micro soft. Azure. ServiceBus** NuGet, zoals in de vorige toepassing van de afzender.
+Als u de berichten wilt ontvangen die u hebt verzonden, maakt u nog een .NET Core-consoletoepassing en installeert u het **Microsoft.Azure.ServiceBus** NuGet-pakket, vergelijkbaar met de vorige verzendtoepassing.
 
 ### <a name="write-code-to-receive-messages-from-the-subscription"></a>Schrijven van code voor het ontvangen van berichten van het abonnement
 
@@ -201,7 +201,7 @@ Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere .NET 
     static ISubscriptionClient subscriptionClient;
     ```
 
-3. Vervang de `Main()`-methode door de volgende **async** `Main`-methode. Hiermee wordt de `RegisterOnMessageHandlerAndReceiveMessages()` methode aangeroepen die u in de volgende stap gaat toevoegen. 
+3. Vervang de `Main()`-methode door de volgende **async** `Main`-methode. De methode wordt `RegisterOnMessageHandlerAndReceiveMessages()` aanroepen die u in de volgende stap gaat toevoegen. 
 
     ```csharp
     public static async Task Main(string[] args)
@@ -355,7 +355,7 @@ Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere .NET 
         }
     }
     ```
-9. Voer het programma uit en controleer de portal opnieuw. U ziet dat het **aantal berichten** en **huidige** waarden nu **0** is.
+9. Voer het programma uit en controleer de portal opnieuw. U ziet dat **de waarden voor Aantal** berichten en **Huidige** nu **0 zijn.**
    
     ![Lengte van het onderwerp][topic-message-receive]
 

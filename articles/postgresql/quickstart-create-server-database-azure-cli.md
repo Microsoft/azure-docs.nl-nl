@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 06/25/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: a595d677cf0964083526cb7e2c73471148be0fd4
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: d4d3b44b0ee878028df369de41451e3dc1d3c6de
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107778414"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107875211"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-by-using-the-azure-cli"></a>Quickstart: Een Azure Database for PostgreSQL-server maken met behulp van Azure CLI
 
@@ -24,7 +24,7 @@ In deze quickstart wordt beschreven hoe u [Azure CLI](/cli/azure/get-started-wit
 - Voor dit artikel is versie 2.0 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
     > [!TIP]
-    >  Overweeg het gebruik van de eenvoudigere Azure CLI-opdracht [az postgres up](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up), die momenteel als preview-versie beschikbaar is. Probeer de [quickstart](./quickstart-create-server-up-azure-cli.md).
+    >  Overweeg het gebruik van de eenvoudigere Azure CLI-opdracht [az postgres up](/cli/azure/postgres#az_postgres_up), die momenteel als preview-versie beschikbaar is. Probeer de [quickstart](./quickstart-create-server-up-azure-cli.md).
 
 - Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account).
 

@@ -1,42 +1,42 @@
 ---
-title: Model variabelen-Azure Time Series Insights Gen2 | Microsoft Docs
-description: Model variabelen
+title: Modelvariabelen - Azure Time Series Insights Gen2-| Microsoft Docs
+description: Modelvariabelen
 author: shreyasharmamsft
 ms.author: shresha
 ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 01/22/2021
-ms.openlocfilehash: fd08dc98fa47617bbc7c8d1fff895377837a7327
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 01184a4eb2aac81bbcabcebf89ef10afeabddbe8
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98736731"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107872961"
 ---
-# <a name="time-series-model-variables"></a>Variabelen voor time series-model
+# <a name="time-series-model-variables"></a>Tijdreeksmodelvariabelen
 
-In dit artikel worden de tijdreeks model variabelen beschreven waarmee formule-en reken regels voor gebeurtenissen worden opgegeven.
+In dit artikel worden de Time Series Model-variabelen beschreven die formule- en berekeningsregels voor gebeurtenissen opgeven.
 
-Elke variabele kan een van de volgende drie typen zijn: *numeric*, *categorische* en *aggregatie*.
+Elke variabele kan een van de volgende drie typen zijn: *numeriek,* *categorisch* en *geaggregeerd.*
 
-* **Numerieke** soorten werken met doorlopende numerieke waarden.
-* **Categorische** -soorten werken met een gedefinieerde set discrete waarden.
-* Bij **gecombineerde** typen worden meerdere variabelen van één soort gecombineerd (ofwel alle numerieke ofwel alle categorische).
+* **Numerieke typen** werken met doorlopende numerieke waarden.
+* **Categorische** soorten werken met een gedefinieerde set discrete waarden.
+* **Aggregatiesoorten** combineren meerdere variabelen van één type (alle numerieke of alle categorische variabelen).
 
 In de volgende tabel ziet u welke eigenschappen relevant zijn voor elk type variabele.
 
-[![Tabel met variabele Time Series-modellen](media/v2-update-tsm/time-series-model-variable-table.png)](media/v2-update-tsm/time-series-model-variable-table.png#lightbox)
+[![Tabel met variabele time series-modellen](media/v2-update-tsm/time-series-model-variable-table.png)](media/v2-update-tsm/time-series-model-variable-table.png#lightbox)
 
 ## <a name="numeric-variables"></a>Numerieke variabelen
 
-| Eigenschap variable | Description |
+| Variabele eigenschap | Description |
 | --- | ---|
-| Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
-| Waarde van variabele | Telemetrie-waarden die worden gebruikt voor berekeningen die afkomstig zijn van het apparaat of Sens oren of worden getransformeerd met behulp van Time Series-expressies. De variabelen van een numeriek type moeten van het type *Double* zijn.|
-| Variabele interpolatie | Interpolatie Hiermee geeft u op hoe een signaal opnieuw moet worden samengesteld met behulp van bestaande gegevens. Opties voor *stap* -en *lineaire* interpolatie zijn beschikbaar voor numerieke variabelen. |
-| Variabele aggregatie | Voer berekeningen uit via de ondersteunde [aggregatie functies voor numerieke typen variabelen](/rest/api/time-series-insights/reference-time-series-expression-syntax#numeric-variable-kind). |
+| Variabelefilter | Filters zijn optionele voorwaardelijke clausules om het aantal rijen te beperken dat wordt overwogen voor berekeningen. |
+| Variabele waarde | Telemetriewaarden die worden gebruikt voor berekeningen die afkomstig zijn van het apparaat of de sensoren of worden getransformeerd met behulp van Time Series-expressies. Variabelen van het type Numeriek moeten of zijn `Double` om overeen te komen met het `Long` gegevenstype van de binnenkomende gegevens.|
+| Variabele interpolatie | Interpolatie geeft aan hoe een signaal moet worden gereconstrueerd met behulp van bestaande gegevens. *De* opties *Stap en* Lineaire interpolatie zijn beschikbaar voor numerieke variabelen. |
+| Variabele aggregatie | Voer berekeningen uit via de [ondersteunde aggregatiefuncties voor numerieke variabele soorten](/rest/api/time-series-insights/reference-time-series-expression-syntax#numeric-variable-kind). |
 
-Variabelen voldoen aan het volgende JSON-voor beeld:
+Variabelen voldoen aan het volgende JSON-voorbeeld:
 
 ```JSON
 "Interpolated Speed": {
@@ -59,15 +59,15 @@ Variabelen voldoen aan het volgende JSON-voor beeld:
 
 ## <a name="categorical-variables"></a>Categorische variabelen
 
-| Eigenschap variable | Description |
+| Variabele eigenschap | Description |
 | --- | ---|
-| Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
-| Waarde van variabele | Telemetrie-waarden die worden gebruikt voor de berekening die afkomstig zijn van het apparaat of de Sens oren. Categorische-variabelen moeten een *Long-waarde* of een *teken reeks* zijn. |
-| Variabele interpolatie | Interpolatie Hiermee geeft u op hoe een signaal opnieuw moet worden samengesteld met behulp van bestaande gegevens. De optie interpolatie van de *stap* is beschikbaar voor Categorische-variabelen. |
-| Variabelen Categorieën | Categorieën maken een toewijzing tussen de waarden die afkomstig zijn van het apparaat of Sens oren aan een label. |
-| Variabele standaard categorie | De standaard categorie is voor alle waarden die niet worden toegewezen in de eigenschap ' categories '. |
+| Variabelefilter | Filters zijn optionele voorwaardelijke clausules om het aantal rijen te beperken dat wordt overwogen voor berekeningen. |
+| Variabele waarde | Telemetriewaarden die worden gebruikt voor berekeningen die afkomstig zijn van het apparaat of de sensoren. Categorische soorten variabelen moeten of zijn `Long` om overeen te komen met het `String` gegevenstype van de binnenkomende gegevens. |
+| Variabele interpolatie | Interpolatie geeft aan hoe een signaal moet worden gereconstrueerd met behulp van bestaande gegevens. De *optie Stapinterpolatie* is beschikbaar voor categorische variabelen. |
+| Variabelecategorieën | Categorieën maken een toewijzing tussen de waarden die afkomstig zijn van het apparaat of de sensoren aan een label. |
+| Standaardcategorie voor variabelen | De standaardcategorie is voor alle waarden die niet worden weergegeven in de eigenschap 'categories'. |
 
-Variabelen voldoen aan het volgende JSON-voor beeld:
+Variabelen voldoen aan het volgende JSON-voorbeeld:
 
 ```JSON
 "Status": {
@@ -97,14 +97,14 @@ Variabelen voldoen aan het volgende JSON-voor beeld:
 }
 ```
 
-## <a name="aggregate-variables"></a>Aggregatie variabelen
+## <a name="aggregate-variables"></a>Variabelen aggregeren
 
-| Eigenschap variable | Description |
+| Variabele eigenschap | Description |
 | --- | ---|
-| Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
-| Variabele aggregatie | Voer berekeningen uit via de ondersteunde [aggregatie functies voor aggregatie typen van variabelen](/rest/api/time-series-insights/reference-time-series-expression-syntax#aggregate-variable-kind). |
+| Variabelefilter | Filters zijn optionele voorwaardelijke clausules om het aantal rijen te beperken dat wordt overwogen voor berekeningen. |
+| Variabele aggregatie | Voer berekeningen uit via de ondersteunde [aggregatiefuncties voor Aggregatievariabelen.](/rest/api/time-series-insights/reference-time-series-expression-syntax#aggregate-variable-kind) |
 
-Variabelen voldoen aan het volgende JSON-voor beeld:
+Variabelen voldoen aan het volgende JSON-voorbeeld:
 
 ```JSON
 "Speed Range": {
@@ -116,10 +116,10 @@ Variabelen voldoen aan het volgende JSON-voor beeld:
 }
 ```
 
-Variabelen worden opgeslagen in de type definitie van een time series-model en kunnen inline via Api's worden aangelegd om de opgeslagen definitie te overschrijven of te vullen.
+Variabelen worden opgeslagen in de typedefinitie van een tijdreeksmodel en kunnen inline worden opgegeven via API's om de opgeslagen definitie te overschrijven of aan te vullen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het [Time Series-model](./concepts-model-overview.md).
+* Meer informatie over [Time Series Model.](./concepts-model-overview.md)
 
-* Meer informatie over het definiëren van variabelen inline met behulp van [query-api's](./concepts-query-overview.md).
+* Lees meer over het inline definiëren van variabelen met behulp van [Query-API's.](./concepts-query-overview.md)

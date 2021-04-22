@@ -9,12 +9,12 @@ ms.custom:
 - subject-armqs
 - devx-track-js
 - mode-arm
-ms.openlocfilehash: 5e8b9e1b2a396bb20b35dd69efe26758ba0db543
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: 2f57e86421f7522467a3f4adf4a4e9a21456ba4c
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107537504"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107878736"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-an-arm-template"></a>Quickstart: Een containerinstantie in Azure implementeren met behulp van een ARM-sjabloon
 
@@ -34,7 +34,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/101-aci-linuxcontainer-public-ip/).
 
-:::code language="json" source="~/quickstart-templates/101-aci-linuxcontainer-public-ip/azuredeploy.json":::
+:::code language="json" source="~/quickstart-templates/quickstarts/microsoft.containerinstance/aci-linuxcontainer-public-ip/azuredeploy.json":::
 
 De volgende resource is gedefinieerd in de sjabloon:
 

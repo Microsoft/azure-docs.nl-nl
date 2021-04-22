@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b892194a0e716aa3de218bc6edb6c38cdc898935
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 1d3accdb20073bd1e9b29988b78d7eacd49976b8
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96338653"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862305"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-c"></a>Quickstart: Aanroepen van uw Bing Custom Search-eindpunt met C# 
 
@@ -30,7 +30,7 @@ Lees in deze quickstart hoe u zoekresultaten opvraagt van de Bing Custom Search-
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Bing Custom Search-exemplaar. Zie voor meer informatie [Snelstart: Uw eerste Bing Custom Search-instantie maken](quick-start.md).
-- [Microsoft .NET Core](https://www.microsoft.com/net/download/core).
+- [Microsoft .NET Core](https://dotnet.microsoft.com/download).
 - Een versie van [Visual Studio 2019 of hoger](https://www.visualstudio.com/downloads/).
 - Als u Linux/MacOS gebruikt, kan deze toepassing worden uitgevoerd met behulp van [Mono](https://www.mono-project.com/).
 - Het NuGet-pakket [Bing Custom Search](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/2.0.0). 

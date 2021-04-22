@@ -4,12 +4,12 @@ description: 'Quickstart: Meer informatie over het maken van een dashboard in Az
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
 ms.date: 12/4/2020
-ms.openlocfilehash: d951c692c7d3c282ae68c5f9b53e9cda5407df10
-ms.sourcegitcommit: afb79a35e687a91270973990ff111ef90634f142
+ms.openlocfilehash: 581c8cc4c2da275467bc39c5c2008b29a5bc0e0e
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107481018"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107875751"
 ---
 # <a name="quickstart-create-an-azure-portal-dashboard-with-azure-cli"></a>Quickstart: Een Azure Portal-dashboard maken met Azure CLI
 
@@ -73,20 +73,20 @@ Zie [Referentie voor Microsoft Portal-dashboardsjablonen](/azure/templates/micro
 
 U kunt de sjabloon nu implementeren vanuit Azure CLI.
 
-1. Voer de opdracht [az portal dash board create](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_create) uit om de sjabloon te implementeren:
+1. Voer de opdracht [az portal dash board create](/cli/azure/portal/dashboard#az_portal_dashboard_create) uit om de sjabloon te implementeren:
 
    ```azurecli
    az portal dashboard create --resource-group myResourceGroup --name 'Simple VM Dashboard' \
       --input-path portal-dashboard-template-testvm.json --location centralus
    ```
 
-1. Controleer of het dashboard is gemaakt door de opdracht [az portal dash board show](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_show) uit te voeren:
+1. Controleer of het dashboard is gemaakt door de opdracht [az portal dash board show](/cli/azure/portal/dashboard#az_portal_dashboard_show) uit te voeren:
 
    ```azurecli
    az portal dashboard show --resource-group myResourceGroup --name 'Simple VM Dashboard'
    ```
 
-Als u alle dashboards voor het huidige abonnement wilt zien, gebruikt u [az portal dash board List](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_list):
+Als u alle dashboards voor het huidige abonnement wilt zien, gebruikt u [az portal dash board List](/cli/azure/portal/dashboard#az_portal_dashboard_list):
 
 ```azurecli
 az portal dashboard list
@@ -98,7 +98,7 @@ U kunt ook alle dashboards voor een resourcegroep bekijken:
 az portal dashboard list --resource-group myResourceGroup
 ```
 
-U kunt een dashboard bijwerken met behulp van de opdracht [az portal dash board update](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_update):
+U kunt een dashboard bijwerken met behulp van de opdracht [az portal dash board update](/cli/azure/portal/dashboard#az_portal_dashboard_update):
 
 ```azurecli
 az portal dashboard update --resource-group myResourceGroup --name 'Simple VM Dashboard' \
@@ -119,7 +119,7 @@ Als u de virtuele machine en het bijbehorende dashboard wilt verwijderen, verwij
 az group delete --name myResourceGroup
 ```
 
-Als u alleen het dashboard wilt verwijderen, gebruikt u de opdracht [az portal dash board delete](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_delete):
+Als u alleen het dashboard wilt verwijderen, gebruikt u de opdracht [az portal dash board delete](/cli/azure/portal/dashboard#az_portal_dashboard_delete):
 
 ```azurecli
 az portal dashboard delete --resource-group myResourceGroup --name "Simple VM Dashboard"
@@ -127,4 +127,4 @@ az portal dashboard delete --resource-group myResourceGroup --name "Simple VM Da
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [az portal dash board](/cli/azure/ext/portal/portal/dashboard) voor meer informatie over Azure CLI-ondersteuning voor dashboards.
+Zie [az portal dash board](/cli/azure/portal/dashboard) voor meer informatie over Azure CLI-ondersteuning voor dashboards.

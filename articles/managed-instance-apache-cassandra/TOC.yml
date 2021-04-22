@@ -1,14 +1,14 @@
-- name: Azure Managed instance voor Apache Cassandra-documentatie
+- name: Documentatie voor Azure Managed Instance voor Apache Cassandra
   href: index.yml
 - name: Overzicht
   items:
-    - name: Wat is een beheerd exemplaar van Azure voor Apache Cassandra?
+    - name: Wat is Azure Managed Instance voor Apache Cassandra?
       href: introduction.md
 - name: Snelstartgidsen
   items:
-    - name: Een cluster maken-Portal
+    - name: Een cluster maken - Portal
       href: create-cluster-portal.md
-    - name: Een cluster maken-CLI
+    - name: Een cluster maken - CLI
       displayName: 'az managed-cassandra, cluster, datacenter, connect'
       href: create-cluster-cli.md
     - name: Een hybride cluster configureren
@@ -35,7 +35,7 @@
       items:
         - name: Cassandra-clusters
           href: /rest/api/cosmos-db-resource-provider/2021-03-01-preview/cassandraclusters
-        - name: Cassandra-data centers
+        - name: Cassandra-datacenters
           href: /rest/api/cosmos-db-resource-provider/2021-03-01-preview/cassandradatacenters
     - name: Azure CLI
-      href: /cli/azure/ext/cosmosdb-preview/managed-cassandra
+      href: /cli/azure/managed-cassandra

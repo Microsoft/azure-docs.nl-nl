@@ -1,24 +1,24 @@
 ---
-title: 'Snelstart: Apparaat-telemetrie verzenden Azure IoT Hub (Node.js)'
-description: In deze quickstart gebruikt u de Azure IoT Hub Device SDK voor Node.js om telemetrie van een apparaat naar een IoT-hub te verzenden.
+title: Apparaat-telemetrie verzenden naar Azure IoT Hub quickstart (Node.js)
+description: In deze quickstart gebruikt u de Azure IoT Hub Device SDK voor Node.js telemetrie te verzenden van een apparaat naar een IoT-hub.
 author: timlt
 ms.author: timlt
 ms.service: iot-develop
 ms.devlang: node
 ms.topic: quickstart
 ms.date: 03/25/2021
-ms.openlocfilehash: 3d42ac814678136c2f6342cd1064e3c3ff394507
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 0e1c99124228da9490abaa17ecc41b931631d9fb
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107777235"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107876972"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-nodejs"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub (Node.js)
 
 **Van toepassing op**: [Ontwikkeling van apparaattoepassing](about-iot-develop.md#device-application-development)
 
-In deze quickstart leert u een eenvoudige werkstroom voor het ontwikkelen van IoT-apparaten. U gebruikt de Azure CLI om een Azure IoT-hub en een gesimuleerd apparaat te maken. Vervolgens gebruikt u de Azure IoT Node.js SDK voor toegang tot het apparaat en het verzenden van telemetrie naar de hub.
+In deze quickstart leert u een eenvoudige werkstroom voor het ontwikkelen van IoT-apparaattoepassing. U gebruikt de Azure CLI om een Azure IoT-hub en een gesimuleerd apparaat te maken. Vervolgens gebruikt u de Azure IoT Node.js SDK voor toegang tot het apparaat en het verzenden van telemetrie naar de hub.
 
 ## <a name="prerequisites"></a>Vereisten
 - Als u geen Azure-abonnement hebt, [kunt u er gratis een maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
@@ -56,10 +56,10 @@ In deze sectie gebruikt u de Node.js SDK om berichten van uw gesimuleerde appara
     npm install
     ```
 
-    Met deze opdracht installeert u de juiste afhankelijkheden zoals opgegeven in de *package.jsin* het bestand in de map met voorbeelden van apparaten.
+    Met deze opdracht worden de juiste afhankelijkheden geïnstalleerd zoals opgegeven in de *mappackage.json* file in de map met voorbeelden van apparaten.
 
-1. Stel beide van de volgende omgevingsvariabelen in, zodat uw gesimuleerde apparaat verbinding kan maken met Azure IoT.
-    * Stel een omgevingsvariabele in met de naam `IOTHUB_DEVICE_CONNECTION_STRING` . Gebruik voor de variabele waarde de apparaatwaarde connection string u in de vorige sectie hebt opgeslagen.
+1. Stel beide van de volgende omgevingsvariabelen in, zodat het gesimuleerde apparaat verbinding kan maken met Azure IoT.
+    * Stel een omgevingsvariabele in met de naam `IOTHUB_DEVICE_CONNECTION_STRING` . Gebruik voor de variabele waarde de apparaat-connection string die u in de vorige sectie hebt opgeslagen.
     * Stel een omgevingsvariabele in met de naam `IOTHUB_DEVICE_SECURITY_TYPE` . Gebruik voor de variabele de letterlijke tekenreekswaarde `connectionString` .
 
     **Windows (cmd)**
@@ -91,7 +91,7 @@ In deze sectie gebruikt u de Node.js SDK om berichten van uw gesimuleerde appara
     ```bash
     export IOTHUB_DEVICE_SECURITY_TYPE="connectionString"
     ```
-1. Voer in uw open CLI-shell de [opdracht az iot hub monitor-events](/cli/azure/ext/azure-iot/iot/hub#ext-azure-iot-az-iot-hub-monitor-events) uit om te beginnen met het controleren op gebeurtenissen op uw gesimuleerde IoT-apparaat.  Gebeurtenisberichten worden in de terminal afgedrukt wanneer ze binnenkomen.
+1. Voer in uw open CLI-shell de [opdracht az iot hub monitor-events](/cli/azure/iot/hub#az_iot_hub_monitor_events) uit om te beginnen met het controleren op gebeurtenissen op uw gesimuleerde IoT-apparaat.  Gebeurtenisberichten worden in de terminal afgedrukt wanneer ze binnenkomen.
 
     ```azurecli
     az iot hub monitor-events --output table --hub-name {YourIoTHubName}

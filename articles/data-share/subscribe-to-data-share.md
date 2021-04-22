@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 03/24/2021
-ms.openlocfilehash: ccfda4975b6453ed67edc2640520bc0a76df5709
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: d063a0870616b5b977df18c56d9d66515b03d0a5
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105644877"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107870855"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Zelfstudie: Gegevens accepteren en ontvangen met Azure Data Share  
 
@@ -45,7 +45,7 @@ Als u ervoor kiest om gegevens te ontvangen in Azure SQL Database of Azure Synap
 
 * Een instantie van Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW).
 * Machtiging om naar databases op de SQL-server te schrijven, aanwezig in *Microsoft.Sql/servers/databases/write*. Deze machtiging maakt onderdeel uit van de rol **Inzender**. 
-* De beheerder van de SQL-Server **Azure Active Directory**
+* **Azure Active Directory beheerder van** de SQL-server
 * Toegang tot SQL Server-firewall. U kunt dit doen via de volgende stappen: 
     1. Ga in SQL Server in de Azure-portal naar *Firewalls en virtuele netwerken*
     1. Klik op **Ja** bij *Toestaan dat Azure-services en -resources toegang tot deze server krijgen*.
@@ -106,7 +106,7 @@ Begin door de omgeving voor te bereiden op de Azure CLI:
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-Voer de opdracht [az datashare consumer invitation list](/cli/azure/ext/datashare/datashare/consumer/invitation#ext_datashare_az_datashare_consumer_invitation_list) uit om uw huidige uitnodigingen te bekijken:
+Voer de opdracht [az datashare consumer invitation list](/cli/azure/datashare/consumer/invitation#az_datashare_consumer_invitation_list) uit om uw huidige uitnodigingen te bekijken:
 
 ```azurecli
 az datashare consumer invitation list --subscription 11111111-1111-1111-1111-111111111111
@@ -140,7 +140,7 @@ Kopieer uw uitnodigings-id om deze in de volgende sectie te gebruiken.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Gebruik de opdracht [az datashare consumer share-subscription create](/cli/azure/ext/datashare/datashare/consumer/share-subscription#ext_datashare_az_datashare_consumer_share_subscription_create) om de Data Share te maken.
+Gebruik de opdracht [az datashare consumer share-subscription create](/cli/azure/datashare/consumer/share-subscription#az_datashare_consumer_share_subscription_create) om de Data Share te maken.
 
 ```azurecli
 az datashare consumer share-subscription create --resource-group share-rg \
@@ -161,13 +161,13 @@ Volg de onderstaande stappen om te configureren waar u gegevens wilt ontvangen.
 
    ![Toewijzen aan doel](./media/dataset-map-target.png "Toewijzen aan doel") 
 
-1. Selecteer het type doelgegevensarchief waarin u de gegevens wilt opslaan. Alle gegevensbestanden of tabellen in het doelgegevensarchief met hetzelfde pad en dezelfde naam worden overschreven. Als u gegevens ontvangt in Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW), schakelt u het selectie vakje **gegevens delen toestaan om het bovenstaande script voor het maken van gebruikers namens mij uit te voeren**.
+1. Selecteer het type doelgegevensarchief waarin u de gegevens wilt opslaan. Alle gegevensbestanden of tabellen in het doelgegevensarchief met hetzelfde pad en dezelfde naam worden overschreven. Als u gegevens ontvangt in Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW), moet u het selectievakje Toestaan dat Data Share het bovenstaande **script 'gebruiker maken'** namens mij uitvoeren in.
 
    Selecteer voor in-place delen een gegevensarchief op de opgegeven locatie. De locatie is het Azure-datacenter waar het brongegevensarchief van de gegevensprovider zich bevindt. Zodra de gegevensset is toegewezen, kunt u de koppeling in het doelpad volgen om toegang te krijgen tot de gegevens.
 
    ![Doelopslagaccount](./media/dataset-map-target-sql.png "Doelopslag") 
 
-1. Als u wilt delen met behulp van momentopnamen, en de gegevensprovider een schema heeft opgesteld voor het maken van momentopnamen om de gegevens regelmatig bij te werken, kunt u het schema voor het maken van momentopnamen ook inschakelen door het tabblad **Schema voor momentopnamen** te selecteren. Schakel het selectievakje naast het schema voor momentopnamen in en selecteer **+ Inschakelen**. Houd er rekening mee dat de eerste geplande moment opname begint binnen één minuut van de plannings tijd en volgende moment opnamen worden gestart binnen enkele seconden van de geplande tijd.
+1. Als u wilt delen met behulp van momentopnamen, en de gegevensprovider een schema heeft opgesteld voor het maken van momentopnamen om de gegevens regelmatig bij te werken, kunt u het schema voor het maken van momentopnamen ook inschakelen door het tabblad **Schema voor momentopnamen** te selecteren. Schakel het selectievakje naast het schema voor momentopnamen in en selecteer **+ Inschakelen**. Houd er rekening mee dat de eerste geplande momentopname binnen één minuut na de planningstijd start en dat volgende momentopnamen binnen enkele seconden na de geplande tijd starten.
 
    ![Schema voor momentopnamen inschakelen](./media/enable-snapshot-schedule.png "Schema voor momentopnamen inschakelen")
 
@@ -175,7 +175,7 @@ Volg de onderstaande stappen om te configureren waar u gegevens wilt ontvangen.
 
 Gebruik deze opdrachten om te configureren waar u gegevens wilt ontvangen.
 
-1. Voer de opdracht [az datashare consumer share-subscription list-source-dataset](/cli/azure/ext/datashare/datashare/consumer/share-subscription#ext_datashare_az_datashare_consumer_share_subscription_list_source_dataset) uit om de gegevensset-id op te halen:
+1. Voer de opdracht [az datashare consumer share-subscription list-source-dataset](/cli/azure/datashare/consumer/share-subscription#az_datashare_consumer_share_subscription_list_source_dataset) uit om de gegevensset-id op te halen:
 
    ```azurecli
    az datashare consumer share-subscription list-source-dataset \
@@ -221,7 +221,7 @@ Gebruik deze opdrachten om te configureren waar u gegevens wilt ontvangen.
      \"storage_account_name\":\"datashareconsumersa\",\"kind\":\"BlobFolder\",\"prefix\":\"consumer\"}'
    ```
 
-1. Gebruik de opdracht [az datashare consumer dataset-mapping create](/cli/azure/ext/datashare/datashare/consumer/dataset-mapping#ext_datashare_az_datashare_consumer_dataset_mapping_create) om de toewijzing voor de gegevensset te maken:
+1. Gebruik de opdracht [az datashare consumer dataset-mapping create](/cli/azure/datashare/consumer/dataset-mapping#az_datashare_consumer_dataset_mapping_create) om de toewijzing voor de gegevensset te maken:
 
    ```azurecli
    az datashare consumer dataset-mapping create --resource-group "share-rg" \
@@ -230,7 +230,7 @@ Gebruik deze opdrachten om te configureren waar u gegevens wilt ontvangen.
      --subscription 11111111-1111-1111-1111-111111111111
    ```
 
-1. Voer de opdracht [az datashare consumer share-subscription synchronization start](/cli/azure/ext/datashare/datashare/consumer/share-subscription/synchronization#ext_datashare_az_datashare_consumer_share_subscription_synchronization_start) uit om de synchronisatie van de gegevensset te starten.
+1. Voer de opdracht [az datashare consumer share-subscription synchronization start](/cli/azure/datashare/consumer/share-subscription/synchronization#az_datashare_consumer_share_subscription_synchronization_start) uit om de synchronisatie van de gegevensset te starten.
 
    ```azurecli
    az datashare consumer share-subscription synchronization start \
@@ -239,7 +239,7 @@ Gebruik deze opdrachten om te configureren waar u gegevens wilt ontvangen.
      --subscription 11111111-1111-1111-1111-111111111111
    ```
 
-   Voer de opdracht [az datashare consumer share-subscription synchronization list](/cli/azure/ext/datashare/datashare/consumer/share-subscription/synchronization#ext_datashare_az_datashare_consumer_share_subscription_synchronization_list) uit om een lijst van uw synchronisaties weer te geven:
+   Voer de opdracht [az datashare consumer share-subscription synchronization list](/cli/azure/datashare/consumer/share-subscription/synchronization#az_datashare_consumer_share_subscription_synchronization_list) uit om een lijst van uw synchronisaties weer te geven:
 
    ```azurecli
    az datashare consumer share-subscription synchronization list \
@@ -248,7 +248,7 @@ Gebruik deze opdrachten om te configureren waar u gegevens wilt ontvangen.
      --subscription 11111111-1111-1111-1111-111111111111
    ```
 
-   Gebruik de opdracht [az datashare consumer share-subscription list-source-share-synchronization-setting](/cli/azure/ext/datashare/datashare/consumer/share-subscription#ext_datashare_az_datashare_consumer_share_subscription_list_source_share_synchronization_setting) om synchronisatie-instellingen te zien die zijn ingesteld voor uw share.
+   Gebruik de opdracht [az datashare consumer share-subscription list-source-share-synchronization-setting](/cli/azure/datashare/consumer/share-subscription#az_datashare_consumer_share_subscription_list_source_share_synchronization_setting) om synchronisatie-instellingen te zien die zijn ingesteld voor uw share.
 
    ```azurecli
    az datashare consumer share-subscription list-source-share-synchronization-setting \
@@ -274,7 +274,7 @@ Deze stappen zijn alleen van toepassing bij delen op basis van momentopnamen.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Voer de opdracht [az datashare consumer trigger create](/cli/azure/ext/datashare/datashare/consumer/trigger#ext_datashare_az_datashare_consumer_trigger_create) uit om het maken van een momentopname te activeren:
+Voer de opdracht [az datashare consumer trigger create](/cli/azure/datashare/consumer/trigger#az_datashare_consumer_trigger_create) uit om het maken van een momentopname te activeren:
 
 ```azurecli
 az datashare consumer trigger create --resource-group "share-rg" \

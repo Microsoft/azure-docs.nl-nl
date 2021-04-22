@@ -9,16 +9,16 @@ ms.service: key-vault
 ms.devlang: azurecli
 ms.date: 01/06/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e07bc758b1ef86b3d8c605cbce72f6db564a355f
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 80d5bbb54715c5a1a5102f8991f366e273145edc
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98020853"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107868947"
 ---
 # <a name="quickstart-create-an-azure-dedicated-hsm-by-using-the-azure-cli"></a>Quickstart: een Azure Dedicated HSM maken met de Azure CLI
 
-In dit artikel wordt beschreven hoe u een Azure Dedicated HSM maakt en beheert met behulp van de Azure CLI-extensie [az dedicated-hsm](/cli/azure/ext/hardware-security-modules/dedicated-hsm).
+In dit artikel wordt beschreven hoe u een Azure Dedicated HSM maakt en beheert met behulp van de Azure CLI-extensie [az dedicated-hsm](/cli/azure/dedicated-hsm).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -44,7 +44,7 @@ az group create --name myRG --location westus
 
 ## <a name="create-a-dedicated-hsm"></a>Een toegewezen HSM maken
 
-Als u een toegewezen HSM wilt maken, gebruikt u de opdracht [az dedicated-hsm create](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_create). In het volgende voorbeeld wordt een toegewezen HSM met de naam `hsm1` ingericht in de regio `westus`, resourcegroep `myRG` en het opgegeven abonnement, virtuele netwerk en subnet. De vereiste parameters zijn `name`, `location` en `resource group`.
+Als u een toegewezen HSM wilt maken, gebruikt u de opdracht [az dedicated-hsm create](/cli/azure/dedicated-hsm#az_dedicated_hsm_create). In het volgende voorbeeld wordt een toegewezen HSM met de naam `hsm1` ingericht in de regio `westus`, resourcegroep `myRG` en het opgegeven abonnement, virtuele netwerk en subnet. De vereiste parameters zijn `name`, `location` en `resource group`.
 
 ```azurecli-interactive
 az dedicated-hsm create \
@@ -63,7 +63,7 @@ Het implementeren duurt ongeveer 25 tot 30 minuten.
 
 ## <a name="get-a-dedicated-hsm"></a>Verkrijg een toegewezen HSM
 
-Als u een huidige toegewezen HSM wilt hebben, voert u de opdracht [az dedicated-hsm show](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_show) uit. In het volgende voorbeeld wordt de toegewezen HSM, `hsm1`, opgehaald in resourcegroep `myRG`.
+Als u een huidige toegewezen HSM wilt hebben, voert u de opdracht [az dedicated-hsm show](/cli/azure/dedicated-hsm#az_dedicated_hsm_show) uit. In het volgende voorbeeld wordt de toegewezen HSM, `hsm1`, opgehaald in resourcegroep `myRG`.
 
 ```azurecli-interactive
 az dedicated-hsm show --resource-group myRG --name hsm1
@@ -71,7 +71,7 @@ az dedicated-hsm show --resource-group myRG --name hsm1
 
 ## <a name="update-a-dedicated-hsm"></a>Een toegewezen HSM bijwerken
 
-Gebruik de opdracht [az dedicated-hsm update](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_update) om een toegewezen HSM bij te werken. In het volgende voorbeeld wordt de toegewezen HSM, `hsm1`, samen met de tags bijgewerkt in resourcegroep `myRG`:
+Gebruik de opdracht [az dedicated-hsm update](/cli/azure/dedicated-hsm#az_dedicated_hsm_update) om een toegewezen HSM bij te werken. In het volgende voorbeeld wordt de toegewezen HSM, `hsm1`, samen met de tags bijgewerkt in resourcegroep `myRG`:
 
 ```azurecli-interactive
 az dedicated-hsm update --resource-group myRG –-name hsm1 --tags resourceType="hsm" Environment="prod" Slice="A"
@@ -79,7 +79,7 @@ az dedicated-hsm update --resource-group myRG –-name hsm1 --tags resourceType=
 
 ## <a name="list-dedicated-hsms"></a>Toegewezen HSM's vermelden
 
-Voer de opdracht [az dedicated-hsm list](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_list) uit om informatie over de huidige toegewezen HSM's op te halen. In het volgende voorbeeld worden de toegewezen HSM's vermeld in resourcegroep `myRG`:
+Voer de opdracht [az dedicated-hsm list](/cli/azure/dedicated-hsm#az_dedicated_hsm_list) uit om informatie over de huidige toegewezen HSM's op te halen. In het volgende voorbeeld worden de toegewezen HSM's vermeld in resourcegroep `myRG`:
 
 ```azurecli-interactive
 az dedicated-hsm list --resource-group myRG
@@ -87,7 +87,7 @@ az dedicated-hsm list --resource-group myRG
 
 ## <a name="remove-a-dedicated-hsm"></a>Een toegewezen HSM verwijderen
 
-Als u een toegewezen HSM wilt verwijderen, gebruikt u de opdracht [az dedicated-hsm delete](/cli/azure/ext/hardware-security-modules/dedicated-hsm#ext_hardware_security_modules_az_dedicated_hsm_delete). In het volgende voorbeeld wordt de toegewezen HSM, `hsm1`, verwijderd uit resourcegroep `myRG`:
+Als u een toegewezen HSM wilt verwijderen, gebruikt u de opdracht [az dedicated-hsm delete](/cli/azure/dedicated-hsm#az_dedicated_hsm_delete). In het volgende voorbeeld wordt de toegewezen HSM, `hsm1`, verwijderd uit resourcegroep `myRG`:
 
 ```azurecli-interactive
 az dedicated-hsm delete --resource-group myRG –-name hsm1

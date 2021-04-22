@@ -9,18 +9,18 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 693c181f8a4a6db3b8b163f4b4d3350a3730b618
-ms.sourcegitcommit: 3f684a803cd0ccd6f0fb1b87744644a45ace750d
+ms.openlocfilehash: 30abc4a5a1431800cef2bcbda6f5eeedf9a216a3
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106221644"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874635"
 ---
 # <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Zelfstudie: Azure-functies implementeren als IoT Edge-modules
 
 [!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
-U kunt Azure-functies gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw Azure IoT Edge-apparaten implementeert. In deze zelfstudie leert u hoe u een Azure-functie maakt en implementeert die sensorgegevens op het gesimuleerde IoT Edge-apparaat filtert. U gebruikt het gesimuleerde IoT Edge-apparaat dat u hebt gemaakt in de Quick starts. In deze zelfstudie leert u het volgende:
+U kunt Azure-functies gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw Azure IoT Edge-apparaten implementeert. In deze zelfstudie leert u hoe u een Azure-functie maakt en implementeert die sensorgegevens op het gesimuleerde IoT Edge-apparaat filtert. U gebruikt het gesimuleerde IoT Edge apparaat dat u in de quickstarts hebt gemaakt. In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
 >
@@ -40,10 +40,10 @@ De Azure-functie die u maakt in deze zelfstudie filtert de temperatuurgegevens d
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u met deze zelf studie begint, moet u de vorige zelf studie hebben door lopen om uw ontwikkel omgeving in te stellen voor Linux-container ontwikkeling: [ontwikkel IOT Edge-modules met behulp van Linux-containers](tutorial-develop-for-linux.md). Als u die zelfstudie hebt voltooid, hebt u de volgende vereisten klaarstaan:
+Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorgegaan om uw ontwikkelomgeving in te stellen voor het ontwikkelen van Linux-containers: Ontwikkel IoT Edge modules met [Linux-containers.](tutorial-develop-for-linux.md) Als u die zelfstudie hebt voltooid, hebt u de volgende vereisten klaarstaan:
 
 * Een gratis of standaard [IoT Hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
-* Een apparaat met Azure IoT Edge Linux-containers. U kunt de Quick starts gebruiken om een [Linux-apparaat](quickstart-linux.md) of [Windows-apparaat](quickstart.md)in te stellen.
+* Een apparaat met Azure IoT Edge Linux-containers. U kunt de quickstarts gebruiken om een [Linux-apparaat](quickstart-linux.md) of [Windows-apparaat in te stellen.](quickstart.md)
 * Een containerregister, zoals [Azure Container Registry](../container-registry/index.yml).
 * [Visual Studio Code](https://code.visualstudio.com/) geconfigureerd met de [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
 * [Docker CE](https://docs.docker.com/install/) geconfigureerd voor het uitvoeren van Linux-containers.
@@ -51,7 +51,7 @@ Voordat u met deze zelf studie begint, moet u de vorige zelf studie hebben door 
 Om een IoT Edge-module te ontwikkelen met Azure Functions, installeert u de volgende aanvullende vereisten op uw ontwikkelcomputer:
 
 * [De extensie C# voor Visual Studio Code (van OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
-* [De .NET Core 2.1 SDK](https://www.microsoft.com/net/download).
+* [De .NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet/2.1).
 
 ## <a name="create-a-function-project"></a>Een functieproject maken
 

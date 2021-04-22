@@ -8,9 +8,9 @@
   items:
     - name: De geaggregeerde naamruimte plannen
       href: hpc-cache-namespace.md
-    - name: Informatie over de gebruiks modellen van de cache
+    - name: Inzicht in cachegebruiksmodellen
       href: cache-usage-models.md
-    - name: Bepalen of HPC-cache de juiste oplossing is
+    - name: Bepalen of HPC Cache de juiste oplossing is
       href: usage-scenarios.md
     - name: Beveiliging
       items:
@@ -57,7 +57,7 @@
 - name: Naslaginformatie
   items:
     - name: Azure CLI
-      href: /cli/azure/ext/hpc-cache/hpc-cache
+      href: /cli/azure/hpc-cache
     - name: Azure PowerShell
       href: /powershell/module/Az.HPCCache
 - name: Resources
@@ -70,7 +70,7 @@
       href: hpc-cache-blob-firewall-fix.md
     - name: Problemen met NFS-opslagdoel maken oplossen
       href: troubleshoot-nas.md
-    - name: Met NFS gekoppelde Blob-opslag gebruiken met Azure HPC-cache
+    - name: Aan NFS-mounted blob-opslag gebruiken met Azure HPC Cache
       href: nfs-blob-considerations.md
     - name: Herstellen na een regionale storing
       href: hpc-region-recovery.md

@@ -1,36 +1,36 @@
 ---
-title: Azure Event Grid systeem onderwerpen maken, weer geven en beheren met CLI
-description: In dit artikel wordt beschreven hoe u Azure CLI gebruikt om systeem onderwerpen te maken, weer te geven en te verwijderen.
+title: Systeemonderwerpen maken, weergeven Azure Event Grid beheren met cli
+description: In dit artikel wordt beschreven hoe u Azure CLI gebruikt voor het maken, weergeven en verwijderen van systeemonderwerpen.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: c1c847c7f25e3a656b798e186a408e560b9ee9e6
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 34a098406762fd57dc9dc4b58fc375286f5d5b13
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98633219"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874293"
 ---
-# <a name="create-view-and-manage-event-grid-system-topics-using-azure-cli"></a>Event Grid systeem onderwerpen maken, weer geven en beheren met behulp van Azure CLI
-In dit artikel wordt beschreven hoe u systeem onderwerpen maakt en beheert met behulp van Azure CLI. Zie [systeem onderwerpen](system-topics.md)voor een overzicht van systeem onderwerpen.
+# <a name="create-view-and-manage-event-grid-system-topics-using-azure-cli"></a>Systeemonderwerpen voor een Event Grid maken, weergeven en beheren met behulp van Azure CLI
+In dit artikel wordt beschreven hoe u systeemonderwerpen maakt en beheert met behulp van Azure CLI. Zie Systeemonderwerpen voor een overzicht [van systeemonderwerpen.](system-topics.md)
 
 ## <a name="install-extension-for-azure-cli"></a>Extensie voor Azure CLI installeren
-Voor Azure CLI hebt u de [extensie Event grid](/cli/azure/azure-cli-extensions-list)nodig.
+Voor Azure CLI hebt u de extensie [Event Grid nodig.](/cli/azure/azure-cli-extensions-list)
 
 In Cloud Shell:
 
-- Als u de extensie eerder hebt geïnstalleerd, werkt u deze bij: `az extension update -n eventgrid`
+- Als u de extensie eerder hebt geïnstalleerd, moet u deze bijwerken: `az extension update -n eventgrid`
 - Als u de extensie nog niet eerder hebt geïnstalleerd, installeert u deze:  `az extension add -n eventgrid`
 
 Voor een lokale installatie:
 
 1. [Installeer de Azure CLI](/cli/azure/install-azure-cli). Zorg ervoor dat u de nieuwste versie hebt door te controleren met `az --version` .
-2. Eerdere versies van de uitbrei ding verwijderen: `az extension remove -n eventgrid`
+2. Verwijder eerdere versies van de extensie: `az extension remove -n eventgrid`
 3. Installeer de eventgrid-extensie met `az extension add -n eventgrid`
 
-## <a name="create-a-system-topic"></a>Een systeem onderwerp maken
+## <a name="create-a-system-topic"></a>Een systeemonderwerp maken
 
-- Als u eerst een systeem onderwerp wilt maken in een Azure-bron en vervolgens een gebeurtenis abonnement voor dat onderwerp wilt maken, raadpleegt u de volgende onderwerpen:
-    - [AZ eventgrid System-topic Create](/cli/azure/ext/eventgrid/eventgrid/system-topic#ext-eventgrid-az-eventgrid-system-topic-create)
+- Zie de volgende naslagonderwerpen om eerst een systeemonderwerp te maken in een Azure-bron en vervolgens een gebeurtenisabonnement voor dat onderwerp te maken:
+    - [az eventgrid system-topic create](/cli/azure/eventgrid/system-topic#az_eventgrid_system_topic_create)
 
         ```azurecli-interactive
         # Get the ID of the Azure source (for example: Azure Storage account)
@@ -48,19 +48,19 @@ Voor een lokale installatie:
             --source $storageid
         ```           
 
-        `topic-type`Voer de volgende opdracht uit voor een lijst met waarden die u kunt gebruiken om een systeem onderwerp te maken. De waarden van het type topic vertegenwoordigen de gebeurtenis bronnen die ondersteuning bieden voor het maken van systeem onderwerpen. Negeer `Microsoft.EventGrid.Topics` en `Microsoft.EventGrid.Domains` in de lijst. 
+        Voer de volgende opdracht uit voor een lijst met waarden die u kunt gebruiken om `topic-type` een systeemonderwerp te maken. Deze onderwerptypewaarden vertegenwoordigen de gebeurtenisbronnen die ondersteuning bieden voor het maken van systeemonderwerpen. Negeer en `Microsoft.EventGrid.Topics` `Microsoft.EventGrid.Domains` in de lijst. 
 
         ```azurecli-interactive
         az eventgrid topic-type  list --output json | grep -w id
         ```
-    - [AZ eventgrid System-onderwerp Event-Subscription Create](/cli/azure/ext/eventgrid/eventgrid/system-topic/event-subscription#ext-eventgrid-az-eventgrid-system-topic-event-subscription-create)
+    - [az eventgrid system-topic event-subscription create](/cli/azure/eventgrid/system-topic/event-subscription#az_eventgrid_system_topic_event-subscription-create)
 
         ```azurecli-interactive
         az eventgrid system-topic event-subscription create --name <SPECIFY EVENT SUBSCRIPTION NAME> \
             -g rg1 --system-topic-name <SYSTEM TOPIC NAME> \
             --endpoint <ENDPOINT URL>         
         ```
-- Als u een systeem onderwerp (impliciet) wilt maken bij het maken van een gebeurtenis abonnement voor een Azure-bron, gebruikt u de methode [AZ eventgrid Event-Subscription Create](/cli/azure/ext/eventgrid/eventgrid/event-subscription#ext-eventgrid-az-eventgrid-event-subscription-create) . Hier volgt een voorbeeld:
+- Als u een systeemonderwerp (impliciet) wilt maken bij het maken van een gebeurtenisabonnement voor een Azure-bron, gebruikt u [de methode az eventgrid event-subscription create.](/cli/azure/eventgrid/event-subscription#az_eventgrid_event_subscription_create) Hier volgt een voorbeeld:
     
     ```azurecli-interactive
     storageid=$(az storage account show --name <AZURE STORAGE ACCOUNT NAME> --resource-group <AZURE RESOURCE GROUP NAME> --query id --output tsv)
@@ -71,30 +71,30 @@ Voor een lokale installatie:
       --name <EVENT SUBSCRIPTION NAME> \
       --endpoint $endpoint
     ```
-    Zie [Abonneren op een opslag account](../storage/blobs/storage-blob-event-quickstart.md?toc=%2Fazure%2Fevent-grid%2Ftoc.json#subscribe-to-your-storage-account)voor een zelf studie met stapsgewijze instructies.
+    Zie Abonneren op opslagaccount voor een zelfstudie met [stapsgewijs instructies.](../storage/blobs/storage-blob-event-quickstart.md?toc=%2Fazure%2Fevent-grid%2Ftoc.json#subscribe-to-your-storage-account)
 
-## <a name="view-all-system-topics"></a>Alle systeem onderwerpen weer geven
-Als u alle systeem onderwerpen en Details van een geselecteerd systeem onderwerp wilt weer geven, gebruikt u de volgende opdrachten:
+## <a name="view-all-system-topics"></a>Alles weergeven systeemonderwerpen
+Als u alle systeemonderwerpen en details van een geselecteerd systeemonderwerp wilt weergeven, gebruikt u de volgende opdrachten:
 
-- [AZ eventgrid System-topic List](/cli/azure/ext/eventgrid/eventgrid/system-topic#ext-eventgrid-az-eventgrid-system-topic-list)
+- [az eventgrid system-topic list](/cli/azure/eventgrid/system-topic#az_eventgrid_system_topic_list)
 
     ```azurecli-interactive
     az eventgrid system-topic list   
      ```
-- [AZ eventgrid System-topic show](/cli/azure/ext/eventgrid/eventgrid/system-topic#ext-eventgrid-az-eventgrid-system-topic-show)
+- [az eventgrid system-topic show](/cli/azure/eventgrid/system-topic#az_eventgrid_system_topic_show)
 
     ```azurecli-interactive
     az eventgrid system-topic show -g <AZURE RESOURCE GROUP NAME> -n <SYSTEM TOPIC NAME>     
      ```
 
-## <a name="delete-a-system-topic"></a>Een systeem onderwerp verwijderen
-Als u een systeem onderwerp wilt verwijderen, gebruikt u de volgende opdracht: 
+## <a name="delete-a-system-topic"></a>Een systeemonderwerp verwijderen
+Gebruik de volgende opdracht om een systeemonderwerp te verwijderen: 
 
-- [AZ eventgrid System-onderwerp Delete](/cli/azure/ext/eventgrid/eventgrid/system-topic#ext-eventgrid-az-eventgrid-system-topic-delete)
+- [az eventgrid system-topic delete](/cli/azure/eventgrid/system-topic#az_eventgrid_system_topic_delete)
 
     ```azurecli-interactive
     az eventgrid system-topic delete -g <AZURE RESOURCE GROUP NAME> --name <SYSTEM TOPIC NAME>   
      ```
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie de sectie [systeem onderwerpen in azure Event grid](system-topics.md) voor meer informatie over systeem onderwerpen en onderwerp typen die door Azure Event grid worden ondersteund. 
+Zie de [sectie Systeemonderwerpen in Azure Event Grid](system-topics.md) voor meer informatie over systeemonderwerpen en onderwerptypen die worden ondersteund door Azure Event Grid. 

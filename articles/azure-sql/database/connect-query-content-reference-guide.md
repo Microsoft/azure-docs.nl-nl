@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/17/2021
-ms.openlocfilehash: a8419ff2ba269b05d1fbf7e9d08a284085465fd8
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: 96b52c80fa06be8c157ad39fd65be4e491e0cbe3
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107257412"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874851"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-connect-and-query-articles"></a>Verbinding maken met Azure SQL Database en Azure SQL Managed Instance en query's uitvoeren voor artikelen
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -86,7 +86,7 @@ De volgende tabel bevat connectiviteitsbibliotheken of *stuurprogramma's* die cl
 
 | Taal | Platform | Aanvullende bronnen | Downloaden | Aan de slag |
 | :-- | :-- | :-- | :-- | :-- |
-| C# | Windows, Linux, macOS | [Microsoft ADO.NET voor SQL Server](/sql/connect/ado-net/microsoft-ado-net-sql-server) | [Downloaden](https://www.microsoft.com/net/download/) | [Aan de slag](https://www.microsoft.com/sql-server/developer-get-started/csharp/ubuntu)
+| C# | Windows, Linux, macOS | [Microsoft ADO.NET voor SQL Server](/sql/connect/ado-net/microsoft-ado-net-sql-server) | [Downloaden](https://dotnet.microsoft.com/download) | [Aan de slag](https://www.microsoft.com/sql-server/developer-get-started/csharp/ubuntu)
 | Java | Windows, Linux, macOS | [Microsoft JDBC-stuurprogramma voor SQL Server](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server/) | [Downloaden](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server) |  [Aan de slag](https://www.microsoft.com/sql-server/developer-get-started/java/ubuntu)
 | PHP | Windows, Linux, macOS| [PHP SQL-stuurprogramma voor SQL Server](/sql/connect/php/microsoft-php-driver-for-sql-server) | [Downloaden](/sql/connect/php/download-drivers-php-sql-server) | [Aan de slag](https://www.microsoft.com/sql-server/developer-get-started/php/ubuntu/)
 | Node.js | Windows, Linux, macOS | [Node.js-stuurprogramma voor SQL Server](/sql/connect/node-js/node-js-driver-for-sql-server/) | [Installeren](/sql/connect/node-js/step-1-configure-development-environment-for-node-js-development/) |  [Aan de slag](https://www.microsoft.com/sql-server/developer-get-started/node/ubuntu)
@@ -117,7 +117,7 @@ De volgende tabel bevat voorbeelden van ORM-frameworks (Object-Relational Mappin
   - [Verbinding maken en query's uitvoeren met Java](connect-query-java.md)
   - [Verbinding maken en query's uitvoeren met Python](connect-query-python.md)
   - [Verbinding maken en query's uitvoeren met Ruby](connect-query-ruby.md)
-  - [Installeer Sqlcmd en BCP de SQL Server opdracht regel Programma's op Linux](/sql/linux/sql-server-linux-setup-tools) -for Linux-gebruikers, probeer verbinding te maken met Azure SQL database of Azure SQL Managed instance met behulp van [Sqlcmd](/sql/ssms/scripting/sqlcmd-use-the-utility).
+  - [Installeer sqlcmd](/sql/linux/sql-server-linux-setup-tools) en bcp de SQL Server-opdrachtregelprogramma's in Linux: voor Linux-gebruikers kunt u proberen verbinding te maken met Azure SQL Database of Azure SQL Managed Instance met [behulp van sqlcmd](/sql/ssms/scripting/sqlcmd-use-the-utility).
 - Voorbeelden van logische code voor opnieuw proberen:
   - [Flexibel verbinding maken met ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
   - [Flexibel verbinding maken met PHP][step-4-connect-resiliently-to-sql-with-php-p42h]

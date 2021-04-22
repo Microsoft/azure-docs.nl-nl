@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure Virtual Network
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Virtual Network. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.topic: sample
 author: KumudD
 ms.author: kumud
 ms.service: virtual-network
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 106511a3ef6b973d8124f7e5559a5c7700e3b049
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 11f9704929b397e9aa526b803855f400dd0cd1ee
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107496776"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107873339"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-virtual-network"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Virtual Network
 

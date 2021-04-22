@@ -1,18 +1,18 @@
 ---
-title: Hand leiding voor het verifiëren van Azure signalerings service-clients
-description: Meer informatie over hoe u uw eigen verificatie implementeert en integreert met de Azure signalerings service door het E2E-voor beeld te volgen.
+title: Handleiding voor het Azure SignalR Service clients
+description: Leer hoe u uw eigen verificatie implementeert en integreert met Azure SignalR Service door het e2e-voorbeeld te volgen.
 author: sffamily
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.custom: devx-track-js, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: cd5b709843ba2d98170aaa58eb5c3cc1ec8883af
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: aace45f78bab273b792d10754be431ed3949e4c6
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98734678"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107869840"
 ---
 # <a name="azure-signalr-service-authentication"></a>verificatie van Azure SignalR Service
 
@@ -47,15 +47,15 @@ U hebt het volgende nodig om deze zelfstudie te voltooien:
 
 - Een account op [GitHub](https://github.com/)
 - [Git](https://git-scm.com/)
-- [.NET Core-SDK](https://www.microsoft.com/net/download/windows)
-- [Azure Cloud shell](../cloud-shell/quickstart.md) geconfigureerd voor de bash omgeving.
+- [.NET Core-SDK](https://dotnet.microsoft.com/download)
+- [Azure Cloud Shell](../cloud-shell/quickstart.md) geconfigureerd voor de bash-omgeving.
 - Download of kloon het [Azure SignalR-voorbeeld](https://github.com/aspnet/AzureSignalR-samples) in de GitHub-opslagplaats.
 
 ## <a name="create-an-oauth-app"></a>Een OAuth-app maken
 
 1. Open een webbrowser, ga naar `https://github.com` en meld u aan bij uw account.
 
-2. Voor uw account gaat u naar **instellingen**  >  **ontwikkelaars instellingen** en klikt u op **een nieuwe toepassing registreren** of **nieuwe OAuth-app** onder *OAuth-apps*.
+2. Navigeer voor uw account naar **Instellingen** Voor ontwikkelaars en klik op Een nieuwe toepassing registreren of Nieuwe  >   **OAuth-app** onder *OAuth-apps.* 
 
 3. Gebruik de volgende instellingen voor de nieuwe OAuth-app en klik vervolgens op **Register application**:
 
@@ -390,7 +390,7 @@ De omgeving voorbereiden op de Azure CLI:
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-In deze sectie gebruikt u de Azure-opdracht regel interface (CLI) om een nieuwe web-app te maken in [Azure app service](../app-service/index.yml) om uw ASP.NET-toepassing in azure te hosten. De web-app wordt geconfigureerd voor het gebruik van een lokale Git-implementatie. De web-app wordt daarnaast geconfigureerd met de verbindingsreeks voor SignalR, geheimen van de GitHub OAuth-app en een implementatiegebruiker.
+In deze sectie gebruikt u de Azure-opdrachtregelinterface (CLI) om een nieuwe web-app te maken in [Azure App Service](../app-service/index.yml) voor het hosten van uw ASP.NET-toepassing in Azure. De web-app wordt geconfigureerd voor het gebruik van een lokale Git-implementatie. De web-app wordt daarnaast geconfigureerd met de verbindingsreeks voor SignalR, geheimen van de GitHub OAuth-app en een implementatiegebruiker.
 
 Bij het maken van de volgende resources moet u de resourcegroep gebruiken waarin zich ook de resource van de SignalR-service bevindt. Op deze manier is het achteraf veel eenvoudiger om alle resources te verwijderen. In deze voorbeelden wordt ervan uitgegaan dat u de groepsnaam hebt gebruikt die in eerdere zelfstudies wordt aanbevolen, te weten *SignalRTestResources*.
 
@@ -546,7 +546,7 @@ Voer de volgende opdrachten uit in een Git-shell om uw code te implementeren.
 
 Als laatste moet u de waarden voor **Homepage URL** en **Authorization callback URL** van de GitHub OAuth-app bijwerken, zodat deze verwijzen naar de nieuwe gehoste app.
 
-1. Open [https://github.com](https://github.com) in een browser en navigeer naar de **instellingen** van uw account OAuth-apps voor  >  **ontwikkel aars**  >  .
+1. Open in een browser en navigeer naar de instellingen voor ontwikkelaars van [https://github.com](https://github.com) uw account   >    >  **Oauth Apps**.
 
 2. Klik op de verificatie-app en werk de waarden voor **Homepage URL** en **Authorization callback URL** bij zoals hieronder wordt weergegeven:
 

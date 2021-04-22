@@ -3,12 +3,12 @@ title: 'Zelfstudie: Een privécloud Azure VMware Solution implementeren'
 description: Meer informatie over het maken en implementeren van Azure VMware Solution privécloud
 ms.topic: tutorial
 ms.date: 02/22/2021
-ms.openlocfilehash: 89a44ce7e5910609068f72c321971ced2e3646b4
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: ea4bf27a1ff14e4872bc2a0e19daa032dd4ba66d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107374842"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107870909"
 ---
 # <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud"></a>Zelfstudie: Een privécloud Azure VMware Solution implementeren
 
@@ -40,7 +40,7 @@ U kunt een Azure VMware Solution-privécloud maken met behulp van [Azure Portal]
 
 ### <a name="azure-cli"></a>Azure CLI
 
-U kunt ook een Azure VMware Solution-privécloud maken met de Azure CLI met behulp van de Azure Cloud Shell in plaats van met Azure Portal.  Zie [Azure VMware-opdrachten](/cli/azure/ext/vmware/vmware) voor een lijst met opdrachten die u kunt gebruiken met Azure VMware Solution.
+U kunt ook een Azure VMware Solution-privécloud maken met de Azure CLI met behulp van de Azure Cloud Shell in plaats van met Azure Portal.  Zie [Azure VMware-opdrachten](/cli/azure/vmware) voor een lijst met opdrachten die u kunt gebruiken met Azure VMware Solution.
 
 #### <a name="open-azure-cloud-shell"></a>Azure Cloud Shell openen
 
@@ -74,7 +74,7 @@ az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --locati
 
 ## <a name="azure-vmware-commands"></a>Azure VMware-opdrachten
 
-Zie [Azure VMware-opdrachten](/cli/azure/ext/vmware/vmware) voor een lijst met opdrachten die u kunt gebruiken met Azure VMware Solution.
+Zie [Azure VMware-opdrachten](/cli/azure/vmware) voor een lijst met opdrachten die u kunt gebruiken met Azure VMware Solution.
 
 ## <a name="next-steps"></a>Volgende stappen
 

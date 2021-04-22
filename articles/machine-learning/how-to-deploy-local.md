@@ -1,7 +1,7 @@
 ---
 title: Lokaal uitvoeren en implementeren
 titleSuffix: Azure Machine Learning
-description: In dit artikel wordt beschreven hoe u uw lokale computer als doel gebruikt voor training, fout opsporing of het implementeren van modellen die zijn gemaakt in Azure Machine Learning.
+description: In dit artikel wordt beschreven hoe u uw lokale computer gebruikt als doel voor het trainen, debuggen of implementeren van modellen die zijn gemaakt in Azure Machine Learning.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,45 +10,45 @@ author: lobrien
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to, deploy
-ms.openlocfilehash: a7d1212d1106f0883d05a860b498b90e4e5f8e00
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 75836580fc2dc5a2090047865610e26d856387b0
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "102517511"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861208"
 ---
-# <a name="deploy-models-trained-with-azure-machine-learning-on-your-local-machines"></a>Modellen implementeren die zijn getraind met Azure Machine Learning op uw lokale computers 
+# <a name="deploy-models-trained-with-azure-machine-learning-on-your-local-machines"></a>Modellen implementeren die zijn getraind met Azure Machine Learning op uw lokale machines 
 
-In dit artikel wordt beschreven hoe u uw lokale computer gebruikt als doel voor het trainen of implementeren van modellen die zijn gemaakt in Azure Machine Learning. Azure Machine Learning is flexibel genoeg om met de meeste python machine learning Frameworks te werken. Machine Learning-oplossingen hebben doorgaans complexe afhankelijkheden die moeilijk te dupliceren zijn. In dit artikel wordt uitgelegd hoe u het totale beheer kunt verdelen met gebruiks gemak.
+In dit artikel wordt beschreven hoe u uw lokale computer gebruikt als doel voor het trainen of implementeren van modellen die zijn gemaakt in Azure Machine Learning. Azure Machine Learning is flexibel genoeg om te werken met de meeste Python machine learning frameworks. Machine learning-oplossingen hebben doorgaans complexe afhankelijkheden die moeilijk te dupliceren zijn. In dit artikel wordt beschreven hoe u een goede balans kunt vinden tussen totale controle en gebruiksgemak.
 
 Scenario's voor lokale implementatie zijn onder andere:
 
-* Snel iteratieen van gegevens, scripts en modellen in een project.
-* Fout opsporing en probleem oplossing in latere fasen.
+* Snel gegevens, scripts en modellen vroeg in een project itereren.
+* Foutopsporing en probleemoplossing in latere fasen.
 * Definitieve implementatie op door de gebruiker beheerde hardware.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
-- Een model en een omgeving. Als u geen getraind model hebt, kunt u het model en de afhankelijkheids bestanden van [deze zelf studie](tutorial-train-models-with-aml.md)gebruiken.
-- De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro).
-- Een Conda Manager, zoals Anaconda of Miniconda, als u Azure Machine Learning pakket afhankelijkheden wilt spie gelen.
-- Docker: als u een container versie van de Azure Machine Learning omgeving wilt gebruiken.
+- Een Azure Machine Learning-werkruimte. Zie Create [an Azure Machine Learning workspace (Een werkruimte Azure Machine Learning maken) voor meer informatie.](how-to-manage-workspace.md)
+- Een model en een omgeving. Als u geen getraind model hebt, kunt u het model en de afhankelijkheidsbestanden in deze [zelfstudie gebruiken.](tutorial-train-models-with-aml.md)
+- De [Azure Machine Learning-SDK voor Python](/python/api/overview/azure/ml/intro).
+- Een Conda-manager, zoals Anaconda of Miniconda, als u afhankelijkheden van Azure Machine Learning wilt spiegelen.
+- Docker, als u een in een container geplaatste versie van de Azure Machine Learning gebruiken.
 
-## <a name="prepare-your-local-machine"></a>Uw lokale machine voorbereiden
+## <a name="prepare-your-local-machine"></a>Uw lokale computer voorbereiden
 
-De meest betrouw bare manier om een Azure Machine Learning model lokaal uit te voeren, is met een docker-installatie kopie. Een docker-installatie kopie biedt een geïsoleerde, in containers geplaatste ervaring, met uitzonde ring van hardwareproblemen, de Azure Execution Environment. Zie [overzicht van docker Remote Development in Windows](/windows/dev-environment/docker/overview)voor meer informatie over het installeren en configureren van docker voor ontwikkelings scenario's.
+De betrouwbaarste manier om lokaal een Azure Machine Learning uit te voeren, is met een Docker-afbeelding. Een Docker-afbeelding biedt een geïsoleerde, in een container geplaatste ervaring die de Azure-uitvoeringsomgeving dupliceert, met uitzondering van hardwareproblemen. Zie Overzicht van externe Docker-ontwikkeling in Windows voor meer informatie over het installeren en configureren van Docker [voor ontwikkelingsscenario's.](/windows/dev-environment/docker/overview)
 
-Het is mogelijk om een fout opsporingsprogramma te koppelen aan een proces dat wordt uitgevoerd in docker. (Zie [koppelen aan een actieve container](https://code.visualstudio.com/docs/remote/attach-container).) U kunt de python-code echter beter debuggen en herhalen zonder docker. In dit scenario is het belang rijk dat uw lokale computer dezelfde bibliotheken gebruikt die worden gebruikt bij het uitvoeren van uw experiment in Azure Machine Learning. Azure gebruikt [Conda](https://docs.conda.io/)om python-afhankelijkheden te beheren. U kunt de omgeving opnieuw maken met behulp van andere pakket beheerders, maar het installeren en configureren van Conda op de lokale computer is de eenvoudigste manier om te synchroniseren. 
+Het is mogelijk om een debugger te koppelen aan een proces dat wordt uitgevoerd in Docker. (Zie [Koppelen aan een container die wordt uitgevoerd.)](https://code.visualstudio.com/docs/remote/attach-container) Maar mogelijk wilt u liever fouten opsporen en uw Python-code itereren zonder docker te gebruiken. In dit scenario is het belangrijk dat uw lokale computer dezelfde bibliotheken gebruikt die worden gebruikt wanneer u uw experiment in Azure Machine Learning. Voor het beheren van Python-afhankelijkheden gebruikt Azure [conda](https://docs.conda.io/). U kunt de omgeving opnieuw maken met behulp van andere pakketmanagers, maar het installeren en configureren van conda op uw lokale computer is de eenvoudigste manier om te synchroniseren. 
 
-## <a name="prepare-your-entry-script"></a>Het script voor de invoer voorbereiden
+## <a name="prepare-your-entry-script"></a>Uw invoerscript voorbereiden
 
-Zelfs als u docker gebruikt om het model en de afhankelijkheden te beheren, moet het python-Score script lokaal zijn. Het script moet twee methoden hebben:
+Zelfs als u Docker gebruikt om het model en de afhankelijkheden te beheren, moet het Python-scorescript lokaal zijn. Het script moet twee methoden hebben:
 
-- Een `init()` methode die geen argumenten accepteert en niets retourneert 
-- Een `run()` methode waarbij een JSON-indelings teken reeks wordt gebruikt en een JSON-serialiseerbaar object wordt geretourneerd
+- Een `init()` methode die geen argumenten gebruikt en niets retourneert 
+- Een `run()` methode die een tekenreeks in JSON-indeling gebruikt en een met JSON serializeerbaar object retourneert
 
-Het argument voor de `run()` methode heeft de volgende vorm: 
+Het argument voor de `run()` methode heeft deze vorm: 
 
 ```json
 {
@@ -56,9 +56,9 @@ Het argument voor de `run()` methode heeft de volgende vorm:
 }
 ```
 
-Het object dat u van de `run()` methode retourneert, moet worden geïmplementeerd `toJSON() -> string` .
+Het object dat u retourneert van `run()` de methode moet `toJSON() -> string` implementeren.
 
-In het volgende voor beeld wordt gedemonstreerd hoe u een geregistreerd scikit-model kunt laden en een score hebt gemaakt met behulp van NumPy-gegevens. Dit voor beeld is gebaseerd op het model en de afhankelijkheden van [deze zelf studie](tutorial-train-models-with-aml.md).
+In het volgende voorbeeld wordt gedemonstreerd hoe u een geregistreerd scikit-learn-model laadt en een score geeft met behulp van NumPy-gegevens. Dit voorbeeld is gebaseerd op het model en de afhankelijkheden van [deze zelfstudie.](tutorial-train-models-with-aml.md)
 
 ```python
 import json
@@ -83,21 +83,21 @@ def run(raw_data):
     return y_hat.tolist()
 ```
 
-Voor meer geavanceerde voor beelden, waaronder automatisch genereren van Swagger-schema's en het berekenen van binaire gegevens (bijvoorbeeld afbeeldingen), raadpleegt u [geavanceerde invoer scripts ontwerpen](how-to-deploy-advanced-entry-script.md). 
+Zie Geavanceerde invoerscripts schrijven voor meer geavanceerde voorbeelden, waaronder het automatisch genereren van Swagger-schema's en het scoren van binaire gegevens (bijvoorbeeld [afbeeldingen).](how-to-deploy-advanced-entry-script.md) 
 
-## <a name="deploy-as-a-local-web-service-by-using-docker"></a>Implementeren als een lokale webservice met behulp van docker
+## <a name="deploy-as-a-local-web-service-by-using-docker"></a>Implementeren als een lokale webservice met behulp van Docker
 
-De gemakkelijkste manier om de omgeving te repliceren die wordt gebruikt door Azure Machine Learning is een webservice te implementeren met behulp van docker. Als docker op uw lokale machine wordt uitgevoerd, doet u het volgende:
+De eenvoudigste manier om de omgeving te repliceren die wordt gebruikt door Azure Machine Learning is door een webservice te implementeren met behulp van Docker. Als Docker wordt uitgevoerd op uw lokale computer, doet u het volgende:
 
-1. Maak verbinding met de Azure Machine Learning-werk ruimte waarin uw model is geregistreerd.
-1. Maak een- `Model` object dat het model vertegenwoordigt.
-1. Maak een `Environment` object dat de afhankelijkheden bevat en definieert de software omgeving waarin uw code wordt uitgevoerd.
-1. Maak een `InferenceConfig` object dat het item script koppelt aan de `Environment` .
-1. Maak een `DeploymentConfiguration` object van de subklasse `LocalWebserviceDeploymentConfiguration` .
-1. Gebruiken `Model.deploy()` om een- `Webservice` object te maken. Met deze methode wordt de docker-installatie kopie gedownload en gekoppeld aan de `Model` , `InferenceConfig` , en `DeploymentConfiguration` .
-1. Activeer de `Webservice` via `Webservice.wait_for_deployment()` .
+1. Maak verbinding met Azure Machine Learning werkruimte waarin uw model is geregistreerd.
+1. Maak een `Model` -object dat het model vertegenwoordigt.
+1. Maak een `Environment` -object dat de afhankelijkheden bevat en definieert de softwareomgeving waarin uw code wordt uitgevoerd.
+1. Maak een `InferenceConfig` -object dat het invoerscript koppelt aan de `Environment` .
+1. Maak een `DeploymentConfiguration` -object van de subklasse `LocalWebserviceDeploymentConfiguration` .
+1. Gebruik `Model.deploy()` om een -object te `Webservice` maken. Met deze methode downloadt u de Docker-afbeelding en koppelt u deze aan `Model` `InferenceConfig` de , en `DeploymentConfiguration` .
+1. Activeer `Webservice` de met behulp van `Webservice.wait_for_deployment()` .
 
-De volgende code toont deze stappen:
+In de volgende code ziet u deze stappen:
 
 ```python
 from azureml.core.webservice import Webservice
@@ -125,11 +125,11 @@ local_service.wait_for_deployment(show_output=True)
 print(f"Scoring URI is : {local_service.scoring_uri}")
 ```
 
-De aanroep naar `Model.deploy()` kan een paar minuten duren. Nadat u de webservice voor het eerst hebt geïmplementeerd, is het efficiënter om de methode te gebruiken `update()` in plaats van helemaal vanaf het begin te beginnen. Zie [een geïmplementeerde webservice bijwerken](how-to-deploy-update-web-service.md).
+De aanroep `Model.deploy()` naar kan enkele minuten duren. Nadat u de webservice voor het eerst hebt geïmplementeerd, is het efficiënter om de methode te gebruiken `update()` in plaats van opnieuw te beginnen. Zie [Een geïmplementeerde webservice bijwerken.](how-to-deploy-update-web-service.md)
 
 ### <a name="test-your-local-deployment"></a>Uw lokale implementatie testen
 
-Wanneer u het vorige implementatie script uitvoert, wordt de URI uitgevoerd waarnaar u gegevens voor score kunt plaatsen (bijvoorbeeld `http://localhost:6789/score` ). In het volgende voor beeld ziet u een script waarin de voorbeeld gegevens worden gescoord met behulp van het `"sklearn-mnist-local"` lokaal geïmplementeerde model. Het model wordt, indien het goed is getraind, Afgeleidingen die `normalized_pixel_values` moeten worden geïnterpreteerd als een "2". 
+Wanneer u het vorige implementatiescript hebt uitgevoerd, wordt de URI uitgevoerd waarop u gegevens kunt plaatsen om te scoren (bijvoorbeeld `http://localhost:6789/score` ). In het volgende voorbeeld ziet u een script dat voorbeeldgegevens scoort met behulp van `"sklearn-mnist-local"` het lokaal geïmplementeerde model. Het model, indien goed getraind, defeert dat `normalized_pixel_values` moet worden geïnterpreteerd als een '2'. 
 
 ```python
 import requests
@@ -175,20 +175,20 @@ print("Should be predicted as '2'")
 print("prediction:", resp.text)
 ```
 
-## <a name="download-and-run-your-model-directly"></a>Uw model direct downloaden en uitvoeren
+## <a name="download-and-run-your-model-directly"></a>Uw model rechtstreeks downloaden en uitvoeren
 
-Het gebruik van docker om uw model te implementeren als een webservice is de meest voorkomende optie. Maar misschien wilt u uw code rechtstreeks uitvoeren met behulp van lokale python-scripts. U hebt twee belang rijke onderdelen nodig: 
+Het gebruik van Docker om uw model te implementeren als een webservice is de meest voorkomende optie. Maar misschien wilt u uw code rechtstreeks uitvoeren met behulp van lokale Python-scripts. U hebt twee belangrijke onderdelen nodig: 
 
 - Het model zelf
-- De afhankelijkheden waarop het model is gebaseerd 
+- De afhankelijkheden waarvan het model afhankelijk is 
 
 U kunt het model downloaden:  
 
-- Selecteer in de portal, door het tabblad **modellen** te selecteren, het gewenste model te selecteren en selecteer op de pagina **Details** de optie **downloaden**.
-- Vanaf de opdracht regel met behulp van `az ml model download` . (Zie [model downloaden.](/cli/azure/ext/azure-cli-ml/ml/model#ext_azure_cli_ml_az_ml_model_download))
-- Met behulp van de python-SDK- `Model.download()` methode. (Zie [model klasse.](/python/api/azureml-core/azureml.core.model.model#download-target-dir------exist-ok-false--exists-ok-none-))
+- Selecteer in de portal het tabblad **Modellen,** selecteer het gewenste model en selecteer op de pagina **Details** de optie **Downloaden.**
+- Vanaf de opdrachtregel met behulp van `az ml model download` . (Zie [Model downloaden.](/cli/azure/ml/model#az_ml_model_download))
+- Met behulp van de Python `Model.download()` SDK-methode. (Zie [Modelklasse.](/python/api/azureml-core/azureml.core.model.model#download-target-dir------exist-ok-false--exists-ok-none-))
 
-Een Azure-model is een of meer geserialiseerde python-objecten, verpakt als een python-selectie bestand (extensie. PKL). De inhoud van het selectie bestand is afhankelijk van de machine learning-bibliotheek of-techniek die wordt gebruikt om het model te trainen. Als u bijvoorbeeld het model uit de zelf studie gebruikt, kunt u het model laden met:
+Een Azure-model is een of meer geseraliseerde Python-objecten, verpakt als een Python pickle-bestand (.pkl-extensie). De inhoud van het pickle-bestand is afhankelijk van de machine learning of techniek die wordt gebruikt om het model te trainen. Als u bijvoorbeeld het model uit de zelfstudie gebruikt, kunt u het model laden met:
 
 ```python
 import pickle
@@ -197,7 +197,7 @@ with open('sklearn_mnist_model.pkl', 'rb') as f :
     logistic_model = pickle.load(f, encoding='latin1')
 ```
 
-Afhankelijkheden zijn altijd lastig om recht te krijgen, met name met machine learning, waar er vaak een dizzying-Web van specifieke versie vereisten kan zijn. U kunt een Azure Machine Learning omgeving opnieuw maken op uw lokale computer als een volledige Conda-omgeving of als docker-installatie kopie met behulp `build_local()` van de methode van de- `Environment` klasse: 
+Afhankelijkheden zijn altijd lastig om het goed te krijgen, met name met machine learning, waarbij er vaak een web met specifieke versievereisten kan zijn. U kunt een Azure Machine Learning opnieuw maken op uw lokale computer als een volledige Conda-omgeving of als een Docker-afbeelding met behulp van de methode `build_local()` van de `Environment` klasse : 
 
 ```python
 ws = Workspace.from_config()
@@ -205,17 +205,17 @@ myenv = Environment.get(workspace=ws, name="tutorial-env", version="1")
 myenv.build_local(workspace=ws, useDocker=False) #Creates conda environment.
 ```
 
-Als u het `build_local()` `useDocker` argument instelt op `True` , wordt met de functie een docker-installatie kopie gemaakt in plaats van een Conda-omgeving. Als u meer controle wilt, kunt u de `save_to_directory()` methode van gebruiken `Environment` . Hiermee schrijft u conda_dependencies. yml en azureml_environment.jsop definitie bestanden die u kunt afstemmen en gebruiken als basis voor uitbrei ding. 
+Als u het `build_local()` `useDocker` argument in stelt op , maakt de `True` functie een Docker-afbeelding in plaats van een Conda-omgeving. Als u meer controle wilt, kunt u de methode gebruiken van , die `save_to_directory()` conda_dependencies.yml en azureml_environment.jsschrijft op definitiebestanden die u kunt afstemmen en gebruiken als basis voor `Environment` extensies. 
 
-De `Environment` klasse heeft een aantal andere methoden voor het synchroniseren van omgevingen in uw Compute-hardware, uw Azure-werk ruimte en docker-installatie kopieën. Zie [omgevings klasse](/python/api/azureml-core/azureml.core.environment(class))voor meer informatie.
+De klasse heeft een aantal andere methoden voor het synchroniseren van omgevingen in uw `Environment` rekenhardware, uw Azure-werkruimte en Docker-afbeeldingen. Zie [Omgevingsklasse voor meer informatie.](/python/api/azureml-core/azureml.core.environment(class))
 
-Nadat u het model hebt gedownload en de afhankelijkheden hebt opgelost, zijn er geen door Azure gedefinieerde beperkingen voor het uitvoeren van scores, het verfijnen van het model, het gebruik van overboeking Learning, enzovoort. 
+Nadat u het model hebt gedownload en de afhankelijkheden ervan hebt opgelost, zijn er geen door Azure gedefinieerde beperkingen voor het uitvoeren van scores, het afstemmen van het model, het gebruik van leeroverdracht, enzovoort. 
 
 ## <a name="upload-a-retrained-model-to-azure-machine-learning"></a>Een opnieuw getraind model uploaden naar Azure Machine Learning
 
-Als u een lokaal getraind of een opnieuw getraind model hebt, kunt u dit registreren bij Azure. Nadat de registratie is geregistreerd, kunt u deze door lopen met behulp van Azure Compute of implementeren met behulp van Azure-functies, zoals de [Azure Kubernetes service](how-to-deploy-azure-kubernetes-service.md) of de Triton-Afleidings [Server (preview)](how-to-deploy-with-triton.md).
+Als u een lokaal getraind of opnieuw getraind model hebt, kunt u het registreren bij Azure. Nadat deze is geregistreerd, kunt u doorgaan met het afstemmen met behulp van Azure Compute of implementeren met behulp van Azure-faciliteiten zoals [Azure Kubernetes Service of](how-to-deploy-azure-kubernetes-service.md) [Triton Inference Server (preview).](how-to-deploy-with-triton.md)
 
-Een model moet worden opgeslagen als een geserialiseerd python-object in de indeling (een. PKL-bestand) om te worden gebruikt met de python-SDK van Azure Machine Learning. Ook moet er een methode worden geïmplementeerd `predict(data)` die een JSON-serialiseerbaar object retourneert. U kunt bijvoorbeeld een lokaal getraind scikit-leer diabetes-model opslaan met: 
+Om te worden gebruikt met de Azure Machine Learning Python SDK, moet een model worden opgeslagen als een geseraliseerd Python-object in pickle-indeling (een .pkl-bestand). Er moet ook een methode `predict(data)` worden geïmplementeerd die een JSON-serializeerbaar object retourneert. U kunt bijvoorbeeld een lokaal getraind scikit-learn-diabetesmodel opslaan met: 
 
 ```python
 import joblib
@@ -230,7 +230,7 @@ sk_model = Ridge().fit(dataset_x, dataset_y)
 joblib.dump(sk_model, "sklearn_regression_model.pkl")
 ```
 
-Als u het model beschikbaar wilt maken in azure, kunt u de `register()` methode van de- `Model` klasse gebruiken:
+Als u het model beschikbaar wilt maken in Azure, kunt u vervolgens de `register()` methode van de klasse `Model` gebruiken:
 
 ```python
 from azureml.core.model import Model
@@ -242,13 +242,13 @@ model = Model.register(model_path="sklearn_regression_model.pkl",
                        workspace=ws)
 ```
 
-U kunt vervolgens het nieuwe geregistreerde model vinden op het tabblad Azure Machine Learning **model** :
+U vindt uw zojuist geregistreerde model vervolgens op het tabblad Azure Machine Learning **Model:**
 
-:::image type="content" source="media/how-to-deploy-local/registered-model.png" alt-text="Scherm afbeelding van het tabblad Azure Machine Learning model, waarin een geüpload model wordt weer gegeven.":::
+:::image type="content" source="media/how-to-deploy-local/registered-model.png" alt-text="Schermopname van Azure Machine Learning tabblad Model, met een geüpload model.":::
 
-Zie voor meer informatie over het uploaden en bijwerken van modellen en omgevingen [model registreren en lokaal implementeren met geavanceerde gebruiks](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local-advanced.ipynb)gegevens.
+Zie Model registreren en lokaal implementeren met geavanceerd gebruik voor meer informatie over het uploaden en bijwerken van modellen [en omgevingen.](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local-advanced.ipynb)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie voor meer informatie over het beheren van omgevingen [& software omgevingen maken gebruiken in azure machine learning](how-to-use-environments.md).
-- Zie [verbinding maken met Storage services op Azure](how-to-access-data.md)voor meer informatie over het openen van gegevens uit uw Data Store.
+- Zie Create & use software environments in Azure Machine Learning [(Softwareomgevingen](how-to-use-environments.md)gebruiken in Azure Machine Learning) voor meer informatie over het beheren Azure Machine Learning.
+- Zie Verbinding maken met opslagservices in Azure voor meer informatie over het openen van [gegevens uit uw gegevensopslag.](how-to-access-data.md)

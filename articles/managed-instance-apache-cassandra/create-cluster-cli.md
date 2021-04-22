@@ -6,12 +6,12 @@ ms.author: thvankra
 ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
 ms.date: 03/15/2021
-ms.openlocfilehash: 53fe53e1406bfcde1f2d8c7b2a1ce8369303426f
-ms.sourcegitcommit: 2654d8d7490720a05e5304bc9a7c2b41eb4ae007
+ms.openlocfilehash: 56fe69ad7f56d62c9f61738448ea0276fee47063
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107379363"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862521"
 ---
 # <a name="quickstart-create-an-azure-managed-instance-for-apache-cassandra-cluster-using-azure-cli-preview"></a>Quickstart: Een Azure Managed Instance voor Apache Cassandra-cluster maken met behulp van Azure CLI (preview)
 
@@ -49,7 +49,7 @@ In deze quickstart wordt gedemonstreerd hoe u de Azure CLI-opdrachten gebruikt o
    az network vnet create -n <VNet_Name> -l eastus2 -g <Resource_Group_Name> --subnet-name <Subnet Name>
    ```
     > [!NOTE]
-    > Voor de implementatie van een azure managed instance voor Apache Cassandra is internettoegang vereist. De implementatie mislukt in omgevingen waar internettoegang is beperkt. Zorg ervoor dat u de toegang binnen uw VNet niet blokkeert tot de volgende essentiële Azure-services die nodig zijn om beheerde Cassandra goed te laten werken:
+    > Voor de implementatie van een azure managed instance voor Apache Cassandra is internettoegang vereist. De implementatie mislukt in omgevingen waarin internettoegang is beperkt. Zorg ervoor dat u de toegang binnen uw VNet niet blokkeert tot de volgende essentiële Azure-services die nodig zijn om beheerde Cassandra goed te laten werken:
     > - Azure Storage
     > - Azure KeyVault
     > - Microsoft Azure Virtual Machine Scale Sets
@@ -66,7 +66,7 @@ In deze quickstart wordt gedemonstreerd hoe u de Azure CLI-opdrachten gebruikt o
    > [!NOTE]
    > De `assignee` waarden en in de vorige opdracht zijn vaste waarden. Voer deze waarden exact in `role` zoals vermeld in de opdracht . Als u dit niet doet, leidt dit tot fouten bij het maken van het cluster. Als er fouten optreden bij het uitvoeren van deze opdracht, hebt u mogelijk geen machtigingen om deze uit te voeren. Neem contact op met uw beheerder voor machtigingen.
 
-1. Maak vervolgens het cluster in uw zojuist gemaakte Virtual Network met behulp van [de opdracht az managed-cassandra cluster create.](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_create) Voer de volgende opdracht uit als de waarde van `delegatedManagementSubnetId` de variabele:
+1. Maak vervolgens het cluster in uw zojuist gemaakte Virtual Network met behulp van [de opdracht az managed-cassandra cluster create.](/cli/azure/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_cluster_create) Voer de volgende opdracht uit als de waarde van `delegatedManagementSubnetId` de variabele:
 
    > [!NOTE]
    > De waarde van de variabele die u hieronder oplevert, is precies hetzelfde als de waarde van die u hebt opgegeven `delegatedManagementSubnetId` `--scope` in de bovenstaande opdracht:
@@ -87,7 +87,7 @@ In deze quickstart wordt gedemonstreerd hoe u de Azure CLI-opdrachten gebruikt o
       --debug
    ```
 
-1. Maak ten slotte een datacenter voor het cluster met drie knooppunten met behulp van [de opdracht az managed-cassandra datacenter create:](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_create)
+1. Maak ten slotte een datacenter voor het cluster met drie knooppunten met behulp van [de opdracht az managed-cassandra datacenter create:](/cli/azure/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_datacenter_create)
 
    ```azurecli-interactive
    dataCenterName='dc1'
@@ -102,7 +102,7 @@ In deze quickstart wordt gedemonstreerd hoe u de Azure CLI-opdrachten gebruikt o
       --node-count 3 
    ```
 
-1. Zodra het datacenter is gemaakt, kunt u de knooppunten in het datacenter omhoog of omlaag schalen door de opdracht [az managed-cassandra datacenter update uit te](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_update) voeren. Wijzig de waarde van `node-count` parameter in de gewenste waarde:
+1. Zodra het datacenter is gemaakt, kunt u de knooppunten in het datacenter omhoog of omlaag schalen door de opdracht [az managed-cassandra datacenter update uit te](/cli/azure/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#az_managed_cassandra_datacenter_update) voeren. Wijzig de waarde van `node-count` parameter in de gewenste waarde:
 
    ```azurecli-interactive
    resourceGroupName='<Resource_Group_Name>'

@@ -1,6 +1,6 @@
 ---
-title: Onderhouds venster configureren (preview-versie)
-description: Meer informatie over het instellen van de tijd waarop gepland onderhoud moet worden uitgevoerd op uw Azure SQL-data bases, elastische Pools en beheerde exemplaar databases.
+title: Onderhoudsvenster configureren (preview)
+description: Informatie over het instellen van de tijd waarop gepland onderhoud moet worden uitgevoerd op uw Azure SQL databases, elastische pools en databases van beheerde exemplaren.
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: service
@@ -9,51 +9,51 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/23/2021
-ms.openlocfilehash: 8688458d85084f3d3dab4678fa91ed827a337739
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 9771c68dda6f457586f27ea45fbc52aa118e8006
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105047348"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107874779"
 ---
-# <a name="configure-maintenance-window-preview"></a>Onderhouds venster configureren (preview-versie)
+# <a name="configure-maintenance-window-preview"></a>Onderhoudsvenster configureren (preview)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
 
-Configureer het [onderhouds venster (preview)](maintenance-window.md) voor een Azure SQL database, een elastische pool of een Azure SQL Managed instance-data base tijdens het maken van resources of op elk gewenst moment nadat een resource is gemaakt. 
+Configureer [het onderhoudsvenster (preview)](maintenance-window.md) voor een Azure SQL-database, elastische pool of Azure SQL Managed Instance-database tijdens het maken van de resource, of op elk gewenst moment nadat een resource is gemaakt. 
 
-Het *systeem standaard* onderhoud van de computer is tot 17:00 uur naar 8 a.m. Daily (lokale tijd van de Azure-regio waarin de resource zich bevindt) om te voor komen dat er pieken voor kantoor uren worden onderbroken. Als de *systeem standaard* onderhouds venster niet het beste is, selecteert u een van de andere beschik bare onderhouds Vensters.
+Het *standaardonderhoudsvenster* van het systeem is dagelijks van 17:00 tot 8:00 uur (lokale tijd van de Azure-regio waar de resource zich bevindt) om piekonderbrekingen in bedrijfsuren te voorkomen. Als het *standaardonderhoudsvenster* van systeem niet de beste tijd is, selecteert u een van de andere beschikbare onderhoudsvensters.
 
-De mogelijkheid om te wijzigen in een ander onderhouds venster is niet beschikbaar voor elk service niveau of in elke regio. Zie [Beschik baarheid van onderhouds venster](maintenance-window.md#availability)voor meer informatie over beschik baarheid.
+De mogelijkheid om over te gaan naar een ander onderhoudsvenster is niet beschikbaar voor elk serviceniveau of in elke regio. Zie Beschikbaarheid van onderhoudsvenster voor [meer informatie over beschikbaarheid.](maintenance-window.md#availability)
 
 > [!Important]
-> Het configureren van het onderhouds venster is een langlopende asynchrone bewerking, vergelijkbaar met het wijzigen van de servicelaag van de Azure SQL-resource. De resource is beschikbaar tijdens de bewerking, met uitzonde ring van een korte herconfiguratie die aan het einde van de bewerking plaatsvindt, en die doorgaans tot 8 seconden duurt, zelfs in het geval van langdurige langlopende trans acties. Als u de gevolgen van de herconfiguratie wilt beperken, moet u de bewerking buiten de piek uren uitvoeren.
+> Het configureren van het onderhoudsvenster is een langdurige asynchrone bewerking, vergelijkbaar met het wijzigen van de servicelaag van de Azure SQL resource. De resource is beschikbaar tijdens de bewerking, met uitzondering van een korte herconfiguratie die aan het einde van de bewerking wordt uitgevoerd en doorgaans maximaal 8 seconden duurt, zelfs in het geval van onderbroken langlopende transacties. Om de impact van de herconfiguratie te minimaliseren, moet u de bewerking uitvoeren buiten de piekuren.
 
-## <a name="configure-maintenance-window-during-database-creation"></a>Onderhouds venster configureren tijdens het maken van de data base 
+## <a name="configure-maintenance-window-during-database-creation"></a>Onderhoudsvenster configureren tijdens het maken van de database 
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Als u het onderhouds venster wilt configureren wanneer u een Data Base, een elastische pool of een beheerd exemplaar maakt, stelt u het gewenste **onderhouds venster** op de pagina **extra instellingen** in. 
+Als u het onderhoudsvenster wilt configureren wanneer u een database, elastische pool of beheerd exemplaar maakt, stelt u het gewenste onderhoudsvenster **in** op **de pagina Aanvullende** instellingen. 
 
-## <a name="set-the-maintenance-window-while-creating-a-single-database-or-elastic-pool"></a>Het onderhouds venster instellen tijdens het maken van één data base of elastische pool
+## <a name="set-the-maintenance-window-while-creating-a-single-database-or-elastic-pool"></a>Het onderhoudsvenster instellen tijdens het maken van een individuele database of elastische pool
 
-Zie [een Azure SQL database afzonderlijke data base maken](single-database-create-quickstart.md)voor stapsgewijze informatie over het maken van een nieuwe data base of groep.
+Zie Create an Azure SQL Database single database (Een database of pool maken) voor stapsgewijse informatie over het maken [van een nieuwe database of pool.](single-database-create-quickstart.md)
 
-   :::image type="content" source="media/maintenance-window-configure/additional-settings.png" alt-text="Het tabblad Extra instellingen voor data base maken":::
+   :::image type="content" source="media/maintenance-window-configure/additional-settings.png" alt-text="Tabblad Extra database-instellingen maken":::
 
 
-## <a name="set-the-maintenance-window-while-creating-a-managed-instance"></a>Het onderhouds venster instellen tijdens het maken van een beheerd exemplaar
+## <a name="set-the-maintenance-window-while-creating-a-managed-instance"></a>Het onderhoudsvenster instellen tijdens het maken van een beheerd exemplaar
 
-Zie [een Azure SQL Managed instance maken](../managed-instance/instance-create-quickstart.md)voor stapsgewijze informatie over het maken van een nieuw beheerd exemplaar.
+Zie Een nieuw beheerd exemplaar maken voor stapsgewijs informatie over het maken [van een Azure SQL Managed Instance.](../managed-instance/instance-create-quickstart.md)
 
-   :::image type="content" source="media/maintenance-window-configure/additional-settings-mi.png" alt-text="Het tabblad Extra instellingen voor het beheerde exemplaar maken":::
+   :::image type="content" source="media/maintenance-window-configure/additional-settings-mi.png" alt-text="Tabblad Aanvullende instellingen voor beheerd exemplaar maken":::
 
 
 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-In de volgende voor beelden ziet u hoe u het onderhouds venster configureert met behulp van Azure PowerShell. U kunt [Azure PowerShell installeren](/powershell/azure/install-az-ps)of de Azure Cloud shell gebruiken.
+De volgende voorbeelden laten zien hoe u het onderhoudsvenster configureert met behulp Azure PowerShell. U kunt [Azure PowerShell](/powershell/azure/install-az-ps)installeren of de Azure Cloud Shell.
 
 ## <a name="launch-azure-cloud-shell"></a>Azure Cloud Shell starten
 
@@ -62,13 +62,13 @@ Azure Cloud Shell is een gratis interactieve shell waarmee u de stappen in dit a
 Als u Cloud Shell wilt openen, selecteert u **Proberen** in de rechterbovenhoek van een codeblok. U kunt Cloud Shell ook openen in een afzonderlijk browsertabblad door naar [https://shell.azure.com/powershell](https://shell.azure.com/powershell) te gaan. Klik op **Kopiëren** om de codeblokken te kopiëren, plak deze in Cloud Shell en druk vervolgens op Enter om de code uit te voeren.
 
 
-## <a name="discover-available-maintenance-windows"></a>Beschik bare onderhouds Vensters detecteren
+## <a name="discover-available-maintenance-windows"></a>Beschikbare onderhoudsvensters ontdekken
 
-Wanneer u het onderhouds venster instelt, heeft elke regio een eigen onderhouds venster opties die overeenkomen met de tijd zone voor de regio waarin de data base of groep zich bevindt. 
+Bij het instellen van het onderhoudsvenster heeft elke regio zijn eigen onderhoudsvensteropties die overeenkomen met de tijdzone voor de regio waarin de database of pool zich bevindt. 
 
-### <a name="discover-sql-database-and-elastic-pool-maintenance-windows"></a>Onderhouds Vensters voor SQL Database en elastische Pools detecteren 
+### <a name="discover-sql-database-and-elastic-pool-maintenance-windows"></a>Onderhoudsvensters SQL Database elastische pool ontdekken 
 
-In het volgende voor beeld worden de beschik bare onderhouds Vensters voor de *eastus2* -regio geretourneerd met behulp van de cmdlet [Get-AzMaintenancePublicConfiguration](/powershell/module/az.maintenance/get-azmaintenancepublicconfiguration) . Stel voor-data bases en elastische Pools `MaintenanceScope` in op `SQLDB` .
+In het volgende voorbeeld worden de beschikbare onderhoudsvensters voor de regio *eastus2* met behulp van de cmdlet [Get-AzMaintenancePublicConfiguration.](/powershell/module/az.maintenance/get-azmaintenancepublicconfiguration) Voor databases en elastische pools stelt u `MaintenanceScope` in op `SQLDB` .
 
    ```powershell-interactive
    $location = "eastus2"
@@ -78,9 +78,9 @@ In het volgende voor beeld worden de beschik bare onderhouds Vensters voor de *e
    $configurations | ?{ $_.Location -eq $location -and $_.MaintenanceScope -eq "SQLDB"}
    ```
 
-### <a name="discover-sql-managed-instance-maintenance-windows"></a>Onderhouds Vensters van SQL Managed instance detecteren 
+### <a name="discover-sql-managed-instance-maintenance-windows"></a>Onderhoudsvensters SQL Managed Instance ontdekken 
 
-In het volgende voor beeld worden de beschik bare onderhouds Vensters voor de *eastus2* -regio geretourneerd met behulp van de cmdlet [Get-AzMaintenancePublicConfiguration](/powershell/module/az.maintenance/get-azmaintenancepublicconfiguration) . Stel voor beheerde instanties `MaintenanceScope` in op `SQLManagedInstance` .
+In het volgende voorbeeld worden de beschikbare onderhoudsvensters voor de regio *eastus2* met behulp van de cmdlet [Get-AzMaintenancePublicConfiguration.](/powershell/module/az.maintenance/get-azmaintenancepublicconfiguration) Voor beheerde exemplaren stelt u `MaintenanceScope` in op `SQLManagedInstance` .
 
    ```powershell-interactive
    $location = "eastus2"
@@ -91,9 +91,9 @@ In het volgende voor beeld worden de beschik bare onderhouds Vensters voor de *e
    ```
 
 
-## <a name="set-the-maintenance-window-while-creating-a-single-database"></a>Het onderhouds venster instellen tijdens het maken van één data base
+## <a name="set-the-maintenance-window-while-creating-a-single-database"></a>Het onderhoudsvenster instellen tijdens het maken van een individuele database
 
-In het volgende voor beeld wordt een nieuwe data base gemaakt en wordt het onderhouds venster ingesteld met behulp van de cmdlet [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) . De `-MaintenanceConfigurationId` moet worden ingesteld op een geldige waarde voor de regio van uw data base. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt een nieuwe database gemaakt en wordt het onderhoudsvenster met behulp van de cmdlet [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) gemaakt. De `-MaintenanceConfigurationId` moet worden ingesteld op een geldige waarde voor de regio van uw database. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
 
    ```powershell-interactive
@@ -119,9 +119,9 @@ In het volgende voor beeld wordt een nieuwe data base gemaakt en wordt het onder
 
 
 
-## <a name="set-the-maintenance-window-while-creating-an-elastic-pool"></a>Het onderhouds venster instellen tijdens het maken van een elastische pool
+## <a name="set-the-maintenance-window-while-creating-an-elastic-pool"></a>Het onderhoudsvenster instellen tijdens het maken van een elastische pool
 
-In het volgende voor beeld wordt een nieuwe elastische pool gemaakt en wordt het onderhouds venster ingesteld met behulp van de cmdlet [New-AzSqlElasticPool](/powershell/module/az.sql/new-azsqlelasticpool) . Het onderhouds venster is ingesteld op de elastische pool, zodat alle data bases in de groep de planning van het onderhouds venster van de pool hebben. De `-MaintenanceConfigurationId` moet worden ingesteld op een geldige waarde voor de regio van uw pool. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt een nieuwe elastische pool gemaakt en wordt het onderhoudsvenster met behulp van de cmdlet [New-AzSqlElasticPool](/powershell/module/az.sql/new-azsqlelasticpool) gemaakt. Het onderhoudsvenster wordt ingesteld voor de elastische pool, zodat alle databases in de pool de planning voor het onderhoudsvenster van de pool hebben. De `-MaintenanceConfigurationId` moet worden ingesteld op een geldige waarde voor de regio van uw pool. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
 
    ```powershell-interactive
@@ -146,9 +146,9 @@ In het volgende voor beeld wordt een nieuwe elastische pool gemaakt en wordt het
     $pool
    ```
 
-## <a name="set-the-maintenance-window-while-creating-a-managed-instance"></a>Het onderhouds venster instellen tijdens het maken van een beheerd exemplaar
+## <a name="set-the-maintenance-window-while-creating-a-managed-instance"></a>Het onderhoudsvenster instellen tijdens het maken van een beheerd exemplaar
 
-In het volgende voor beeld wordt een nieuw beheerd exemplaar gemaakt en wordt het onderhouds venster ingesteld met behulp van de cmdlet [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance) . Het onderhouds venster is ingesteld op het exemplaar, zodat alle data bases in het exemplaar het onderhouds venster schema van het exemplaar hebben. Voor `-MaintenanceConfigurationId` is de *MaintenanceConfigName* een geldige waarde voor de regio van uw exemplaar. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt een nieuw beheerd exemplaar gemaakt en wordt het onderhoudsvenster met behulp van de cmdlet [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance) gemaakt. Het onderhoudsvenster is ingesteld op het exemplaar, zodat alle databases in het exemplaar de planning voor het onderhoudsvenster van het exemplaar hebben. Voor `-MaintenanceConfigurationId` moet *maintenanceConfigName* een geldige waarde zijn voor de regio van uw exemplaar. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
 
    ```powershell
@@ -162,9 +162,9 @@ In het volgende voor beeld wordt een nieuw beheerd exemplaar gemaakt en wordt he
 
 # <a name="cli"></a>[CLI](#tab/azure-cli)
 
-In de volgende voor beelden ziet u hoe u het onderhouds venster configureert met behulp van Azure CLI. U kunt [de Azure cli installeren](/cli/azure/install-azure-cli)of de Azure Cloud shell gebruiken. 
+De volgende voorbeelden laten zien hoe u het onderhoudsvenster configureert met behulp van Azure CLI. U kunt [de Azure CLI installeren](/cli/azure/install-azure-cli)of de Azure Cloud Shell. 
 
-Het configureren van het onderhouds venster met de Azure CLI is alleen beschikbaar voor SQL Managed instance.
+Het onderhoudsvenster configureren met de Azure CLI is alleen beschikbaar voor SQL Managed Instance.
 
 ## <a name="launch-azure-cloud-shell"></a>Azure Cloud Shell starten
 
@@ -172,13 +172,13 @@ Azure Cloud Shell is een gratis interactieve shell waarmee u de stappen in dit a
 
 Als u Cloud Shell wilt openen, selecteert u **Proberen** in de rechterbovenhoek van een codeblok. U kunt Cloud Shell ook openen in een afzonderlijk browsertabblad door naar [https://shell.azure.com/cli](https://shell.azure.com/cli) te gaan. Klik op **Kopiëren** om de codeblokken te kopiëren, plak deze in Cloud Shell en druk vervolgens op Enter om de code uit te voeren.
 
-## <a name="discover-available-maintenance-windows"></a>Beschik bare onderhouds Vensters detecteren
+## <a name="discover-available-maintenance-windows"></a>Beschikbare onderhoudsvensters ontdekken
 
-Wanneer u het onderhouds venster instelt, heeft elke regio een eigen onderhouds venster opties die overeenkomen met de tijd zone voor de regio waarin de data base of groep zich bevindt.
+Bij het instellen van het onderhoudsvenster heeft elke regio zijn eigen opties voor het onderhoudsvenster die overeenkomen met de tijdzone voor de regio waarin de database of pool zich bevindt.
 
-### <a name="discover-sql-database-and-elastic-pool-maintenance-windows"></a>Onderhouds Vensters voor SQL Database en elastische Pools detecteren
+### <a name="discover-sql-database-and-elastic-pool-maintenance-windows"></a>Onderhoudsvensters SQL Database elastische pool ontdekken
 
-In het volgende voor beeld worden de beschik bare onderhouds Vensters voor de *eastus2* -regio geretourneerd met behulp van de opdracht [AZ Maintenance Public-Configuration List](/cli/azure/ext/maintenance/maintenance/public-configuration#ext_maintenance_az_maintenance_public_configuration_list) . Stel voor-data bases en elastische Pools `maintenanceScope` in op `SQLDB` .
+In het volgende voorbeeld worden de beschikbare onderhoudsvensters voor de regio *eastus2* met behulp van de [opdracht az maintenance public-configuration list.](/cli/azure/maintenance/public-configuration#az_maintenance_public_configuration_list) Stel voor databases en elastische pools in `maintenanceScope` op `SQLDB` .
 
    ```azurecli
    location="eastus2"
@@ -186,17 +186,17 @@ In het volgende voor beeld worden de beschik bare onderhouds Vensters voor de *e
    az maintenance public-configuration list --query "[?location=='$location'&&contains(maintenanceScope,'SQLDB')]"
    ```
 
-### <a name="discover-sql-managed-instance-maintenance-windows"></a>Onderhouds Vensters van SQL Managed instance detecteren
+### <a name="discover-sql-managed-instance-maintenance-windows"></a>Onderhoudsvensters SQL Managed Instance ontdekken
 
-In het volgende voor beeld worden de beschik bare onderhouds Vensters voor de *eastus2* -regio geretourneerd met behulp van de opdracht [AZ Maintenance Public-Configuration List](/cli/azure/ext/maintenance/maintenance/public-configuration#ext_maintenance_az_maintenance_public_configuration_list) . Stel voor beheerde instanties `maintenanceScope` in op `SQLManagedInstance` .
+In het volgende voorbeeld worden de beschikbare onderhoudsvensters voor de regio *eastus2* met behulp van de [opdracht az maintenance public-configuration list.](/cli/azure/maintenance/public-configuration#az_maintenance_public_configuration_list) Stel voor beheerde exemplaren in `maintenanceScope` op `SQLManagedInstance` .
 
    ```azurecli
    az maintenance public-configuration list --query "[?location=='eastus2'&&contains(maintenanceScope,'SQLManagedInstance')]"
    ```
 
-## <a name="set-the-maintenance-window-while-creating-a-single-database"></a>Het onderhouds venster instellen tijdens het maken van één data base
+## <a name="set-the-maintenance-window-while-creating-a-single-database"></a>Het onderhoudsvenster instellen tijdens het maken van een individuele database
 
-In het volgende voor beeld wordt een nieuwe data base gemaakt en wordt het onderhouds venster ingesteld met behulp van de opdracht [AZ SQL DB Create](/cli/azure/sql/db#az_sql_db_create) . De `--maint-config-id` (of `-m` ) moet worden ingesteld op een geldige waarde voor de regio van uw data base. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt een nieuwe database gemaakt en wordt het onderhoudsvenster met behulp van de [opdracht az sql db create](/cli/azure/sql/db#az_sql_db_create) gemaakt. De `--maint-config-id` (of `-m` ) moet worden ingesteld op een geldige waarde voor de regio van uw database. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
 
    ```azurecli
@@ -219,9 +219,9 @@ In het volgende voor beeld wordt een nieuwe data base gemaakt en wordt het onder
       --maint-config-id $maintenanceConfig
    ```
 
-## <a name="set-the-maintenance-window-while-creating-an-elastic-pool"></a>Het onderhouds venster instellen tijdens het maken van een elastische pool
+## <a name="set-the-maintenance-window-while-creating-an-elastic-pool"></a>Het onderhoudsvenster instellen tijdens het maken van een elastische pool
 
-In het volgende voor beeld wordt een nieuwe elastische pool gemaakt en wordt het onderhouds venster ingesteld met de cmdlet [AZ SQL Elastic-pool Create](/cli/azure/sql/elastic-pool#az_sql_elastic_pool_create) . Het onderhouds venster is ingesteld op de elastische pool, zodat alle data bases in de groep de planning van het onderhouds venster van de pool hebben. De `--maint-config-id` (of `-m` ) moet worden ingesteld op een geldige waarde voor de regio van uw pool. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt een nieuwe elastische pool gemaakt en wordt het onderhoudsvenster met behulp van de cmdlet [az sql elastic-pool create](/cli/azure/sql/elastic-pool#az_sql_elastic_pool_create) gemaakt. Het onderhoudsvenster wordt ingesteld voor de elastische pool, zodat alle databases in de pool de planning voor het onderhoudsvenster van de pool hebben. De `--maint-config-id` (of `-m` ) moet worden ingesteld op een geldige waarde voor de regio van uw pool. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
 
    ```azurecli
@@ -244,9 +244,9 @@ In het volgende voor beeld wordt een nieuwe elastische pool gemaakt en wordt het
       --maint-config-id $maintenanceConfig
    ```
 
-## <a name="set-the-maintenance-window-while-creating-a-managed-instance"></a>Het onderhouds venster instellen tijdens het maken van een beheerd exemplaar
+## <a name="set-the-maintenance-window-while-creating-a-managed-instance"></a>Het onderhoudsvenster instellen tijdens het maken van een beheerd exemplaar
 
-In het volgende voor beeld wordt een nieuw beheerd exemplaar gemaakt en wordt het onderhouds venster ingesteld met behulp van [AZ SQL mi Create](/cli/azure/sql/mi#az_sql_mi_create). Het onderhouds venster is ingesteld op het exemplaar, zodat alle data bases in het exemplaar het onderhouds venster schema van het exemplaar hebben. *MaintenanceConfigName* moet een geldige waarde zijn voor de regio van uw exemplaar. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt een nieuw beheerd exemplaar gemaakt en wordt het onderhoudsvenster met [az sql mi create gemaakt.](/cli/azure/sql/mi#az_sql_mi_create) Het onderhoudsvenster wordt ingesteld op het exemplaar, zodat alle databases in het exemplaar de planning voor het onderhoudsvenster van het exemplaar hebben. *MaintenanceConfigName* moet een geldige waarde zijn voor de regio van uw exemplaar. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
    ```azurecli
    az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} -m /subscriptions/{SubID}/providers/Microsoft.Maintenance/publicMaintenanceConfigurations/SQL_{Region}_{MaintenanceConfigName}
@@ -254,38 +254,38 @@ In het volgende voor beeld wordt een nieuw beheerd exemplaar gemaakt en wordt he
 
 -----
 
-## <a name="configure-maintenance-window-for-existing-databases"></a>Onderhouds venster voor bestaande data bases configureren
+## <a name="configure-maintenance-window-for-existing-databases"></a>Onderhoudsvenster configureren voor bestaande databases
 
 
-Bij het Toep assen van een onderhouds venster selectie voor een Data Base kan een korte herconfiguratie (enkele seconden) in sommige gevallen worden ervaren, omdat Azure de vereiste wijzigingen toepast.
+Bij het toepassen van een selectie van een onderhoudsvenster op een database, kan er in sommige gevallen een korte herconfiguratie (enkele seconden) worden uitgevoerd, omdat Azure de vereiste wijzigingen moet toepassen.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Met de volgende stappen wordt het onderhouds venster voor een bestaande data base, elastische pool of een beheerd exemplaar ingesteld met behulp van de Azure Portal:
+Met de volgende stappen stelt u het onderhoudsvenster in voor een bestaande database, elastische pool of beheerd exemplaar met behulp van de Azure Portal:
 
 
-## <a name="set-the-maintenance-window-for-an-existing-database-or-elastic-pool"></a>Het onderhouds venster voor een bestaande data base of elastische pool instellen
+## <a name="set-the-maintenance-window-for-an-existing-database-or-elastic-pool"></a>Het onderhoudsvenster voor een bestaande database of elastische pool instellen
 
-1. Navigeer naar het SQL database of de elastische pool waarvoor u het onderhouds venster wilt instellen.
-1. Selecteer in het menu **instellingen** de optie **onderhoud** en selecteer vervolgens het gewenste onderhouds venster.
+1. Navigeer naar SQL database of elastische pool waar u het onderhoudsvenster voor wilt instellen.
+1. Selecteer in **het** menu Instellingen **de optie Onderhoud** en selecteer vervolgens het gewenste onderhoudsvenster.
 
-   :::image type="content" source="media/maintenance-window-configure/maintenance.png" alt-text="SQL database onderhouds pagina":::
+   :::image type="content" source="media/maintenance-window-configure/maintenance.png" alt-text="SQL database onderhoudspagina":::
 
 
-## <a name="set-the-maintenance-window-for-an-existing-managed-instance"></a>Het onderhouds venster voor een bestaand beheerd exemplaar instellen
+## <a name="set-the-maintenance-window-for-an-existing-managed-instance"></a>Het onderhoudsvenster voor een bestaand beheerd exemplaar instellen
 
-1. Navigeer naar het beheerde exemplaar waarvoor u het onderhouds venster wilt instellen.
-1. Selecteer in het menu **instellingen** de optie **onderhoud** en selecteer vervolgens het gewenste onderhouds venster.
+1. Navigeer naar het beheerde exemplaar waar u het onderhoudsvenster voor wilt instellen.
+1. Selecteer in **het** menu Instellingen **de optie Onderhoud** en selecteer vervolgens het gewenste onderhoudsvenster.
 
-   :::image type="content" source="media/maintenance-window-configure/maintenance-mi.png" alt-text="Onderhouds pagina voor SQL Managed instance":::
+   :::image type="content" source="media/maintenance-window-configure/maintenance-mi.png" alt-text="Onderhoudspagina voor SQL Managed Instance":::
 
 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-## <a name="set-the-maintenance-window-for-an-existing-database"></a>Het onderhouds venster voor een bestaande data base instellen
+## <a name="set-the-maintenance-window-for-an-existing-database"></a>Het onderhoudsvenster voor een bestaande database instellen
 
-In het volgende voor beeld wordt het onderhouds venster voor een bestaande data base ingesteld met behulp van de cmdlet [set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) . De `-MaintenanceConfigurationId` moet worden ingesteld op een geldige waarde voor de regio van uw data base. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt het onderhoudsvenster voor een bestaande database ingesteld met behulp van de cmdlet [Set-AzSqlDatabase.](/powershell/module/az.sql/set-azsqldatabase) De `-MaintenanceConfigurationId` moet worden ingesteld op een geldige waarde voor de regio van uw database. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
    ```powershell-interactive
     # Select different maintenance window
@@ -300,9 +300,9 @@ In het volgende voor beeld wordt het onderhouds venster voor een bestaande data 
     $database
    ```
 
-## <a name="set-the-maintenance-window-on-an-existing-elastic-pool"></a>Het onderhouds venster instellen voor een bestaande elastische pool
+## <a name="set-the-maintenance-window-on-an-existing-elastic-pool"></a>Het onderhoudsvenster voor een bestaande elastische pool instellen
 
-In het volgende voor beeld wordt het onderhouds venster voor een bestaande elastische pool ingesteld met behulp van de cmdlet [set-AzSqlElasticPool](/powershell/module/az.sql/set-azsqlelasticpool) . Het is belang rijk om ervoor te zorgen dat de `$maintenanceConfig` waarde een geldige waarde is voor de regio van uw pool.  Zie [detectie van beschik bare onderhouds Vensters](#discover-available-maintenance-windows)voor geldige waarden voor een regio.
+In het volgende voorbeeld wordt het onderhoudsvenster voor een bestaande elastische pool ingesteld met behulp van de cmdlet [Set-AzSqlElasticPool.](/powershell/module/az.sql/set-azsqlelasticpool) Het is belangrijk om ervoor te zorgen dat de `$maintenanceConfig` waarde een geldige waarde is voor de regio van uw pool.  Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor een regio.](#discover-available-maintenance-windows)
 
    ```powershell-interactive
     # Select different maintenance window
@@ -319,9 +319,9 @@ In het volgende voor beeld wordt het onderhouds venster voor een bestaande elast
 
 
 
-## <a name="set-the-maintenance-window-on-an-existing-managed-instance"></a>Het onderhouds venster instellen voor een bestaand beheerd exemplaar
+## <a name="set-the-maintenance-window-on-an-existing-managed-instance"></a>Het onderhoudsvenster instellen op een bestaand beheerd exemplaar
 
-In het volgende voor beeld wordt het onderhouds venster voor een bestaand beheerd exemplaar ingesteld met behulp van de cmdlet [set-AzSqlInstance](/powershell/module/az.sql/set-azsqlinstance) . Het is belang rijk om ervoor te zorgen dat de `$maintenanceConfig` waarde een geldige waarde voor de regio van uw exemplaar moet zijn.  Zie [detectie van beschik bare onderhouds Vensters](#discover-available-maintenance-windows)voor geldige waarden voor een regio.
+In het volgende voorbeeld wordt het onderhoudsvenster voor een bestaand beheerd exemplaar ingesteld met behulp van de cmdlet [Set-AzSqlInstance.](/powershell/module/az.sql/set-azsqlinstance) Het is belangrijk om ervoor te zorgen dat de waarde een geldige waarde moet `$maintenanceConfig` zijn voor de regio van uw exemplaar.  Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor een regio.](#discover-available-maintenance-windows)
 
 
    ```powershell-interactive
@@ -333,11 +333,11 @@ In het volgende voor beeld wordt het onderhouds venster voor een bestaand beheer
 
 # <a name="cli"></a>[CLI](#tab/azure-cli)
 
-In de volgende voor beelden ziet u hoe u het onderhouds venster configureert met behulp van Azure CLI. U kunt [de Azure cli installeren](/cli/azure/install-azure-cli)of de Azure Cloud shell gebruiken.
+De volgende voorbeelden laten zien hoe u het onderhoudsvenster configureert met behulp van Azure CLI. U kunt [de Azure CLI installeren](/cli/azure/install-azure-cli)of de Azure Cloud Shell.
 
-## <a name="set-the-maintenance-window-for-an-existing-database"></a>Het onderhouds venster voor een bestaande data base instellen
+## <a name="set-the-maintenance-window-for-an-existing-database"></a>Het onderhoudsvenster voor een bestaande database instellen
 
-In het volgende voor beeld wordt het onderhouds venster voor een bestaande data base ingesteld met behulp van de opdracht [AZ SQL DB Update](/cli/azure/sql/db#az_sql_db_update) . De `--maint-config-id` (of `-m` ) moet worden ingesteld op een geldige waarde voor de regio van uw data base. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt het onderhoudsvenster voor een bestaande database met behulp van de [opdracht az sql db update.](/cli/azure/sql/db#az_sql_db_update) De `--maint-config-id` (of `-m` ) moet worden ingesteld op een geldige waarde voor de regio van uw database. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
    ```azurecli
     # Select different maintenance window
@@ -351,9 +351,9 @@ In het volgende voor beeld wordt het onderhouds venster voor een bestaande data 
       --maint-config-id $maintenanceConfig
    ```
 
-## <a name="set-the-maintenance-window-on-an-existing-elastic-pool"></a>Het onderhouds venster instellen voor een bestaande elastische pool
+## <a name="set-the-maintenance-window-on-an-existing-elastic-pool"></a>Het onderhoudsvenster voor een bestaande elastische pool instellen
 
-In het volgende voor beeld wordt het onderhouds venster voor een bestaande elastische pool ingesteld met behulp van de opdracht [AZ SQL Elastic-pool update](/cli/azure/sql/elastic-pool#az_sql_elastic_pool_update) . Het is belang rijk om ervoor te zorgen dat de `maintenanceConfig` waarde een geldige waarde is voor de regio van uw pool.  Zie [detectie van beschik bare onderhouds Vensters](#discover-available-maintenance-windows)voor geldige waarden voor een regio.
+In het volgende voorbeeld wordt het onderhoudsvenster voor een bestaande elastische pool met behulp van [de opdracht az sql elastic-pool update.](/cli/azure/sql/elastic-pool#az_sql_elastic_pool_update) Het is belangrijk om ervoor te zorgen dat de `maintenanceConfig` waarde een geldige waarde is voor de regio van uw pool.  Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor een regio.](#discover-available-maintenance-windows)
 
    ```azurecli
     # Select different maintenance window
@@ -367,9 +367,9 @@ In het volgende voor beeld wordt het onderhouds venster voor een bestaande elast
       --maint-config-id $maintenanceConfig
    ```
 
-## <a name="set-the-maintenance-window-on-an-existing-managed-instance"></a>Het onderhouds venster instellen voor een bestaand beheerd exemplaar
+## <a name="set-the-maintenance-window-on-an-existing-managed-instance"></a>Het onderhoudsvenster instellen op een bestaand beheerd exemplaar
 
-In het volgende voor beeld wordt het onderhouds venster ingesteld met behulp van [AZ SQL mi update](/cli/azure/sql/mi#az_sql_mi_update). Het onderhouds venster is ingesteld op het exemplaar, zodat alle data bases in het exemplaar het onderhouds venster schema van het exemplaar hebben. Voor `-MaintenanceConfigurationId` is de *MaintenanceConfigName* een geldige waarde voor de regio van uw exemplaar. Zie [Detecteer beschik bare onderhouds Vensters](#discover-available-maintenance-windows)om geldige waarden voor uw regio op te halen.
+In het volgende voorbeeld wordt het onderhoudsvenster met [az sql mi update .](/cli/azure/sql/mi#az_sql_mi_update) Het onderhoudsvenster wordt ingesteld op het exemplaar, zodat alle databases in het exemplaar de planning voor het onderhoudsvenster van het exemplaar hebben. Voor `-MaintenanceConfigurationId` moet *MaintenanceConfigName* een geldige waarde zijn voor de regio van uw exemplaar. Zie Beschikbare onderhoudsvensters ontdekken voor geldige waarden [voor uw regio.](#discover-available-maintenance-windows)
 
    ```azurecli
    az sql mi update -g mygroup  -n myinstance -m /subscriptions/{SubID}/providers/Microsoft.Maintenance/publicMaintenanceConfigurations/SQL_{Region}_{MainteanceConfigName}
@@ -379,12 +379,12 @@ In het volgende voor beeld wordt het onderhouds venster ingesteld met behulp van
 
 ## <a name="cleanup-resources"></a>Resources opruimen
 
-Zorg ervoor dat u overbodige resources verwijdert nadat u klaar bent met deze om onnodige kosten te voor komen.
+Zorg ervoor dat u overbodige resources verwijdert nadat u er klaar mee bent om onnodige kosten te voorkomen.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Ga naar de SQL database of elastische pool die u niet meer nodig hebt.
-1. Selecteer in het menu **overzicht** de optie om de resource te verwijderen.
+1. Navigeer naar SQL database of elastische pool die u niet meer nodig hebt.
+1. Selecteer in **het** menu Overzicht de optie om de resource te verwijderen.
 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -421,6 +421,6 @@ Zorg ervoor dat u overbodige resources verwijdert nadat u klaar bent met deze om
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [onderhouds venster (preview-versie)](maintenance-window.md)voor meer informatie over onderhouds Vensters.
-- Zie [Veelgestelde vragen over onderhouds Vensters](maintenance-window-faq.yml)voor meer informatie.
-- Zie [bewaking en prestaties afstemmen in Azure SQL database en Azure SQL Managed instance](monitor-tune-overview.md)voor meer informatie over het optimaliseren van prestaties.
+- Zie onderhoudsvenster [(preview) voor meer informatie over het onderhoudsvenster.](maintenance-window.md)
+- Zie Veelgestelde vragen over [onderhoudsvenster voor meer informatie.](maintenance-window-faq.yml)
+- Zie Bewaking en prestaties afstemmen in Azure SQL Database en Azure SQL Managed Instance voor meer informatie over [het optimaliseren van Azure SQL Managed Instance.](monitor-tune-overview.md)

@@ -5,12 +5,12 @@ author: MSEvanhi
 ms.topic: tutorial
 ms.date: 06/24/2020
 ms.author: evanhi
-ms.openlocfilehash: 721fe31f514cb948c93dc2a779a92ef3b2775ef9
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: 915856e3f9875c0a3318bc19138eaae8742bf72f
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107779233"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871737"
 ---
 # <a name="quickstart-create-a-custom-provider-and-deploy-custom-resources"></a>Quickstart: Een aangepaste provider maken en aangepaste resources implementeren
 
@@ -265,7 +265,7 @@ U ontvangt het antwoord:
 
 ## <a name="custom-resource-provider-commands"></a>Opdrachten voor de aangepaste resourceprovider
 
-Gebruik de [custom-providers](/cli/azure/ext/custom-providers/custom-providers/resource-provider)-opdrachten om samen te werken met uw aangepaste resourceprovider.
+Gebruik de [custom-providers](/cli/azure/custom-providers/resource-provider)-opdrachten om samen te werken met uw aangepaste resourceprovider.
 
 ### <a name="list-custom-resource-providers"></a>Aangepaste resourceproviders weergeven
 

@@ -67,7 +67,7 @@
 - name: Naslaginformatie
   items:
     - name: Azure CLI
-      href: /cli/azure/ext/blockchain/blockchain
+      href: /cli/azure/blockchain
 - name: Resources
   items:
     - name: Azure Blockchain Dev Kit

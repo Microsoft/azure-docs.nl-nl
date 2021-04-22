@@ -1,49 +1,49 @@
 ---
-title: 'Concepten: persoonlijke Clouds van Azure VMware-oplossing controleren en herstellen'
-description: Meer informatie over hoe de Azure VMware-oplossing VMware ESXi servers bewaakt en herstelt in een persoonlijke cloud van Azure VMware-oplossing.
+title: 'Concepten : privé clouds bewaken en Azure VMware Solution herstellen'
+description: Ontdek hoe Azure VMware Solution servers in VMware ESXi privécloud bewaakt en Azure VMware Solution herstelt.
 ms.topic: conceptual
 ms.custom: contperf-fy21q2
 ms.date: 02/16/2021
-ms.openlocfilehash: 59319b5598be9770e82b9676a28444648230a019
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 9fa94d6093e03432f20672ecf5c0160ce479e175
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100633135"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871665"
 ---
-# <a name="monitor-and-repair-azure-vmware-solution-private-clouds"></a>Persoonlijke Clouds van Azure VMware-oplossing controleren en herstellen
+# <a name="monitor-and-repair-azure-vmware-solution-private-clouds"></a>Privé clouds bewaken Azure VMware Solution herstellen
 
-De Azure VMware-oplossing bewaakt voortdurend de VMware ESXi-servers op een Azure VMware-oplossing privécloud. 
+Azure VMware Solution bewaakt continu de VMware ESXi servers in een Azure VMware Solution privécloud. 
 
-## <a name="what-azure-vmware-solution-monitors"></a>Wat de Azure VMware-oplossing bewaakt
+## <a name="what-azure-vmware-solution-monitors"></a>Wat Azure VMware Solution monitors
 
-Met de Azure VMware-oplossing worden de volgende voor waarden op de host bewaakt:  
+Azure VMware Solution controleert de volgende voorwaarden op de host:  
 
-- Processor status 
-- Geheugen status 
-- Verbinding en energie status 
-- Status van hardware-ventilator 
-- Netwerk connectiviteits verlies 
-- Status van hardwaresysteem bord 
-- Er zijn fouten opgetreden op de schijven van een vSAN-host 
-- Hardwarematige spanning 
-- Status van hardwarematige Tempe ratuur 
-- Energie status van hardware 
-- Opslag status 
+- Processorstatus 
+- Geheugenstatus 
+- Verbindings- en energietoestand 
+- Status van hardwareventilator 
+- Netwerkverbindingsverlies 
+- Status van hardwaresysteembord 
+- Er zijn fouten opgetreden op de schijf(en) van een vSAN-host 
+- Hardwarespanning 
+- Status van de hardwaretemperatuur 
+- Status van hardware-energie 
+- Opslagstatus 
 - Verbindingsfout 
 
 > [!NOTE]
-> Tenant beheerders van Azure VMware-oplossing mogen de hierboven gedefinieerde VMware vCenter-alarm signalen niet bewerken of verwijderen, aangezien deze worden beheerd door het beheer vlak van de Azure VMware-oplossing in vCenter. Deze waarschuwingen worden gebruikt door de bewaking van Azure VMware-oplossingen om het herstel proces van de Azure VMware-oplossing te activeren.
+> Azure VMware Solution mogen de hierboven gedefinieerde VMware vCenter-alarmen niet bewerken of verwijderen, omdat deze worden beheerd door het Azure VMware Solution-besturingsvlak in vCenter. Deze alarmen worden gebruikt door Azure VMware Solution bewaking om het herstelproces van Azure VMware Solution host te activeren.
 
-## <a name="azure-vmware-solution-host-remediation"></a>Herstel van de Azure VMware-oplossing host  
+## <a name="azure-vmware-solution-host-remediation"></a>Azure VMware Solution host herstellen  
 
-Wanneer de Azure VMware-oplossing een afbraak of fout op een Azure VMware-oplossings knooppunt detecteert, wordt het proces voor het herstellen van hosts geactiveerd. Voor het door voeren van de host moet het defecte knoop punt worden vervangen door een nieuw goedend knoop punt.  
+Wanneer Azure VMware Solution een degradatie of fout op een Azure VMware Solution detecteert, wordt het hostbemiddelingsproces activeert. Bij het herstellen van de host moet het defecte knooppunt worden vervangen door een nieuw, goed werkend knooppunt.  
 
-Het herstel van de host begint met het toevoegen van een nieuw goed in orde knoop punt in het cluster. Als dat mogelijk is, wordt de defecte host in VMware vSphere onderhouds modus geplaatst. VMware vMotion verplaatst de Vm's van de defecte host naar andere beschik bare servers in het cluster, waardoor er mogelijk sprake is van een downtime van nul voor Livemigratie van werk belastingen. Als de defecte host niet in de onderhouds modus kan worden geplaatst, wordt de host uit het cluster verwijderd.
+Herstel van de host begint met het toevoegen van een nieuw knooppunt met een goede status in het cluster. Vervolgens wordt, indien mogelijk, de defecte host in VMware vSphere onderhoudsmodus geplaatst. VMware vMotion verplaatst de VM's van de defecte host naar andere beschikbare servers in het cluster, waardoor er mogelijk geen downtime is voor livemigratie van workloads. Als de defecte host niet in de onderhoudsmodus kan worden geplaatst, wordt de host uit het cluster verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u hebt laten zien hoe u met Azure VMware-oplossing persoonlijke Clouds bewaakt en herstelt, kunt u het volgende weten:
+Nu u hebt behandeld hoe u Azure VMware Solution bewaakt en herstelt van privé clouds, wilt u mogelijk meer informatie over:
 
-- [Azure VMware-oplossing persoonlijke Cloud upgrades](concepts-upgrades.md).
-- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
+- [Azure VMware Solution privécloudupgrades](concepts-upgrades.md)
+- [Een resource Azure VMware Solution inschakelen](enable-azure-vmware-solution.md)

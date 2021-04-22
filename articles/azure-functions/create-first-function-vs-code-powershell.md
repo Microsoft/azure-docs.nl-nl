@@ -3,12 +3,12 @@ title: Een PowerShell-functie maken met behulp van Visual Studio Code - Azure Fu
 description: Leer hoe u een PowerShell-functie maakt en publiceer vervolgens het lokale project naar serverloze hosting in Azure Functions met behulp van de Azure Functions-extensie in Visual Studio Code.
 ms.topic: quickstart
 ms.date: 11/04/2020
-ms.openlocfilehash: 9833b154cdba24f8760e7e8d9040bfc72bbcd271
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 58a2b8a5fb386603361afa9fc26b4d323c487691
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "99493585"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862539"
 ---
 # <a name="quickstart-create-a-powershell-function-in-azure-using-visual-studio-code"></a>Quickstart: Een PowerShell-functie maken in Azure met behulp van Visual Studio Code
 
@@ -30,7 +30,7 @@ Voordat u aan de slag kunt gaan, moet u beschikken over de volgende vereisten:
 
 + [PowerShell 7](/powershell/scripting/install/installing-powershell-core-on-windows)
 
-+ Zowel [.NET Core 3.1-runtime](https://www.microsoft.com/net/download) als [.NET Core 2.1-runtime](https://dotnet.microsoft.com/download/dotnet-core/2.1)  
++ Zowel [.NET Core 3.1-runtime](https://dotnet.microsoft.com/download) als [.NET Core 2.1-runtime](https://dotnet.microsoft.com/download/dotnet/2.1)  
 
 + [Visual Studio Code](https://code.visualstudio.com/) op een van de [ondersteunde platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).    
 
@@ -79,7 +79,7 @@ Nadat u hebt gecontroleerd of de functie correct wordt uitgevoerd op uw lokale c
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt [Visual Studio code](functions-develop-vs-code.md?tabs=powershell) gebruikt voor het maken van een functie-app met een eenvoudige, door http geactiveerde functie. In het volgende artikel vouwt u die functie uit door verbinding te maken met Azure Storage. Zie [bindingen toevoegen aan een bestaande functie in azure functions](add-bindings-existing-function.md?tabs=powershell)voor meer informatie over het maken van verbinding met andere Azure-Services.  
+U hebt Visual Studio [Code gebruikt om](functions-develop-vs-code.md?tabs=powershell) een functie-app te maken met een eenvoudige http-geactiveerde functie. In het volgende artikel vouwt u die functie uit door verbinding te maken met Azure Storage. Zie Bindingen toevoegen aan een bestaande functie in Azure Functions voor meer informatie over het maken [van verbinding met andere Azure-services.](add-bindings-existing-function.md?tabs=powershell)  
 
 > [!div class="nextstepaction"]
 > [Verbinding maken met een Azure Storage-wachtrij](functions-add-output-binding-storage-queue-vs-code.md?pivots=programming-language-powershell)

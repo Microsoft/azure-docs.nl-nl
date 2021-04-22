@@ -5,12 +5,12 @@ ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 02/09/2018
-ms.openlocfilehash: 5050e7014d9f1f804f7103938ff3dcb43915c549
-ms.sourcegitcommit: 425420fe14cf5265d3e7ff31d596be62542837fb
+ms.openlocfilehash: e1d74795fd25019e205f4b7b1d2bac1b67107e2d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107738932"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107878574"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Azure Data Lake-hulpprogramma's voor Visual Studio Code gebruiken
 
@@ -24,10 +24,10 @@ Azure Data Lake Tools voor VS Code ondersteunt Windows, Linux en macOS. Lokaal u
 
 - [Visual Studio Code](https://www.visualstudio.com/products/code-vs.aspx)
 
-Voor MacOS en Linux:
+Voor macOS en Linux:
 
-- [.NET Core SDK 5.0](https://www.microsoft.com/net/download/core)
-- [Mono 6.12.x](https://www.mono-project.com/download/)
+- [.NET 5.0 SDK](https://dotnet.microsoft.com/download)
+- [Mono 5.2.x](https://www.mono-project.com/download/)
 
 ## <a name="install-azure-data-lake-tools"></a>Azure Data Lake Tools installeren
 
@@ -55,11 +55,11 @@ Als u met U-SQL wilt werken, moet u een U-SQL-bestand of een map openen.
 
 ### <a name="to-open-the-sample-script"></a>Het voorbeeldscript openen
 
-Open het opdrachtenpalet (Ctrl+Shift+P) en voer **ADL: Voorbeeldscript openen in.** Er wordt een ander exemplaar van dit voorbeeld geopend. U kunt ook een script bewerken, configureren en verzenden op dit exemplaar.
+Open het opdrachtenpalet (Ctrl+Shift+P) en voer **ADL: Voorbeeldscript openen in.** Er wordt een andere instantie van dit voorbeeld geopend. U kunt ook een script bewerken, configureren en verzenden op dit exemplaar.
 
 ### <a name="to-open-a-folder-for-your-u-sql-project"></a>Een map voor uw U-SQL-project openen
 
-1. Selecteer Visual Studio Code het menu **Bestand** en selecteer **vervolgens Map openen.**
+1. Selecteer Visual Studio code het menu **Bestand** en selecteer vervolgens **Map openen.**
 2. Geef een map op en selecteer **vervolgens Map selecteren.**
 3. Selecteer **het** menu Bestand en selecteer vervolgens **Nieuw.** Er wordt een bestand Untitled-1 toegevoegd aan het project.
 4. Voer de volgende code in het bestand Untitled-1 in:
@@ -76,11 +76,11 @@ Open het opdrachtenpalet (Ctrl+Shift+P) en voer **ADL: Voorbeeldscript openen in
                  D( DepID, DepName );
    ```
 
-   UITVOER @departments     NAAR '/Output/departments.csv' USING Outputters.Csv();
+   UITVOER @departments     NAAR '/Output/departments.csv' MET behulp van Outputters.Csv();
 
     Het script maakt een departments.csv bestand met enkele gegevens die zijn opgenomen in de map /output.
 
-5. Sla het bestand op **als myUSQL.usql** in de geopende map.
+5. Sla het bestand op als **myUSQL.usql** in de geopende map.
 
 ### <a name="to-compile-a-u-sql-script"></a>Een U-SQL-script compileren
 
@@ -92,9 +92,9 @@ Open het opdrachtenpalet (Ctrl+Shift+P) en voer **ADL: Voorbeeldscript openen in
 1. Selecteer Ctrl+Shift+P om het opdrachtenpalet te openen.
 2. Voer **ADL: Taak verzenden in.** U kunt ook met de rechtermuisknop op een scriptbestand klikken en vervolgens **ADL: Taak verzenden selecteren.**
 
-Nadat u een U-SQL-taak hebt ingediend, worden de logboeken voor verzending weergegeven in het **venster Uitvoer** in VS Code. De taakweergave wordt weergegeven in het rechterdeelvenster. Als de verzending is geslaagd, wordt de taak-URL ook weergegeven. U kunt de taak-URL openen in een webbrowser om de realtime taakstatus bij te houden.
+Nadat u een U-SQL-taak hebt ingediend, worden de logboeken voor verzending weergegeven in het **venster Uitvoer** in VS Code. De taakweergave wordt weergegeven in het rechterdeelvenster. Als het indienen is geslaagd, wordt ook de taak-URL weergegeven. U kunt de taak-URL openen in een webbrowser om de realtime taakstatus bij te houden.
 
-Op het tabblad SAMENVATTING van de **taakweergave** ziet u de taakdetails. De belangrijkste functies zijn onder andere het opnieuw inzenden van een script, het dupliceren van een script en openen in de portal. Op het tabblad GEGEVENS van de **taakweergave** kunt u verwijzen naar de invoerbestanden, uitvoerbestanden en bronbestanden. Bestanden kunnen worden gedownload naar de lokale computer.
+Op het tabblad SAMENVATTING van de **taakweergave** ziet u de taakdetails. De belangrijkste functies zijn onder andere het opnieuw inzenden van een script, het dupliceren van een script en openen in de portal. Op het tabblad GEGEVENS van **de** taakweergave kunt u verwijzen naar de invoerbestanden, uitvoerbestanden en bronbestanden. Bestanden kunnen worden gedownload naar de lokale computer.
 
 ![Tabblad Samenvatting in de taakweergave](./media/data-lake-analytics-data-lake-tools-for-vscode/job-view-summary.png)
 
@@ -102,11 +102,11 @@ Op het tabblad SAMENVATTING van de **taakweergave** ziet u de taakdetails. De be
 
 ### <a name="to-set-the-default-context"></a>De standaardcontext instellen
 
-U kunt de standaardcontext zo instellen dat deze instelling wordt toegepast op alle scriptbestanden als u geen parameters voor bestanden afzonderlijk hebt ingesteld.
+U kunt de standaardcontext instellen om deze instelling toe te passen op alle scriptbestanden als u geen parameters voor bestanden afzonderlijk hebt ingesteld.
 
 1. Selecteer Ctrl+Shift+P om het opdrachtenpalet te openen.
 2. Voer **ADL in: standaardcontext instellen.** Of klik met de rechtermuisknop op de scripteditor en selecteer **ADL: Standaardcontext instellen.**
-3. Kies het account, de database en het schema dat u wilt gebruiken. De instelling wordt opgeslagen in de xxx_settings.jsin het configuratiebestand.
+3. Kies het account, de database en het schema dat u wilt gebruiken. De instelling wordt opgeslagen in xxx_settings.jsconfiguratiebestand.
 
    ![Account, database en schema ingesteld als de standaardcontext](./media/data-lake-analytics-data-lake-tools-for-vscode/default-context-sequence.png)
 
@@ -131,7 +131,7 @@ U kunt de standaardcontext zo instellen dat deze instelling wordt toegepast op a
 ### <a name="to-set-git-ignore"></a>Git-negeren instellen
 
 1. Selecteer Ctrl+Shift+P om het opdrachtenpalet te openen.
-2. Voer **ADL in: Stel Git Ignore in.**
+2. Voer **ADL in: stel Git Ignore in.**
 
    - Als u geen **.gitIgnore-bestand** in uw VS Code-werkmap hebt, wordt er een bestand met de naam **.gitIgnore** gemaakt in uw map. Er worden standaard vier items **(usqlCodeBehindReference**, **usqlCodeBehindGenerated,** **.cache**, **obj)** toegevoegd aan het bestand. U kunt indien nodig meer updates maken.
    - Als u al een **.gitIgnore-bestand** in uw VS Code-werkmap hebt, voegt het hulpprogramma vier items **(usqlCodeBehindReference**, **usqlCodeBehindGenerated**, **.cache**, **obj**) toe aan uw **.gitIgnore-bestand** als de vier items niet zijn opgenomen in het bestand.
@@ -231,7 +231,7 @@ Voordat u U-SQL-scripts kunt compileren en uitvoeren in Data Lake Analytics, moe
 
 1. Selecteer Ctrl+Shift+P om het opdrachtenpalet te openen.
 
-2. Voer **ADL in: Meld u aan.** De aanmeldingsgegevens worden rechts onder weergegeven.
+2. Voer **ADL in: Meld u aan.** De aanmeldingsgegevens worden rechtsbeneden weergegeven.
 
    ![De aanmeldingsopdracht invoeren](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-extension-login.png)
 
@@ -264,7 +264,7 @@ U kunt een extractiescript maken voor .csv-, .tsv- en .txt-bestanden met behulp 
 
 ### <a name="to-create-an-extraction-script-by-using-a-command"></a>Een extractiescript maken met behulp van een opdracht
 
-1. Selecteer Ctrl+Shift+P om het opdrachtenpalet te openen en voer **ADL: EXTRACT Script maken in.**
+1. Selecteer Ctrl+Shift+P om het opdrachtenpalet te openen en voer **ADL: Extract Script maken in.**
 2. Geef het volledige pad voor een Azure Storage op en selecteer enter.
 3. Selecteer één account.
 4. Selecteer voor een TXT-bestand een scheidingsteken om het bestand te extraheren.

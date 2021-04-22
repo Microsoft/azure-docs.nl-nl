@@ -8,12 +8,12 @@ ms.author: helohr
 ms.reviewer: thhickli; darank
 manager: femila
 ms.custom: references_regions
-ms.openlocfilehash: 242dd2476783a3d1db6b74452d35e87c5cd189b6
-ms.sourcegitcommit: db925ea0af071d2c81b7f0ae89464214f8167505
+ms.openlocfilehash: 2712115f19c7cc64a0475061e134d6be6de5d1ca
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107516549"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107867399"
 ---
 # <a name="whats-new-in-windows-virtual-desktop"></a>Nieuwe functies in Windows Virtual Desktop
 
@@ -40,53 +40,53 @@ Bekijk deze artikelen voor meer informatie over updates voor onze clients voor W
 
 De Windows Virtual Desktop agent wordt ten minste één keer per maand bijgewerkt.
 
-Dit is gewijzigd in de Windows Virtual Desktop Agent:
+Dit is gewijzigd in de Windows Virtual Desktop agent:
 
 - Versie 1.0.2990.800: Deze update is uitgebracht op 13 april 2021 en heeft de volgende wijzigingen:
     - Agentfoutberichten bijgewerkt.
-    - Voegt een uitzondering toe die voorkomt dat u niet-Windows 7-agents installeert op windows 7-VM's.
-    - Heeft heartbeat-servicelogica bijgewerkt.
+    - Hiermee voegt u een uitzondering toe die voorkomt dat u niet-Windows 7-agents installeert op windows 7-VM's.
+    - Heartbeat-servicelogica is bijgewerkt.
 - Versie 1.0.2944.1400: Deze update is uitgebracht op 7 april 2021 en heeft de volgende wijzigingen:
-    - Koppelingen geplaatst naar de gids Windows Virtual Desktop agent voor probleemoplossing in de logboeken van de logboeken voor agentfouten.
+    - Koppelingen naar de gids voor probleemoplossing Windows Virtual Desktop agent in logboeken van logboeken voor agentfouten geplaatst.
     - Er is een extra uitzondering toegevoegd voor een betere foutafhandeling.
-    - De WVDAgentUrlTool.exe waarmee klanten kunnen controleren tot welke vereiste URL's ze toegang hebben.
-- Versie 1.0.2866.1500: Deze update is uitgebracht op 26 maart 2021 en er is een probleem opgelost met de statuscontrole van de stack.
-- Versie 1.0.2800.2802: Deze update is uitgebracht op 10 maart 2021 en heeft algemene verbeteringen en oplossingen voor fouten.
+    - De WVDAgentUrlTool.exe toegevoegd waarmee klanten kunnen controleren tot welke vereiste URL's ze toegang hebben.
+- Versie 1.0.2866.1500: deze update is uitgebracht op 26 maart 2021 en er is een probleem opgelost met de statuscontrole van de stack.
+- Versie 1.0.2800.2802: deze update is uitgebracht op 10 maart 2021 en heeft algemene verbeteringen en oplossingen voor fouten.
 - Versie 1.0.2800.2800: deze update is uitgebracht op 2 maart 2021 en er is een probleem met een omgekeerde verbinding opgelost.
-- Versie 1.0.2800.2700: Deze update is uitgebracht op 10 februari 2021 en heeft algemene verbeteringen en oplossingen voor fouten.
-- Versie 1.0.2800.2700: Deze update is uitgebracht op 4 februari 2021 en er is een probleem opgelost met toegang geweigerde orchestration.
+- Versie 1.0.2800.2700: deze update is uitgebracht op 10 februari 2021 en heeft algemene verbeteringen en oplossingen voor fouten.
+- Versie 1.0.2800.2700: deze update is uitgebracht op 4 februari 2021 en er is een probleem opgelost met toegang geweigerde orchestration.
 
 ## <a name="fslogix-updates"></a>FSLogix-updates
 
-Bent u benieuwd naar de nieuwste updates voor FSLogix? Bekijk Wat [is er nieuw op FSLogix.](/fslogix/whats-new)
+Bent u benieuwd naar de nieuwste updates voor FSLogix? Bekijk Wat [is er nieuw in FSLogix.](/fslogix/whats-new)
 
 ## <a name="march-2021"></a>Maart 2021
 
 Dit is gewijzigd in maart 2021.
 
-### <a name="updates-to-the-azure-portal-ui-for-windows-virtual-desktop"></a>Updates voor de Azure Portal-gebruikersinterface voor Windows Virtual Desktop
+### <a name="updates-to-the-azure-portal-ui-for-windows-virtual-desktop"></a>Updates voor de Azure Portal ui voor Windows Virtual Desktop
 
 We hebben de volgende updates aangebracht in Windows Virtual Desktop voor de Azure Portal:
 
 - We hebben nieuwe beschikbaarheidsopties (beschikbaarheidsset en zones) ingeschakeld voor de werkstromen om hostgroepen te maken en VM's toe te voegen.
 - We hebben een probleem opgelost waarbij een host met de status Hulp nodig niet beschikbaar werd. Er wordt nu een waarschuwingspictogram naast de host weergegeven.
 - Sortering voor actieve sessies is ingeschakeld.
-- U kunt nu berichten verzenden naar of specifieke gebruikers uitloggen op het tabblad met hostdetails.
-- We hebben het veld voor de maximale sessielimiet gewijzigd.
+- U kunt nu berichten verzenden naar of specifieke gebruikers afmelden op het tabblad Hostdetails.
+- We hebben het veld maximale sessielimiet gewijzigd.
 - We hebben een OE-validatiepad toegevoegd aan de werkstroom om een hostgroep te maken.
 - U kunt nu de nieuwste versie van de Windows 10 gebruiken wanneer u een persoonlijke hostgroep maakt.
 
-### <a name="generation-2-images-and-trusted-launch"></a>Afbeeldingen van de tweede generatie en Vertrouwd starten
+### <a name="generation-2-images-and-trusted-launch"></a>Afbeeldingen van de 2e generatie en Vertrouwd starten
 
-De Azure Marketplace heeft nu generatie 2-afbeeldingen voor Windows 10 Enterprise en Windows 10 Enterprise meerdere sessies. Met deze afbeeldingen kunt u vertrouwde VM's starten gebruiken. Meer informatie over virtuele machines van de tweede generatie kunt u op Een virtuele machine van de [1e of 2e generatie maken.](../virtual-machines/generation-2.md) Zie het [TechCommunity-bericht](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/windows-virtual-desktop-support-for-trusted-launch/m-p/2206170)voor Windows Virtual Desktop het inrichten van vertrouwde start-VM's.
+De Azure Marketplace heeft nu generatie 2-afbeeldingen voor Windows 10 Enterprise en Windows 10 Enterprise meerdere sessies. Met deze afbeeldingen kunt u vertrouwde VM's starten gebruiken. Meer informatie over virtuele machines van de tweede generatie kunt u op Een virtuele machine van de [1e of 2e generatie maken.](../virtual-machines/generation-2.md) Zie onze [TechCommunity-post](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/windows-virtual-desktop-support-for-trusted-launch/m-p/2206170)voor Windows Virtual Desktop het inrichten van vertrouwde start-VM's.
 
-### <a name="fslogix-is-now-preinstalled-on-windows-10-enterprise-multi-session-images"></a>FSLogix is nu vooraf geïnstalleerd op Windows 10 Enterprise installatie van meerdere sessies
+### <a name="fslogix-is-now-preinstalled-on-windows-10-enterprise-multi-session-images"></a>FSLogix is nu vooraf geïnstalleerd op Windows 10 Enterprise van meerdere sessies
 
 Op basis van feedback van klanten hebben we een nieuwe versie van de Windows 10 Enterprise voor meerdere sessies ingesteld, met een niet-geconfigureerde versie van FSLogix die al is geïnstalleerd. We hopen dat dit uw implementatie Windows Virtual Desktop eenvoudiger maakt.
 
 ### <a name="azure-monitor-for-windows-virtual-desktop-is-now-in-general-availability"></a>Azure Monitor voor Windows Virtual Desktop is nu algemeen beschikbaar
 
-Azure Monitor voor Windows Virtual Desktop is nu algemeen beschikbaar voor het publiek. Deze functie is een geautomatiseerde service die uw implementaties bewaakt en waarmee u gebeurtenissen, status en suggesties voor probleemoplossing op één plek kunt bekijken. Zie onze documentatie [of](azure-monitor.md) bekijk onze [TechCommunity-post](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/azure-monitor-for-windows-virtual-desktop-is-generally-available/m-p/2242861)voor meer informatie.
+Azure Monitor voor Windows Virtual Desktop is nu algemeen beschikbaar voor het publiek. Deze functie is een geautomatiseerde service die uw implementaties bewaakt en waarmee u op één plek gebeurtenissen, statussen en suggesties voor probleemoplossing kunt bekijken. Raadpleeg onze documentatie voor [meer informatie](azure-monitor.md) of bekijk onze [TechCommunity-post.](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/azure-monitor-for-windows-virtual-desktop-is-generally-available/m-p/2242861)
 
 ### <a name="march-2021-updates-for-teams-on-windows-virtual-desktop"></a>Updates van maart 2021 voor Teams op Windows Virtual Desktop
 
@@ -95,17 +95,17 @@ We hebben de volgende updates voor Teams op Windows Virtual Desktop:
 - We hebben de prestaties van videokwaliteit verbeterd bij aanroepen en de 2x2-modus.
 - We hebben het CPU-gebruik met 5-10% verminderd (afhankelijk van de CPU-generatie) door gebruik te maken van hardware-offload van videoverwerking (XVP).
 - Oudere machines kunnen nu XVP en hardwaredecoderen gebruiken om meer binnenkomende videostreams soepel weer te geven in de 2x2-modus.
-- We hebben de WebRTC-stack bijgewerkt van M74 naar M88 voor betere AV-synchronisatieprestaties en minder tijdelijke problemen.
-- We hebben onze software H264-coderingsserver vervangen door OpenH264 (OSS gebruikt in Teams op het web), waardoor de videokwaliteit van de uitgaande camera is toegenomen.
-- Op 30 maart hebben we de 2x2-modus voor Teams Server ingeschakeld voor het grote publiek. In de 2x2-modus worden maximaal vier binnenkomende videostreams tegelijk weer te zien.
+- We hebben de WebRTC-stack bijgewerkt van M74 naar M88 voor betere av-synchronisatieprestaties en minder tijdelijke problemen.
+- We hebben onze H264-softwarecoder vervangen door OpenH264 (OSS gebruikt in Teams op het web), waardoor de videokwaliteit van de uitgaande camera is verhoogd.
+- We hebben de 2x2-modus voor Teams Server ingeschakeld voor het algemene publiek op 30 maart. In de 2x2-modus worden maximaal vier binnenkomende videostreams tegelijk weer te zien.
 
-### <a name="start-vm-on-connect-public-preview"></a>VM starten in Openbare preview verbinden
+### <a name="start-vm-on-connect-public-preview"></a>VM starten in openbare preview verbinden
 
-De nieuwe instelling voor de hostgroep, VM starten op verbinding, is nu beschikbaar in openbare preview. Met deze instelling kunt u uw VM's inrichten wanneer u ze nodig hebt. Als u kosten wilt besparen, moet u de toewijzing van uw VM's op de Azure Compute configureren. Bekijk onze [blogpost](https://aka.ms/wvdstartvmonconnect) en onze documentatie voor [meer informatie.](start-virtual-machine-connect.md)
+De nieuwe hostgroepinstelling, VM starten op verbinding, is nu beschikbaar in openbare preview. Met deze instelling kunt u uw VM's in te stellen wanneer u ze nodig hebt. Als u kosten wilt besparen, moet u de toewijzing van uw VM's op de Azure Compute configureren. Bekijk onze [blogpost](https://aka.ms/wvdstartvmonconnect) en onze documentatie voor [meer informatie.](start-virtual-machine-connect.md)
 
 ### <a name="windows-virtual-desktop-specialty-certification"></a>Windows Virtual Desktop Speciale certificering
 
-We hebben een bètaversie van het AZ-140-examen uitgebracht, waarin u uw expertise in Windows Virtual Desktop in Azure kunt bewijzen. Lees onze [TechCommunity-post voor meer informatie.](https://techcommunity.microsoft.com/t5/microsoft-learn-blog/beta-exam-prove-your-expertise-in-windows-virtual-desktop-on/ba-p/2147107)
+We hebben een bètaversie uitgebracht van het AZ-140-examen, waarin u uw expertise in Windows Virtual Desktop in Azure kunt bewijzen. Lees onze [TechCommunity-post voor meer informatie.](https://techcommunity.microsoft.com/t5/microsoft-learn-blog/beta-exam-prove-your-expertise-in-windows-virtual-desktop-on/ba-p/2147107)
 
 ## <a name="february-2021"></a>Februari 2021
 
@@ -115,17 +115,17 @@ Dit is gewijzigd in februari 2021.
 
 We hebben de Azure Portal op de volgende manieren verbeterd:
 
-- Modus voor bulksgewijs leeglaten op hosts op het tabblad Sessiehostraster. 
+- De modus Bulksgewijs leeglaten op hosts op het tabblad Sessiehostraster. 
 - De MSIX-app-attach is nu beschikbaar voor openbare preview.
 - Probleem opgelost met overzichtsgegevens van hostgroep voor donkere modus.
 
-### <a name="eu-metadata-storage-now-in-public-preview"></a>Opslag van metagegevens in de EU nu in openbare preview
+### <a name="eu-metadata-storage-now-in-public-preview"></a>Opslag van eu-metagegevens nu in openbare preview
 
-We hosten nu een openbare preview van het geografische gebied Europa (EU) als opslagoptie voor servicemetagegevens in Windows Virtual Desktop. Klanten kunnen kiezen tussen West of Europa - noord wanneer ze hun serviceobjecten maken. De serviceobjecten en metagegevens voor de hostgroepen worden opgeslagen in de Azure-geografie die aan elke regio is gekoppeld. Lees voor meer informatie onze [blogpost waarin de openbare preview wordt aangekondigd.](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/announcing-public-preview-of-windows-virtual-desktop-service/m-p/2143939)
+We hosten nu een openbare preview van het geografische gebied Europa (EU) als een opslagoptie voor servicemetagegevens in Windows Virtual Desktop. Klanten kunnen kiezen tussen West of Europa - noord wanneer ze hun serviceobjecten maken. De serviceobjecten en metagegevens voor de hostgroepen worden opgeslagen in de Azure-geografie die aan elke regio is gekoppeld. Lees voor meer informatie onze [blogpost waarin de openbare preview wordt aangekondigd.](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/announcing-public-preview-of-windows-virtual-desktop-service/m-p/2143939)
 
-### <a name="teams-on-windows-virtual-desktop-plugin-updates"></a>Teams op updates Windows Virtual Desktop-invoeginvoeging
+### <a name="teams-on-windows-virtual-desktop-plugin-updates"></a>Updates voor Teams Windows Virtual Desktop-invoeginvoeging
 
-We hebben de kwaliteit van video-aanroepen voor de Windows Virtual Desktop-invoeging verbeterd door de meest gemelde problemen op te lossen, zoals wanneer het scherm plotseling donker wordt of de video en geluid gedesynchroniseerd. Deze verbeteringen moeten de prestaties van de weergave met één video verbeteren met actief schakelen tussen sprekers. We hebben ook een probleem opgelost waarbij hardwareapparaten met speciale tekens niet beschikbaar waren in Teams.
+We hebben de kwaliteit van video-aanroepen voor de Windows Virtual Desktop-invoeggebruiker verbeterd door de meest gemelde problemen op te lossen, zoals wanneer het scherm plotseling donker wordt of de video en geluid desynchroniseren. Deze verbeteringen moeten de prestaties van de weergave met één video verbeteren met actief schakelen tussen sprekers. We hebben ook een probleem opgelost waarbij hardwareapparaten met speciale tekens niet beschikbaar waren in Teams.
 
 ## <a name="january-2021"></a>Januari 2021
 
@@ -133,40 +133,40 @@ Dit is gewijzigd in januari 2021:
 
 ### <a name="new-windows-virtual-desktop-offer"></a>Nieuwe Windows Virtual Desktop aanbieding
 
-Nieuwe klanten besparen 30 procent op Windows Virtual Desktop computingkosten voor virtuele machines uit de D-serie en Bs-serie tot 90 dagen bij gebruik van de native Microsoft-oplossing. U kunt deze aanbieding inwisselen in Azure Portal vóór 31 maart 2021. Meer informatie op onze [pagina Windows Virtual Desktop-aanbieding.](https://azure.microsoft.com/services/virtual-desktop/offer/)
+Nieuwe klanten besparen tot 30 procent op Windows Virtual Desktop computingkosten voor virtuele machines uit de D-serie en BS-serie tot 90 dagen wanneer ze de native Microsoft-oplossing gebruiken. U kunt deze aanbieding inwisselen in Azure Portal vóór 31 maart 2021. Meer informatie op onze [pagina Windows Virtual Desktop-aanbieding.](https://azure.microsoft.com/services/virtual-desktop/offer/)
 
 ### <a name="networksecuritygrouprules-value-change"></a>waardewijziging networkSecurityGroupRules 
 
-In de Azure Resource Manager geneste sjabloon hebben we de standaardwaarde voor networkSecurityGroupRules gewijzigd van een object in een matrix. Dit voorkomt fouten als u een managedDisks-customimagevm.jszonder een waarde op te geven voor networkSecurityGroupRules. Dit was geen wijziging die een grote wijziging was en is compatibel met de achterwaartse weg.
+In de Azure Resource Manager geneste sjabloon hebben we de standaardwaarde voor networkSecurityGroupRules gewijzigd van een -object in een matrix. Dit voorkomt fouten als u een managedDisks-customimagevm.jszonder een waarde op te geven voor networkSecurityGroupRules. Dit was geen wijziging die een grote wijziging was en is compatibel met de achterwaartse weg.
 
 ### <a name="fslogix-hotfix-update"></a>FSLogix-hotfix-update
 
 We hebben FSLogix versie 2009 HF_01 (2.9.7654.46150) uitgebracht om problemen in de vorige release op te lossen (2.9.7621.30127). U wordt aangeraden de vorige versie niet meer te gebruiken en FSLogix zo snel mogelijk bij te werken.
 
-Zie de opmerkingen bij de release in Wat is er nieuw [in FSLogix voor meer informatie.](/fslogix/whats-new#fslogix-apps-2009-hf_01-29765446150)
+Zie de opmerkingen bij de release in [What's new in FSLogix (Wat is er nieuw in FSLogix) voor meer informatie.](/fslogix/whats-new#fslogix-apps-2009-hf_01-29765446150)
 
 ### <a name="azure-portal-experience-improvements"></a>Azure Portal ervaringsverbeteringen
 
-We hebben de volgende verbeteringen aangebracht in de Azure Portal-ervaring:
+We hebben de volgende verbeteringen aangebracht in de Azure Portal ervaring:
 
-- U kunt nu rechtstreeks lokale VM-beheerdersreferenties toevoegen in plaats van een lokaal account toe te voegen dat is gemaakt met de referenties van het Active Directory-domeinaccount.
+- U kunt nu lokale VM-beheerdersreferenties rechtstreeks toevoegen in plaats van dat u een lokaal account moet toevoegen dat is gemaakt met de referenties van het Active Directory-domeinaccount.
 - Gebruikers kunnen nu zowel afzonderlijke als groepstoewijzingen op afzonderlijke tabbladen voor afzonderlijke gebruikers en groepen weer geven.
 - Het versienummer van de Windows Virtual Desktop Agent is nu zichtbaar in het overzicht van virtuele machines voor hostgroepen.
 - Bulksgewijs verwijderen toegevoegd voor hostgroepen en toepassingsgroepen.
-- U kunt nu de modus Leegvoer in- of uitschakelen voor meerdere sessiehosts in een hostgroep.
+- U kunt nu de leegstand in- of uitschakelen voor meerdere sessiehosts in een hostgroep.
 - Het openbare IP-veld is verwijderd van de pagina met VM-details.
 
-### <a name="windows-virtual-desktop-agent-troubleshooting"></a>problemen Windows Virtual Desktop agent oplossen
+### <a name="windows-virtual-desktop-agent-troubleshooting"></a>Windows Virtual Desktop agent oplossen
 
 We hebben onlangs de gids voor [probleemoplossing Windows Virtual Desktop agent](troubleshoot-agent.md) ingesteld om klanten te helpen die veelvoorkomende problemen hebben ondervonden.
 
 ### <a name="microsoft-defender-for-endpoint-integration"></a>Microsoft Defender for Endpoint-integratie
 
-Microsoft Defender voor eindpuntintegratie is nu algemeen beschikbaar. Deze functie biedt uw virtuele Windows Virtual Desktop dezelfde onderzoekservaring als een lokale Windows 10 machine. Als u Windows 10 Enterprise meerdere sessies gebruikt, ondersteunt Microsoft Defender for Endpoint maximaal 50 gelijktijdige gebruikersverbindingen, waardoor u de kostenbesparingen van Windows 10 Enterprise meerdere sessies en het vertrouwen van Microsoft Defender voor eindpunten kunt besparen. Bekijk onze blogpost voor [meer informatie.](https://techcommunity.microsoft.com/t5/microsoft-defender-for-endpoint/windows-virtual-desktop-support-is-now-generally-available/ba-p/2103712)
+Microsoft Defender voor eindpuntintegratie is nu algemeen beschikbaar. Deze functie biedt uw Windows Virtual Desktop VM's dezelfde onderzoekservaring als een lokale Windows 10 machine. Als u Windows 10 Enterprise meerdere sessies gebruikt, ondersteunt Microsoft Defender for Endpoint maximaal 50 gelijktijdige gebruikersverbindingen, waardoor u de kostenbesparingen van Windows 10 Enterprise meerdere sessies en het vertrouwen van Microsoft Defender voor eindpunten kunt besparen. Bekijk onze blogpost voor [meer informatie.](https://techcommunity.microsoft.com/t5/microsoft-defender-for-endpoint/windows-virtual-desktop-support-is-now-generally-available/ba-p/2103712)
 
 ### <a name="azure-security-baseline-for-windows-virtual-desktop"></a>Azure-beveiligingsbasislijn voor Windows Virtual Desktop
 
-We hebben onlangs een artikel gepubliceerd over de Azure-beveiligingsbasislijn voor Windows Virtual Desktop waar we uw aandacht op willen vestigen. [](security-baseline.md) Deze richtlijnen bevatten informatie over het toepassen van de Azure Security-benchmark, versie 2.0, op Windows Virtual Desktop. In de Azure Security-benchmark worden de instellingen en procedures beschreven die u kunt gebruiken om uw cloudoplossingen in Azure te beveiligen.
+We hebben onlangs een artikel [gepubliceerd](security-baseline.md) over de Azure-beveiligingsbasislijn voor Windows Virtual Desktop waar we uw aandacht op willen vestigen. Deze richtlijnen bevatten informatie over het toepassen van de Azure Security-benchmark, versie 2.0, op Windows Virtual Desktop. In de Azure Security-benchmark worden de instellingen en procedures beschreven die u kunt gebruiken om uw cloudoplossingen in Azure te beveiligen.
 
 ## <a name="december-2020"></a>December 2020
 
@@ -315,7 +315,7 @@ Dit is gewijzigd in augustus 2020:
 
 - Azure Advisor maakt nu deel uit van Windows Virtual Desktop. Wanneer u via de Azure-portal toegang hebt tot Windows Virtual Desktop, ziet u aanbevelingen voor het optimaliseren van uw Windows Virtual Desktop-omgeving. Zie [Azure Advisor](azure-advisor.md) voor meer informatie.
 
-- Azure CLI ondersteunt nu Windows Virtual Desktop (`az desktopvirtualization`) om u te helpen bij het automatiseren van Windows Virtual Destkop-implementaties. Bekijk [desktopvirtualization](/cli/azure/ext/desktopvirtualization/) voor een lijst met extensie-opdrachten.
+- Azure CLI ondersteunt nu Windows Virtual Desktop (`az desktopvirtualization`) om u te helpen bij het automatiseren van Windows Virtual Destkop-implementaties. Bekijk [desktopvirtualization](/cli/azure/) voor een lijst met extensie-opdrachten.
 
 - We hebben onze implementatiesjablonen bijgewerkt zodat ze volledig compatibel zijn met de Azure Resource Manager-interfaces voor Windows Virtual Desktop. U kunt de sjablonen vinden op [GitHub](https://github.com/Azure/RDS-Templates/tree/master/ARM-wvd-templates).
 

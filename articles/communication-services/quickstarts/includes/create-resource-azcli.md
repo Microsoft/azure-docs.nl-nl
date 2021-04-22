@@ -4,34 +4,34 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 03/10/2021
 ms.author: mikben
-ms.openlocfilehash: 22a9cf3338f422341928a77f2bf14c497aa2ba31
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 69857915620eada94586754a6c934edaf0b294a9
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105563770"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107880335"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/dotnet/)
-- [Azure cli](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?tabs=azure-cli) installeren 
+- [Azure CLI installeren](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?tabs=azure-cli) 
 
 ## <a name="create-azure-communication-resource"></a>Azure Communication-resource maken
 
-Als u een Azure Communication Services-resource wilt maken, [meldt u zich aan bij Azure cli](/cli/azure/authenticate-azure-cli). U kunt dit via de Terminal doen met behulp van de ```az login``` opdracht en uw referenties opgeven. Voer de volgende opdracht uit om de resource te maken:
+Meld u aan Azure Communication Services Azure CLI om een resource [te maken.](/cli/azure/authenticate-azure-cli) U kunt dit doen via de terminal met behulp van ```az login``` de opdracht en uw referenties op te geven. Voer de volgende opdracht uit om de resource te maken:
 
 ```azurecli
 az communication create --name "<communicationName>" --location "Global" --data-location "United States" --resource-group "<resourceGroup>"
 ```
 
-Als u een specifiek abonnement wilt selecteren, kunt u ook de vlag opgeven ```--subscription``` en de abonnements-id opgeven.
+Als u een specifiek abonnement wilt selecteren, kunt u ook de vlag ```--subscription``` opgeven en de abonnements-id opgeven.
 ```
 az communication create --name "<communicationName>" --location "Global" --data-location "United States" --resource-group "<resourceGroup> --subscription "<subscriptionID>"
 ```
 
-U kunt uw communicatie Services-resource configureren met de volgende opties:
+U kunt uw Communication Services configureren met de volgende opties:
 
-* De resource groep
+* De resourcegroep
 * De naam van de Communication Services-resource
 * De geografie waaraan de resource wordt gekoppeld
 
@@ -39,7 +39,7 @@ In de volgende stap kunt u tags toewijzen aan de resource. Tags kunnen worden ge
 
 ## <a name="manage-your-communication-services-resource"></a>Een Communication Services-resource maken.
 
-Voer de volgende opdrachten uit om tags toe te voegen aan uw Communication Services-resource. U kunt ook een specifiek abonnement instellen.
+Als u tags wilt toevoegen aan Communication Services resource, voert u de volgende opdrachten uit. U kunt zich ook richten op een specifiek abonnement.
 
 ```azurecli
 az communication update --name "<communicationName>" --tags newTag="newVal1" --resource-group "<resourceGroup>"
@@ -51,4 +51,4 @@ az communication show --name "<communicationName>" --resource-group "<resourceGr
 az communication show --name "<communicationName>" --resource-group "<resourceGroup>" --subscription "<subscriptionID>"
 ```
 
-Zie [AZ Communication](/cli/azure/ext/communication/communication)(Engelstalig) voor meer informatie over aanvullende opdrachten.
+Zie az communication voor meer informatie [over aanvullende opdrachten.](/cli/azure/communication)

@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 04/14/2021
+ms.date: 04/21/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: c18aa600f99fd509bfea8071d8a69fc6ea3f2720
-ms.sourcegitcommit: 3b5cb7fb84a427aee5b15fb96b89ec213a6536c2
+ms.openlocfilehash: 8c870e802af826bf352e53900dff2f9e87044ca6
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107498614"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107866466"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -20,4 +20,4 @@ ms.locfileid: "107498614"
 |[Voor App Configuration moeten privékoppelingen worden gebruikt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fca610c1d-041c-4332-9d88-7ed3094967c7) |Met Azure Private Link kunt u uw virtuele netwerk met services in Azure verbinden zonder een openbaar IP-adres bij de bron of bestemming. Het privékoppelingsplatform zorgt voor de connectiviteit tussen de consument en de services via het Azure-backbonenetwerk. Als u privé-eindpunten toewijst aan uw app-configuratie in plaats van aan de volledige service, bent u ook beschermd tegen gegevenslekken. Zie voor meer informatie: [https://aka.ms/appconfig/private-endpoint](https://aka.ms/appconfig/private-endpoint). |AuditIfNotExists, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Configuration/PrivateLink_Audit.json) |
 |[Configureer App Configuration om openbare netwerktoegang uit te schakelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F73290fa2-dfa7-4bbb-945d-a5e23b75df2c) |Schakel openbare netwerktoegang voor App Configuration zodat deze niet toegankelijk is via het openbare internet. Deze configuratie helpt ze te beschermen tegen risico's van gegevenslekken. U kunt de blootstelling van uw resources beperken door in plaats daarvan privé-eindpunten te maken. Zie voor meer informatie: [https://aka.ms/appconfig/private-endpoint](https://aka.ms/appconfig/private-endpoint). |Wijzigen, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Configuration/PrivateLink_PublicNetworkAccess_Modify.json) |
 |[Privé-DNS-zones configureren voor privé-eindpunten die zijn verbonden met App Configuration](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7a860e27-9ca2-4fc6-822d-c2d248c300df) |Gebruik privé-DNS-zones om de DNS-resolutie voor een privé-eindpunt te overschrijven. Een privé-DNS-zone kan worden gekoppeld aan uw virtuele netwerk om app-configuratie-exemplaren om te zetten. Zie voor meer informatie: [https://aka.ms/appconfig/private-endpoint](https://aka.ms/appconfig/private-endpoint). |DeployIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Configuration/PrivateLink_DNSZone_Deploy.json) |
-|[Privé-eindpunten configureren voor App Configuration](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F614ffa75-862c-456e-ad8b-eaa1b0844b07) |Met privé-eindpunten kunt u uw virtuele netwerk verbinden met Azure-services zonder een openbaar IP-adres op de bron of bestemming. Door privé-eindpunten toe tewijsen aan uw app-configuratie-exemplaren, worden de risico's van gegevenslekken verminderd. Zie voor meer informatie: [https://aka.ms/appconfig/private-endpoint](https://aka.ms/appconfig/private-endpoint). |DeployIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Configuration/PrivateLink_Deploy.json) |
+|[Privé-eindpunten configureren voor App Configuration](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F614ffa75-862c-456e-ad8b-eaa1b0844b07) |Met privé-eindpunten kunt u uw virtuele netwerk verbinden met Azure-services zonder een openbaar IP-adres bij de bron of bestemming. Door privé-eindpunten toe tewijsen aan uw app-configuratie-exemplaren, worden de risico's voor het lekken van gegevens verminderd. Zie voor meer informatie: [https://aka.ms/appconfig/private-endpoint](https://aka.ms/appconfig/private-endpoint). |DeployIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Configuration/PrivateLink_Deploy.json) |

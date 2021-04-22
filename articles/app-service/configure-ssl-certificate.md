@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 03/02/2021
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 99dc8cb2acf06faae16df6d3a48c4d38b1be46d8
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 1e05435f364cc30b351275439a04caff47c35512
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104577781"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871791"
 ---
 # <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Een TLS/SSL-certificaat toevoegen in Azure App Service
 
@@ -26,7 +26,7 @@ De volgende tabel bevat de beschikbare opties voor het toevoegen van certificate
 
 |Optie|Beschrijving|
 |-|-|
-| Een gratis door App Service beheerd certificaat maken (preview) | Een persoonlijk certificaat dat gratis en eenvoudig te gebruiken is als u uw [aangepaste domein](app-service-web-tutorial-custom-domain.md) in app service moet beveiligen. |
+| Een gratis door App Service beheerd certificaat maken (preview) | Een persoonlijk certificaat dat gratis en eenvoudig te gebruiken is als u alleen uw aangepaste domein [hoeft](app-service-web-tutorial-custom-domain.md) te beveiligen in App Service. |
 | Een App Service-certificaat kopen | Een persoonlijk certificaat dat wordt beheerd door Azure. Het certificaat biedt de eenvoud van geautomatiseerd certificaatbeheer, gecombineerd met de flexibiliteit van opties voor verlengen en exporteren. |
 | Een certificaat uit Key Vault importeren | Dit is handig als u [Azure Key Vault](../key-vault/index.yml) gebruikt voor het beheren van uw [PKCS12-certificaten](https://wikipedia.org/wiki/PKCS_12). Zie [Vereisten voor persoonlijke certificaten](#private-certificate-requirements). |
 | Een persoonlijk certificaat uploaden | Als u al een persoonlijk certificaat van een externe provider hebt, kunt u het certificaat uploaden. Zie [Vereisten voor persoonlijke certificaten](#private-certificate-requirements). |
@@ -35,16 +35,16 @@ De volgende tabel bevat de beschikbare opties voor het toevoegen van certificate
 ## <a name="prerequisites"></a>Vereisten
 
 - [Maak een App Service-app](./index.yml).
-- Controleer voor een persoonlijk certificaat of het voldoet aan alle [vereisten van app service](#private-certificate-requirements).
-- **Alleen gratis certificaat**:
-    - Wijs het domein toe waarvoor u een certificaat wilt App Service. Zie [zelf studie: een bestaande aangepaste DNS-naam toewijzen aan Azure app service](app-service-web-tutorial-custom-domain.md)voor meer informatie.
-    - Zorg ervoor dat voor een hoofd domein (zoals contoso.com) geen [IP-beperkingen](app-service-ip-restrictions.md) zijn geconfigureerd voor uw app. Het maken van een certificaat en het periodiek vernieuwen van een hoofd domein is afhankelijk van uw app die bereikbaar is vanaf internet.
+- Zorg er voor een persoonlijk certificaat voor dat het voldoet aan alle [vereisten van App Service](#private-certificate-requirements).
+- **Alleen gratis certificaat:**
+    - Wijs het domein toe waarop u een certificaat wilt App Service. Zie Zelfstudie: Een [bestaande aangepaste DNS-naam](app-service-web-tutorial-custom-domain.md)aan een aangepaste DNS-naam Azure App Service.
+    - Voor een hoofddomein (zoals contoso.com) moet u ervoor zorgen dat er voor uw app geen [IP-beperkingen zijn](app-service-ip-restrictions.md) geconfigureerd. Het maken van certificaten en de periodieke verlenging van een hoofddomein is afhankelijk van of uw app bereikbaar is via internet.
 
 ## <a name="private-certificate-requirements"></a>Vereisten voor persoonlijke certificaten
 
-Het [gratis door app service beheerde certificaat](#create-a-free-managed-certificate-preview) en het [app service certificaat](#import-an-app-service-certificate) voldoen al aan de vereisten van app service. Als u ervoor kiest om een persoonlijk certificaat te uploaden of te importeren naar App Service, moet uw certificaat voldoen aan de volgende vereisten:
+Het [gratis App Service beheerd certificaat en](#create-a-free-managed-certificate-preview) het [App Service certificaat](#import-an-app-service-certificate) voldoen al aan de vereisten van App Service. Als u ervoor kiest om een persoonlijk certificaat te uploaden of te importeren naar App Service, moet uw certificaat voldoen aan de volgende vereisten:
 
-* Wordt geëxporteerd als een [PFX-bestand met wachtwoord beveiliging](https://en.wikipedia.org/w/index.php?title=X.509&section=4#Certificate_filename_extensions)dat is versleuteld met Triple DES.
+* Geëxporteerd als een [PFX-bestand met wachtwoordversleuteling,](https://en.wikipedia.org/w/index.php?title=X.509&section=4#Certificate_filename_extensions)versleuteld met drie keer DES.
 * Bevat een persoonlijke sleutel van minstens 2048 bits
 * Bevat alle tussenliggende certificaten in de certificaatketen
 
@@ -61,14 +61,14 @@ Voor het beveiligen van een aangepast domein in een TLS-binding heeft het certif
 ## <a name="create-a-free-managed-certificate-preview"></a>Een gratis beheerd certificaat maken (preview)
 
 > [!NOTE]
-> Voordat u een gratis beheerd certificaat maakt, moet u ervoor zorgen dat u aan [de vereisten](#prerequisites) voor uw app hebt voldaan.
+> Voordat u een gratis beheerd certificaat maakt, moet u ervoor zorgen dat u aan [de vereisten voor](#prerequisites) uw app hebt voldaan.
 
 Het gratis door App Service beheerde certificaat is een gebruiksklare oplossing voor het beveiligen van uw aangepaste DNS-naam in App Service. Het is een volledig functioneel TLS/SSL-certificaat dat wordt beheerd door App Service en dat automatisch wordt verlengd. Het gratis certificaat wordt geleverd met de volgende beperkingen:
 
 - Het biedt geen ondersteuning voor wildcard-certificaten.
 - Het kan niet worden geëxporteerd.
 - Wordt niet ondersteund op App Service Environment (ASE).
-- Wordt niet ondersteund met hoofd domeinen die zijn geïntegreerd met Traffic Manager.
+- Wordt niet ondersteund met hoofddomeinen die zijn geïntegreerd met Traffic Manager.
 
 > [!NOTE]
 > Het gratis certificaat wordt uitgegeven door DigiCert. Voor sommige domeinen van het hoogste niveau moet u DigiCert expliciet als certificaatverlener toestaan door een [CAA-domeinrecord](https://wikipedia.org/wiki/DNS_Certification_Authority_Authorization) te maken met de waarde: `0 issue digicert.com`.
@@ -217,7 +217,7 @@ Wanneer de bewerking is voltooid, ziet u het certificaat in de lijst **Certifica
 ![Key Vault-certificaat importeren voltooid](./media/configure-ssl-certificate/import-app-service-cert-finished.png)
 
 > [!NOTE]
-> Als u uw certificaat in Key Vault bijwerkt met een nieuw certificaat, wordt uw certificaat automatisch binnen 48 uur gesynchroniseerd in App Service.
+> Als u uw certificaat in een Key Vault met een nieuw certificaat, App Service uw certificaat automatisch binnen 24 uur gesynchroniseerd.
 
 > [!IMPORTANT] 
 > Als u een aangepast domein met dit certificaat wilt beveiligen, moet u nog wel een certificaatbinding maken. Volg de stappen in [Binding maken](configure-ssl-bindings.md#create-binding).
@@ -325,13 +325,13 @@ Als u het certificaat opnieuw versleutelt, wordt het certificaat gedistribueerd 
 Nadat het opnieuw versleutelen is voltooid, klikt u op **Synchroniseren**. Met de synchronisatiebewerking worden de hostname-bindingen voor het certificaat in App Service automatisch bijgewerkt zonder dat er downtime voor uw apps wordt veroorzaakt.
 
 > [!NOTE]
-> Als u niet op **Synchroniseren** klikt, wordt het certificaat automatisch binnen 48 uur gesynchroniseerd.
+> Als u niet op Synchroniseren **klikt,** App Service uw certificaat automatisch binnen 24 uur gesynchroniseerd.
 
 ### <a name="renew-certificate"></a>Certificaat verlengen
 
 U kunt het automatisch verlengen van uw certificaat op elk gewenst moment inschakelen door het certificaat te selecteren op de pagina [App Service-certificaten](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) en vervolgens op **Instellingen voor automatisch verlengen** in de navigatie links te klikken. App Service-certificaten hebben standaard een geldigheidsduur van één jaar.
 
-Selecteer **Aan** en klik op **Opslaan**. Certificaten kunnen automatisch worden verlengd 30 dagen voordat het verloopt als u automatische verlenging hebt ingeschakeld.
+Selecteer **Aan** en klik op **Opslaan**. Certificaten kunnen 30 dagen vóór de vervaldatum automatisch worden vernieuwd als automatische verlenging is ingeschakeld.
 
 ![App Service-certificaat automatisch verlengen](./media/configure-ssl-certificate/auto-renew-app-service-cert.png)
 
@@ -340,7 +340,7 @@ Als u het certificaat handmatig wilt verlengen, klikt u op **Handmatig verlengen
 Nadat het verlengen is voltooid, klikt u op **Synchroniseren**. Met de synchronisatiebewerking worden de hostname-bindingen voor het certificaat in App Service automatisch bijgewerkt zonder dat er downtime voor uw apps wordt veroorzaakt.
 
 > [!NOTE]
-> Als u niet op **Synchroniseren** klikt, wordt het certificaat automatisch binnen 48 uur gesynchroniseerd.
+> Als u niet op Synchroniseren **klikt,** App Service uw certificaat automatisch binnen 24 uur gesynchroniseerd.
 
 ### <a name="export-certificate"></a>Certificaat exporteren
 

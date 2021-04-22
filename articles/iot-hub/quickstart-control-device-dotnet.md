@@ -1,5 +1,5 @@
 ---
-title: 'Quick Start: een apparaat beheren vanuit Azure IoT Hub Snelstartgids (.NET) | Microsoft Docs'
+title: 'Quickstart: een apparaat vanuit Azure IoT Hub quickstart (.NET) | Microsoft Docs'
 description: In deze snelstartgids gaan we twee voorbeeldtoepassingen geschreven in C# uitvoeren. De ene toepassing is een servicetoepassing waarmee u op afstand apparaten kunt beheren die zijn verbonden met de hub. De andere toepassing simuleert een apparaat dat is verbonden met uw hub en dat op afstand kan worden beheerd.
 author: robinsh
 manager: philmea
@@ -14,12 +14,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - devx-track-azurecli
 ms.date: 03/04/2020
-ms.openlocfilehash: b89cc9dfb0a98f61b74ecf42471d08129661fb22
-ms.sourcegitcommit: 73fb48074c4c91c3511d5bcdffd6e40854fb46e5
+ms.openlocfilehash: 92f27c16b5dd45352a3a6cb65dd4bf78e88188f0
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106059856"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107868543"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-net"></a>Quickstart: Een apparaat beheren dat is verbonden met een IoT-hub (.NET)
 
@@ -39,7 +39,7 @@ In de snelstartgids worden twee vooraf geschreven .NET-toepassingen gebruikt:
 
 * De twee voorbeeldtoepassingen die u uitvoert in deze snelstartgids zijn geschreven in C#. .NET Core SDK 3.1 of hoger moet zijn geïnstalleerd op de ontwikkelcomputer.
 
-    U kunt de .NET Core SDK voor meerdere platforms downloaden van [.NET](https://www.microsoft.com/net/download/all).
+    U kunt de .NET Core SDK voor meerdere platforms downloaden van [.NET](https://dotnet.microsoft.com/download).
 
     Gebruik de volgende opdracht om de huidige versie van C# op uw ontwikkelcomputer te controleren:
 

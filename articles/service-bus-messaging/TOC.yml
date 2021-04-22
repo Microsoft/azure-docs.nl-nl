@@ -110,6 +110,8 @@
           href: message-transfers-locks-settlement.md
         - name: Wachtrijen voor onbestelbare berichten
           href: service-bus-dead-letter-queues.md
+        - name: Berichten uitstellen
+          href: message-deferral.md
         - name: Prestaties optimaliseren
           href: service-bus-performance-improvements.md
         - name: Geo-herstel na noodgeval en geo-replicatie
@@ -174,7 +176,7 @@
           href: service-bus-filter-examples.md
         - name: Afhandeling van berichten
           items:
-            - name: Java Message Service (JMS) 2.0-entiteiten
+            - name: JMS-entiteiten (Java Message Service) 2.0
               href: java-message-service-20-entities.md
             - name: JMS-ontwikkelaarsaccounts (Java Message Service) guide.md
               href: jms-developer-guide.md
@@ -206,8 +208,6 @@
           items:
             - name: Berichten vooraf ophalen
               href: service-bus-prefetch.md
-            - name: Berichten uitstellen
-              href: message-deferral.md
             - name: Entiteiten koppelen met automatisch doorsturen
               href: service-bus-auto-forwarding.md
             - name: Transactieverwerking
@@ -240,7 +240,7 @@
           href: enable-duplicate-detection.md
         - name: Partities voor een wachtrij of onderwerp inschakelen
           href: enable-partitions.md
-        - name: Automatisch doorsturen voor een wachtrij of abonnement inschakelen
+        - name: Automatisch doorsturen inschakelen voor een wachtrij of abonnement
           href: enable-auto-forward.md
         - name: Inschakelen van dead lettering voor een wachtrij of abonnement
           href: enable-dead-letter.md

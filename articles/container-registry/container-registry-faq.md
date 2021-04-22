@@ -5,25 +5,25 @@ author: sajayantony
 ms.topic: article
 ms.date: 03/15/2021
 ms.author: sajaya
-ms.openlocfilehash: a8c007d7f4419ddbe1555b50ceb6fb92ea0a6f98
-ms.sourcegitcommit: 4b0e424f5aa8a11daf0eec32456854542a2f5df0
+ms.openlocfilehash: e5c855675990d6fd3ec97b839539acd843016a7d
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/20/2021
-ms.locfileid: "107783895"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864699"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Veelgestelde vragen over Azure Container Registry
 
 In dit artikel worden veelgestelde vragen en bekende problemen met betrekking tot Azure Container Registry.
 
 Zie voor hulp bij het oplossen van problemen met het register:
-* [Problemen met aanmelden bij register oplossen](container-registry-troubleshoot-login.md)
-* [Netwerkproblemen met register oplossen](container-registry-troubleshoot-access.md)
+* [Problemen met aanmelding bij register oplossen](container-registry-troubleshoot-login.md)
+* [Netwerkproblemen met het register oplossen](container-registry-troubleshoot-access.md)
 * [Problemen met registerprestaties oplossen](container-registry-troubleshoot-performance.md)
 
 ## <a name="resource-management"></a>Resourcebeheer
 
-- [Kan ik een Azure-containerregister maken met behulp van Resource Manager sjabloon?](#can-i-create-an-azure-container-registry-using-a-resource-manager-template)
+- [Kan ik een Azure-containerregister maken met behulp van een Resource Manager sjabloon?](#can-i-create-an-azure-container-registry-using-a-resource-manager-template)
 - [Is er scannen op beveiligingsprobleem voor afbeeldingen in ACR?](#is-there-security-vulnerability-scanning-for-images-in-acr)
 - [Hoe kan ik Kubernetes configureren met Azure Container Registry?](#how-do-i-configure-kubernetes-with-azure-container-registry)
 - [Hoe kan ik beheerdersreferenties voor een containerregister op te halen?](#how-do-i-get-admin-credentials-for-a-container-registry)
@@ -101,21 +101,21 @@ Het duurt enige tijd om wijzigingen in de firewallregel door te voeren. Nadat u 
 
 ## <a name="registry-operations"></a>Registerbewerkingen
 
-- [Hoe kan ik toegang tot HTTP API V2 van Docker Registry?](#how-do-i-access-docker-registry-http-api-v2)
+- [Hoe kan ik toegang tot Http API V2 voor Docker Registry?](#how-do-i-access-docker-registry-http-api-v2)
 - [Hoe kan ik alle manifesten verwijderen waarnaar niet wordt verwezen door een tag in een opslagplaats?](#how-do-i-delete-all-manifests-that-are-not-referenced-by-any-tag-in-a-repository)
-- [Waarom wordt het gebruik van registerquota niet beperkt na het verwijderen van afbeeldingen?](#why-does-the-registry-quota-usage-not-reduce-after-deleting-images)
+- [Waarom wordt het gebruik van het registerquotum niet beperkt na het verwijderen van afbeeldingen?](#why-does-the-registry-quota-usage-not-reduce-after-deleting-images)
 - [Hoe kan ik opslagquotumwijzigingen valideren?](#how-do-i-validate-storage-quota-changes)
-- [Hoe kan ik bij mijn register bij het uitvoeren van de CLI in een container?](#how-do-i-authenticate-with-my-registry-when-running-the-cli-in-a-container)
+- [Hoe kan ik verifiëren met mijn register bij het uitvoeren van de CLI in een container?](#how-do-i-authenticate-with-my-registry-when-running-the-cli-in-a-container)
 - [TLS 1.2 inschakelen](#how-to-enable-tls-12)
-- [Ondersteunt Azure Container Registry inhoud vertrouwen?](#does-azure-container-registry-support-content-trust)
+- [Biedt Azure Container Registry ondersteuning voor Inhoud vertrouwen?](#does-azure-container-registry-support-content-trust)
 - [Hoe kan ik toegang verlenen tot pull- of push-afbeeldingen zonder toestemming voor het beheren van de registerresource?](#how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource)
 - [Hoe kan ik automatische quarantaine van afbeeldingen inschakelen voor een register?](#how-do-i-enable-automatic-image-quarantine-for-a-registry)
 - [Hoe schakel ik anonieme pull-toegang in?](#how-do-i-enable-anonymous-pull-access)
 - [Hoe kan ik niet-distribueerbare lagen naar een register pushen?](#how-do-i-push-non-distributable-layers-to-a-registry)
 
-### <a name="how-do-i-access-docker-registry-http-api-v2"></a>Hoe kan ik toegang tot HTTP API V2 van Docker Registry?
+### <a name="how-do-i-access-docker-registry-http-api-v2"></a>Hoe kan ik toegang tot Http API V2 voor Docker Registry?
 
-ACR ondersteunt Http API V2 voor Docker Registry. De API's zijn toegankelijk via `https://<your registry login server>/v2/` . Voorbeeld: `https://mycontainerregistry.azurecr.io/v2/`
+ACR biedt ondersteuning voor HTTP API V2 voor Docker Registry. De API's zijn toegankelijk via `https://<your registry login server>/v2/` . Voorbeeld: `https://mycontainerregistry.azurecr.io/v2/`
 
 ### <a name="how-do-i-delete-all-manifests-that-are-not-referenced-by-any-tag-in-a-repository"></a>Hoe kan ik alle manifesten verwijderen waarnaar niet wordt verwezen door een tag in een opslagplaats?
 
@@ -131,11 +131,11 @@ Voor PowerShell:
 az acr repository show-manifests -n myRegistry --repository myRepository --query "[?tags[0]==null].digest" -o tsv | %{ az acr repository delete -n myRegistry -t myRepository@$_ }
 ```
 
-Opmerking: u kunt de `-y` verwijderopdracht toevoegen om de bevestiging over te slaan.
+Opmerking: u kunt de opdracht verwijderen `-y` toevoegen om de bevestiging over te slaan.
 
-Zie Containerafbeeldingen verwijderen in Azure Container Registry voor [meer Azure Container Registry.](container-registry-delete.md)
+Zie Containerafbeeldingen verwijderen [in](container-registry-delete.md)Azure Container Registry.
 
-### <a name="why-does-the-registry-quota-usage-not-reduce-after-deleting-images"></a>Waarom wordt het gebruik van registerquota niet beperkt na het verwijderen van afbeeldingen?
+### <a name="why-does-the-registry-quota-usage-not-reduce-after-deleting-images"></a>Waarom wordt het gebruik van het registerquotum niet beperkt na het verwijderen van afbeeldingen?
 
 Deze situatie kan zich voor doen als er nog steeds wordt verwezen naar de onderliggende lagen door andere containerafbeeldingen. Als u een afbeelding verwijdert zonder verwijzingen, wordt het registergebruik binnen enkele minuten bijgewerkt.
 
@@ -271,18 +271,19 @@ az acr update --name myregistry --anonymous-pull-enabled
 U kunt anonieme pull-toegang op elk moment uitschakelen door in te `--anonymous-pull-enabled` stellen op `false` .
 
 > [!NOTE]
-> * Voer uit voordat u een anonieme pull-bewerking probeert uit te `docker logout` voeren om ervoor te zorgen dat u bestaande Docker-referenties leegt.
-> * Alleen gegevensvlakbewerkingen zijn beschikbaar voor niet-geautheticeerde clients.
-> * Het register kan een groot aantal niet-niet-geautheteerde aanvragen in de weg staan.
+> * Voer uit voordat u een anonieme pull-bewerking probeert uit te voeren om ervoor te `docker logout` zorgen dat u bestaande Docker-referenties leegt.
+> * Alleen gegevensvlakbewerkingen zijn beschikbaar voor niet-geautheteerde clients.
+> * Het register kan een groot aantal niet-geautheteerde aanvragen in de weg staan.
+> * Anonieme pull-toegang wordt momenteel niet ondersteund [in](container-registry-geo-replication.md) geografisch gerepliceerde registerregio's.
 
 > [!WARNING]
-> Anonieme pull-toegang is momenteel van toepassing op alle opslagplaatsen in het register. Als u de toegang tot de opslagplaats beheert met [tokens](container-registry-repository-scoped-permissions.md)binnen het bereik van de opslagplaats, moet u er rekening mee houden dat alle gebruikers gegevens uit deze opslagplaatsen kunnen halen in een register dat is ingeschakeld voor anonieme pull. U wordt aangeraden tokens te verwijderen wanneer anonieme pull-toegang is ingeschakeld.
+> Anonieme pull-toegang is momenteel van toepassing op alle opslagplaatsen in het register. Als u de toegang tot de opslagplaats beheert met behulp van [tokens](container-registry-repository-scoped-permissions.md)binnen het bereik van de opslagplaats, moet u er rekening mee houden dat alle gebruikers gegevens uit deze opslagplaatsen kunnen halen in een register dat is ingeschakeld voor anonieme pull. U wordt aangeraden tokens te verwijderen wanneer anonieme pull-toegang is ingeschakeld.
 
 ### <a name="how-do-i-push-non-distributable-layers-to-a-registry"></a>Hoe kan ik niet-distribueerbare lagen naar een register pushen?
 
-Een niet-distribueerbare laag in een manifest bevat een URL-parameter waar inhoud van kan worden opgehaald. Sommige mogelijke gebruiksgevallen voor het inschakelen van niet-distribueerbare laag-pushes zijn voor beperkte netwerkregisters, registers met beperkte toegang via de lucht of voor registers zonder internetverbinding.
+Een niet-distribueerbare laag in een manifest bevat een URL-parameter waar inhoud uit kan worden opgehaald. Sommige mogelijke gebruiksgevallen voor het inschakelen van niet-distribueerbare laag-pushes zijn voor netwerkgeperkte registers, registers met beperkte toegang via de lucht of voor registers zonder internetverbinding.
 
-Als u bijvoorbeeld NSG-regels hebt ingesteld zodat een VM alleen afbeeldingen uit uw Azure-containerregister kan halen, zal Docker fouten voor vreemde/niet-distribueerbare lagen pullen. Een Windows Server Core-afbeelding bevat bijvoorbeeld referente laagverwijzingen naar het Azure-containerregister in het manifest en kan in dit scenario niet worden opgeslagen.
+Als u bijvoorbeeld NSG-regels hebt ingesteld, zodat een VM alleen afbeeldingen uit uw Azure-containerregister kan halen, zal Docker fouten voor vreemde/niet-distribueerbare lagen op halen. Een Windows Server Core-afbeelding bevat bijvoorbeeld referente laagverwijzingen naar het Azure-containerregister in het manifest en kan in dit scenario niet worden opgeslagen.
 
 Pushen van niet-distribueerbare lagen inschakelen:
 
@@ -326,7 +327,7 @@ Zie De status van een [Azure-containerregister controleren](container-registry-c
 
 ### <a name="docker-pull-fails-with-error-nethttp-request-canceled-while-waiting-for-connection-clienttimeout-exceeded-while-awaiting-headers"></a>docker pull mislukt met fout: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers) (Docker pull mislukt met fout: net/http: request canceled while waiting for connection (Client.Timeout is overschreden tijdens het wachten op headers)
 
- - Als deze fout een tijdelijk probleem is, lukt het opnieuw proberen.
+ - Als deze fout een tijdelijk probleem is, slaagt het opnieuw proberen.
  - Als `docker pull` er continu een fout is, kan er een probleem zijn met de Docker-daemon. Het probleem kan over het algemeen worden vereend door de Docker-daemon opnieuw op te starten. 
  - Als u dit probleem blijft zien na het opnieuw opstarten van de Docker-daemon, kan het probleem een aantal problemen met de netwerkverbinding met de computer zijn. Als u wilt controleren of het algemene netwerk op de computer in orde is, moet u de volgende opdracht uitvoeren om de eindpuntconnectiviteit te testen. De minimale `az acr` versie met deze connectiviteitscontroleopdracht is 2.2.9. Upgrade uw Azure CLI als u een oudere versie gebruikt.
  
@@ -354,7 +355,7 @@ Fedora 28 Server heeft bijvoorbeeld de volgende opties voor docker-daemon:
 
 `OPTIONS='--selinux-enabled --log-driver=journald --live-restore'`
 
-Als `--signature-verification=false` deze ontbreekt, `docker pull` mislukt met een fout die vergelijkbaar is met:
+Als `--signature-verification=false` deze ontbreekt, `docker pull` mislukt met een fout die lijkt op:
 
 ```output
 Trying to pull repository myregistry.azurecr.io/myimage ...
@@ -409,7 +410,7 @@ Zie [Docker-documentatie](https://docs.docker.com/engine/admin/#read-the-logs) v
     docker run --net=host --ipc=host --uts=host --pid=host -it --security-opt=seccomp=unconfined --privileged --rm -v /:/host alpine /bin/sh
     chroot /host
     ```
-    U hebt nu toegang tot alle bestanden van de VM met `dockerd` . Het logboek is op `/var/log/docker.log` .
+    U hebt nu toegang tot alle bestanden van de VM met `dockerd` . Het logboek staat op `/var/log/docker.log` .
 
 ### <a name="new-user-permissions-may-not-be-effective-immediately-after-updating"></a>Nieuwe gebruikersmachtigingen zijn mogelijk niet onmiddellijk van kracht na het bijwerken
 
@@ -483,7 +484,7 @@ Neem contact op met uw netwerkbeheerder of controleer uw netwerkconfiguratie en 
 
 ### <a name="why-does-my-pull-or-push-request-fail-with-disallowed-operation"></a>Waarom mislukt mijn pull- of pushaanvraag met een niet-toegestaan bewerking?
 
-Hier zijn enkele scenario's waarin bewerkingen mogelijk niet zijn toegestaan:
+Hier zijn enkele scenario's waarbij bewerkingen mogelijk niet zijn toegestaan:
 * Klassieke registers worden niet meer ondersteund. Voer een upgrade uit naar een [ondersteunde servicelaag](./container-registry-skus.md) [met az acr update](/cli/azure/acr#az_acr_update) of de Azure Portal.
 * De afbeelding of opslagplaats is mogelijk vergrendeld, zodat deze niet kan worden verwijderd of bijgewerkt. U kunt de opdracht [az acr show repository](./container-registry-image-lock.md) gebruiken om de huidige kenmerken weer te geven.
 * Sommige bewerkingen zijn niet toegestaan als de afbeelding in quarantaine is. Meer informatie over [quarantaine](https://github.com/Azure/acr/tree/master/docs/preview/quarantine).
@@ -524,7 +525,7 @@ Configureer de Docker-proxy voor uitvoer van de vorige opdracht en poort 8888 (b
 - [Ondersteunt Tasks GitLab voor brontriggers?](#does-tasks-support-gitlab-for-source-triggers)
 - [Welke beheerservice voor git-opslagplaatsen ondersteunt Tasks?](#what-git-repository-management-service-does-tasks-support)
 
-### <a name="how-do-i-batch-cancel-runs"></a>Hoe kan ik batchonderzeggen uitgevoerd?
+### <a name="how-do-i-batch-cancel-runs"></a>Hoe kan ik batch annuleren?
 
 Met de volgende opdrachten worden alle taken in het opgegeven register geannuleerd.
 
@@ -535,7 +536,7 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 
 ### <a name="how-do-i-include-the-git-folder-in-az-acr-build-command"></a>Hoe kan ik de map .git opnemen in de opdracht az acr build?
 
-Als u een lokale bronmap door te geven aan de opdracht, wordt de map standaard uitgesloten van `az acr build` `.git` het geüploade pakket. U kunt een bestand `.dockerignore` maken met de volgende instelling. De opdracht wordt opdracht gegeven om alle bestanden onder `.git` in het geüploade pakket te herstellen. 
+Als u een lokale bronmap aan de opdracht doorlevert, wordt de map standaard uitgesloten van het `az acr build` `.git` geüploade pakket. U kunt een bestand `.dockerignore` maken met de volgende instelling. Het vertelt de opdracht om alle bestanden onder `.git` in het geüploade pakket te herstellen. 
 
 `!.git/**`
 

@@ -1,134 +1,134 @@
 ---
-title: Een HPC-cache van Azure maken
-description: Een Azure HPC-cache-exemplaar maken
+title: Een Azure HPC Cache
+description: Een Azure HPC Cache maken
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: 63a179f7123f088c9c60fbfb8996a5b21d1c704d
-ms.sourcegitcommit: 32e0fedb80b5a5ed0d2336cea18c3ec3b5015ca1
+ms.openlocfilehash: 02934a1943ef37d282dd2a2e7862c5695bbd6ecb
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "104773263"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862701"
 ---
-# <a name="create-an-azure-hpc-cache"></a>Een HPC-cache van Azure maken
+# <a name="create-an-azure-hpc-cache"></a>Een Azure HPC Cache
 
 Gebruik de Azure Portal of de Azure CLI om uw cache te maken.
 
-![scherm opname van het cache-overzicht in Azure Portal, met de knop maken onderaan](media/hpc-cache-home-page.png)
+![schermopname van cacheoverzicht in Azure Portal, met de knop Maken onderaan](media/hpc-cache-home-page.png)
 
-Klik op de onderstaande afbeelding om een [video demonstratie](https://azure.microsoft.com/resources/videos/set-up-hpc-cache/) te bekijken van het maken van een cache en het toevoegen van een opslag doel.
+Klik op de onderstaande afbeelding om een [videodemonstratie te bekijken](https://azure.microsoft.com/resources/videos/set-up-hpc-cache/) van het maken van een cache en het toevoegen van een opslagdoel.
 
-[![Video miniatuur: Azure HPC cache: Setup (Klik om de video pagina te bezoeken)](media/video-4-setup.png)](https://azure.microsoft.com/resources/videos/set-up-hpc-cache/)
+[![videominiature: Azure HPC Cache: Instellen (klik om naar de videopagina te gaan)](media/video-4-setup.png)](https://azure.microsoft.com/resources/videos/set-up-hpc-cache/)
 
 ## <a name="portal"></a>[Portal](#tab/azure-portal)
 
-## <a name="define-basic-details"></a>Basis Details definiëren
+## <a name="define-basic-details"></a>Basisdetails definiëren
 
-![scherm afbeelding van de pagina project details in Azure Portal](media/hpc-cache-create-basics.png)
+![schermopname van de pagina projectdetails in Azure Portal](media/hpc-cache-create-basics.png)
 
-Selecteer in **Project Details** het abonnement en de resource groep die als host moet fungeren voor de cache.
+Selecteer **in Projectdetails** het abonnement en de resourcegroep die de cache gaan hosten.
 
-Stel in **service Details** de naam van de cache en de andere kenmerken in:
+Stel **in Servicedetails** de cachenaam en de volgende andere kenmerken in:
 
-* Locatie: Selecteer een van de [ondersteunde regio's](hpc-cache-overview.md#region-availability).
-* Virtueel netwerk: u kunt een bestaande selecteren of een nieuw virtueel netwerk maken.
-* Subnet: Kies of maak een subnet met ten minste 64 IP-adressen (/24). Dit subnet moet alleen worden gebruikt voor deze Azure HPC-cache-instantie.
+* Locatie: selecteer een van de [ondersteunde regio's.](hpc-cache-overview.md#region-availability)
+* Virtueel netwerk: u kunt een bestaand netwerk selecteren of een nieuw virtueel netwerk maken.
+* Subnet: kies of maak een subnet met ten minste 64 IP-adressen (/24). Dit subnet mag alleen worden gebruikt voor dit Azure HPC Cache exemplaar.
 
-## <a name="set-cache-capacity"></a>Cache capaciteit instellen
+## <a name="set-cache-capacity"></a>Cachecapaciteit instellen
 <!-- referenced from GUI - update aka.ms link if you change this header text -->
 
-Op de pagina **cache** moet u de capaciteit van uw cache instellen. De waarden die u hier instelt, bepalen hoeveel gegevens uw cache kan bevatten en hoe snel deze client aanvragen kunnen worden verwerkt.
+Op de **pagina Cache** moet u de capaciteit van uw cache instellen. De waarden die hier worden ingesteld, bepalen hoeveel gegevens uw cache kan bevatten en hoe snel deze clientaanvragen kunnen verwerken.
 
-De capaciteit is ook van invloed op de kosten van de cache.
+Capaciteit is ook van invloed op de kosten van de cache.
 
 Kies de capaciteit door deze twee waarden in te stellen:
 
-* De maximale snelheid van gegevens overdracht voor de cache (door Voer), in GB/seconde
-* De hoeveelheid opslag ruimte die is toegewezen voor gegevens in de cache, in TB
+* De maximale overdrachtssnelheid voor de cache (doorvoer), in GB/seconde
+* De hoeveelheid opslag die is toegewezen voor gegevens in de cache, in TB
 
-Kies een van de beschik bare doorvoer waarden en cache opslag grootten.
+Kies een van de beschikbare doorvoerwaarden en opslaggrootten voor de cache.
 
-Houd er wel voor dat de werkelijke gegevens overdrachts snelheid afhankelijk is van de werk belasting, de netwerk snelheid en het type opslag doelen. Met de waarden die u kiest, stelt u de maximale door Voer voor het hele cache systeem in, maar een aantal dat wordt gebruikt voor overhead taken. Als een client bijvoorbeeld een bestand aanvraagt dat niet al in de cache is opgeslagen, of als het bestand is gemarkeerd als verouderd, gebruikt de cache een deel van de door Voer om het op te halen uit de back-end-opslag.
+Houd er rekening mee dat de werkelijke gegevensoverdrachtsnelheid afhankelijk is van de werkbelasting, netwerksnelheden en het type opslagdoelen. Met de waarden die u kiest, stelt u de maximale doorvoer voor het hele cachesysteem in, maar sommige worden gebruikt voor overheadtaken. Als een client bijvoorbeeld een bestand aanvraagt dat nog niet in de cache is opgeslagen of als het bestand als verouderd is gemarkeerd, gebruikt uw cache een deel van de doorvoer om het op te halen uit de back-endopslag.
 
-Met Azure HPC cache kunt u beheren welke bestanden in de cache worden opgeslagen en vooraf worden geladen om het aantal cache treffers te maximaliseren. De cache-inhoud wordt voortdurend beoordeeld en bestanden worden verplaatst naar lange termijn opslag wanneer ze minder vaak worden gebruikt. Kies een cache opslag grootte die de actieve set van werk bestanden kan bevatten, plus extra ruimte voor meta gegevens en andere overhead.
+Azure HPC Cache beheert welke bestanden in de cache worden opgeslagen en vooraf worden geladen om de treffers van de cache te maximaliseren. De inhoud van de cache wordt continu geëvalueerd en bestanden worden verplaatst naar langetermijnopslag wanneer ze minder vaak worden gebruikt. Kies een cacheopslaggrootte die de actieve set werkbestanden kan bevatten, plus extra ruimte voor metagegevens en andere overhead.
 
-![scherm afbeelding van de pagina cache grootte](media/hpc-cache-create-capacity.png)
+![schermopname van de pagina voor het wijzigen van de cache](media/hpc-cache-create-capacity.png)
 
-## <a name="enable-azure-key-vault-encryption-optional"></a>Versleuteling van Azure Key Vault inschakelen (optioneel)
+## <a name="enable-azure-key-vault-encryption-optional"></a>Versleuteling Azure Key Vault inschakelen (optioneel)
 
-De pagina **schijf versleutelings sleutels** wordt weer gegeven tussen de tabbladen **cache** en **Tags** .<!-- Read [Regional availability](hpc-cache-overview.md#region-availability) to learn more about region support. -->
+De **pagina Schijfversleutelingssleutels** wordt weergegeven tussen **de tabbladen Cache** en Tags. <!-- Read [Regional availability](hpc-cache-overview.md#region-availability) to learn more about region support. -->
 
-Als u de versleutelings sleutels wilt beheren die voor uw cache opslag worden gebruikt, geeft u uw Azure Key Vault informatie op de pagina **schijf versleutelings sleutels** . De sleutel kluis moet zich in dezelfde regio en in hetzelfde abonnement bevinden als de cache.
+Als u de versleutelingssleutels wilt beheren die worden gebruikt voor uw cacheopslag, moet Azure Key Vault op de pagina **Schijfversleutelingssleutels.** De sleutelkluis moet zich in dezelfde regio en in hetzelfde abonnement als de cache.
 
-U kunt deze sectie overs Laan als u geen door de klant beheerde sleutels nodig hebt. Azure versleutelt standaard gegevens met door micro soft beheerde sleutels. Lees de [Azure Storage-versleuteling](../storage/common/storage-service-encryption.md) voor meer informatie.
+U kunt deze sectie overslaan als u geen door de klant beheerde sleutels nodig hebt. Azure versleutelt gegevens standaard met door Microsoft beheerde sleutels. Lees [Azure Storage-versleuteling](../storage/common/storage-service-encryption.md) voor meer informatie.
 
 > [!NOTE]
 >
-> * U kunt geen andere door micro soft beheerde sleutels en door de klant beheerde sleutels wijzigen nadat u de cache hebt gemaakt.
-> * Nadat de cache is gemaakt, moet u deze autoriseren voor toegang tot de sleutel kluis. Klik op de knop **versleuteling inschakelen** op de pagina **overzicht** van de cache om versleuteling in te scha kelen. Neem deze stap binnen 90 minuten na het maken van de cache.
-> * Na deze autorisatie worden cache schijven gemaakt. Dit betekent dat de initiële tijd voor het maken van de cache kort is, maar dat de cache tien minuten of meer niet kan worden gebruikt nadat u toegang hebt geautoriseerd.
+> * U kunt niet wisselen tussen door Microsoft beheerde sleutels en door de klant beheerde sleutels nadat u de cache hebt gemaakt.
+> * Nadat de cache is gemaakt, moet u deze machtigen voor toegang tot de sleutelkluis. Klik op **de knop Versleuteling** inschakelen op de pagina **Overzicht** van de cache om versleuteling in te stellen. Neem deze stap binnen 90 minuten na het maken van de cache.
+> * Cacheschijven worden gemaakt na deze autorisatie. Dit betekent dat de eerste tijd voor het maken van de cache kort is, maar dat de cache pas tien minuten of meer gereed is voor gebruik nadat u de toegang hebt geautoriseerd.
 
-Lees voor een volledige uitleg van het door de klant beheerde sleutel versleutelings proces een door de klant beheerde versleutelings sleutel [gebruiken voor Azure HPC-cache](customer-keys.md).
+Lees Door de klant beheerde versleutelingssleutels gebruiken voor een volledige uitleg van het versleutelingsproces van door de [klant beheerde Azure HPC Cache.](customer-keys.md)
 
-![scherm afbeelding van de pagina versleutelings sleutels met de selectie ' door de klant beheerd ' geselecteerde en sleutel kluis velden die worden weer gegeven](media/create-encryption.png)
+![schermopname van de pagina met versleutelingssleutels met door de klant beheerde velden en sleutelkluisvelden](media/create-encryption.png)
 
-Selecteer door de **klant beheerd** voor het kiezen van door de klant beheerde sleutel versleuteling. De sleutel kluis specificatie velden worden weer gegeven. Selecteer de Azure Key Vault die u wilt gebruiken en selecteer vervolgens de sleutel en versie die u voor deze cache wilt gebruiken. De sleutel moet een 2048-bits RSA-sleutel zijn. U kunt op deze pagina een nieuwe sleutel kluis, sleutel of sleutel versie maken.
+Selecteer **Door de klant beheerd** om door de klant beheerde sleutelversleuteling te kiezen. De sleutelkluisspecificatievelden worden weergegeven. Selecteer de Azure Key Vault wilt gebruiken en selecteer vervolgens de sleutel en versie die u voor deze cache wilt gebruiken. De sleutel moet een 2048-bits RSA-sleutel zijn. Op deze pagina kunt u een nieuwe sleutelkluis, sleutel of sleutelversie maken.
 
-Nadat u de cache hebt gemaakt, moet u deze machtigen voor het gebruik van de sleutel kluis-service. Lees [Azure Key Vault versleuteling autoriseren vanuit de cache](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) voor meer informatie.
+Nadat u de cache hebt gemaakt, moet u deze machtigen voor het gebruik van de sleutelkluisservice. Lees [Autor Azure Key Vault versleuteling van de cache voor](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) meer informatie.
 
-## <a name="add-resource-tags-optional"></a>Resource Tags toevoegen (optioneel)
+## <a name="add-resource-tags-optional"></a>Resourcetags toevoegen (optioneel)
 
-Op de pagina **Tags** kunt u [resource Tags](../azure-resource-manager/management/tag-resources.md) toevoegen aan uw Azure HPC-cache-exemplaar.
+Op **de pagina** Tags kunt u [resourcetags toevoegen](../azure-resource-manager/management/tag-resources.md) aan uw Azure HPC Cache exemplaar.
 
-## <a name="finish-creating-the-cache"></a>Het maken van de cache volt ooien
+## <a name="finish-creating-the-cache"></a>Het maken van de cache voltooien
 
-Nadat u de nieuwe cache hebt geconfigureerd, klikt u op het tabblad **controleren + maken** . In de portal worden uw selecties gevalideerd en kunt u uw keuzes controleren. Als alles correct is, klikt u op **maken**.
+Nadat u de nieuwe cache hebt geconfigureerd, klikt u op **het tabblad Beoordelen en** maken. In de portal worden uw selecties gevalideerd en kunt u uw keuzes bekijken. Als alles klopt, klikt u op **Maken.**
 
-Het maken van de cache duurt ongeveer 10 minuten. U kunt de voortgang volgen in het deel venster meldingen van de Azure Portal.
+Het maken van de cache duurt ongeveer 10 minuten. U kunt de voortgang volgen in het deelvenster Azure Portal meldingen van het systeem.
 
-![scherm opname van pagina's voor het maken van de implementatie van de cache en meldingen in de portal](media/hpc-cache-deploy-status.png)
+![schermopname van de pagina's 'Implementatie wordt bezig' en 'meldingen' van cache maken in de portal](media/hpc-cache-deploy-status.png)
 
-Wanneer het maken is voltooid, wordt er een melding weer gegeven met een koppeling naar het nieuwe Azure HPC-cache-exemplaar. de cache wordt weer gegeven in de lijst met **resources** van uw abonnement.
+Wanneer het maken is voltooien, wordt er een melding weergegeven met een koppeling naar het nieuwe Azure HPC Cache-exemplaar en wordt de cache weergegeven in de **lijst Resources van uw** abonnement.
 
-![scherm opname van het Azure HPC-cache-exemplaar in Azure Portal](media/hpc-cache-new-overview.png)
+![schermopname van Azure HPC Cache-exemplaar in Azure Portal](media/hpc-cache-new-overview.png)
 
 > [!NOTE]
-> Als uw cache door de klant beheerde versleutelings sleutels gebruikt, kan de cache worden weer gegeven in de lijst met resources voordat de implementatie status wordt gewijzigd in voltooid. Zodra de status van de cache wacht op de sleutel, kunt u [deze machtigen](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) voor het gebruik **van** de sleutel kluis.
+> Als uw cache gebruikmaakt van door de klant beheerde versleutelingssleutels, wordt de cache mogelijk weergegeven in de lijst met resources voordat de implementatiestatus wordt gewijzigd. Zodra de cache de status Wachten op sleutel **heeft,** kunt u deze autor [laten gebruiken](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) voor het gebruik van de sleutelkluis.
 
 ## <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ## <a name="create-the-cache-with-azure-cli"></a>De cache maken met Azure CLI
 
-[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
+[Azure CLI instellen voor Azure HPC Cache.](./az-cli-prerequisites.md)
 
 > [!NOTE]
-> De Azure CLI biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelings sleutels. Gebruik Azure Portal.
+> De Azure CLI biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelingssleutels. Gebruik Azure Portal.
 
-Gebruik de opdracht [AZ HPC-cache Create](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-create) om een nieuwe Azure HPC-cache te maken.
+Gebruik de [opdracht az hpc-cache create](/cli/azure/hpc-cache#az_hpc_cache_create) om een nieuw Azure HPC Cache.
 
-Geef deze waarden op:
+Hier kunt u de volgende waarden op geven:
 
-* Naam van de resource groep in de cache
-* Cache naam
+* Naam van cacheresourcegroep
+* Cachenaam
 * Azure-regio
-* Cache-subnet, in deze indeling:
+* Cachesubnet, in deze indeling:
 
   ``--subnet "/subscriptions/<subscription_id>/resourceGroups/<cache_resource_group>/providers/Microsoft.Network/virtualNetworks/<virtual_network_name>/sub
 nets/<cache_subnet_name>"``
 
-  Het cache-subnet heeft ten minste 64 IP-adressen (/24) nodig en kan geen andere resources bevatten.
+  Het cachesubnet heeft ten minste 64 IP-adressen (/24) nodig en kan geen andere resources huis houden.
 
-* Cache capaciteit. Met twee waarden is de maximale door Voer van uw Azure HPC-cache ingesteld:
+* Cachecapaciteit. Met twee waarden wordt de maximale doorvoer van uw Azure HPC Cache:
 
-  * De cache grootte (in GB)
-  * De SKU van de virtuele machines die worden gebruikt in de cache-infra structuur
+  * De cachegrootte (in GB)
+  * De SKU van de virtuele machines die worden gebruikt in de cache-infrastructuur
 
-  [AZ HPC-cache sku's lijst](/cli/azure/ext/hpc-cache/hpc-cache/skus) toont de beschik bare sku's en de geldige opties voor cache grootte voor elke SKU. Opties voor cache grootte variëren van 3 TB tot 48 TB, maar slechts enkele waarden worden ondersteund.
+  [az hpc-cache skus list toont](/cli/azure/hpc-cache/skus) de beschikbare SKU's en de opties voor de geldige cachegrootte voor elke SKU. Opties voor cachegrootte variëren van 3 TB tot 48 TB, maar slechts enkele waarden worden ondersteund.
 
-  In dit diagram ziet u welke cache grootte en SKU-combi Naties geldig zijn op het moment dat dit document wordt voor bereid (juli 2020).
+  In deze grafiek ziet u welke cachegrootte en SKU-combinaties geldig zijn op het moment dat dit document wordt voorbereid (juli 2020).
 
   | Cachegrootte | Standard_2G | Standard_4G | Standard_8G |
   |------------|-------------|-------------|-------------|
@@ -138,9 +138,9 @@ nets/<cache_subnet_name>"``
   | 24576 GB   | nee          | ja         | ja         |
   | 49152 GB   | nee          | nee          | ja         |
 
-  Lees de sectie **cache capaciteit instellen** in het tabblad Portal-instructies voor belang rijke informatie over prijzen, door Voer en de grootte van uw cache op de juiste manier voor uw werk stroom.
+  Lees de **sectie Cachecapaciteit instellen** op het tabblad met portalinstructies voor belangrijke informatie over prijzen, doorvoer en hoe u de grootte van uw cache geschikt kunt maken voor uw werkstroom.
 
-Voor beeld van het maken van cache:
+Voorbeeld van het maken van de cache:
 
 ```azurecli
 az hpc-cache create --resource-group doc-demo-rg --name my-cache-0619 \
@@ -149,7 +149,7 @@ az hpc-cache create --resource-group doc-demo-rg --name my-cache-0619 \
     --sku-name "Standard_2G"
 ```
 
-Het maken van de cache duurt enkele minuten. Als de opdracht maken is voltooid, wordt de uitvoer als volgt geretourneerd:
+Het maken van de cache duurt enkele minuten. Als het maken is geslaagd, retourneert de opdracht uitvoer als deze:
 
 ```azurecli
 {
@@ -186,20 +186,20 @@ Het maken van de cache duurt enkele minuten. Als de opdracht maken is voltooid, 
 
 Het bericht bevat nuttige informatie, waaronder de volgende items:
 
-* Client koppel adressen: gebruik deze IP-adressen wanneer u klaar bent om clients te verbinden met de cache. Lees [de Azure HPC-cache koppelen](hpc-cache-mount.md) voor meer informatie.
-* Upgrade status: dit bericht wordt gewijzigd wanneer een software-update wordt uitgebracht. U kunt de [cache software](hpc-cache-manage.md#upgrade-cache-software) hand matig bijwerken op een geschikt tijdstip, of deze wordt na enkele dagen automatisch toegepast.
+* Client-koppeladressen: gebruik deze IP-adressen wanneer u klaar bent om clients te verbinden met de cache. Lees [De Azure HPC Cache](hpc-cache-mount.md) voor meer informatie.
+* Upgradestatus: wanneer er een software-update wordt uitgebracht, wordt dit bericht gewijzigd. U kunt [de cachesoftware handmatig](hpc-cache-manage.md#upgrade-cache-software) bijwerken op een handig moment, anders wordt deze na enkele dagen automatisch toegepast.
 
 ## <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
 > [!CAUTION]
-> De Power shell-module AZ. HPCCache is momenteel beschikbaar als open bare preview. Deze preview-versie wordt geleverd zonder Service Level Agreement. Dit wordt niet aanbevolen voor productieworkloads. Sommige functies worden mogelijk niet ondersteund of hebben mogelijk beperkte mogelijkheden. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+> De PowerShell-module Az.HPCCache is momenteel beschikbaar als openbare preview. Deze preview-versie wordt geleverd zonder Service Level Agreement. Dit wordt niet aanbevolen voor productieworkloads. Sommige functies worden mogelijk niet ondersteund of hebben beperkte mogelijkheden. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="requirements"></a>Vereisten
 
 Als u PowerShell lokaal wilt gebruiken, moet u voor dit artikel de Az-module van PowerShell installeren en verbinding maken met uw Azure-account met behulp van de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Zie [Azure PowerShell installeren](/powershell/azure/install-az-ps) voor meer informatie over het installeren van de Az-module van PowerShell. Als u Cloud Shell gebruikt, raadpleegt u [Overzicht van Azure Cloud Shell](../cloud-shell/overview.md) voor meer informatie.
 
 > [!IMPORTANT]
-> Hoewel de Power shell-module **AZ. HPCCache** in preview is, moet u deze afzonderlijk installeren met behulp van de `Install-Module` cmdlet. Nadat deze Power shell-module algemeen beschikbaar is, zal deze deel uitmaken van toekomstige AZ Power shell-module releases en beschikbaar zijn vanuit Azure Cloud Shell.
+> Hoewel de **PowerShell-module Az.HPCCache** in preview is, moet u deze afzonderlijk installeren met behulp van de `Install-Module` cmdlet . Nadat deze PowerShell-module algemeen beschikbaar is, maakt deze deel uit van toekomstige releases van Az PowerShell-modules en is deze systeemeigen beschikbaar vanuit Azure Cloud Shell.
 
 ```azurepowershell-interactive
 Install-Module -Name Az.HPCCache
@@ -208,30 +208,30 @@ Install-Module -Name Az.HPCCache
 ## <a name="create-the-cache-with-azure-powershell"></a>De cache maken met Azure PowerShell
 
 > [!NOTE]
-> Azure PowerShell biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelings sleutels. Gebruik Azure Portal.
+> Azure PowerShell biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelingssleutels. Gebruik Azure Portal.
 
-Gebruik de cmdlet [New-AzHpcCache](/powershell/module/az.hpccache/new-azhpccache) om een nieuwe Azure HPC-cache te maken.
+Gebruik de [cmdlet New-AzHpcCache](/powershell/module/az.hpccache/new-azhpccache) om een nieuw Azure HPC Cache.
 
-Geef de volgende waarden op:
+Geef deze waarden op:
 
-* Naam van de resource groep in de cache
-* Cache naam
+* Naam van cacheresourcegroep
+* Cachenaam
 * Azure-regio
-* Cache-subnet, in deze indeling:
+* Cachesubnet, in deze indeling:
 
   `-SubnetUri "/subscriptions/<subscription_id>/resourceGroups/<cache_resource_group>/providers/Microsoft.Network/virtualNetworks/<virtual_network_name>/sub
 nets/<cache_subnet_name>"`
 
-  Het cache-subnet heeft ten minste 64 IP-adressen (/24) nodig en kan geen andere resources bevatten.
+  Het cachesubnet heeft ten minste 64 IP-adressen (/24) nodig en kan geen andere resources huis houden.
 
-* Cache capaciteit. Met twee waarden is de maximale door Voer van uw Azure HPC-cache ingesteld:
+* Cachecapaciteit. Met twee waarden wordt de maximale doorvoer van uw Azure HPC Cache:
 
-  * De cache grootte (in GB)
-  * De SKU van de virtuele machines die worden gebruikt in de cache-infra structuur
+  * De cachegrootte (in GB)
+  * De SKU van de virtuele machines die worden gebruikt in de cache-infrastructuur
 
-  [Get-AzHpcCacheSku](/powershell/module/az.hpccache/get-azhpccachesku) toont de beschik bare sku's en de geldige opties voor cache grootte voor elke. Opties voor cache grootte variëren van 3 TB tot 48 TB, maar slechts enkele waarden worden ondersteund.
+  [Get-AzHpcCacheSku toont](/powershell/module/az.hpccache/get-azhpccachesku) de beschikbare SKU's en de opties voor de geldige cachegrootte voor elke SKU. Opties voor cachegrootte variëren van 3 TB tot 48 TB, maar slechts enkele waarden worden ondersteund.
 
-  In dit diagram ziet u welke cache grootte en SKU-combi Naties geldig zijn op het moment dat dit document wordt voor bereid (juli 2020).
+  In deze grafiek ziet u welke cachegrootte en SKU-combinaties geldig zijn op het moment dat dit document wordt voorbereid (juli 2020).
 
   | Cachegrootte | Standard_2G | Standard_4G | Standard_8G |
   |------------|-------------|-------------|-------------|
@@ -241,9 +241,9 @@ nets/<cache_subnet_name>"`
   | 24.576 GB   | nee          | ja         | ja         |
   | 49.152 GB   | nee          | nee          | ja         |
 
-  Lees de sectie **cache capaciteit instellen** in het tabblad Portal-instructies voor belang rijke informatie over prijzen, door Voer en de grootte van uw cache op de juiste manier voor uw werk stroom.
+  Lees de **sectie Cachecapaciteit instellen** op het tabblad Instructies voor de portal voor belangrijke informatie over prijzen, doorvoer en hoe u de grootte van uw cache geschikt kunt maken voor uw werkstroom.
 
-Voor beeld van het maken van cache:
+Voorbeeld van het maken van de cache:
 
 ```azurepowershell-interactive
 $cacheParams = @{
@@ -257,7 +257,7 @@ $cacheParams = @{
 New-AzHpcCache @cacheParams
 ```
 
-Het maken van de cache duurt enkele minuten. Als de opdracht maken is voltooid, wordt de volgende uitvoer geretourneerd:
+Het maken van de cache duurt enkele minuten. Als het maken is geslaagd, retourneert de opdracht de volgende uitvoer:
 
 ```Output
 cacheSizeGb       : 3072
@@ -277,14 +277,14 @@ upgradeStatus     : @{currentFirmwareVersion=5.3.42; firmwareUpdateDeadline=1/1/
 
 Het bericht bevat nuttige informatie, waaronder de volgende items:
 
-* Client koppel adressen: gebruik deze IP-adressen wanneer u klaar bent om clients te verbinden met de cache. Lees [de Azure HPC-cache koppelen](hpc-cache-mount.md) voor meer informatie.
-* Upgrade status: dit bericht wordt gewijzigd wanneer een software-update wordt uitgebracht. U kunt de [cache software](hpc-cache-manage.md#upgrade-cache-software) hand matig bijwerken op een geschikt tijdstip, of deze wordt na enkele dagen automatisch toegepast.
+* Client-koppeladressen: gebruik deze IP-adressen wanneer u klaar bent om clients te verbinden met de cache. Lees [De Azure HPC Cache](hpc-cache-mount.md) voor meer informatie.
+* Upgradestatus: wanneer een software-update wordt uitgebracht, wordt dit bericht gewijzigd. U kunt [cachesoftware handmatig op](hpc-cache-manage.md#upgrade-cache-software) een handig moment upgraden of deze wordt na enkele dagen automatisch toegepast.
 
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als uw cache wordt weer gegeven in de lijst met **resources** , kunt u door gaan naar de volgende stap.
+Nadat uw cache wordt weergegeven in de **lijst Resources,** kunt u naar de volgende stap gaan.
 
-* [Definieer opslag doelen](hpc-cache-add-storage.md) om uw cache toegang te geven tot uw gegevens bronnen.
-* Als u versleutelings sleutels van door de klant beheerde code ring gebruikt, moet u Azure Key Vault versleuteling van de cache van de-overzichts pagina [machtigen](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) om de cache-instellingen te volt ooien. U moet deze stap uitvoeren voordat u opslag kunt toevoegen. Lees door de [klant beheerde versleutelings sleutels gebruiken](customer-keys.md) voor meer informatie.
+* [Definieer opslagdoelen](hpc-cache-add-storage.md) om uw cache toegang te geven tot uw gegevensbronnen.
+* Als u door de klant beheerde [](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) versleutelingssleutels gebruikt, moet u Azure Key Vault versleuteling van de overzichtspagina van de cache toestaan om uw cache-installatie te voltooien. U moet deze stap doen voordat u opslag kunt toevoegen. Lees [Door de klant beheerde versleutelingssleutels gebruiken](customer-keys.md) voor meer informatie.

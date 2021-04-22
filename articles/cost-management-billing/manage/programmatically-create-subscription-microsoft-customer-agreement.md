@@ -1,6 +1,6 @@
 ---
 title: Programmatisch Azure-abonnementen voor een Microsoft-klantovereenkomst maken met de nieuwste API's
-description: Informatie over het maken van Azure-abonnementen voor een micro soft-klant overeenkomst via een programma met de nieuwste versies van REST API, Azure CLI, Azure PowerShell en Azure Resource Manager sjablonen.
+description: Leer hoe u programmatisch Azure-abonnementen maakt voor een Microsoft-klantovereenkomst met behulp van de nieuwste versies van REST API, Azure CLI, Azure PowerShell en Azure Resource Manager sjablonen.
 author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
@@ -9,12 +9,12 @@ ms.date: 03/29/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 5409c30020db2c8d7acf3c23df5a7d709d872341
-ms.sourcegitcommit: edc7dc50c4f5550d9776a4c42167a872032a4151
+ms.openlocfilehash: 324ca849e0f9c1282dc4b47ceba4654c76c07b35
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105963271"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107870819"
 ---
 # <a name="programmatically-create-azure-subscriptions-for-a-microsoft-customer-agreement-with-the-latest-apis"></a>Programmatisch Azure-abonnementen voor een Microsoft-klantovereenkomst maken met de nieuwste API's
 
@@ -28,9 +28,9 @@ Wanneer u programmatisch een Azure-abonnement maakt, wordt dat abonnement beheer
 
 ## <a name="prerequisites"></a>Vereisten
 
-U moet de rol van eigenaar, bijdrager of Azure-abonnementsmaker op een factuursectie of die van eigenaar of bijdrager op een factureringsprofiel of factureringsrekening hebben om abonnementen te maken. U kunt ook dezelfde rol geven aan een Service Principal Name (SPN). Zie [facturerings rollen en taken voor abonnementen](understand-mca-roles.md#subscription-billing-roles-and-tasks)voor meer informatie over rollen en het toewijzen van machtigingen aan hen.
+U moet de rol van eigenaar, bijdrager of Azure-abonnementsmaker op een factuursectie of die van eigenaar of bijdrager op een factureringsprofiel of factureringsrekening hebben om abonnementen te maken. U kunt dezelfde rol ook aan een SPN (Service Principal Name) geven. Zie Abonnementsfactureringsrollen en -taken voor meer informatie over rollen en het toewijzen van [machtigingen aan deze rollen.](understand-mca-roles.md#subscription-billing-roles-and-tasks)
 
-Als u een SPN gebruikt om abonnementen te maken, gebruikt u het ObjectId van de Azure AD-toepassings registratie als Service-Principal ObjectId met [Azure Active Directory Power shell](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) of [Azure cli](/cli/azure/ad/sp?view=azure-cli-latest#az_ad_sp_list). 
+Als u een SPN gebruikt om abonnementen te maken, gebruikt u de ObjectId van de Azure AD-toepassingsregistratie als de Service Principal ObjectId met [behulp van Azure Active Directory PowerShell](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) of [Azure CLI.](/cli/azure/ad/sp?view=azure-cli-latest#az_ad_sp_list) 
 
 Raadpleeg [Toegang tot een Microsoft-klantovereenkomst controleren](../understand/mca-overview.md#check-access-to-a-microsoft-customer-agreement) als u niet weet of u toegang hebt tot een Microsoft-klantovereenkomstaccount.
 
@@ -75,7 +75,7 @@ Gebruik de eigenschap `displayName` om de factureringsrekening te identificeren 
 ```azurepowershell
 Get-AzBillingAccount
 ```
-Er wordt een lijst weer gegeven met alle facturerings accounts waartoe u toegang hebt 
+U krijgt een lijst terug met alle factureringsrekeningen tot wie u toegang hebt 
 
 ```json
 Name          : 5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx
@@ -93,7 +93,7 @@ Gebruik de eigenschap `displayName` om de factureringsrekening te identificeren 
 ```azurecli
 az billing account list
 ```
-Er wordt een lijst weer gegeven met alle facturerings accounts waartoe u toegang hebt 
+U krijgt een lijst terug van alle factureringsaccounts tot wie u toegang hebt 
 
 ```json
 [
@@ -126,7 +126,7 @@ Gebruik de eigenschap `displayName` om de factureringsrekening te identificeren 
 
 De kosten voor uw abonnement worden weergegeven in een sectie van de factuur van het factureringsprofiel. Gebruik de volgende API om de lijst met factureringsprofielen en factuursecties op te halen waarvoor u gemachtigd bent om Azure-abonnementen te maken.
 
-Eerst krijgt u de lijst met facturerings profielen onder het facturerings account waartoe u toegang hebt (gebruik de `name` die u hebt ontvangen van de vorige stap)
+Eerst krijgt u de lijst met factureringsprofielen onder het factureringsaccount waar u toegang toe hebt (gebruik de die u in de `name` vorige stap hebt gemaakt)
 
 ### <a name="rest"></a>[REST](#tab/rest)
 
@@ -216,7 +216,7 @@ Gebruik de eigenschap `id` om de factuursectie te identificeren waarvoor u abonn
 Get-AzBillingProfile -BillingAccountName 5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx
 ```
 
-U krijgt de lijst met facturerings profielen onder dit account als onderdeel van het antwoord.
+U krijgt de lijst met factureringsprofielen onder dit account als onderdeel van het antwoord.
 
 ```json
 Name              : AW4F-xxxx-xxx-xxx
@@ -238,20 +238,20 @@ Country           : US
 PostalCode        : 98052
 ```
 
-Noteer het `name` factuur Profiel van het bovenstaande antwoord. De volgende stap is het verkrijgen van het gedeelte invoice dat u toegang hebt tot onder dit facturerings profiel. U hebt de `name` van de facturerings account en het facturerings profiel nodig
+Noteer `name` de van het factureringsprofiel uit het bovenstaande antwoord. De volgende stap is het ontvangen van de factuursectie waar u toegang toe hebt onder dit factureringsprofiel. U hebt de van `name` de factureringsrekening en het factureringsprofiel nodig
 
 ```azurepowershell
 Get-AzInvoiceSection -BillingAccountName 5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx -BillingProfileName AW4F-xxxx-xxx-xxx
 ```
 
-U ontvangt het gedeelte met de factuur dat wordt geretourneerd
+De factuursectie wordt geretourneerd
 
 ```json
 Name        : SH3V-xxxx-xxx-xxx
 DisplayName : Development
 ```
 
-`name`Hierboven vindt u de naam van het factuur gedeelte waarvoor u een abonnement wilt maken. Maak uw facturerings bereik met de indeling "/providers/Microsoft.Billing/billingAccounts/ <BillingAccountName> /BillingProfiles/ <BillingProfileName> /invoiceSections/ <InvoiceSectionName> ". In dit voor beeld is deze waarde gelijk aan `"/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx"` .
+Het `name` bovenstaande is de naam van de factuursectie die u nodig hebt om een abonnement onder te maken. Maak uw factureringsbereik met behulp van de indeling "/providers/Microsoft.Billing/billingAccounts/ <BillingAccountName> /billingProfiles/ <BillingProfileName> /invoiceSections/ <InvoiceSectionName> ". In dit voorbeeld is deze waarde gelijk aan `"/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx"` .
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -259,7 +259,7 @@ DisplayName : Development
 az billing profile list --account-name "5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx" --expand "InvoiceSections"
 ```
 
-Deze API retourneert de lijst met facturerings profielen en factuur secties onder het meegeleverde facturerings account.
+Deze API retourneert de lijst met factureringsprofielen en factuursecties onder de opgegeven factureringsrekening.
 
 ```json
 [
@@ -323,7 +323,7 @@ Deze API retourneert de lijst met facturerings profielen en factuur secties onde
   }
 ]
 ```
-Gebruik de `id` eigenschap onder het gedeelte object factureren om de factuur sectie te identificeren waarvoor u abonnementen wilt maken. Kopieer de gehele tekenreeks. Bijvoorbeeld/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx: XXXXXXXX-XXXX-XXXX-XXXX-xxxxxxxxxxxx_xxxx-XX-XX/billingProfiles/AW4F-XXXX-XXX-XXX/invoiceSections/SH3V-XXXX-XXX-XXX.
+Gebruik de `id` eigenschap onder het object factuursectie om de factuursectie te identificeren waarvoor u abonnementen wilt maken. Kopieer de gehele tekenreeks. Bijvoorbeeld/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx-xxx.
 
 ---
 
@@ -416,7 +416,7 @@ U ontvangt de subscriptionId als onderdeel van het antwoord van de opdracht.
 
 Installeer eerst de extensie door `az extension add --name account` en `az extension add --name alias` uit te voeren.
 
-Voer de volgende [az account alias create](/cli/azure/ext/account/account/alias#ext_account_az_account_alias_create)-opdracht uit.
+Voer de volgende [az account alias create](/cli/azure/account/alias#az_account_alias_create)-opdracht uit.
 
 ```azurecli
 az account alias create --name "sampleAlias" --billing-scope "/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/billingProfiles/AW4F-xxxx-xxx-xxx/invoiceSections/SH3V-xxxx-xxx-xxx" --display-name "Dev Team Subscription" --workload "Production"
@@ -440,9 +440,9 @@ U ontvangt de subscriptionId als onderdeel van het antwoord van de opdracht.
 
 ## <a name="use-arm-template"></a>ARM-sjabloon gebruiken
 
-In de vorige sectie is geleerd hoe u een abonnement maakt met Power shell, CLI of REST API. Als u het maken van abonnementen wilt automatiseren, kunt u overwegen een Azure Resource Manager sjabloon (ARM-sjabloon) te gebruiken.
+In de vorige sectie hebt u kunnen zien hoe u een abonnement maakt met PowerShell, CLI of REST API. Als u het maken van abonnementen wilt automatiseren, kunt u een ARM Azure Resource Manager sjabloon (ARM-sjabloon) gebruiken.
 
-Met de volgende sjabloon maakt u een abonnement. `billingScope`Geef voor de factuur sectie-id op. `targetManagementGroup`Geef voor de beheer groep op waar u het abonnement wilt maken.
+Met de volgende sjabloon maakt u een abonnement. Geef `billingScope` voor de id van de factuursectie op. Geef `targetManagementGroup` voor de beheergroep op waar u het abonnement wilt maken.
 
 ```json
 {
@@ -486,7 +486,7 @@ Met de volgende sjabloon maakt u een abonnement. `billingScope`Geef voor de fact
 }
 ```
 
-Implementeer de sjabloon op het [niveau van de beheer groep](../../azure-resource-manager/templates/deploy-to-management-group.md).
+Implementeer de sjabloon op [beheergroepniveau.](../../azure-resource-manager/templates/deploy-to-management-group.md)
 
 ### <a name="rest"></a>[REST](#tab/rest)
 
@@ -494,7 +494,7 @@ Implementeer de sjabloon op het [niveau van de beheer groep](../../azure-resourc
 PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/mg1/providers/Microsoft.Resources/deployments/exampledeployment?api-version=2020-06-01
 ```
 
-Met een aanvraag tekst:
+Met een aanvraag body:
 
 ```json
 {
@@ -549,4 +549,4 @@ az deployment mg create \
 
 * Nu u een abonnement hebt gemaakt, kunt u die mogelijkheid verlenen aan andere gebruikers en service-principals. Zie [Toegang verlenen voor het maken van Azure Enterprise-abonnementen (preview)](grant-access-to-create-subscription.md) voor meer informatie.
 * Zie [Resources organiseren met Azure-beheergroepen](../../governance/management-groups/overview.md) voor meer informatie over het beheren van grote aantallen abonnementen met behulp van beheergroepen.
-* Zie [abonnementen verplaatsen](../../governance/management-groups/manage.md#move-subscriptions)voor informatie over het wijzigen van de beheer groep voor een abonnement.
+* Zie Abonnementen verplaatsen als u de beheergroep voor een [abonnement wilt wijzigen.](../../governance/management-groups/manage.md#move-subscriptions)

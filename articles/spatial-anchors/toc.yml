@@ -4,7 +4,7 @@
   items:
     - name: Over Spatial Anchors
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een Unity-app maken
@@ -83,7 +83,7 @@
           href: how-tos/set-up-coarse-reloc-cpp-ndk.md
         - name: In C++/WinRT
           href: how-tos/set-up-coarse-reloc-cpp-winrt.md
-    - name: Grove relokalisatie zonder een anker sessie gebruiken
+    - name: Coarse-relokalisatie gebruiken zonder ankersessie
       href: how-tos/use-coarse-relocalization-without-anchor-session.md
     - name: Instellen van het project
       items:
@@ -107,7 +107,7 @@
       href: concepts/logging-diagnostics.md
     - name: Coarse-relokalisatie
       href: concepts/coarse-reloc.md
-    - name: Strategie voor anker zoeken
+    - name: Strategie voor het lokaliseren van ankers
       href: concepts/anchor-locate-strategy.md
 - name: Verwijzingen
   items:
@@ -122,7 +122,7 @@
     - name: SDK voor HoloLens C++/WinRT
       href: /cpp/api/spatial-anchors/winrt/
     - name: Azure CLI
-      href: /cli/azure/ext/mixed-reality/spatial-anchors-account
+      href: /cli/azure/spatial-anchors-account
     - name: Azure PowerShell
       href: /powershell/module/az.mixedreality
 - name: Resources

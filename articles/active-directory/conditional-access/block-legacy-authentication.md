@@ -1,6 +1,6 @@
 ---
-title: Verouderde verificatie blok keren-Azure Active Directory
-description: Meer informatie over het verbeteren van uw beveiligings postuur door verouderde verificatie te blok keren met voorwaardelijke toegang van Azure AD.
+title: Verouderde verificatie blokkeren - Azure Active Directory
+description: Meer informatie over het verbeteren van uw beveiligingsstatus door verouderde verificatie te blokkeren met behulp van voorwaardelijke toegang van Azure AD.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -11,120 +11,120 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09f98e3d6c7997d9cae2737b25f4323021e29bfb
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 84c8b82219f2b2aea39bbcd23f030243d9ea8635
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98892436"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861801"
 ---
 # <a name="how-to-block-legacy-authentication-to-azure-ad-with-conditional-access"></a>Procedure: verouderde verificatie bij Azure AD met voorwaardelijke toegang blokkeren   
 
-Om uw gebruikers eenvoudig toegang te geven tot uw Cloud-apps, ondersteunt Azure Active Directory (Azure AD) een breed scala aan verificatie protocollen, waaronder verouderde verificatie. Verouderde protocollen bieden echter geen ondersteuning voor multi-factor Authentication (MFA). MFA is in veel omgevingen een algemene vereiste om identiteits diefstal te verhelpen. 
+Om uw gebruikers eenvoudig toegang te geven tot uw cloud-apps, ondersteunt Azure Active Directory (Azure AD) een breed scala aan verificatieprotocollen, waaronder verouderde verificatie. Verouderde protocollen bieden echter geen ondersteuning voor Meervoudige verificatie (MFA). MFA is in veel omgevingen een veelvoorkomende vereiste voor identiteitsdiefstal. 
 
-Alex Weinert, directeur van identiteits beveiliging bij micro soft, in zijn 12 maart 2020 blog post [nieuwe hulp middelen voor het blok keren van verouderde verificatie in uw organisatie benadrukt u](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/new-tools-to-block-legacy-authentication-in-your-organization/ba-p/1225302#) waarom organisaties verouderde verificatie moeten blok keren en welke extra Hulpprogram Ma's micro soft biedt om deze taak uit te voeren:
+Alex Weinert, Director of Identity Security bij Microsoft, in zijn blogpost van 12 maart 2020 Nieuwe hulpprogramma's om verouderde verificatie [in](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/new-tools-to-block-legacy-authentication-in-your-organization/ba-p/1225302#) uw organisatie te blokkeren benadrukt waarom organisaties verouderde verificatie moeten blokkeren en welke andere hulpprogramma's Microsoft biedt om deze taak uit te voeren:
 
-> Voor MFA moet u ook verouderde verificatie blok keren. Dit komt doordat verouderde verificatie protocollen, zoals POP, SMTP, IMAP en MAPI, geen MFA afdwingen, waardoor ze voorkeurs toegangs punten voor aanvallers aanvallen van uw organisatie...
+> Om MFA effectief te laten zijn, moet u ook verouderde verificatie blokkeren. Dit komt doordat verouderde verificatieprotocollen zoals POP, SMTP, IMAP en MAPI MFA niet kunnen afdwingen, waardoor ze voorkeursinvoerpunten worden voor aanvallers die uw organisatie aanvallen...
 > 
->... De aantallen van verouderde verificatie van een analyse van Azure Active Directory verkeer (Azure AD) zijn Stark:
+>... De getallen over verouderde verificatie uit een analyse van Azure Active Directory (Azure AD)-verkeer zijn:
 > 
-> - Meer dan 99 procent van de aanvallen voor wachtwoord spray gebruiken verouderde verificatie protocollen
-> - Meer dan 97 procent van de referentie aanvallen gebruiken verouderde verificatie
-> - Azure AD-accounts in organisaties met een uitgeschakelde verouderde verificatie-ervaring van 67 procent minder dan die waar oudere authenticatie is ingeschakeld
+> - Meer dan 99 procent van de wachtwoordsprayaanvallen maakt gebruik van verouderde verificatieprotocollen
+> - Meer dan 97 procent van de aanvallen met referentiegegevens gebruikt verouderde verificatie
+> - Azure AD-accounts in organisaties die verouderde verificatie hebben uitgeschakeld, hebben 67 procent minder compromissen dan wanneer verouderde verificatie is ingeschakeld
 >
 
-Als uw omgeving klaar is om verouderde verificatie te blok keren om de beveiliging van uw Tenant te verbeteren, kunt u dit doel bereiken met voorwaardelijke toegang. In dit artikel wordt uitgelegd hoe u beleid voor voorwaardelijke toegang kunt configureren waarmee verouderde verificatie voor uw Tenant wordt geblokkeerd.
+Als uw omgeving gereed is om verouderde verificatie te blokkeren om de beveiliging van uw tenant te verbeteren, kunt u dit doel bereiken met voorwaardelijke toegang. In dit artikel wordt uitgelegd hoe u beleid voor voorwaardelijke toegang kunt configureren dat verouderde verificatie voor uw tenant blokkeert. Klanten zonder licenties die voorwaardelijke toegang bevatten, kunnen gebruikmaken van standaardinstellingen voor [beveiliging](../fundamentals/concept-fundamentals-security-defaults.md)) om verouderde verificatie te blokkeren.
 
 ## <a name="prerequisites"></a>Vereisten
 
-In dit artikel wordt ervan uitgegaan dat u bekend bent met de [basis concepten](overview.md) van voorwaardelijke toegang tot Azure AD.
+In dit artikel wordt ervan uitgenomen dat u bekend bent met de [basisconcepten](overview.md) van voorwaardelijke toegang van Azure AD.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
-Azure AD biedt ondersteuning voor een aantal van de meest gebruikte verificatie-en autorisatie protocollen, inclusief verouderde verificatie. Verouderde verificatie verwijst naar protocollen die gebruikmaken van basis verificatie. Normaal gesp roken kunnen deze protocollen geen type verificatie van de tweede factor afdwingen. Voor beelden voor apps die zijn gebaseerd op verouderde verificatie zijn:
+Azure AD ondersteunt een aantal van de meest gebruikte verificatie- en autorisatieprotocollen, waaronder verouderde verificatie. Verouderde verificatie verwijst naar protocollen die gebruikmaken van basisverificatie. Normaal gesproken kunnen met deze protocollen geen tweede-factorverificatie worden afgedwongen. Voorbeelden voor apps die zijn gebaseerd op verouderde verificatie zijn:
 
-- Oudere Microsoft Office-apps
-- Apps die e-mail protocollen zoals POP, IMAP en SMTP gebruiken
+- Oudere Microsoft Office apps
+- Apps die gebruikmaken van e-mailprotocollen zoals POP, IMAP en SMTP
 
-Verificatie met één factor (bijvoorbeeld gebruikers naam en wacht woord) is niet voldoende dagen. Wacht woorden zijn ongeldig omdat ze gemakkelijk te raden zijn en wij (mens) zijn slecht bij het kiezen van goede wacht woorden. Wacht woorden zijn ook kwetsbaar voor diverse aanvallen zoals phishing en wachtwoord spray. Een van de eenvoudigste dingen die u kunt doen om te beschermen tegen wachtwoord dreigingen is het implementeren van multi-factor Authentication (MFA). Met MFA, zelfs als een aanvaller in bezit is van het wacht woord van een gebruiker, is het wacht woord alleen niet voldoende om te verifiëren en toegang te krijgen tot de gegevens.
+Enkelvoudige verificatie (bijvoorbeeld gebruikersnaam en wachtwoord) is tegenwoordig niet voldoende. Wachtwoorden zijn slecht omdat ze gemakkelijk te raden zijn en wij (mensen) slecht zijn in het kiezen van goede wachtwoorden. Wachtwoorden zijn ook kwetsbaar voor verschillende aanvallen, zoals phishing en wachtwoordspray. Een van de eenvoudigste dingen die u kunt doen om te beveiligen tegen wachtwoordbedreigingen is het implementeren van Meervoudige verificatie (MFA). Zelfs als een aanvaller met MFA het wachtwoord van een gebruiker in bezit krijgt, is het wachtwoord alleen niet voldoende om de gegevens te verifiëren en te openen.
 
-Hoe kunt u voor komen dat apps die verouderde verificatie gebruiken, toegang krijgen tot de resources van uw Tenant? De aanbeveling is om ze alleen te blok keren met een beleid voor voorwaardelijke toegang. Als dat nodig is, kunt u alleen bepaalde gebruikers en specifieke netwerk locaties gebruiken voor het gebruik van apps die zijn gebaseerd op verouderde verificatie.
+Hoe kunt u voorkomen dat apps die gebruikmaken van verouderde verificatie toegang hebben tot de resources van uw tenant? Het wordt aanbevolen om ze te blokkeren met een beleid voor voorwaardelijke toegang. Indien nodig, staat u alleen bepaalde gebruikers en specifieke netwerklocaties toe om apps te gebruiken die zijn gebaseerd op verouderde verificatie.
 
-Beleid voor voorwaardelijke toegang wordt afgedwongen nadat de verificatie van de eerste factor is voltooid. Daarom is voorwaardelijke toegang niet bedoeld als een eerste verdedigings linie voor scenario's als denial-of-service-aanvallen, maar kunnen ook signalen van deze gebeurtenissen (bijvoorbeeld het risico niveau van de aanmelding, de locatie van de aanvraag enzovoort) worden gebruikt om de toegang te bepalen.
+Beleid voor voorwaardelijke toegang wordt afgedwongen nadat de verificatie van de eerste factor is voltooid. Voorwaardelijke toegang is daarom niet bedoeld als een eerste verdedigingslinie voor scenario's zoals DoS-aanvallen (Denial of Service), maar kan gebruikmaken van signalen van deze gebeurtenissen (bijvoorbeeld het aanmeldingsrisiconiveau, de locatie van de aanvraag, en dergelijke) om de toegang te bepalen.
 
 ## <a name="implementation"></a>Implementatie
 
-In deze sectie wordt uitgelegd hoe u een beleid voor voorwaardelijke toegang configureert om verouderde verificatie te blok keren. 
+In deze sectie wordt uitgelegd hoe u beleid voor voorwaardelijke toegang configureert om verouderde verificatie te blokkeren. 
 
-### <a name="legacy-authentication-protocols"></a>Verouderde verificatie protocollen
+### <a name="legacy-authentication-protocols"></a>Verouderde verificatieprotocollen
 
-De volgende opties worden beschouwd als verouderde verificatie protocollen
+De volgende opties worden beschouwd als verouderde verificatieprotocollen
 
-- Geverifieerde SMTP: wordt gebruikt door POP-en IMAP-clients voor het verzenden van e-mail berichten.
-- Automatische detectie: wordt door Outlook-en EAS-clients gebruikt om post vakken in Exchange Online te vinden en er verbinding mee te maken.
-- Exchange ActiveSync (EAS): wordt gebruikt om verbinding te maken met post vakken in Exchange Online.
-- Exchange Online Power shell: wordt gebruikt om verbinding te maken met Exchange Online met externe Power shell. Als u basis verificatie voor Exchange Online Power shell blokkeert, moet u de Exchange Online Power shell-module gebruiken om verbinding te maken. Zie [verbinding maken met Exchange Online Power shell met multi-factor Authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell)voor instructies.
-- Exchange Web Services (EWS): een programmeer interface die wordt gebruikt door Outlook, Outlook voor Mac en apps van derden.
-- IMAP4: wordt gebruikt door IMAP-e-mailclients.
-- MAPI via HTTP (MAPI/HTTP): wordt gebruikt door Outlook 2010 en hoger.
-- Offline adresboek (OAB): een kopie van de adres lijst verzamelingen die worden gedownload en gebruikt door Outlook.
-- Outlook Anywhere (RPC via HTTP): wordt gebruikt door Outlook 2016 en eerder.
-- Outlook-service: wordt gebruikt door de mail-en agenda-app voor Windows 10.
-- POP3: wordt gebruikt door POP-e-mailclients.
-- Reporting Web Services: wordt gebruikt voor het ophalen van rapport gegevens in Exchange Online.
-- Andere clients-andere protocollen die zijn geïdentificeerd als het gebruik van verouderde verificatie.
+- Geverifieerde SMTP: wordt gebruikt door POP- en IMAP-clients om e-mailberichten te verzenden.
+- Automatisch ontdekken: wordt gebruikt door Outlook- en EAS-clients om postvakken in Exchange Online te zoeken en er verbinding mee te maken.
+- Exchange ActiveSync (EAS) : wordt gebruikt om verbinding te maken met postvakken in Exchange Online.
+- Exchange Online PowerShell: wordt gebruikt om verbinding te maken met Exchange Online via externe PowerShell. Als u basisverificatie voor Exchange Online PowerShell blokkeert, moet u de Exchange Online PowerShell-module gebruiken om verbinding te maken. Zie Verbinding maken met [Exchange Online PowerShell met behulp van meervoudige verificatie voor instructies.](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell)
+- Exchange Web Services (EWS) : een programmeerinterface die wordt gebruikt door Outlook, Outlook voor Mac en apps van derden.
+- IMAP4: wordt gebruikt door IMAP-e-mail-clients.
+- MAPI via HTTP (MAPI/HTTP) : wordt gebruikt door Outlook 2010 en hoger.
+- Offline Adresboek (OAB) : een kopie van adreslijstverzamelingen die worden gedownload en gebruikt door Outlook.
+- Outlook Anywhere (RPC via HTTP) : wordt gebruikt door Outlook 2016 en eerder.
+- Outlook-service: wordt gebruikt door de app Mail en Agenda voor Windows 10.
+- POP3: wordt gebruikt door POP-e-mail-clients.
+- Reporting Web Services: wordt gebruikt om rapportgegevens op te halen in Exchange Online.
+- Andere clients: andere protocollen die zijn geïdentificeerd als het gebruik van verouderde verificatie.
 
-Zie voor meer informatie over deze verificatie protocollen en-services [aanmeldings activiteiten rapporten in de Azure Active Directory Portal](../reports-monitoring/concept-sign-ins.md#filter-sign-in-activities).
+Zie Aanmeldactiviteitenrapporten in de Azure Active Directory portal voor meer informatie [over deze verificatieprotocollen en -services.](../reports-monitoring/concept-sign-ins.md#filter-sign-in-activities)
 
-### <a name="identify-legacy-authentication-use"></a>Gebruik van verouderde authenticatie identificeren
+### <a name="identify-legacy-authentication-use"></a>Verouderd verificatiegebruik identificeren
 
-Voordat u verouderde verificatie in uw Directory kunt blok keren, moet u eerst begrijpen of uw gebruikers apps hebben die gebruikmaken van verouderde verificatie en hoe dit van invloed is op uw algemene Directory. Aanmeld logboeken van Azure AD kunnen worden gebruikt om te begrijpen of u gebruikmaakt van verouderde verificatie.
+Voordat u verouderde verificatie in uw directory kunt blokkeren, moet u eerst weten of uw gebruikers apps hebben die gebruikmaken van verouderde verificatie en hoe dit van invloed is op uw algehele directory. Aanmeldingslogboeken van Azure AD kunnen worden gebruikt om te begrijpen of u verouderde verificatie gebruikt.
 
-1. Navigeer naar het **Azure Portal**  >    >  **-Azure Active Directory aanmeldingen**.
-1. Voeg de kolom client toepassing toe als deze niet wordt weer gegeven door te klikken op de client-app **Columns**  >  .
-1. **Filters toevoegen**  >  **Client-App** > alle verouderde verificatie protocollen selecteren. Selecteer buiten het dialoog venster filteren om uw selecties toe te passen en sluit het dialoog venster.
-1. Als u de [nieuwe preview-rapporten voor aanmeldings activiteiten](../reports-monitoring/concept-all-sign-ins.md)hebt geactiveerd, herhaalt u de bovenstaande stappen ook op het tabblad **Gebruikers aanmeldingen (niet-interactief)** .
+1. Navigeer **naar Azure Portal**  >  **Azure Active Directory**  >  **Aanmeldingen**.
+1. Voeg de kolom Client-app toe als deze niet wordt weergegeven door te klikken op **Columns**  >  **Client App.**
+1. **Filters toevoegen**  >  **Client->** alle verouderde verificatieprotocollen. Selecteer buiten het filterdialoogvenster om uw selecties toe te passen en sluit het dialoogvenster.
+1. Als u de preview [van](../reports-monitoring/concept-all-sign-ins.md)de nieuwe aanmeldactiviteitenrapporten hebt geactiveerd, herhaalt u de bovenstaande stappen ook op het tabblad Gebruikersaanmeldingen **(niet-interactief).**
 
-Bij filteren worden alleen de aanmeldings pogingen weer gegeven die zijn gemaakt door verouderde verificatie protocollen. Als u op elke afzonderlijke aanmeldings poging klikt, wordt er meer informatie weer gegeven. In het veld **client-app** onder het tabblad **basis informatie** wordt aangegeven welk verouderde verificatie protocol is gebruikt.
+Filteren geeft alleen aanmeldingspogingen weer die zijn gedaan door verouderde verificatieprotocollen. Als u op elke afzonderlijke aanmeldingspoging klikt, ziet u meer informatie. In **het veld Client-app** op **het tabblad Basisgegevens** wordt aangegeven welk verouderde verificatieprotocol is gebruikt.
 
-In deze logboeken wordt aangegeven welke gebruikers nog steeds afhankelijk zijn van verouderde verificatie en welke toepassingen verouderde protocollen gebruiken om verificatie aanvragen uit te voeren. Voor gebruikers die niet in deze logboeken worden weer gegeven en worden bevestigd dat ze geen verouderde authenticatie gebruiken, implementeert alleen het beleid voor voorwaardelijke toegang voor deze gebruikers.
+Deze logboeken geven aan welke gebruikers nog steeds afhankelijk zijn van verouderde verificatie en welke toepassingen gebruikmaken van verouderde protocollen om verificatieaanvragen te maken. Voor gebruikers die niet worden weergegeven in deze logboeken en waarvan wordt bevestigd dat ze geen verouderde verificatie gebruiken, implementeert u een beleid voor voorwaardelijke toegang alleen voor deze gebruikers.
 
 ## <a name="block-legacy-authentication"></a>Verouderde verificatie blokkeren 
 
-Er zijn twee manieren om het beleid voor voorwaardelijke toegang te gebruiken om verouderde verificatie te blok keren.
+Er zijn twee manieren om beleid voor voorwaardelijke toegang te gebruiken om verouderde verificatie te blokkeren.
 
-- [Verouderde verificatie rechtstreeks blok keren](#directly-blocking-legacy-authentication)
-- [Verouderde verificatie indirect blok keren](#indirectly-blocking-legacy-authentication)
+- [Verouderde verificatie rechtstreeks blokkeren](#directly-blocking-legacy-authentication)
+- [Verouderde verificatie indirect blokkeren](#indirectly-blocking-legacy-authentication)
  
-### <a name="directly-blocking-legacy-authentication"></a>Verouderde verificatie rechtstreeks blok keren
+### <a name="directly-blocking-legacy-authentication"></a>Verouderde verificatie rechtstreeks blokkeren
 
-De eenvoudigste manier om verouderde verificatie voor uw hele organisatie te blok keren, is door een beleid voor voorwaardelijke toegang te configureren dat specifiek van toepassing is op verouderde authenticatie clients en de toegang blokkeert. Wanneer u gebruikers en toepassingen aan het beleid toewijst, moet u ervoor zorgen dat u gebruikers en service accounts uitsluit die nog moeten worden aangemeld met verouderde verificatie. Configureer de client-apps voor waarde door **Exchange ActiveSync-clients** en **andere clients** te selecteren. Als u de toegang voor deze client-Apps wilt blok keren, configureert u de toegangs elementen om de toegang te blok keren.
+De eenvoudigste manier om verouderde verificatie in uw hele organisatie te blokkeren, is door een beleid voor voorwaardelijke toegang te configureren dat specifiek van toepassing is op clients met verouderde verificatie en toegang blokkeert. Wanneer u gebruikers en toepassingen toewijst aan het beleid, moet u gebruikers en serviceaccounts uitsluiten die zich nog steeds moeten aanmelden met verouderde verificatie. Configureer de voorwaarde voor client-apps door **Exchange ActiveSync-clients en** **Andere clients te selecteren.** Als u de toegang voor deze client-apps wilt blokkeren, configureert u het toegangsbesturingselement op Toegang blokkeren.
 
-![Voor waarde voor client-apps geconfigureerd om verouderde auth te blok keren](./media/block-legacy-authentication/client-apps-condition-configured-yes.png)
+![Voorwaarde voor client-apps geconfigureerd om verouderde auth te blokkeren](./media/block-legacy-authentication/client-apps-condition-configured-yes.png)
 
-### <a name="indirectly-blocking-legacy-authentication"></a>Verouderde verificatie indirect blok keren
+### <a name="indirectly-blocking-legacy-authentication"></a>Verouderde verificatie indirect blokkeren
 
-Zelfs als uw organisatie niet gereed is voor het blok keren van verouderde verificatie voor de hele organisatie, moet u ervoor zorgen dat aanmeldingen met behulp van verouderde verificatie geen beleids regels passeren waarvoor toekennings controles nodig zijn, zoals het vereisen van multi-factor Authentication of compatibele/hybride Azure AD-apparaten. Tijdens de verificatie bieden verouderde verificatie-clients geen ondersteuning voor het verzenden van MFA, apparaatcompatibiliteit of status informatie aan Azure AD. Daarom moet u beleids regels met granting Controls Toep assen op alle client toepassingen, zodat verouderde op verificatie gebaseerde aanmeldingen die niet aan de toekennings besturings elementen kunnen voldoen, worden geblokkeerd. Met de algemene Beschik baarheid van de voor waarde client-apps in augustus 2020 is nieuw gemaakt beleid voor voorwaardelijke toegang standaard van toepassing op alle client-apps.
+Zelfs als uw organisatie niet gereed is om verouderde verificatie in de hele organisatie te blokkeren, moet u ervoor zorgen dat aanmeldingen met verouderde verificatie geen beleidsregels omzeilen waarvoor toekenningscontroles zijn vereist, zoals meervoudige verificatie of compatibele/hybride Azure AD-apparaten. Tijdens de verificatie bieden verouderde verificatie-clients geen ondersteuning voor het verzenden van MFA, apparaat naleving of statusinformatie aan Azure AD. Pas daarom beleid met toekenningsbesturingselementen toe op alle clienttoepassingen, zodat aanmeldingen op basis van verouderde verificatie die niet voldoen aan de toekenningsbesturingselementen, worden geblokkeerd. Met de algemene beschikbaarheid van de voorwaarde voor client-apps in augustus 2020 zijn nieuw gemaakte beleidsregels voor voorwaardelijke toegang standaard van toepassing op alle client-apps.
 
-![Standaard configuratie van client-apps voor waarde](./media/block-legacy-authentication/client-apps-condition-configured-no.png)
+![Standaardconfiguratie voor client-apps](./media/block-legacy-authentication/client-apps-condition-configured-no.png)
 
 ## <a name="what-you-should-know"></a>Wat u moet weten
 
-Het blok keren van toegang met **andere clients** blokkeert ook Exchange Online Power shell en Dynamics 365 met behulp van basis verificatie.
+Het blokkeren van toegang **met andere clients** blokkeert ook Exchange Online PowerShell en Dynamics 365 met behulp van basisvereening.
 
-Het configureren van een beleid voor **andere clients** blokkeert de hele organisatie van bepaalde clients, zoals SPConnect. Dit blok treedt op omdat oudere clients op onverwachte wijze worden geverifieerd. Het probleem is niet van toepassing op grote Office-toepassingen zoals de oudere Office-clients.
+Het configureren van een beleid **voor andere clients** blokkeert de hele organisatie van bepaalde clients, zoals SPConnect. Dit blok teert omdat oudere clients op onverwachte manieren worden geverifieerd. Het probleem is niet van toepassing op grote Office-toepassingen zoals de oudere Office-clients.
 
 Het kan tot 24 uur duren voordat het beleid van kracht wordt.
 
-U kunt alle beschik bare granting-besturings elementen voor de andere voor waarden van de **clients** selecteren. de ervaring van de eind gebruiker is echter altijd dezelfde toegang die wordt geblokkeerd.
+U kunt alle beschikbare toekenningsbesturingselementen selecteren voor de **voorwaarde Andere clients;** De eindgebruikerservaring is echter altijd hetzelfde: geblokkeerde toegang.
 
-### <a name="sharepoint-online-and-b2b-guest-users"></a>Share point online en B2B-gast gebruikers
+### <a name="sharepoint-online-and-b2b-guest-users"></a>SharePoint Online- en B2B-gastgebruikers
 
-Om B2B-gebruikers toegang te blok keren via verouderde verificatie naar share point online, moeten organisaties verouderde verificatie uitschakelen in share point met de `Set-SPOTenant` Power shell-opdracht en de `-LegacyAuthProtocolsEnabled` para meter instellen op `$false` . Meer informatie over het instellen van deze para meter vindt u in het referentie document van share point Power shell over [set-SPOTenant](/powershell/module/sharepoint-online/set-spotenant)
+Als u B2B-gebruikerstoegang via verouderde verificatie voor SharePoint Online wilt blokkeren, moeten organisaties verouderde verificatie op SharePoint uitschakelen met behulp van de PowerShell-opdracht en de `Set-SPOTenant` `-LegacyAuthProtocolsEnabled` parameter instellen op `$false` . Meer informatie over het instellen van deze parameter vindt u in het SharePoint PowerShell-referentiedocument met [betrekking tot Set-SPOTenant](/powershell/module/sharepoint-online/set-spotenant)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Effect bepalen met de modus alleen rapport-alleen voor voorwaardelijke toegang](howto-conditional-access-insights-reporting.md)
-- Als u nog niet bekend bent met het configureren van beleid voor voorwaardelijke toegang, raadpleegt u [MFA vereisen voor specifieke apps met voorwaardelijke toegang Azure Active Directory](../authentication/tutorial-enable-azure-mfa.md) voor een voor beeld.
-- Zie voor meer informatie over ondersteuning voor moderne authenticatie [hoe moderne verificatie werkt voor office 2013-en office 2016-client-apps](/office365/enterprise/modern-auth-for-office-2013-and-2016) 
-- [Een multifunctioneel apparaat of toepassing instellen om e-mail te verzenden met Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
+- [Invloed bepalen met de rapportmodus Voorwaardelijke toegang](howto-conditional-access-insights-reporting.md)
+- Als u nog niet bekend bent met het configureren van beleid voor voorwaardelijke toegang, zie MFA vereisen voor specifieke [apps met Azure Active Directory voorwaardelijke](../authentication/tutorial-enable-azure-mfa.md) toegang voor een voorbeeld.
+- Zie How [modern authentication works for Office 2013 and Office 2016 client apps (Hoe moderne verificatie werkt voor Office 2013- en Office 2016-client-apps)](/office365/enterprise/modern-auth-for-office-2013-and-2016) voor meer informatie over moderne verificatieondersteuning 
+- [Een apparaat of toepassing met meerdere functies instellen voor het verzenden van e-mail met Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)

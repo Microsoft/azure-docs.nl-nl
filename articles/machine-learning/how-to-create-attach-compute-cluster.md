@@ -11,16 +11,16 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 2d23e073a43d61a501e93e0288f222ef26407744
-ms.sourcegitcommit: 49b2069d9bcee4ee7dd77b9f1791588fe2a23937
+ms.openlocfilehash: f61936e622a539b29c6788f631df5de42bb2f242
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107538231"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107861243"
 ---
 # <a name="create-an-azure-machine-learning-compute-cluster"></a>Een Azure Machine Learning-rekencluster maken
 
-Meer informatie over het maken en beheren van [een rekencluster](concept-compute-target.md#azure-machine-learning-compute-managed) in Azure Machine Learning werkruimte.
+Meer informatie over het maken en beheren van een [rekencluster](concept-compute-target.md#azure-machine-learning-compute-managed) in Azure Machine Learning werkruimte.
 
 U kunt een Azure Machine Learning gebruiken om een training- of batchdeferentieproces te distribueren over een cluster van CPU- of GPU-rekenknooppunten in de cloud. Zie voor GPU geoptimaliseerde VM-grootten voor meer informatie over de VM-grootten met [GPU's.](../virtual-machines/sizes-gpu.md) 
 
@@ -86,7 +86,7 @@ Als u een permanente Azure Machine Learning Compute-resource in Python wilt make
 
 [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=cpu_cluster)]
 
-U kunt ook verschillende geavanceerde eigenschappen configureren wanneer u een Azure Machine Learning Compute. Met de eigenschappen kunt u een permanent cluster met een vaste grootte of binnen een bestaand Azure-Virtual Network in uw abonnement.  Zie de [klasse AmlCompute](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute) voor meer informatie.
+U kunt ook verschillende geavanceerde eigenschappen configureren wanneer u een Azure Machine Learning Compute. Met de eigenschappen kunt u een permanent cluster van vaste grootte of binnen een bestaande Azure-Virtual Network maken in uw abonnement.  Zie de [klasse AmlCompute](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute) voor meer informatie.
 
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
@@ -96,7 +96,7 @@ U kunt ook verschillende geavanceerde eigenschappen configureren wanneer u een A
 az ml computetarget create amlcompute -n cpu --min-nodes 1 --max-nodes 1 -s STANDARD_D3_V2
 ```
 
-Zie az [ml computetarget create amlcompute voor meer informatie.](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)
+Zie az [ml computetarget create amlcompute voor meer informatie.](/cli/azure/ml/computetarget/create#az_ml_computetarget_create_amlcompute)
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
@@ -106,7 +106,7 @@ Zie Rekendoelen maken in Azure Machine Learning-studio voor meer informatie over
 
  ## <a name="lower-your-compute-cluster-cost"></a><a id="low-pri-vm"></a> De kosten van uw rekencluster verlagen
 
-U kunt er ook voor kiezen om [VM's met lage prioriteit te](concept-plan-manage-cost.md#low-pri-vm) gebruiken om een deel van uw workloads of al uw workloads uit te voeren. Deze VM's hebben geen gegarandeerde beschikbaarheid en kunnen worden vereendd tijdens gebruik. U moet een bestaande taak opnieuw starten. 
+U kunt er ook voor kiezen om [VM's met lage prioriteit te](concept-plan-manage-cost.md#low-pri-vm) gebruiken om een deel van uw workloads of al uw workloads uit te voeren. Deze VM's hebben geen gegarandeerde beschikbaarheid en kunnen tijdens gebruik worden vereendd. U moet een bestaande taak opnieuw starten. 
 
 Gebruik een van deze manieren om een VM met lage prioriteit op te geven:
     

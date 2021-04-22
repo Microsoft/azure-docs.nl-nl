@@ -1,15 +1,15 @@
 ---
-title: Uw ontwikkel omgeving instellen op macOS
-description: Installeer de runtime, SDK en hulpprogramma's en maak een lokaal ontwikkelcluster. Nadat u deze installatie hebt voltooid, kunt u toepassingen bouwen op macOS.
+title: Uw dev-omgeving instellen in macOS
+description: Installeer de runtime, SDK en hulpprogramma's en maak een lokaal ontwikkelcluster. Nadat u deze installatie hebt doorlopen, bent u klaar om toepassingen te bouwen in macOS.
 ms.topic: conceptual
 ms.date: 10/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: d08046c8f29901dd9650a1edc886efa2ff226e00
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: 6fe551f8371322af8d955b5233e6d9d05741f3d9
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93086774"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107868119"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Uw ontwikkelomgeving instellen in Mac OS X
 > [!div class="op_single_selector"]
@@ -41,38 +41,38 @@ Als u een lokale Docker-container wilt instellen en daarop een Service Fabric-cl
         "fixed-cidr-v6": "fd00::/64"
     }
     ```
-    U kunt deze instellingen rechtstreeks in het bestand daemon.json in uw Docker-installatiepad bijwerken. U kunt de configuratie-instellingen van de daemon rechtstreeks wijzigen in docker. Selecteer de **Docker-pictogram**, en selecteer vervolgens **voorkeuren** > **Daemon** > **Geavanceerd**.
+    U kunt deze instellingen rechtstreeks in het bestand daemon.json in uw Docker-installatiepad bijwerken. U kunt de configuratie-instellingen van de daemon rechtstreeks wijzigen in Docker. Selecteer de **Docker-pictogram**, en selecteer vervolgens **voorkeuren** > **Daemon** > **Geavanceerd**.
     
     >[!NOTE]
     >
-    >Het is raadzaam om de daemon rechtstreeks in docker aan te passen omdat de locatie van de daemon.jsin het bestand kan variëren van machine tot computer. Bijvoorbeeld, ~/Library/Containers/com.docker.docker/Data/database/com.docker.driver.amd64-linux/etc/docker/daemon.json.
+    >Het is raadzaam om de daemon rechtstreeks in Docker te wijzigen, omdat de locatie van de daemon.jsin het bestand per computer kan verschillen. Bijvoorbeeld, ~/Library/Containers/com.docker.docker/Data/database/com.docker.driver.amd64-linux/etc/docker/daemon.json.
     >
 
     >[!TIP]
     >U wordt aangeraden tijdens het testen van grote toepassingen de resources te verhogen die aan Docker zijn toegewezen. U kunt dit doen door het **Docker-pictogram** te selecteren en vervolgens **Geavanceerd** om het aantal kernen en het geheugen aan te passen.
 
 2. Start het cluster.<br/>
-    <b>Ubuntu 18,04 LTS:</b>
+    <b>Ubuntu 18.04 LTS:</b>
     ```bash
     docker run --name sftestcluster -d -v /var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mcr.microsoft.com/service-fabric/onebox:u18
     ```
 
-    <b>Ubuntu 16,04 LTS:</b>
+    <b>Ubuntu 16.04 LTS:</b>
     ```bash
     docker run --name sftestcluster -d -v /var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mcr.microsoft.com/service-fabric/onebox:u16
     ```
 
     >[!TIP]
-    > Standaard wordt hierdoor de installatiekopie met de nieuwste versie van Service Fabric opgehaald. Ga naar de [service Fabric Onebox](https://hub.docker.com/_/microsoft-service-fabric-onebox) -pagina op docker hub voor een bepaalde revisies.
+    > Standaard wordt hierdoor de installatiekopie met de nieuwste versie van Service Fabric opgehaald. Voor bepaalde revisies gaat u naar de [Service Fabric Onebox](https://hub.docker.com/_/microsoft-service-fabric-onebox) op Docker Hub.
 
 
 
-3. Optioneel: bouw uw uitgebreide Service Fabric-installatie kopie.
+3. Optioneel: bouw uw uitgebreide Service Fabric-afbeelding.
 
-    Maak in een nieuwe map een bestand `Dockerfile` met de naam om uw aangepaste installatie kopie te bouwen:
+    Maak in een nieuwe map een bestand met de naam `Dockerfile` om uw aangepaste afbeelding te bouwen:
 
     >[!NOTE]
-    >U kunt de bovenstaande afbeelding aanpassen met een Dockerfile om extra Program ma's of afhankelijkheden aan uw container toe te voegen.
+    >U kunt de bovenstaande afbeelding aanpassen met een Dockerfile om extra programma's of afhankelijkheden aan uw container toe te voegen.
     >Bijvoorbeeld: het toevoegen van `RUN apt-get install nodejs -y` biedt ondersteuning voor `nodejs`-toepassingen als uitvoerbare gastbestanden.
     ```Dockerfile
     FROM mcr.microsoft.com/service-fabric/onebox:u18
@@ -85,7 +85,7 @@ Als u een lokale Docker-container wilt instellen en daarop een Service Fabric-cl
     >[!TIP]
     > Standaard wordt hierdoor de installatiekopie met de nieuwste versie van Service Fabric opgehaald. Ga naar de [Docker Hub](https://hub.docker.com/r/microsoft/service-fabric-onebox/)-pagina als u een bepaalde revisie wilt ophalen.
 
-    Als u een herbruikbare afbeelding wilt bouwen vanuit de `Dockerfile` , opent u een Terminal en `cd` gaat u rechtstreeks naar het werk dat u `Dockerfile` vervolgens uitvoert:
+    Als u uw herbruikbare afbeelding wilt bouwen vanuit de , opent u een terminal en naar de `Dockerfile` direct met uw . Voer vervolgens het volgende `cd` `Dockerfile` uit:
 
     ```bash 
     docker build -t mysfcluster .
@@ -94,7 +94,7 @@ Als u een lokale Docker-container wilt instellen en daarop een Service Fabric-cl
     >[!NOTE]
     >Deze bewerking kan enige tijd duren, maar hoeft slechts eenmaal te worden uitgevoerd.
 
-    U kunt nu snel een lokale kopie van Service Fabric wanneer u deze nodig hebt door uit te voeren:
+    U kunt nu snel een lokale kopie van de Service Fabric wanneer u deze nodig hebt door het volgende uit te schakelen:
 
     ```bash 
     docker run --name sftestcluster -d -v /var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mysfcluster
@@ -108,14 +108,14 @@ Als u een lokale Docker-container wilt instellen en daarop een Service Fabric-cl
     >`docker run -itd -p 19000:19000 -p 19080:19080 -p 8080:8080 --name sfonebox mcr.microsoft.com/service-fabric/onebox:u18`
     >
 
-4. Het kan even duren voordat het cluster is gestart. Wanneer deze wordt uitgevoerd, kunt u logboeken weer geven met behulp van de volgende opdracht of naar het dash board gaan om de status van het cluster weer te geven: `http://localhost:19080`
+4. Het duurt even om het cluster te starten. Wanneer deze wordt uitgevoerd, kunt u logboeken weergeven met behulp van de volgende opdracht of naar het dashboard gaan om de status van de clusters weer te geven: `http://localhost:19080`
 
     ```bash 
     docker logs sftestcluster
     ```
 
 
-5. Gebruik de volgende opdracht om de container te stoppen en op te schonen. We zullen deze container echter in de volgende stap gebruiken.
+5. Gebruik de volgende opdracht om de container te stoppen en op te schonen. In de volgende stap gebruiken we deze container echter wel.
 
     ```bash 
     docker rm -f sftestcluster
@@ -125,7 +125,7 @@ Als u een lokale Docker-container wilt instellen en daarop een Service Fabric-cl
  
  Hier volgen bekende beperkingen van het uitvoeren van het lokale cluster in een container voor Mac-computers: 
  
- * De DNS-service wordt niet uitgevoerd en wordt momenteel niet ondersteund in de container. [Probleem #132](https://github.com/Microsoft/service-fabric/issues/132)
+ * DNS-service wordt niet uitgevoerd en wordt momenteel niet ondersteund in de container. [Probleem #132](https://github.com/Microsoft/service-fabric/issues/132)
  * Voor het uitvoeren van op containers gebaseerde apps moet SF worden uitgevoerd op een Linux-host. Geneste container-apps worden momenteel niet ondersteund.
 
 ## <a name="set-up-the-service-fabric-cli-sfctl-on-your-mac"></a>De Service Fabric-CLI (sfctl) instellen op een Mac
@@ -173,7 +173,7 @@ Service Fabric biedt hulpprogramma's waarmee u vanuit de terminal een Service Fa
     ```
 
     > [!IMPORTANT]
-    > De huidige versies van `brew cask install java` kunnen een recentere versie van de JDK installeren.
+    > Met de huidige versies `brew cask install java` van kan een recentere versie van de JDK worden geïnstalleerd.
     > Zorg ervoor dat u JDK 8 installeert.
 
 ## <a name="deploy-your-application-on-your-mac-from-the-terminal"></a>Toepassingen implementeren op uw Mac vanuit de terminal
@@ -193,9 +193,9 @@ Nadat u de Service Fabric-toepassing hebt gemaakt en gebouwd, kunt u de toepassi
     bash install.sh
     ```
 
-## <a name="set-up-net-core-31-development"></a>.NET Core 3,1-ontwikkeling instellen
+## <a name="set-up-net-core-31-development"></a>.NET Core 3.1-ontwikkeling instellen
 
-Installeer de [.net Core 3,1 SDK voor Mac](https://www.microsoft.com/net/core#macos) om [C# service Fabric-toepassingen te maken](service-fabric-create-your-first-linux-application-with-csharp.md). Pakketten voor .NET Core Service Fabric-toepassingen worden gehost op NuGet.org.
+Installeer de [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download?initial-os=macos) voor Mac om te beginnen met het maken [van C# Service Fabric toepassingen.](service-fabric-create-your-first-linux-application-with-csharp.md) Pakketten voor .NET Core-Service Fabric worden gehost op NuGet.org.
 
 ## <a name="install-the-service-fabric-plug-in-for-eclipse-on-your-mac"></a>De Service Fabric-invoegtoepassing installeren voor Eclipse op uw Mac
 

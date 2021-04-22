@@ -31,13 +31,13 @@
       href: manage-filter-resource-views.md
     - name: Azure-dashboards maken
       items:
-        - name: Een Azure-dash board maken
+        - name: Een Azure-dashboard maken
           href: azure-portal-dashboards.md
-        - name: Een Azure-dash board delen
+        - name: Een Azure-dashboard delen
           href: azure-portal-dashboard-share-access.md
         - name: Een aangepaste markdown-tegel gebruiken
           href: azure-portal-markdown-tile.md
-        - name: Programmatisch een Azure-dash board maken
+        - name: Programmatisch een Azure-dashboard maken
           href: azure-portal-dashboards-create-programmatically.md
           displayName: 'Azure CLI, az portal dashboard, az portal'
     - name: Videoserie met instructies voor de Azure-portal
@@ -79,7 +79,7 @@
     - name: Structuur van Azure-dashboards
       href: azure-portal-dashboards-structure.md
     - name: Azure CLI
-      href: /cli/azure/ext/portal/portal
+      href: /cli/azure/portal
     - name: Ingebouwde modules voor Azure Policy
       displayName: 'samples, policies, definitions'
       href: ./policy-reference.md

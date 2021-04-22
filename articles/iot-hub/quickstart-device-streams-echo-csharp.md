@@ -1,5 +1,5 @@
 ---
-title: 'Quick Start: communiceren met device-app in C# met Azure IoT Hub Device streams'
+title: 'Quickstart: Communiceren met de apparaat-app in C# met Azure IoT Hub-apparaatstreams'
 description: In deze quickstart voert u twee voorbeeldtoepassingen in C# uit die communiceren via een apparaatstream die tot stand is gebracht via IoT Hub.
 author: robinsh
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 3eb65db27e5b96f4b12973154bc860a2ab3df020
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: c4f6e06524412c76661623cb5ef2985a41f2d7fc
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "98624605"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864070"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Snelstart: Communiceren met een apparaattoepassing in C# via IoT Hub-apparaatstreams (preview)
 
@@ -36,7 +36,7 @@ Azure IoT Hub ondersteunt momenteel apparaatstreams als een [preview-functie](ht
 
 * De twee voorbeeldtoepassingen die u uitvoert in deze quickstart, zijn geschreven in C#. Op de ontwikkelcomputer moet .NET Core SDK 2.1.0 of hoger zijn geïnstalleerd.
 
-    Download de [.NET Core SDK voor meerdere platforms downloaden van .NET](https://www.microsoft.com/net/download/all).
+    Download de [.NET Core SDK voor meerdere platforms downloaden van .NET](https://dotnet.microsoft.com/download).
 
     Controleer de huidige versie van C# op de ontwikkelcomputer met behulp van de volgende opdracht:
 

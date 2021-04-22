@@ -1,15 +1,15 @@
 ---
-title: Uw ontwikkel omgeving instellen in Linux
+title: Uw ontwikkelomgeving instellen in Linux
 description: Installeer de runtime en SDK en maak een lokaal ontwikkelcluster in Linux. Zodra u dit hebt gedaan, kunt u toepassingen bouwen.
 ms.topic: conceptual
 ms.date: 10/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 14b8a278605a908b4182c724831b2e42de54a753
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: fcf0aeec27415d03c528e42ad5341a92bd299d88
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "93086887"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107869397"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Uw ontwikkelomgeving voorbereiden in Linux
 > [!div class="op_single_selector"]
@@ -19,16 +19,16 @@ ms.locfileid: "93086887"
 
 Als u [Azure Service Fabric-toepassingen](service-fabric-application-model.md) op uw Linux-ontwikkelmachine wilt implementeren en uitvoeren, moet u de runtime en algemene SDK installeren. U kunt ook optionele SDK's voor Java en .NET Core-ontwikkeling installeren. 
 
-Bij de stappen in dit artikel wordt ervan uitgegaan dat u systeem eigen op Linux installeert of dat u de [service Fabric Onebox-container installatie kopie](https://hub.docker.com/_/microsoft-service-fabric-onebox)gebruikt, dat wil zeggen `mcr.microsoft.com/service-fabric/onebox:u18` .
+Bij de stappen in dit artikel wordt ervan uitgenomen dat u systeemeigen installeert op Linux of dat u de [Service Fabric OneBox-container](https://hub.docker.com/_/microsoft-service-fabric-onebox)gebruikt, dat wil zeggen `mcr.microsoft.com/service-fabric/onebox:u18` .
 
-U kunt Service Fabric entiteiten die worden gehost in de Cloud of on-premises beheren met de Azure Service Fabric opdracht regel interface (CLI). Zie [De Service Fabric-CLI instellen](./service-fabric-cli.md) voor meer informatie over het installeren van de CLI.
+U kunt entiteiten Service Fabric in de cloud of on-premises beheren met de Azure Service Fabric cli (opdrachtregelinterface). Zie [De Service Fabric-CLI instellen](./service-fabric-cli.md) voor meer informatie over het installeren van de CLI.
 
 
 ## <a name="prerequisites"></a>Vereisten
 
 Deze besturingssysteemversies worden ondersteund voor ontwikkeling.
 
-* Ubuntu 16,04 ( `Xenial Xerus` ), 18,04 ( `Bionic Beaver` )
+* Ubuntu 16.04 ( `Xenial Xerus` ), 18.04 ( `Bionic Beaver` )
 
     Zorg ervoor dat het pakket `apt-transport-https` is geïnstalleerd.
          
@@ -50,7 +50,7 @@ Voor het installeren van de SDK en het bijbehorende runtimepakket via het apt-ge
 
 ## <a name="script-installation"></a>Installatie van script
 
-Voor het gemak wordt een script gegeven om de Service Fabric runtime en de Service Fabric algemene SDK samen met de [ **sfctl** cli](service-fabric-cli.md)te installeren. Als u het script uitvoert, wordt ervan uitgegaan dat u akkoord gaat met de licenties voor alle software die wordt geïnstalleerd. U kunt ook de [hand matige installatie](#manual-installation) stappen in de volgende sectie uitvoeren, zodat hieraan gekoppelde licenties worden gepresenteerd, evenals de onderdelen die worden geïnstalleerd.
+Voor het gemak wordt een script geleverd om de Service Fabric runtime en de Service Fabric algemene SDK samen met [ **de sfctl** CLI te installeren.](service-fabric-cli.md) Als u het script uitvoert, wordt ervan uitgegaan dat u akkoord gaat met de licenties voor alle software die wordt geïnstalleerd. U kunt ook de [handmatige](#manual-installation) installatiestappen uitvoeren in de volgende sectie, waarin de bijbehorende licenties en de onderdelen worden geïnstalleerd.
 
 Nadat het script is uitgevoerd, kunt u verdergaan met [Een lokaal cluster instellen](#set-up-a-local-cluster).
 
@@ -63,14 +63,14 @@ Volg de rest van deze handleiding voor handmatige installatie van de Service Fab
 
 1. Open een terminal.
 
-2. Voeg de `dotnet` opslag plaats toe aan de lijst met bronnen die overeenkomt met uw distributie.
+2. Voeg de `dotnet` repo toe aan de lijst met bronnen die overeenkomt met uw distributie.
 
     ```bash
     wget -q https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb
     sudo dpkg -i packages-microsoft-prod.deb
     ```
 
-3. Voeg de nieuwe MS open tech GNU Privacy Guard-sleutel (GnuPG of GPG) toe aan uw APT-sleutel hanger.
+3. Voeg de nieuwe MS Open Tech Gnu Privacy Guard-sleutel (GnuPG of GPG) toe aan uw APT-sleutelring.
 
     ```bash
     sudo curl -fsSL https://packages.microsoft.com/keys/msopentech.asc | sudo apt-key add -
@@ -88,7 +88,7 @@ Volg de rest van deze handleiding voor handmatige installatie van de Service Fab
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     ```
 
-6. Voeg Azul JDK-sleutel toe aan uw APT sleutel hanger en stel de opslag plaats in.
+6. Voeg de Azul JDK-sleutel toe aan uw APT-sleutelhanger en stel de opslagplaats in.
 
     ```bash
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9
@@ -120,10 +120,10 @@ sudo apt-get install servicefabricsdkcommon
 
 # <a name="red-hat-enterprise-linux-74"></a>[Red Hat Enterprise Linux 7.4](#tab/sdksetuprhel74)
 
-## <a name="update-your-yum-repositories"></a>Uw yum-opslag plaatsen bijwerken
-Als u de SDK en het bijbehorende runtime pakket via het yum-opdracht regel programma wilt installeren, moet u eerst uw pakket bronnen bijwerken.
+## <a name="update-your-yum-repositories"></a>Uw Yum-opslagplaatsen bijwerken
+Als u de SDK en het bijbehorende runtimepakket wilt installeren via het opdrachtregelprogramma yum, moet u eerst uw pakketbronnen bijwerken.
 
-## <a name="manual-installation-rhel"></a>Hand matige installatie (RHEL)
+## <a name="manual-installation-rhel"></a>Handmatige installatie (RHEL)
 Volg de rest van deze handleiding voor handmatige installatie van de Service Fabric-runtime en de algemene SDK.
 
 1. Open een terminal.
@@ -152,7 +152,7 @@ Volg de rest van deze handleiding voor handmatige installatie van de Service Fab
     sudo cp ./microsoft-prod.repo /etc/yum.repos.d/
     ```
 
-## <a name="install-and-set-up-the-service-fabric-sdk-for-a-local-cluster-rhel"></a>De Service Fabric SDK installeren en instellen voor een lokaal cluster (RHEL)
+## <a name="install-and-set-up-the-service-fabric-sdk-for-a-local-cluster-rhel"></a>De SDK voor Service Fabric lokale cluster (RHEL) installeren en instellen
 
 Wanneer u uw bronnen hebt bijgewerkt, kunt u de SDK installeren. Installeer het Service Fabric SDK-pakket, bevestig de installatie en accepteer de gebruiksrechtovereenkomst.
 
@@ -162,26 +162,26 @@ sudo yum install servicefabricsdkcommon
 
 ---
 
-## <a name="included-packages"></a>Inbegrepen pakketten
+## <a name="included-packages"></a>Opgenomen pakketten
 De Service Fabric-runtime die wordt geleverd met de installatie omvat de pakketten in de volgende tabel. 
 
  | | DotNetCore | Java | Python | Node.js | 
 --- | --- | --- | --- |---
-**Ubuntu** | 2.0.7 | AzulJDK 1,8 | Implicit van npm | meest recente |
+**Ubuntu** | 2.0.7 | AzulJDK 1.8 | Implicit van npm | meest recente |
 **RHEL** | - | OpenJDK 1.8 | Implicit van npm | meest recente |
 
 ## <a name="set-up-a-local-cluster"></a>Een lokaal cluster instellen
-1. Een lokaal Service Fabric cluster starten voor ontwikkeling.
+1. Start een lokaal Service Fabric cluster voor ontwikkeling.
 
 # <a name="container-based-local-cluster"></a>[Lokaal cluster op basis van containers](#tab/localclusteroneboxcontainer)
 
-Start een op een container gebaseerd [service Fabric Onebox](https://hub.docker.com/_/microsoft-service-fabric-onebox) -cluster.
+Start een op een container gebaseerd [Service Fabric Onebox-cluster.](https://hub.docker.com/_/microsoft-service-fabric-onebox)
 
-1. Installeer Moby om docker-containers te kunnen implementeren.
+1. Installeer Moby om Docker-containers te kunnen implementeren.
     ```bash
     sudo apt-get install moby-engine moby-cli -y
     ```
-2. Werk de configuratie van de docker-daemon op uw host bij met de volgende instellingen en start de docker-daemon opnieuw. Details: [IPv6-ondersteuning inschakelen](https://docs.docker.com/config/daemon/ipv6/)
+2. Werk de configuratie van de Docker-daemon op uw host bij met de volgende instellingen en start de Docker-daemon opnieuw op. Details: [IPv6-ondersteuning inschakelen](https://docs.docker.com/config/daemon/ipv6/)
 
     ```json
     {
@@ -191,12 +191,12 @@ Start een op een container gebaseerd [service Fabric Onebox](https://hub.docker.
     ```
 
 3. Start het cluster.<br/>
-    <b>Ubuntu 18,04 LTS:</b>
+    <b>Ubuntu 18.04 LTS:</b>
     ```bash
     docker run --name sftestcluster -d -v /var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mcr.microsoft.com/service-fabric/onebox:u18
     ```
 
-    <b>Ubuntu 16,04 LTS:</b>
+    <b>Ubuntu 16.04 LTS:</b>
     ```bash
     docker run --name sftestcluster -d -v /var/run/docker.sock:/var/run/docker.sock -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 mcr.microsoft.com/service-fabric/onebox:u16
     ```
@@ -206,7 +206,7 @@ Start een op een container gebaseerd [service Fabric Onebox](https://hub.docker.
 
 # <a name="local-cluster"></a>[Lokaal cluster](#tab/localcluster)
 
-Nadat u de SDK hebt geïnstalleerd met behulp van de bovenstaande stappen, start u een lokaal cluster.
+Nadat u de SDK met de bovenstaande stappen heeft geïnstalleerd, start u een lokaal cluster.
 
 1. Voer het installatiescript van het cluster uit.
 
@@ -216,7 +216,7 @@ Nadat u de SDK hebt geïnstalleerd met behulp van de bovenstaande stappen, start
 
 ---
 
-2. Open een webbrowser en ga naar **service Fabric Explorer** ( `http://localhost:19080/Explorer` ). Wanneer het cluster is gestart, ziet u het Service Fabric Explorer-dashboard. Het kan enkele minuten duren voordat het cluster volledig is ingesteld. Als het openen van de browser is mislukt of als in Service Fabric Explorer niet wordt aangegeven dat het systeem gereed is, wacht u enkele minuten en probeert u het opnieuw.
+2. Open een webbrowser en ga naar **Service Fabric Explorer** ( `http://localhost:19080/Explorer` ). Wanneer het cluster is gestart, ziet u het Service Fabric Explorer-dashboard. Het kan enkele minuten duren voordat het cluster volledig is ingesteld. Als het openen van de browser is mislukt of als in Service Fabric Explorer niet wordt aangegeven dat het systeem gereed is, wacht u enkele minuten en probeert u het opnieuw.
 
     ![Service Fabric Explorer in Linux][sfx-linux]
 
@@ -259,13 +259,13 @@ Service Fabric biedt hulpprogramma's waarmee u vanuit een terminal Service Fabri
 
 Nadat u de generatoren hebt geïnstalleerd, kunt u uitvoerbare gastbestanden of containerservices maken door respectievelijk `yo azuresfguest` of `yo azuresfcontainer` uit te voeren.
 
-## <a name="set-up-net-core-31-development"></a>.NET Core 3,1-ontwikkeling instellen
+## <a name="set-up-net-core-31-development"></a>.NET Core 3.1-ontwikkeling instellen
 
-Installeer de [.net Core 3,1 SDK voor Ubuntu](https://www.microsoft.com/net/core#linuxubuntu) om [C# service Fabric-toepassingen te maken](service-fabric-create-your-first-linux-application-with-csharp.md). Pakketten voor .NET Core Service Fabric-toepassingen worden gehost op NuGet.org.
+Installeer de [.NET Core 3.1 SDK voor Ubuntu](/dotnet/core/install/linux-ubuntu) om te beginnen met het maken [van C# Service Fabric toepassingen](service-fabric-create-your-first-linux-application-with-csharp.md). Pakketten voor .NET Core-Service Fabric worden gehost op NuGet.org.
 
 ## <a name="set-up-java-development"></a>Java-ontwikkeling instellen
 
-Als u Service Fabric Services wilt maken met behulp van Java, installeert u Gradle om bouw taken uit te voeren. Voer de onderstaande opdracht uit om Gradle te installeren. De Service Fabric-Java-bibliotheken worden opgehaald uit Maven.
+Installeer Gradle om Service Fabric-services te bouwen met behulp van Java om buildtaken uit te voeren. Voer de onderstaande opdracht uit om Gradle te installeren. De Service Fabric-Java-bibliotheken worden opgehaald uit Maven.
 
 
 * Ubuntu
@@ -298,11 +298,11 @@ U kunt de Eclipse-invoegtoepassing voor Service Fabric installeren vanuit de Ecl
 > 
 > Voor Ubuntu wordt u aangeraden de installatie rechtstreeks vanaf de site van Eclipse uit te voeren en niet door middel van een installatieprogramma voor pakketten (`apt` of `apt-get`). Daardoor weet u zeker dat u de meest recente versie van Eclipse hebt. U kunt de Eclipse IDE installeren voor Java-ontwikkelaars of voor Java EE-ontwikkelaars.
 
-1. Controleer in Eclipse of u Eclipse Neon of later en Buildship versie 2.2.1 of later hebt geïnstalleerd. Controleer de versies van geïnstalleerde onderdelen door **Help**  >  **over** de  >  **installatie Details** van de eclips te selecteren. U kunt Buildship bijwerken met behulp van de instructies in [Eclipse Buildship: Eclipse-invoegtoepassingen voor Gradle][buildship-update].
+1. Controleer in Eclipse of u Eclipse Neon of later en Buildship versie 2.2.1 of later hebt geïnstalleerd. Controleer de versies van geïnstalleerde onderdelen door **Help**  >  **over Eclipse-installatiedetails** te  >  **selecteren.** U kunt Buildship bijwerken met behulp van de instructies in [Eclipse Buildship: Eclipse-invoegtoepassingen voor Gradle][buildship-update].
 
-2. Als u de service Fabric-invoeg toepassing wilt installeren, selecteert u **Help**  >  **nieuwe software installeren**.
+2. Als u de Service Fabric wilt installeren, selecteert **u Help** Nieuwe  >  **software installeren.**
 
-3. Voer in het vak **werken met** **https: \/ /DL.Microsoft.com/Eclipse** in.
+3. Voer in **het vak Werken** met **https: \/ /dl.microsoft.com/eclipse.**
 
 4. Selecteer **Toevoegen**.
 
@@ -312,7 +312,7 @@ U kunt de Eclipse-invoegtoepassing voor Service Fabric installeren vanuit de Ecl
 
 6. Voer de installatiestappen uit. Ga vervolgens akkoord met de gebruiksrechtovereenkomst.
 
-Als u de Eclipse-invoegtoepassing voor Service Fabric al hebt geïnstalleerd, controleert u of u de meest recente versie gebruikt. Controleer door **Help**  >  **over** de  >  **installatie Details** van de eclips te selecteren. Zoek vervolgens naar Service Fabric in de lijst met geïnstalleerde invoeg toepassingen. Selecteer **bijwerken** als er een nieuwere versie beschikbaar is.
+Als u de Eclipse-invoegtoepassing voor Service Fabric al hebt geïnstalleerd, controleert u of u de meest recente versie gebruikt. Selecteer Help over  >  **Eclipse-installatiedetails.**  >   Zoek vervolgens naar Service Fabric in de lijst met geïnstalleerde in plug-ins. Selecteer **Bijwerken** als er een nieuwere versie beschikbaar is.
 
 Zie [Service Fabric-invoegtoepassing voor de ontwikkeling van Eclipse Java-toepassingen](service-fabric-get-started-eclipse.md) voor meer informatie.
 

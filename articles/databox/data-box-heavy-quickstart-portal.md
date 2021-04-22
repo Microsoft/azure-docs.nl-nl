@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 11/04/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 3a7f9179822720b0e5ffc21bc560b4c6ccad9463
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
-ms.translationtype: HT
+ms.openlocfilehash: 8c418f7cbeb56b94b7a85b12e833301b979bff32
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347419"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107871539"
 ---
 ::: zone target = "docs"
 
@@ -89,7 +89,7 @@ Gebruik deze Azure CLI-opdrachten om een Data Box Heavy-taak te maken.
    az storage account create --resource-group databox-rg --name databoxtestsa
    ```
 
-1. Voer de opdracht [az databox job create](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_create) uit om een Data Box-taak te maken met de waarde **--sku** van `DataBoxHeavy`:
+1. Voer de opdracht [az databox job create](/cli/azure/databox/job#az_databox_job_create) uit om een Data Box-taak te maken met de waarde **--sku** van `DataBoxHeavy`:
 
    ```azurecli
    az databox job create --resource-group databox-rg --name databoxheavy-job \
@@ -102,37 +102,37 @@ Gebruik deze Azure CLI-opdrachten om een Data Box Heavy-taak te maken.
    > [!NOTE]
    > Controleer of uw abonnement ondersteuning biedt voor Data Box Heavy.
 
-1. Voer de opdracht [az databox job update](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_update) uit om een taak bij te werken, zoals in dit voorbeeld, waar u de naam en het e-mailadres van een contactpersoon wijzigt:
+1. Voer de opdracht [az databox job update](/cli/azure/databox/job#az_databox_job_update) uit om een taak bij te werken, zoals in dit voorbeeld, waar u de naam en het e-mailadres van een contactpersoon wijzigt:
 
    ```azurecli
    az databox job update -g databox-rg --name databox-job --contact-name "Robert Anic" --email-list RobertAnic@contoso.com
    ```
 
-   Voer de opdracht [az databox job show](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_show) uit om informatie te krijgen over de taak:
+   Voer de opdracht [az databox job show](/cli/azure/databox/job#az_databox_job_show) uit om informatie te krijgen over de taak:
 
    ```azurecli
    az databox job show --resource-group databox-rg --name databox-job
    ```
 
-   Gebruik de opdracht [az databox job list]( /cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_list) om alle Data Box-taken voor een resourcegroep te zien:
+   Gebruik de opdracht [az databox job list]( /cli/azure/databox/job#az_databox_job_list) om alle Data Box-taken voor een resourcegroep te zien:
 
    ```azurecli
    az databox job list --resource-group databox-rg
    ```
 
-   Voer de opdracht [az databox job cancel](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_cancel) uit om een taak te annuleren:
+   Voer de opdracht [az databox job cancel](/cli/azure/databox/job#az_databox_job_cancel) uit om een taak te annuleren:
 
    ```azurecli
    az databox job cancel –resource-group databox-rg --name databox-job --reason "Cancel job."
    ```
 
-   Voer de opdracht [az databox job delete](/cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_delete) uit om een taak te verwijderen:
+   Voer de opdracht [az databox job delete](/cli/azure/databox/job#az_databox_job_delete) uit om een taak te verwijderen:
 
    ```azurecli
    az databox job delete –resource-group databox-rg --name databox-job
    ```
 
-1. Gebruik de opdracht [az databox job list-credentials]( /cli/azure/ext/databox/databox/job#ext_databox_az_databox_job_list_credentials) om de referenties voor een Data Box-taak weer te geven:
+1. Gebruik de opdracht [az databox job list-credentials]( /cli/azure/databox/job#az_databox_job_list_credentials) om de referenties voor een Data Box-taak weer te geven:
 
    ```azurecli
    az databox job list-credentials --resource-group "databox-rg" --name "databoxdisk-job"

@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 03/25/2021
+ms.date: 04/21/2021
 ms.author: v-jansk
-ms.openlocfilehash: 09e8f82b6a4ff26f0ae53090e7c330f72d3b9583
-ms.sourcegitcommit: 3c460886f53a84ae104d8a09d94acb3444a23cdc
+ms.openlocfilehash: e47f3363a9e09a3e371c751e0bdd1143cfc72314
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "107836160"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864897"
 ---
 # <a name="get-supported-document-formats"></a>Ondersteunde documentindelingen krijgen
 
-De methode Ondersteunde documentindelingen krijgen retourneert een lijst met documentindelingen die worden ondersteund door de documentvertalingsservice. De lijst bevat de algemene bestandsextensie en het inhoudstype als de upload-API wordt gebruikt.
+De methode Ondersteunde documentindelingen krijgen retourneert een lijst met documentindelingen die worden ondersteund door de documentvertalingsservice. De lijst bevat de algemene bestandsextensie en het inhoudstype als u de upload-API gebruikt.
 
 ## <a name="request-url"></a>Aanvraag-URL
 
@@ -33,7 +33,7 @@ Meer informatie over het vinden van [uw aangepaste domeinnaam](../get-started-wi
 > [!IMPORTANT]
 >
 > * **Voor alle API-aanvragen voor de documentvertalingsservice is een aangepast domein-eindpunt vereist.**
-> * U kunt het eindpunt dat u op uw  Azure Portal resourcesleutels en eindpuntpagina hebt gevonden, noch het globale translator-eindpunt gebruiken om HTTP-aanvragen te maken voor `api.cognitive.microsofttranslator.com` documentvertaling.
+> * U kunt het eindpunt op de pagina sleutels  en eindpunten van uw Azure Portal-resource, noch het globale translator-eindpunt, , gebruiken om HTTP-aanvragen te maken voor `api.cognitive.microsofttranslator.com` documentvertaling.
 
 ## <a name="request-headers"></a>Aanvraagheaders
 
@@ -62,9 +62,9 @@ De volgende informatie wordt geretourneerd als een geslaagd antwoord.
 |Naam|Type|Description|
 |--- |--- |--- |
 |waarde|FileFormat []|FileFormat[] bevat de hieronder vermelde details.|
-|value.format|tekenreeks []|Ondersteunde inhoudstypen voor deze indeling.|
-|value.fileExtensions|tekenreeks []|Ondersteunde bestandsextensie voor deze indeling.|
-|value.contentTypes|tekenreeks []|Naam van de indeling.|
+|value.format|tekenreeks[]|Ondersteunde inhoudstypen voor deze indeling.|
+|value.fileExtensions|tekenreeks[]|Ondersteunde bestandsextensie voor deze indeling.|
+|value.contentTypes|tekenreeks[]|Naam van de indeling.|
 |value.versions|Tekenreeks[]|Ondersteunde versie.|
 
 ### <a name="error-response"></a>Foutbericht
@@ -73,8 +73,8 @@ De volgende informatie wordt geretourneerd als een geslaagd antwoord.
 |--- |--- |--- |
  |code|tekenreeks|Enums met foutcodes op hoog niveau. Mogelijke waarden:<ul><li>InternalServerError</li><li>InvalidArgument</li><li>InvalidRequest</li><li>RequestRateTooHigh</li><li>ResourceNotFound</li><li>ServiceUnavailable</li><li>Niet geautoriseerd</li></ul>|
 |message|tekenreeks|Haalt een foutbericht op hoog niveau op.|
-|innerError|InnerErrorV2|Nieuwe interne foutindeling, die voldoet aan Cognitive Services API-richtlijnen. Het bevat de vereiste eigenschappen ErrorCode, bericht en optionele eigenschappen target, details(sleutel-waardepaar), interne fout (dit kan worden genest).|
-|innerError.code|tekenreeks|Haalt de codefoutreeks op.|
+|innerError|InnerErrorV2|Nieuwe interne foutindeling, die voldoet aan Cognitive Services API-richtlijnen. Het bevat vereiste eigenschappen: ErrorCode, message en optional properties target, details(sleutelwaardepaar), interne fout (dit kan worden genest).|
+|innerError.code|tekenreeks|Haalt een codefoutreeks op.|
 |innerError.message|tekenreeks|Haalt een foutbericht op hoog niveau op.|
 
 ## <a name="examples"></a>Voorbeelden

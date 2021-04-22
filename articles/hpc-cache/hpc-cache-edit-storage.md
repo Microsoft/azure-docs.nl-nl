@@ -1,51 +1,51 @@
 ---
-title: Doel doelen voor Azure HPC-cache bijwerken
-description: Doel doelen van de Azure HPC-cache bewerken
+title: Opslagdoelen Azure HPC Cache bijwerken
+description: Opslagdoelen Azure HPC Cache bewerken
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 03/29/2021
 ms.author: v-erkel
-ms.openlocfilehash: d61612b6e491fae550559e499cb360efc0f7c044
-ms.sourcegitcommit: 20f8bf22d621a34df5374ddf0cd324d3a762d46d
+ms.openlocfilehash: ebf68c1eb06984e2de8114c53e1bb55d52aed70a
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "107258908"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107862629"
 ---
 # <a name="edit-storage-targets"></a>Opslagdoelen bewerken
 
-U kunt opslag doelen verwijderen of wijzigen met de Azure Portal of door gebruik te maken van de Azure CLI.
+U kunt opslagdoelen verwijderen of wijzigen met de Azure Portal of met behulp van de Azure CLI.
 
-Afhankelijk van het type opslag kunt u deze opslag doel waarden wijzigen:
+Afhankelijk van het type opslag kunt u deze opslagdoelwaarden wijzigen:
 
-* Voor Blob Storage-doelen kunt u het pad naar de naam ruimte en het toegangs beleid wijzigen.
+* Voor Blob Storage-doelen kunt u het pad naar de naamruimte en het toegangsbeleid wijzigen.
 
-* Voor NFS-opslag doelen kunt u deze waarden wijzigen:
+* Voor NFS-opslagdoelen kunt u deze waarden wijzigen:
 
-  * Naam ruimte paden
+  * Naamruimtepaden
   * Toegangsbeleid
-  * De export-of export submap van de opslag die is gekoppeld aan een naam ruimte-pad
-  * Gebruiks model
+  * De subdirectory voor het exporteren of exporteren van opslag die is gekoppeld aan een naamruimtepad
+  * Gebruiksmodel
 
-* Voor ADLS-NFS-opslag doelen kunt u het pad naar de naam ruimte, het toegangs beleid en het gebruiks model wijzigen.
+* Voor ADLS-NFS-opslagdoelen kunt u het pad naar de naamruimte, het toegangsbeleid en het gebruiksmodel wijzigen.
 
-U kunt de naam, het type of het back-end-opslag systeem (BLOB-container of NBS-hostnaam/IP-adres) van een opslag doel niet bewerken. Als u deze eigenschappen wilt wijzigen, verwijdert u het opslag doel en maakt u een vervanging met de nieuwe waarde.
+U kunt de naam, het type of het back-endopslagsysteem van een opslagdoel niet bewerken (blobcontainer of NFS-hostnaam/IP-adres). Als u deze eigenschappen wilt wijzigen, verwijdert u het opslagdoel en maakt u een vervanging met de nieuwe waarde.
 
 > [!TIP]
-> De [video](https://azure.microsoft.com/resources/videos/managing-hpc-cache/) voor het beheren van de HPC-cache van Azure laat zien hoe u een opslag doel bewerkt in de Azure Portal.
+> In [de video Azure HPC Cache ziet](https://azure.microsoft.com/resources/videos/managing-hpc-cache/) u hoe u een opslagdoel in de Azure Portal.
 
-## <a name="remove-a-storage-target"></a>Een opslag doel verwijderen
+## <a name="remove-a-storage-target"></a>Een opslagdoel verwijderen
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Als u een opslag doel wilt verwijderen, opent u de pagina **opslag doelen** . Selecteer het opslag doel in de lijst en klik op de knop **verwijderen** .
+Als u een opslagdoel wilt verwijderen, opent u **de pagina Opslagdoelen.** Selecteer het opslagdoel in de lijst en klik op **de knop** Verwijderen.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
+[Azure CLI instellen voor Azure HPC Cache.](./az-cli-prerequisites.md)
 
-Gebruik [AZ HPC-cache Storage-doel Remove](/cli/azure/ext/hpc-cache/hpc-cache/storage-target#ext-hpc-cache-az-hpc-cache-storage-target-remove) om een opslag doel uit de cache te verwijderen.
+Gebruik [az hpc-cache storage-target remove om](/cli/azure/hpc-cache/storage-target#az_hpc_cache_storage_target_remove) een opslagdoel uit de cache te verwijderen.
 
 ```azurecli
 $ az hpc-cache storage-target remove --resource-group cache-rg --cache-name doc-cache0629 --name blob1
@@ -60,31 +60,31 @@ $ az hpc-cache storage-target remove --resource-group cache-rg --cache-name doc-
 
 ---
 
-Als u een opslag doel verwijdert, wordt de koppeling van het opslag systeem met dit Azure HPC-cache systeem verwijderd, maar wordt het back-end-opslag systeem niet gewijzigd. Als u bijvoorbeeld een Azure Blob Storage-container hebt gebruikt, bestaan de container en de inhoud ervan nog steeds nadat u deze uit de cache hebt verwijderd. U kunt de container toevoegen aan een andere Azure HPC-cache door deze opnieuw toe te voegen aan deze cache of door de Azure Portal te verwijderen.
+Als u een opslagdoel verwijdert, wordt de associatie van het opslagsysteem met dit Azure HPC Cache-systeem verwijderd, maar wordt het back-endopslagsysteem niet gewijzigd. Als u bijvoorbeeld een Azure Blob Storage-container hebt gebruikt, bestaan de container en de inhoud ervan nog steeds nadat u deze uit de cache hebt verwijderd. U kunt de container toevoegen aan een Azure HPC Cache, deze opnieuw toevoegen aan deze cache of deze verwijderen met de Azure Portal.
 
-Alle bestands wijzigingen die in de cache zijn opgeslagen, worden naar het back-end-opslag systeem geschreven voordat het opslag doel wordt verwijderd. Dit proces kan een uur of langer duren als er veel gewijzigde gegevens in de cache staan.
+Bestandswijzigingen die zijn opgeslagen in de cache, worden naar het back-endopslagsysteem geschreven voordat het opslagdoel wordt verwijderd. Dit proces kan een uur of meer duren als er veel gewijzigde gegevens in de cache staan.
 
-## <a name="change-a-blob-storage-targets-namespace-path"></a>Het pad van de naam ruimte van een Blob-opslag doel wijzigen
+## <a name="change-a-blob-storage-targets-namespace-path"></a>Het pad naar de naamruimte van een blobopslagdoel wijzigen
 
-Naam ruimte paden zijn de paden die clients gebruiken om dit opslag doel te koppelen. (Voor meer informatie raadpleegt u [de geaggregeerde naam ruimte plannen](hpc-cache-namespace.md) en [de geaggregeerde naam ruimte instellen](add-namespace-paths.md)).
+Naamruimtepaden zijn de paden die clients gebruiken om dit opslagdoel te mounten. (Lees Plan the [aggregated namespace (De geaggregeerde naamruimte plannen)](hpc-cache-namespace.md) en [Set up the aggregated namespace (De geaggregeerde naamruimte instellen) voor meer informatie.](add-namespace-paths.md)
 
-Het pad naar de naam ruimte is de enige update die u kunt maken in een Azure Blob-opslag doel. Gebruik de Azure Portal of de Azure CLI om deze te wijzigen.
+Het naamruimtepad is de enige update die u kunt maken op een Azure Blob Storage-doel. Gebruik de Azure Portal of de Azure CLI om deze te wijzigen.
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Gebruik de **naam ruimte** pagina voor uw Azure HPC-cache. De naam ruimte pagina wordt uitgebreid beschreven in het artikel [de geaggregeerde naam ruimte instellen](add-namespace-paths.md).
+Gebruik de **pagina Naamruimte** voor uw Azure HPC Cache. De naamruimtepagina wordt uitgebreid beschreven in het artikel De geaggregeerde [naamruimte instellen.](add-namespace-paths.md)
 
-Klik op de naam van het pad dat u wilt wijzigen en maak het nieuwe pad in het bewerkings venster dat wordt weer gegeven.
+Klik op de naam van het pad dat u wilt wijzigen en maak het nieuwe pad in het bewerkingsvenster dat wordt weergegeven.
 
-![Scherm afbeelding van de pagina met de naam ruimte na klikken op een pad naar een BLOB-naam ruimte: de velden bewerken worden in een deel venster aan de rechter kant weer gegeven](media/update-namespace-blob.png)
+![Schermopname van de naamruimtepagina nadat u op een pad naar een Blob-naamruimte hebt geklikt: de bewerkingsvelden worden weergegeven in een deelvenster aan de rechterkant](media/update-namespace-blob.png)
 
-Nadat u wijzigingen hebt aangebracht, klikt u op **OK** om het opslag doel bij te werken of klikt u op **Annuleren** om de wijzigingen te negeren.
+Nadat u wijzigingen hebt aangebracht, klikt u **op OK** om het opslagdoel bij te werken of klikt u op **Annuleren om** wijzigingen te verwijderen.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
+[Azure CLI instellen voor Azure HPC Cache.](./az-cli-prerequisites.md)
 
-Als u de naam ruimte van een Blob Storage-doel wilt wijzigen in de Azure CLI, gebruikt u de opdracht [AZ HPC-cache Blob-Storage-target update](/cli/azure/ext/hpc-cache/hpc-cache/blob-storage-target#ext-hpc-cache-az-hpc-cache-blob-storage-target-update). Alleen de `--virtual-namespace-path` waarde kan worden gewijzigd.
+Als u de naamruimte van een blob-opslagdoel wilt wijzigen met de Azure CLI, gebruikt u de opdracht [az hpc-cache blob-storage-target update.](/cli/azure/hpc-cache/blob-storage-target#az_hpc_cache_blob_storage_target_update) Alleen de `--virtual-namespace-path` waarde kan worden gewijzigd.
 
   ```azurecli
   az hpc-cache blob-storage-target update --cache-name cache-name --name target-name \
@@ -93,53 +93,53 @@ Als u de naam ruimte van een Blob Storage-doel wilt wijzigen in de Azure CLI, ge
 
 ---
 
-## <a name="update-an-nfs-storage-target"></a>Een NFS-opslag doel bijwerken
+## <a name="update-an-nfs-storage-target"></a>Een NFS-opslagdoel bijwerken
 
-Voor NFS-opslag doelen kunt u virtuele naam ruimte paden wijzigen of toevoegen, de NFS-export-of-submap waarden wijzigen waarnaar een naam ruimte verwijst en het gebruiks model wijzigen.
+Voor NFS-opslagdoelen kunt u virtuele naamruimtepaden wijzigen of toevoegen, de NFS-export- of subdirectorywaarden wijzigen waar een naamruimtepad naar wijst en het gebruiksmodel wijzigen.
 
-Opslag doelen in caches met sommige typen aangepaste DNS-instellingen hebben ook een besturings element voor het vernieuwen van hun IP-adressen. (Dit soort configuratie is zeldzaam.)
+Opslagdoelen in caches met bepaalde typen aangepaste DNS-instellingen hebben ook een besturingselement voor het vernieuwen van hun IP-adressen. (Dit soort configuratie is zeldzaam.)
 
-Meer informatie vindt u hieronder:
+Hieronder vindt u meer informatie:
 
-* De waarden van de [geaggregeerde naam](#change-aggregated-namespace-values) ruimte (virtuele naam ruimte, het toegangs beleid, de export en de export submap) wijzigen
-* [Het gebruiks model wijzigen](#change-the-usage-model)
+* [Geaggregeerde naamruimtewaarden wijzigen](#change-aggregated-namespace-values) (pad naar virtuele naamruimte, toegangsbeleid, export- en export-subdirectory)
+* [Het gebruiksmodel wijzigen](#change-the-usage-model)
 * [DNS vernieuwen](#update-ip-address-custom-dns-configurations-only)
 
-### <a name="change-aggregated-namespace-values"></a>Samengevoegde waarden van naam ruimte wijzigen
+### <a name="change-aggregated-namespace-values"></a>Geaggregeerde naamruimtewaarden wijzigen
 
-U kunt de Azure Portal of de Azure CLI gebruiken om het pad naar de client gerichte naam ruimte, het exporteren van de opslag en de export submap (indien gebruikt) te wijzigen.
+U kunt de Azure Portal of de Azure CLI gebruiken om het pad naar de client gerichte naamruimte, de opslagexport en de exportsubdirectory te wijzigen (indien gebruikt).
 
-Lees de richt lijnen in paden voor het [toevoegen van NFS-naam ruimten](add-namespace-paths.md#nfs-namespace-paths) als u een herinnering wilt over het maken van meerdere geldige paden voor één opslag doel.
+Lees de richtlijnen in [Paden voor NFS-naamruimte toevoegen](add-namespace-paths.md#nfs-namespace-paths) als u een herinnering nodig hebt over het maken van meerdere geldige paden op één opslagdoel.
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Gebruik de **naam ruimte** pagina voor uw Azure HPC-cache om naam ruimte waarden bij te werken. Deze pagina wordt uitgebreid beschreven in het artikel [de geaggregeerde naam ruimte instellen](add-namespace-paths.md).
+Gebruik de **pagina Naamruimte** voor uw Azure HPC Cache naamruimtewaarden bij te werken. Deze pagina wordt gedetailleerder beschreven in het artikel [De geaggregeerde naamruimte instellen.](add-namespace-paths.md)
 
-![scherm afbeelding van de pagina Portal-naam ruimte met de pagina NFS-update openen aan de rechter kant](media/update-namespace-nfs.png)
+![schermopname van de portalnaamruimtepagina met de NFS-updatepagina aan de rechterkant geopend](media/update-namespace-nfs.png)
 
 1. Klik op de naam van het pad dat u wilt wijzigen.
-1. Gebruik het bewerkings venster om nieuwe waarden voor het virtuele pad, exporteren of submappen te typen, of om een ander toegangs beleid te selecteren.
-1. Nadat u wijzigingen hebt aangebracht, klikt u op **OK** om het opslag doel bij te werken of op **Annuleren** om de wijzigingen te negeren.
+1. Gebruik het bewerkingsvenster om waarden voor nieuw virtueel pad, exporteren of subdirectory in te voeren of om een ander toegangsbeleid te selecteren.
+1. Nadat u wijzigingen hebt aangebracht, klikt u **op OK om** het opslagdoel bij te werken of op Annuleren **om** wijzigingen te verwijderen.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
+[Azure CLI instellen voor Azure HPC Cache.](./az-cli-prerequisites.md)
 
-Gebruik de ``--junction`` optie in de opdracht [AZ HPC-cache NFS-Storage-doel update](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target) om het pad naar de naam ruimte, de NFS-export of de export submap te wijzigen.
+Gebruik de optie in de opdracht ``--junction`` [az hpc-cache nfs-storage-target update](/cli/azure/hpc-cache/nfs-storage-target) om het naamruimtepad, de NFS-export of de export-subdirectory te wijzigen.
 
-De ``--junction`` para meter gebruikt deze waarden:
+De ``--junction`` parameter gebruikt deze waarden:
 
-* ``namespace-path`` -Het pad naar het client gerichte virtuele bestand
-* ``nfs-export`` -Het opslag systeem exporteren om te koppelen aan het client gerichte pad
-* ``target-path`` (optioneel): een submap van de export, indien nodig
+* ``namespace-path`` - Het client gerichte virtuele bestandspad
+* ``nfs-export`` - De export van het opslagsysteem om te koppelen aan het client-gerichte pad
+* ``target-path`` (optioneel) - Een subdirectory van de export, indien nodig
 
 Voorbeeld: ``--junction namespace-path="/nas-1" nfs-export="/datadisk1" target-path="/test"``
 
-U moet alle drie de waarden voor elk pad opgeven in de ``--junction`` instructie. Gebruik de bestaande waarden voor waarden die u niet wilt wijzigen.
+U moet alle drie de waarden voor elk pad in de ``--junction`` instructie. Gebruik de bestaande waarden voor waarden die u niet wilt wijzigen.
 
-De cache naam, de naam van het opslag doel en de resource groep zijn ook vereist in alle update-opdrachten.
+De cachenaam, de doelnaam van de opslag en de resourcegroep zijn ook vereist in alle updateopdrachten.
 
-Voor beeld opdracht:
+Voorbeeldopdracht:
 
 ```azurecli
 az hpc-cache nfs-storage-target update --cache-name mycache \
@@ -149,36 +149,36 @@ az hpc-cache nfs-storage-target update --cache-name mycache \
 
 ---
 
-### <a name="change-the-usage-model"></a>Het gebruiks model wijzigen
+### <a name="change-the-usage-model"></a>Het gebruiksmodel wijzigen
 
-Het gebruiks model is van invloed op de manier waarop de cache gegevens bewaart. Lees meer informatie over het gebruik van de [cache](cache-usage-models.md) om meer te weten te komen.
+Het gebruiksmodel is van invloed op de manier waarop de cache gegevens bewaart. Lees [Meer informatie over cachegebruiksmodellen](cache-usage-models.md) voor meer informatie.
 
 > [!NOTE]
-> Als u gebruiks modellen wijzigt, moet u clients mogelijk opnieuw koppelen om NLM-fouten te voor komen. Lees [hoe u clients opnieuw moet koppelen](cache-usage-models.md#know-when-to-remount-clients-for-nlm) voor meer informatie.
+> Als u gebruiksmodellen wijzigt, moet u mogelijk clients opnieuw ontkoppelen om NLM-fouten te voorkomen. Lees [Weten wanneer clients opnieuw moeten worden ontkoppeld](cache-usage-models.md#know-when-to-remount-clients-for-nlm) voor meer informatie.
 
-Gebruik een van de volgende methoden om het gebruiks model voor een NFS-opslag doel te wijzigen.
+Gebruik een van deze methoden om het gebruiksmodel voor een NFS-opslagdoel te wijzigen.
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Wijzig het gebruiks model op de pagina **opslag doelen** in het Azure Portal. Klik op de naam van het opslag doel dat u wilt wijzigen.
+Wijzig het gebruiksmodel op de **pagina Opslagdoelen** in de Azure Portal. Klik op de naam van het opslagdoel dat u wilt wijzigen.
 
-![scherm afbeelding van de bewerkings pagina voor een NFS-opslag doel](media/edit-storage-nfs.png)
+![schermopname van de pagina bewerken voor een NFS-opslagdoel](media/edit-storage-nfs.png)
 
-Gebruik de vervolg keuzelijst om een nieuw gebruiks model te kiezen. Klik op **OK** om het opslag doel bij te werken of klik op **Annuleren** om de wijzigingen te negeren.
+Gebruik de vervolgkeuze selecteren om een nieuw gebruiksmodel te kiezen. Klik **op OK** om het opslagdoel bij te werken of klik op Annuleren **om** wijzigingen te verwijderen.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-[Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
+[Azure CLI instellen voor Azure HPC Cache.](./az-cli-prerequisites.md)
 
-Gebruik de opdracht [AZ HPC-cache NFS-Storage-doel update](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target#ext-hpc-cache-az-hpc-cache-nfs-storage-target-update) .
+Gebruik de [opdracht az hpc-cache nfs-storage-target update.](/cli/azure/hpc-cache/nfs-storage-target#az_hpc_cache_nfs_storage_target_update)
 
-De opdracht update is bijna identiek aan de opdracht die u gebruikt om een NFS-opslag doel toe te voegen. Raadpleeg [een NFS-opslag doel maken](hpc-cache-add-storage.md#create-an-nfs-storage-target) voor meer informatie en voor beelden.
+De update opdracht is bijna identiek aan de opdracht die u gebruikt om een NFS-opslagdoel toe te voegen. Raadpleeg [Een NFS-opslagdoel maken voor](hpc-cache-add-storage.md#create-an-nfs-storage-target) meer informatie en voorbeelden.
 
-Als u het gebruiks model wilt wijzigen, moet u de ``--nfs3-usage-model`` optie bijwerken. Voorbeeld: ``--nfs3-usage-model WRITE_WORKLOAD_15``
+Als u het gebruiksmodel wilt wijzigen, moet u de optie ``--nfs3-usage-model`` bijwerken. Voorbeeld: ``--nfs3-usage-model WRITE_WORKLOAD_15``
 
-De cache naam, de naam van het opslag doel en de waarden van de resource groep zijn ook vereist.
+De cachenaam, de doelnaam van de opslag en de resourcegroepwaarden zijn ook vereist.
 
-Als u de namen van de gebruiks modellen wilt controleren, gebruikt u de opdracht [AZ HPC-cache Usage-model List](/cli/azure/ext/hpc-cache/hpc-cache/usage-model#ext-hpc-cache-az-hpc-cache-usage-model-list).
+Als u de namen van de gebruiksmodellen wilt controleren, gebruikt u de opdracht [az hpc-cache usage-model list](/cli/azure/hpc-cache/usage-model#az_hpc_cache_usage-model-list).
 
 Als de cache is gestopt of niet in orde is, wordt de update toegepast nadat de cache in orde is.
 
@@ -186,36 +186,36 @@ Als de cache is gestopt of niet in orde is, wordt de update toegepast nadat de c
 
 ### <a name="update-ip-address-custom-dns-configurations-only"></a>IP-adres bijwerken (alleen aangepaste DNS-configuraties)
 
-Als uw cache een niet-standaard DNS-configuratie gebruikt, is het mogelijk dat het IP-adres van uw NFS-opslag doel wordt gewijzigd vanwege wijzigingen in de back-end-DNS. Als uw DNS-server het IP-adres van het back-end-opslag systeem wijzigt, kan de Azure HPC-cache de toegang tot het opslag systeem verliezen.
+Als uw cache een niet-standaard-DNS-configuratie gebruikt, is het mogelijk dat het IP-adres van uw NFS-opslagdoel wordt gewijzigd vanwege back-end-DNS-wijzigingen. Als uw DNS-server het IP-adres van het back-endopslagsysteem wijzigt, kan Azure HPC Cache toegang tot het opslagsysteem verliezen.
 
-In het ideale geval moet u samen werken met de Manager van het aangepaste DNS-systeem van uw cache voor het plannen van updates, omdat deze wijzigingen opslag niet beschikbaar maken.
+In het ideale geval moet u samenwerken met de manager van het aangepaste DNS-systeem van uw cache om te plannen voor eventuele updates, omdat deze wijzigingen ervoor zorgen dat opslag niet beschikbaar is.
 
-Als u het IP-adres van de DNS-naam van het opslag doel moet bijwerken, is er een knop in de lijst opslag doelen. Klik op **DNS vernieuwen** om een query op de aangepaste DNS-server uit te zoeken voor een nieuw IP-adres.
+Als u het door DNS opgegeven IP-adres van een opslagdoel moet bijwerken, is er een knop in de lijst Opslagdoelen. Klik **op DNS vernieuwen** om een query uit te voeren op de aangepaste DNS-server voor een nieuw IP-adres.
 
-![Scherm opname van de lijst met opslag doelen. Voor één opslag doel, de '... ' in de kolom uiterst rechts is geopend en er worden twee opties weer gegeven: verwijderen en DNS vernieuwen.](media/refresh-dns.png)
+![Schermopname van de lijst met opslagdoel. Voor één opslagdoel, de '...' menu in de kolom rechts is geopend en er worden twee opties weergegeven: Verwijderen en DNS vernieuwen.](media/refresh-dns.png)
 
-Als de update is geslaagd, neemt deze minder dan twee minuten in beslag. U kunt slechts één opslag doel tegelijk vernieuwen. wacht tot de vorige bewerking is voltooid voordat u een andere uitvoert.
+Als dit lukt, duurt de update minder dan twee minuten. U kunt slechts één opslagdoel per keer vernieuwen; wacht tot de vorige bewerking is voltooid voordat u een andere bewerking probeert.
 
-## <a name="update-an-adls-nfs-storage-target-preview"></a>Een ADLS-NFS-opslag doel bijwerken (PREVIEW)
+## <a name="update-an-adls-nfs-storage-target-preview"></a>Een ADLS-NFS-opslagdoel bijwerken (PREVIEW)
 
-Net als bij NFS-doelen kunt u het pad van de naam ruimte en het gebruiks model voor ADLS-NFS-opslag doelen wijzigen.
+Net als bij NFS-doelen kunt u het naamruimtepad en het gebruiksmodel voor ADLS-NFS-opslagdoelen wijzigen.
 
-### <a name="change-an-adls-nfs-namespace-path"></a>Een pad naar de ADLS-NFS-naam ruimte wijzigen
+### <a name="change-an-adls-nfs-namespace-path"></a>Een pad naar een ADLS-NFS-naamruimte wijzigen
 
-Gebruik de **naam ruimte** pagina voor uw Azure HPC-cache om naam ruimte waarden bij te werken. Deze pagina wordt uitgebreid beschreven in het artikel [de geaggregeerde naam ruimte instellen](add-namespace-paths.md).
+Gebruik de **pagina Naamruimte** voor uw Azure HPC Cache naamruimtewaarden bij te werken. Deze pagina wordt gedetailleerder beschreven in het artikel [De geaggregeerde naamruimte instellen.](add-namespace-paths.md)
 
-![scherm afbeelding van de pagina Portal-naam ruimte met een pagina ADS-NFS-update openen aan de rechter kant](media/update-namespace-adls.png)
+![schermopname van de portalnaamruimtepagina met een ads-NFS-updatepagina aan de rechterkant geopend](media/update-namespace-adls.png)
 
 1. Klik op de naam van het pad dat u wilt wijzigen.
-1. Gebruik het bewerkings venster om het nieuwe virtuele pad te typen of het toegangs beleid bij te werken.
-1. Nadat u wijzigingen hebt aangebracht, klikt u op **OK** om het opslag doel bij te werken of op **Annuleren** om de wijzigingen te negeren.
+1. Gebruik het bewerkingsvenster om een nieuw virtueel pad in te voeren of het toegangsbeleid bij te werken.
+1. Nadat u wijzigingen hebt aangebracht, klikt u **op OK** om het opslagdoel bij te werken of op **Annuleren om** wijzigingen te verwijderen.
 
-### <a name="change-adls-nfs-usage-models"></a>ADLS-NFS-gebruiks modellen wijzigen
+### <a name="change-adls-nfs-usage-models"></a>ADLS-NFS-gebruiksmodellen wijzigen
 
-De configuratie voor ADLS-NFS-gebruiks modellen is identiek aan de selectie van het NFS-gebruiks model. Lees de portal instructies in het [gebruiks model wijzigen](#change-the-usage-model) in de sectie NFS hierboven. Aanvullende hulpprogram ma's voor het bijwerken van ADLS-NFS-opslag doelen zijn in ontwikkeling.
+De configuratie voor ADLS-NFS-gebruiksmodellen is identiek aan de selectie van het NFS-gebruiksmodel. Lees de portalinstructies in [Het gebruiksmodel wijzigen](#change-the-usage-model) in de sectie NFS hierboven. Aanvullende hulpprogramma's voor het bijwerken van ADLS-NFS-opslagdoelen zijn in ontwikkeling.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Lees [opslag doelen toevoegen](hpc-cache-add-storage.md) voor meer informatie over deze opties.
-* [Plan de geaggregeerde naam ruimte](hpc-cache-namespace.md) voor meer tips over het gebruik van virtuele paden.
+* Lees [Opslagdoelen toevoegen](hpc-cache-add-storage.md) voor meer informatie over deze opties.
+* Lees [De geaggregeerde naamruimte plannen voor](hpc-cache-namespace.md) meer tips over het gebruik van virtuele paden.

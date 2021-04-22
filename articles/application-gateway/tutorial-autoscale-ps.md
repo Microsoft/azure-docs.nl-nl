@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/08/2021
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 2a756313a4659dfc531289c2c86890371f700367
-ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.openlocfilehash: 8196267ff7a71fb3910848fd0fef11a40a3c1c32
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "102452285"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107869937"
 ---
 # <a name="tutorial-create-an-application-gateway-that-improves-web-application-access"></a>Zelfstudie: een toepassingsgateway maken die de toegang tot de webtoepassing verbetert
 
@@ -36,7 +36,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Voor deze zelf studie moet u lokaal een beheer Azure PowerShell sessie uitvoeren. Versie 1.0.0 of hoger van de Azure PowerShell-module moet zijn geïnstalleerd. Voer `Get-Module -ListAvailable Az` uit om de versie te bekijken. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Nadat u de versie van PowerShell hebt gecontroleerd, voert u `Connect-AzAccount` uit om een verbinding op te zetten met Azure.
+Voor deze zelfstudie moet u lokaal een beheersessie Azure PowerShell uitvoeren. Versie 1.0.0 of hoger van de Azure PowerShell-module moet zijn geïnstalleerd. Voer `Get-Module -ListAvailable Az` uit om de versie te bekijken. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Nadat u de versie van PowerShell hebt gecontroleerd, voert u `Connect-AzAccount` uit om een verbinding op te zetten met Azure.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -58,7 +58,7 @@ New-AzResourceGroup -Name $rg -Location $location
 
 ## <a name="create-a-self-signed-certificate"></a>Een zelfondertekend certificaat maken
 
-Voor gebruik in de productie moet u een geldig certificaat importeren dat is ondertekend door een vertrouwde provider. Voor deze zelfstudie maakt u een zelfondertekend certificaat met behulp van [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate). U kunt [Export-PfxCertificate ](/powershell/module/pkiclient/export-pfxcertificate) gebruiken met de Thumbprint die is geretourneerd om een ​​PFX-bestand uit het certificaat te exporteren.
+Voor gebruik in de productie moet u een geldig certificaat importeren dat is ondertekend door een vertrouwde provider. Voor deze zelfstudie maakt u een zelfondertekend certificaat met behulp van [New-SelfSignedCertificate](/powershell/module/pki/new-selfsignedcertificate). U kunt [Export-PfxCertificate ](/powershell/module/pki/export-pfxcertificate) gebruiken met de Thumbprint die is geretourneerd om een ​​PFX-bestand uit het certificaat te exporteren.
 
 ```powershell
 New-SelfSignedCertificate `
@@ -76,7 +76,7 @@ Thumbprint                                Subject
 E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630  CN=www.contoso.com
 ```
 
-Gebruik de vinger afdruk om het pfx-bestand te maken. Vervang door *\<password>* een wacht woord van uw keuze:
+Gebruik de vingerafdruk om het PFX-bestand te maken. Vervang *\<password>* door een wachtwoord naar keuze:
 
 ```powershell
 $pwd = ConvertTo-SecureString -String "<password>" -Force -AsPlainText
@@ -122,7 +122,7 @@ $gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name "AppGwSubnet" -VirtualNetwork
 
 ## <a name="create-web-apps"></a>Web-apps maken
 
-Configureer twee web-apps voor de back-end-groep. Vervang *\<site1-name>* en *\<site-2-name>* door unieke namen in het `azurewebsites.net` domein.
+Configureer twee web-apps voor de back-endpool. Vervang *\<site1-name>* en door unieke namen in het *\<site-2-name>* `azurewebsites.net` domein.
 
 ```azurepowershell
 New-AzAppServicePlan -ResourceGroupName $rg -Name "ASP-01"  -Location $location -Tier Basic `
@@ -135,7 +135,7 @@ New-AzWebApp -ResourceGroupName $rg -Name <site2-name> -Location $location -AppS
 
 Configureer de waarden voor IP-configuratie, front-end-IP-configuratie, back-endpool, HTTP-instellingen, certificaat, poort, listener en regel met exact dezelfde indeling als de bestaande standaardtoepassingsgateway. De nieuwe SKU volgt hetzelfde objectmodel als de standaard-SKU.
 
-Vervang uw twee web-app-FQDN-namen (bijvoorbeeld: `mywebapp.azurewebsites.net` ) in de definitie van de $pool variabele.
+Vervang uw twee web-app-FQDN's (bijvoorbeeld: ) in de `mywebapp.azurewebsites.net` $pool variabeledefinitie.
 
 ```azurepowershell
 $ipconfig = New-AzApplicationGatewayIPConfiguration -Name "IPConfig" -Subnet $gwSubnet

@@ -1,32 +1,32 @@
 ---
 title: Aan de slag met Azure Service Bus-wachtrijen | Microsoft Docs
-description: In deze zelf studie maakt u .NET Core-Console toepassingen om berichten te verzenden naar en berichten van een Service Bus wachtrij te ontvangen.
+description: In deze zelfstudie maakt u .NET Core-consoletoepassingen om berichten te verzenden naar en te ontvangen van Service Bus wachtrij.
 ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.date: 09/01/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e8e70884838d56003694e2da09668527ce5b6c7b
-ms.sourcegitcommit: f28ebb95ae9aaaff3f87d8388a09b41e0b3445b5
+ms.openlocfilehash: d92a5e0b0d1a6953d0043f85ff98f6740aaacebb
+ms.sourcegitcommit: 2aeb2c41fd22a02552ff871479124b567fa4463c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "100652986"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107864010"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Aan de slag met Service Bus-wachtrijen
-In deze zelf studie maakt u .NET Core-Console toepassingen om berichten te verzenden naar en berichten van een Service Bus wachtrij te ontvangen.
+In deze zelfstudie maakt u .NET Core-consoletoepassingen om berichten te verzenden naar en te ontvangen van Service Bus wachtrij.
 
 > [!WARNING]
-> Deze Snelstartgids maakt gebruik van het oude pakket micro soft. Azure. ServiceBus. Zie [gebeurtenissen verzenden en ontvangen met behulp van het pakket Azure. Messa ging. ServiceBus](service-bus-dotnet-get-started-with-queues.md)voor een Snelstartgids waarbij het meest recente Azure. Messa ging. ServiceBus-pakket wordt gebruikt. 
+> In deze quickstart wordt het oude pakket Microsoft.Azure.ServiceBus gebruikt. Zie Gebeurtenissen verzenden en ontvangen met [azure.messaging.ServiceBus-pakket](service-bus-dotnet-get-started-with-queues.md)voor een quickstart die gebruikmaakt van het meest recente Pakket Azure.Messaging.ServiceBus. 
 
 ## <a name="prerequisites"></a>Vereisten
 
 - [Visual Studio 2019](https://www.visualstudio.com/vs).
-- [NET Core SDK](https://www.microsoft.com/net/download/windows), versie 2.0 of later.
+- [NET Core SDK](https://dotnet.microsoft.com/download), versie 2.0 of later.
 - Een Azure-abonnement. U hebt een Azure-account nodig om deze zelfstudie te voltooien. U kunt uw [voordelen als MSDN-abonnee](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) activeren of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Als u geen wachtrij hebt om te gebruiken, volgt u de stappen in het artikel [De Azure-portal gebruiken om een Service Bus-wachtrij te maken](service-bus-quickstart-portal.md) om een wachtrij te maken.
 
   - Lees het beknopte overzicht van Service Bus-wachtrijen.
-  - Maak een Service Bus naam ruimte.
+  - Maak een Service Bus naamruimte.
   - De verbindingsreeks ophalen.
   - Maak een Service Bus wachtrij.
 
@@ -36,12 +36,12 @@ Maak een C#-consoletoepassing met Visual Studio om berichten naar de wachtrij te
 
 ### <a name="create-a-console-application"></a>Een consoletoepassing maken
 
-Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#. In dit voor beeld wordt de app- *CoreSenderApp* naam.
+Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#. In dit voorbeeld wordt de app *CoreSenderApp genoemd.*
 
 ### <a name="add-the-service-bus-nuget-package"></a>Het Service Bus NuGet-pakket toevoegen
 
 1. Klik met de rechtermuisknop op het nieuwe project en selecteer **NuGet-pakketten beheren**.
-1. Selecteer **Bladeren**. Zoek en selecteer **[micro soft. Azure. ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)**.
+1. Selecteer **Bladeren**. Zoek en selecteer **[Microsoft.Azure.ServiceBus.](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)**
 1. Selecteer **Installeren** om de installatie te voltooien en sluit vervolgens de NuGet Package Manager.
 
     ![Een NuGet-pakket selecteren][nuget-pkg]
@@ -114,7 +114,7 @@ Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#
     }
     ```
 
-Het bestand *Program. cs* moet er als volgt uitzien.
+Hier ziet u hoe het *bestand Program.cs* eruit moet zien.
 
 ```csharp
 namespace CoreSenderApp
@@ -178,19 +178,19 @@ namespace CoreSenderApp
 
 Voer het programma uit en controleer de Azure Portal.
 
-Selecteer de naam van uw wachtrij in het venster **overzicht** van de naam ruimte om de wachtrij- **essentiële** elementen weer te geven.
+Selecteer de naam van uw wachtrij in het venster **Overzicht** van de naamruimte om de wachtrij **Essentials weer te geven.**
 
 ![Berichten ontvangen met aantal en grootte][queue-message]
 
-De waarde voor het **aantal actieve berichten** voor de wachtrij is nu **10**. Telkens wanneer u deze app Sender uitvoert zonder de berichten op te halen, wordt deze waarde verhoogd met 10.
+De **waarde voor Aantal actieve** berichten voor de wachtrij is nu **10**. Telkens wanneer u deze afzender-app uit te voeren zonder de berichten op te haalt, wordt deze waarde met 10 verhoogd.
 
 De huidige grootte van de wachtrij verhoogt de **HUIDIGE** waarde in **Essentials** telkens wanneer de app berichten aan de wachtrij toevoegt.
 
-In de volgende sectie wordt beschreven hoe u deze berichten ophaalt.
+In de volgende sectie wordt beschreven hoe u deze berichten kunt ophalen.
 
 ## <a name="receive-messages"></a>Berichten ontvangen
 
-Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere **console app (.net core)** -toepassing. Installeer het **micro soft. Azure. ServiceBus** NuGet-pakket, zoals u voor de afzender toepassing hebt gedaan.
+Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere **consoletoepassing (.NET Core).** Installeer het **Microsoft.Azure.ServiceBus** NuGet-pakket, net zoals u hebt gedaan voor de afzendertoepassing.
 
 ### <a name="write-code-to-receive-messages-from-the-queue"></a>Schrijven van code voor het ontvangen van berichten van de wachtrij
 
@@ -239,7 +239,7 @@ Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere **con
     }
     ```
 
-1. Voeg direct na de `MainAsync()` methode de volgende methode toe, waarmee de bericht afhandeling wordt geregistreerd en de berichten worden ontvangen die worden verzonden door de toepassing van de afzender:
+1. Voeg direct na de methode de volgende methode toe, waarmee de berichten-handler wordt geregistreerd en de berichten worden ontvangen die door `MainAsync()` de afzendertoepassing worden verzonden:
 
     ```csharp
     static void RegisterOnMessageHandlerAndReceiveMessages()
@@ -295,7 +295,7 @@ Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere **con
     }
     ```
 
-Het bestand *Program. cs* moet er als volgt uitzien:
+Het bestand *Program.cs* moet er als volgende uitzien:
 
 ```csharp
 namespace CoreReceiverApp
@@ -385,10 +385,10 @@ Voer het programma uit en controleer de portal opnieuw. De waarden voor **Aantal
 
 ![Wachtrij nadat berichten zijn ontvangen][queue-message-receive]
 
-Gefeliciteerd U hebt nu een wachtrij gemaakt, een set berichten naar die wachtrij verzonden en die berichten ontvangen van dezelfde wachtrij.
+Gefeliciteerd U hebt nu een wachtrij gemaakt, een set berichten verzonden naar die wachtrij en deze berichten ontvangen van dezelfde wachtrij.
 
 > [!NOTE]
-> U kunt resources van Service Bus beheren met [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). Met de Service Bus Explorer kunnen gebruikers eenvoudig verbinding maken met een Service Bus naam ruimte en berichten entiteiten beheren. Het hulp programma biedt geavanceerde functies zoals de functionaliteit voor importeren/exporteren of de mogelijkheid om onderwerpen, wacht rijen, abonnementen, relay-Services, Notification hubs en Event hubs te testen.
+> U kunt resources van Service Bus beheren met [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). Met Service Bus Explorer kunnen gebruikers eenvoudig verbinding maken met een Service Bus-naamruimte en berichtenentiteiten beheren. Het hulpprogramma biedt geavanceerde functies zoals functionaliteit voor importeren/exporteren of de mogelijkheid om onderwerpen, wachtrijen, abonnementen, Relay-services, Notification Hubs en Event Hubs te testen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

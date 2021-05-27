@@ -33,7 +33,7 @@ Kubernetes met Azure Arc biedt ondersteuning voor industriestandaard SSL om gege
 
 ## <a name="supported-kubernetes-distributions"></a>Ondersteunde Kubernetes-distributies
 
-Azure Arc enabled Kubernetes werkt met alle CNCF-gecertificeerde Kubernetes-clusters (native computing Foundation) van de Cloud. Het Azure-Arc-team heeft met belang rijke partners van de branche gewerkt de [conformiteit](./validation-program.md) van hun Kubernetes-distributies te valideren met Kubernetes van Azure Arc ingeschakeld.
+Azure Arc enabled Kubernetes werkt met alle CNCF-gecertificeerde Kubernetes-clusters (native computing Foundation) van de Cloud. Het Azure-Arc-team heeft met belangrijke partners van de branche gewerkt de [conformiteit](./validation-program.md) van hun Kubernetes-distributies te valideren met Kubernetes van Azure Arc ingeschakeld.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's 
 

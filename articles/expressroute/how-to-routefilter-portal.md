@@ -41,7 +41,7 @@ In deze zelfstudie leert u het volgende:
 
 ### <a name="about-route-filters"></a><a name="about"></a>Informatie over routefilters
 
-Wanneer Micosoft-peering wordt geconfigureerd voor uw ExpressRoute-circuit, worden met de Microsoft Edge-routers twee BGP-sessies tot stand gebracht met de Edge-routers via uw connectiviteitsprovider. Er worden geen routes geadverteerd naar uw netwerk. Als u dit wel wilt doen, moet u een routefilter koppelen.
+Wanneer Microsoft-peering wordt geconfigureerd voor uw ExpressRoute-circuit, worden met de Microsoft Edge-routers twee BGP-sessies tot stand gebracht met de Edge-routers via uw connectiviteitsprovider. Er worden geen routes geadverteerd naar uw netwerk. Als u dit wel wilt doen, moet u een routefilter koppelen.
 
 Via een routefilter kunt u services identificeren die u wilt gebruiken via Microsoft-peering op uw ExpressRoute-circuit. Het is in feite een lijst met alle toegestane BGP-communitywaarden. Zodra een routefilter is gedefinieerd en gekoppeld aan een ExpressRoute-circuit, worden alle voorvoegsels die overeenkomen met de BGP-communitywaarden, geadverteerd naar uw netwerk.
 
